@@ -7,6 +7,7 @@ public class WeaponBase : MonoBehaviour
     public virtual WeaponDataBase Data { get; }
 
     public List<BaseTrigger> Trigger = new();
+    public Animator _anims;
 
     public virtual void AddData(WeaponDataBase weaponData, WeaponControler father) { }
 

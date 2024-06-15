@@ -20,6 +20,17 @@ public class WeaponControler : MonoBehaviour
     void Update()
     {
         MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+
+
+
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            weapon.PrimaryFireIsDown();
+        }
+        else if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            weapon.PrimaryFireWasUp();
+        }
     }
 
 
