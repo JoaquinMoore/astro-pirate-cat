@@ -1,0 +1,889 @@
+fileFormatVersion: 2
+guid: 9c00d4e8995f8344b979de9b0a6faf15
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tripulante_tex_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 651
+        width: 429
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 948e3f1eaa5fad04bb94f00a19b96c7e
+      internalID: -1761507687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_1
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 748
+        width: 290
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcde155ec6c680b428aa0ceb7be347df
+      internalID: 1204606746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_2
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 789
+        width: 272
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdd3e664f93f5794eb829b4972f2998b
+      internalID: -159448398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 594
+        width: 122
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e531d4219f494346a2298c418beaa7f
+      internalID: 181031595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_4
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 609
+        width: 138
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb09cbd095822d749831bfc5963d4b01
+      internalID: 1379775494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_6
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 580
+        width: 71
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0176bb3600ed82940a5227dba99a94ef
+      internalID: 821029354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_7
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 583
+        width: 73
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 934dda02782f43a46bf0c9c9e8ad2257
+      internalID: 455680466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_8
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 562
+        width: 183
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f701c4fa87db3c043bcc7f303d102eba
+      internalID: -586187553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_9
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 630
+        width: 98
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa9853c1feba5443bb3a12eb20f5555
+      internalID: -1726776311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_10
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 576
+        width: 240
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e00fc3df1c3affd4fbf25353054dce9c
+      internalID: -610905612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_11
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 564
+        width: 156
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 746c2a297fdf1d2478d4f533a470aa4c
+      internalID: 443682549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_13
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 582
+        width: 86
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dff3601e2dd150b4eacdd50036d0b62f
+      internalID: -2127825586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_14
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 504
+        width: 128
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39019ac4b35f4bc4fb33ce70f9e96df7
+      internalID: 1567366040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_16
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 528
+        width: 123
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76d266f5cf3861b4ebfd7317e5f651f2
+      internalID: -2135656769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_18
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 522
+        width: 70
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 702a9dd53ba40e54e822835413baec50
+      internalID: -270397633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_19
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 515
+        width: 73
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7980f063359c01d468b648514d70c597
+      internalID: 2000599250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_20
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 423
+        width: 146
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d5cfe9b34f11fb48bf9fd73f3d0715a
+      internalID: 2023080537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_21
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 439
+        width: 147
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9112d28ffe5f4684291bebf7077370bb
+      internalID: 504209792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_22
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 399
+        width: 106
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 022b7eab070807a4bb7d1e54453f67c2
+      internalID: -297462789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_23
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 481
+        width: 137
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 547fd4e3ca1b80d4f90ba57da6c879ca
+      internalID: 430996148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_25
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 479
+        width: 63
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e508fb70c55cbbf469143c6f0a3f2558
+      internalID: -359091244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_26
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 465
+        width: 71
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b863cf15017c73d4b875d04b9012ba75
+      internalID: -217214671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_27
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 444
+        width: 151
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f827ddb18b958094098f7ad131a5cfa0
+      internalID: 422162160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_29
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 362
+        width: 183
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba5f8c5a2e229a34ab9f9e720f2059bd
+      internalID: -1944461753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_30
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 369
+        width: 158
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5957c7cab8c047549b9bcef3e140fec6
+      internalID: -183619343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_32
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 262
+        width: 109
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c9cce533a8a21f4d85161459a7d73de
+      internalID: 1554571234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_33
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 317
+        width: 146
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6156ee915102c44ca24abc5a1baf7be
+      internalID: 2094637541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_34
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 259
+        width: 93
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8adb7d1bbc686fa4aa50902b7b98c717
+      internalID: 2115262430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_35
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 318
+        width: 197
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52fb8e90b510ee648809cf5a350efd73
+      internalID: 1081141089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_40
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 258
+        width: 134
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfd5e7fe726c89e4db75ba6878506741
+      internalID: 1440036294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_41
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 183
+        width: 61
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87b69d588cbe07c4aa241eff35a6067c
+      internalID: 443807137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_42
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 219
+        width: 58
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c73196a1245056e4c8066577dae2f3ff
+      internalID: 278651487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_43
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 178
+        width: 202
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab7b84ef192a303409f9e3c8958f0b2b
+      internalID: -1550347150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tripulante_tex_47
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 121
+        width: 58
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffda2d1ac8aecd847ad76d34024a3bc6
+      internalID: 330825956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Tripulante_tex_0: -1761507687
+      Tripulante_tex_1: 1204606746
+      Tripulante_tex_10: -610905612
+      Tripulante_tex_11: 443682549
+      Tripulante_tex_12: 827470461
+      Tripulante_tex_13: -2127825586
+      Tripulante_tex_14: 1567366040
+      Tripulante_tex_15: -451216420
+      Tripulante_tex_16: -2135656769
+      Tripulante_tex_17: 171176076
+      Tripulante_tex_18: -270397633
+      Tripulante_tex_19: 2000599250
+      Tripulante_tex_2: -159448398
+      Tripulante_tex_20: 2023080537
+      Tripulante_tex_21: 504209792
+      Tripulante_tex_22: -297462789
+      Tripulante_tex_23: 430996148
+      Tripulante_tex_24: -361284952
+      Tripulante_tex_25: -359091244
+      Tripulante_tex_26: -217214671
+      Tripulante_tex_27: 422162160
+      Tripulante_tex_28: 1633079883
+      Tripulante_tex_29: -1944461753
+      Tripulante_tex_3: 181031595
+      Tripulante_tex_30: -183619343
+      Tripulante_tex_31: 1371085168
+      Tripulante_tex_32: 1554571234
+      Tripulante_tex_33: 2094637541
+      Tripulante_tex_34: 2115262430
+      Tripulante_tex_35: 1081141089
+      Tripulante_tex_36: 1062370720
+      Tripulante_tex_37: 1556293833
+      Tripulante_tex_38: 689444271
+      Tripulante_tex_39: -1382839684
+      Tripulante_tex_4: 1379775494
+      Tripulante_tex_40: 1440036294
+      Tripulante_tex_41: 443807137
+      Tripulante_tex_42: 278651487
+      Tripulante_tex_43: -1550347150
+      Tripulante_tex_44: 1791288307
+      Tripulante_tex_45: 2058984477
+      Tripulante_tex_46: 1626165975
+      Tripulante_tex_47: 330825956
+      Tripulante_tex_5: -1647203556
+      Tripulante_tex_6: 821029354
+      Tripulante_tex_7: 455680466
+      Tripulante_tex_8: -586187553
+      Tripulante_tex_9: -1726776311
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
