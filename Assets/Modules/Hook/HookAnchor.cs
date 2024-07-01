@@ -9,6 +9,5 @@ public class HookAnchor : MonoBehaviour
         Approach
     }
 
-    [field: SerializeField]
-    public AnchorType TypeOfAnchor { get; private set; }
+    public AnchorType typeOfAnchor;
 }

@@ -1,14 +1,10 @@
 using System.Collections;
-using UnityEditorInternal;
 using UnityEngine;
 
 [RequireComponent(typeof(DistanceJoint2D))]
 public class HookTool : MonoBehaviour
 {
     private const float MIN_APPROACH_DISTANCE = 0.01f;
-
-    [SerializeField]
-    private Projectile _hookPrefab;
 
     [Header("Approach anchor")]
     [SerializeField, Min(0)]
@@ -25,20 +21,15 @@ public class HookTool : MonoBehaviour
         _joint.autoConfigureDistance = true;
     }
 
-    private void OnEnable()
-    {
-        _hookPrefab.OnCollide.AddListener(Collide);
-    }
-
-    private void Collide(Collider2D collider)
+    public void Grab(Collider2D collider, GameObject hook)
     {
         if (collider.TryGetComponent<HookAnchor>(out var anchor))
         {
-            _hookPrefab.transform.position = collider.transform.position;
-            _joint.connectedAnchor = _hookPrefab.transform.position;
+            hook.transform.position = collider.transform.position;
+            _joint.connectedAnchor = hook.transform.position;
             _joint.enabled = true;
 
-            if (anchor.TypeOfAnchor == HookAnchor.AnchorType.Approach)
+            if (anchor.typeOfAnchor == HookAnchor.AnchorType.Approach)
             {
                 StopAllCoroutines();
                 StartCoroutine(Approach());

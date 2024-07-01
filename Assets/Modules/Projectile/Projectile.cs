@@ -13,7 +13,8 @@ public class Projectile : MonoBehaviour
     }
 
 
-    public UnityEvent<Collider2D> OnCollide;
+    public UnityEvent<Collider2D, GameObject> OnCollide;
+
     [SerializeField]
     private Vector2 _currentVelocity;
     [SerializeField]
@@ -33,7 +34,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        OnCollide.Invoke(collision);
+        OnCollide.Invoke(collision, gameObject);
 
         switch (_collisionBehaviour)
         {
