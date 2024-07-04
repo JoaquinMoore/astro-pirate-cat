@@ -6,6 +6,8 @@ public class HookTool : MonoBehaviour
 {
     private const float MIN_APPROACH_DISTANCE = 0.01f;
 
+    public float MinDistance => _minDistance;
+
     [Header("Approach anchor")]
     [SerializeField, Min(0)]
     private float _minDistance;

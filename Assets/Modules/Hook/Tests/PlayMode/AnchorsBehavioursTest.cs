@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
@@ -6,58 +7,62 @@ using UnityEngine.TestTools;
 
 public class AnchorsBehavioursTest
 {
-    private static HookTool _hookTool;
-    private static GameObject _hook;
-    private static HookAnchor _swingAnchor, _approachAnchor;
-    private static Vector2 _swingAnchorStartPosition = new(10, 0);
+    private HookTool _hookTool;
+    private GameObject _hook;
+    private HookAnchor _swingAnchor, _approachAnchor;
 
-    private class Rebuild
+    [UnitySetUp]
+    public IEnumerator SetUp()
     {
-        public Rebuild()
-        {
-            CreateHookTool();
-            CreateHook();
-            CreateSwingAnchor();
-        }
+        EditorSceneManager.LoadSceneInPlayMode(
+            "Assets/Modules/Hook/Tests/PlayMode/Rebuilds/HooktoolWithSwingAndApproachAnchors.unity",
+            new LoadSceneParameters(LoadSceneMode.Single)
+        );
 
-        private void CreateHookTool()
-        {
-            var character = new GameObject();
-            _hookTool = character.AddComponent<HookTool>();
-        }
-
-        private static void CreateHook()
-        {
-            _hook = new GameObject();
-            _hook.transform.position = Vector2.zero;
-        }
-
-        private static void CreateSwingAnchor()
-        {
-            _swingAnchor = new GameObject().AddComponent<HookAnchor>();
-            _swingAnchor.typeOfAnchor = HookAnchor.AnchorType.Swing;
-            _swingAnchor.gameObject.AddComponent<BoxCollider2D>();
-            _swingAnchor.transform.position = _swingAnchorStartPosition;
-        }
+        yield return null;
+        _hookTool = Object.FindObjectOfType<HookTool>();
+        _hook = GameObject.Find("Hook");
+        _swingAnchor = GameObject.Find("SwingAnchor").GetComponent<HookAnchor>();
+        _approachAnchor = GameObject.Find("ApproachAnchor").GetComponent<HookAnchor>();
     }
-
-    private float HookToolDistanceAnchor => Vector2.Distance(_hookTool.transform.position, _swingAnchor.transform.position);
 
     [UnityTest]
     public IEnumerator SwingAnchor()
     {
-        new Rebuild();
-
         // Obtener la distancia inicial del hooktool al anchor.
-        var initialDistance = HookToolDistanceAnchor;
+        var initialDistance = HookToolDistanceAnchor(_swingAnchor);
 
-        // Validation: Asegurar que una vez que se enganchó al anchor, el hook se posiciona sobre el anchor.
-        _hookTool.Grab(_swingAnchor.GetComponent<Collider2D>(), _hook);
-        Assert.AreEqual(_hook.transform.position, _swingAnchor.transform.position);
+        AssertGrab(_hookTool, _hook, _swingAnchor);
 
-        // Validation: Asegurar que la distancia entre el hooktool y el anchor es la misma luego de aplicar una fuerza al character.
-        _hookTool.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+        // Validation: Asegurar que la distancia entre el hooktool y el anchor sea la misma luego de estar en movimiento.
+        _hookTool.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 10, ForceMode2D.Impulse);
         yield return new WaitForSeconds(2);
-        Assert.AreApproximatelyEqual(initialDistance, HookToolDistanceAnchor);
+        Assert.AreApproximatelyEqual(initialDistance, HookToolDistanceAnchor(_swingAnchor));
+    }
+
+    [UnityTest]
+    public IEnumerator ApproachAnchor()
+    {
+        // Obtener la distancia inicial del hooktool al achor.
+        var initialDistance = HookToolDistanceAnchor(_approachAnchor);
+
+        AssertGrab(_hookTool, _hook, _approachAnchor);
+
+        yield return new WaitForSeconds(2);
+
+        // Validation: Asegurar que la distancia entre el hooktool y el anchor sea la distancia minima.
+        Assert.AreApproximatelyEqual(HookToolDistanceAnchor(_approachAnchor), _hookTool.MinDistance, 0.1f);
+
+        // Validation: Asegurar que la distancia entre el hooktool y el anchor no sea igual que la distancia inicial.
+        Assert.AreNotApproximatelyEqual(initialDistance, HookToolDistanceAnchor(_approachAnchor));
+    }
+
+    private float HookToolDistanceAnchor(HookAnchor anchor) => Vector2.Distance(_hookTool.transform.position, anchor.transform.position);
+
+    private static void AssertGrab(HookTool hookTool, GameObject hook, HookAnchor anchor)
+    {
+        // Validation: Asegurar que al engancharse, el hook se posiciona sobre el anchor.
+        hookTool.Grab(anchor.GetComponent<Collider2D>(), hook);
+        Assert.AreEqual(hook.transform.position, anchor.transform.position);
     }
 }
