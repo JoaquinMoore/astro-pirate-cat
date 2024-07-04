@@ -36,7 +36,7 @@ namespace HealthSystem
         /// <param name="damage">Cantidad de vida a reducir.</param>
         public void Hurt(int damage)
         {
-            CurrentHealth -= damage;
+            CurrentHealth -= Mathf.Abs(damage);
 
             if (CurrentHealth <= 0)
             {
@@ -54,7 +54,7 @@ namespace HealthSystem
         /// <param name="amount">Cantidad de vida a aumentar.</param>
         public void Heal(int amount)
         {
-            CurrentHealth += amount;
+            CurrentHealth += Mathf.Abs(amount);
             OnHeal?.Invoke();
         }
 
