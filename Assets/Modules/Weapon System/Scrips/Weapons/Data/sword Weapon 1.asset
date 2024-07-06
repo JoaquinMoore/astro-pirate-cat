@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
+  m_Name: sword Weapon 1
+  m_EditorClassIdentifier: 
+  WeaponPrefab: {fileID: 1440629363716621446, guid: e424099c33dda9643a06f5180bb0faa9, type: 3}
+  BulletData: {fileID: 0}
+  Triggers:
+  - rid: 3779179902629838850
+  Magazines:
+  - rid: 3779179902629838848
+  FireSelector: 0
+  MagazineSelector: 0
+  SyncedSelector: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3779179902629838848
+      type: {class: Magazine, ns: , asm: Assembly-CSharp}
+      data:
+        _Magazine:
+          rid: 3779179902629838849
+        Position: 0
+    - rid: 3779179902629838849
+      type: {class: MeleMagazine, ns: , asm: Assembly-CSharp}
+      data:
+        name: Melle mag
+        _settings:
+          SpreadSpeedMod: 1
+          MaxSpread: 0
+          Recoil: 1
+          BulletData: {fileID: 11400000, guid: 418085b548a6add449c4b6afc1920fa6, type: 2}
+    - rid: 3779179902629838850
+      type: {class: Trigger, ns: , asm: Assembly-CSharp}
+      data:
+        _Trigger:
+          rid: 3779179902629838851
+        Position: 0
+    - rid: 3779179902629838851
+      type: {class: FullTrigger, ns: , asm: Assembly-CSharp}
+      data:
+        name: full
+        TriggerSettings:
+          FireRate: 200

@@ -1,0 +1,183 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
+  m_Name: laz weapon
+  m_EditorClassIdentifier: 
+  WeaponPrefab: {fileID: 1440629363716621446, guid: e424099c33dda9643a06f5180bb0faa9, type: 3}
+  BulletData: {fileID: 0}
+  Triggers:
+  - rid: 473616207288205316
+  Magazines:
+  - rid: 473616364297781248
+  - rid: 3779179857084416000
+  FireSelector: 0
+  MagazineSelector: 0
+  SyncedSelector: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 473616207288205316
+      type: {class: Trigger, ns: , asm: Assembly-CSharp}
+      data:
+        _Trigger:
+          rid: 473616207288205317
+        Position: 1
+    - rid: 473616207288205317
+      type: {class: FullTrigger, ns: , asm: Assembly-CSharp}
+      data:
+        name: full
+        TriggerSettings:
+          FireRate: 1000
+    - rid: 473616364297781248
+      type: {class: Magazine, ns: , asm: Assembly-CSharp}
+      data:
+        _Magazine:
+          rid: 473616364297781249
+        Position: 0
+    - rid: 473616364297781249
+      type: {class: LaserHeatMagazine, ns: , asm: Assembly-CSharp}
+      data:
+        name: laser mag
+        _settings:
+          SpreadSpeedMod: 0.52
+          MaxSpread: 1
+          Recoil: 3
+          BulletData: {fileID: 11400000, guid: c4d47d02be29cb2479c7515a7328c328, type: 2}
+          RecoilSpeedGainMod: 1
+          MaxHeat: 5
+          HeatGainTime: 1
+          HeatGainCurve:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 1
+              outSlope: 1
+              tangentMode: 34
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 1
+              outSlope: 1
+              tangentMode: 34
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          CoolDownRate: 0.6
+          HeatLoseCurve:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: -1
+              outSlope: -1
+              tangentMode: 34
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: -1
+              outSlope: -1
+              tangentMode: 34
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          CoolDownRatePerTic: 0.19
+          CoolDownStartDelay: 0.08
+        _currentHeat: 0
+        _currentTime: 0
+        _currentRecoil: 0
+    - rid: 3779179857084416000
+      type: {class: Magazine, ns: , asm: Assembly-CSharp}
+      data:
+        _Magazine:
+          rid: 3779179857084416001
+        Position: 1
+    - rid: 3779179857084416001
+      type: {class: LaserHeatMagazine, ns: , asm: Assembly-CSharp}
+      data:
+        name: laser mag
+        _settings:
+          SpreadSpeedMod: 0.18
+          MaxSpread: 0.1
+          Recoil: 2
+          BulletData: {fileID: 11400000, guid: 1a1ae16903601454497c7addbd4712c8, type: 2}
+          RecoilSpeedGainMod: 1
+          MaxHeat: 10
+          HeatGainTime: 1
+          HeatGainCurve:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 1
+              outSlope: 1
+              tangentMode: 34
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 1
+              outSlope: 1
+              tangentMode: 34
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          CoolDownRate: 1
+          HeatLoseCurve:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: -1
+              outSlope: -1
+              tangentMode: 34
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: -1
+              outSlope: -1
+              tangentMode: 34
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          CoolDownRatePerTic: 1
+          CoolDownStartDelay: 1
+        _currentHeat: 0
+        _currentTime: 0
+        _currentRecoil: 0

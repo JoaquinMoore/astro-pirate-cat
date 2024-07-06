@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645bd2132a7ff33418590d724777fc8d, type: 3}
+  m_Name: Laser Bullet thick
+  m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 2082099774799481041, guid: d4ee9dffc4d1bde45958a1b472576165, type: 3}
+  Damage: 10
+  TicInterbalDamage: 2

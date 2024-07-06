@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangeWeaponData : WeaponDataBase
+public class BaseBulletData : ScriptableObject
 {
+    public BaseBullet BulletPrefab;
 
 }
