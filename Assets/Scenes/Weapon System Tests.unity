@@ -259,9 +259,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _WeaponHolder: {fileID: 253220329}
   _Data:
+  - {fileID: 11400000, guid: 5bea5b53e8454084db19dca58a55f5d4, type: 2}
   - {fileID: 11400000, guid: 4dfc1a29174ef534196fcadaa050fbeb, type: 2}
   - {fileID: 11400000, guid: 54a23910e26ecbd43b41a1ee04ad7047, type: 2}
-  - {fileID: 11400000, guid: 5bea5b53e8454084db19dca58a55f5d4, type: 2}
   TestingInputs: 1
   _weapons: []
   _weaponInt: 0

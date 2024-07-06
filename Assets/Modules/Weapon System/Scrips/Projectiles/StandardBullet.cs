@@ -5,7 +5,7 @@ using UnityEngine;
 public class StandardBullet : BaseBullet
 {
 
-    public override IEnumerator OnImpact() {yield return null; Destroy(gameObject); StopAllCoroutines(); }
+    public override IEnumerator OnInpact() {yield return null; Destroy(gameObject); StopAllCoroutines(); }
 
     protected int _damage;
     protected float _speed;

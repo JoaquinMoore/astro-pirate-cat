@@ -120,23 +120,20 @@ public class WeaponControler : MonoBehaviour
 
     public void ChangeSecondaryWeapon(float direction)
     {
-        if (direction > 1)
-            return;
-        if (direction < -1)
-            return;
+
         _weaponInt += (int)direction;
-        
-        if (_weaponInt >= _weapons.Count)
-            _weaponInt = 0;
-        if (_weaponInt < 0)
-            _weaponInt = _weapons.Count - 1;
-
-        if (_weaponInt < 0)
-            return;
-
+        _weaponInt = (int)Mathf.Repeat(_weaponInt, _weapons.Count);
 
         if (_weapons[_weaponInt].WeaponEquiped)
             _weaponInt += (int)direction;
+
+
+        if (_weaponInt < 0)
+        {
+            _weaponInt = 0;
+            return;
+        }
+
 
         _selectedWeapon = _weapons[_weaponInt];
         //
