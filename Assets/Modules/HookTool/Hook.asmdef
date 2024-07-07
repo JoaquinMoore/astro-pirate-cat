@@ -1,7 +1,9 @@
 {
     "name": "Hook",
     "rootNamespace": "Hook",
-    "references": [],
+    "references": [
+        "GUID:1b5085ede21a2174ab66af55fda59d10"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
