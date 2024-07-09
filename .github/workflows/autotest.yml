@@ -1,6 +1,9 @@
 name: AutoTest
 
-on: push
+on:
+  push:
+    branches:
+      - 'Matias-CIPipeline'
 
 jobs:
   run_tests:
