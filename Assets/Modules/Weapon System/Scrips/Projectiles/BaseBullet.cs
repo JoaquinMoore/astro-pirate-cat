@@ -21,6 +21,5 @@ public class BaseBullet : BaseProjectile
     }
 
     public virtual void ExternalInput() { }
-    private void OnTriggerEnter2D(Collider2D collision) { }
     public virtual IEnumerator DespawnTimer() { yield return null; }
 }

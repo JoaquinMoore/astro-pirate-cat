@@ -97,7 +97,7 @@ public class StandardMagazine : BaseMagazine
 public class LaserHeatMagazine : BaseMagazine
 {
     [SerializeField] private LaserHeatSettings _settings;
-    BaseBullet BulletHolder;
+    BaseBullet _bulletHolder;
 
 
     [Header("Debug")]
@@ -130,12 +130,12 @@ public class LaserHeatMagazine : BaseMagazine
     public override void AddData(Transform shootpivot, RangeWeapon wp, Settings settings)
     {
         _settings = settings as LaserHeatSettings;
-        if (BulletHolder == null)
+        if (_bulletHolder == null)
         {
-            BulletHolder = Object.Instantiate(settings.BulletData.BulletPrefab, shootpivot);
-            BulletHolder.transform.position = shootpivot.position;
+            _bulletHolder = Object.Instantiate(settings.BulletData.BulletPrefab, shootpivot);
+            _bulletHolder.transform.position = shootpivot.position;
         }
-        BulletHolder.gameObject.SetActive(false);
+        _bulletHolder.SetUp(settings.BulletData);
 
 
 
@@ -146,16 +146,16 @@ public class LaserHeatMagazine : BaseMagazine
     public override void Fire()
     {
         _wp.StopAllCoroutines();
-        if (!BulletHolder.gameObject.activeSelf)
+        if (!_bulletHolder.gameObject.activeSelf)
         {
-            BulletHolder.gameObject.SetActive(true);
+            _bulletHolder.gameObject.SetActive(true);
         }
         _currentTime += Time.fixedDeltaTime;
         float Pertage = _settings.HeatGainCurve.Evaluate(_currentTime / _settings.HeatGainTime);
         _currentHeat = Mathf.Lerp(0, _settings.MaxHeat, Pertage);
 
         _currentRecoil = Mathf.Lerp(_currentRecoil, _recoil, Time.deltaTime * _settings.RecoilSpeedGainMod);
-        BulletHolder.ExternalInput();
+        _bulletHolder.ExternalInput();
         base.Fire();
     }
 
@@ -165,7 +165,7 @@ public class LaserHeatMagazine : BaseMagazine
             return;
 
         _wp.StopAllCoroutines();
-        BulletHolder.gameObject.SetActive(false);
+        _bulletHolder.gameObject.SetActive(false);
         _wp.StartCoroutine(CoolDown());
         _currentRecoil = 0;
         base.FireIsUp();
@@ -204,11 +204,12 @@ public class LaserHeatMagazine : BaseMagazine
 
     public override void Reset()
     {
-        BulletHolder.gameObject.SetActive(false);
+        _bulletHolder.gameObject.SetActive(false);
     }
     public override void Reselect()
     {
-        BulletHolder.gameObject.SetActive(false);
+        _bulletHolder.gameObject.SetActive(false);
+        _wp.StartCoroutine(CoolDown());
     }
 
     public override void ReEquip()
@@ -244,8 +245,7 @@ public class MeleMagazine : BaseMagazine
             _bulletHolder = Object.Instantiate(settings.BulletData.BulletPrefab, shootpivot);
             _bulletHolder.transform.position = shootpivot.position;
         }
-        _bulletHolder.gameObject.SetActive(false);
-
+        _bulletHolder.SetUp(settings.BulletData);
 
 
 

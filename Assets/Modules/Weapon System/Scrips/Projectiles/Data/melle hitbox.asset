@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 2082099774799481041, guid: ce92d1e474a134c48986ee8a5a8e2c54, type: 3}
   Damage: 10
-  TicInterbalDamage: 2
+  MaxTargets: 3

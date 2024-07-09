@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Laser Bullet thick
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 2082099774799481041, guid: d4ee9dffc4d1bde45958a1b472576165, type: 3}
-  Damage: 10
-  TicInterbalDamage: 2
+  Damage: 20
+  MaxTargets: 10

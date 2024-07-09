@@ -127,17 +127,12 @@ public class WeaponControler : MonoBehaviour
         if (_weapons[_weaponInt].WeaponEquiped)
             _weaponInt += (int)direction;
 
-
         if (_weaponInt < 0)
         {
-            _weaponInt = 0;
+            _weaponInt = (int)Mathf.Repeat(_weaponInt, _weapons.Count);
             return;
         }
-
-
         _selectedWeapon = _weapons[_weaponInt];
-        //
-        //Weapons[WeaponInt].gameObject.SetActive(true);
 
     }
 

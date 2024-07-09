@@ -10,7 +10,7 @@ public class BaseTrigger
 
     protected bool Canfire = true;
     protected Animator _anim;
-    public virtual void AddData(Animator anim, Settings settings) { _anim = anim; _FireRate = settings.FireRate; Debug.Log(settings.FireRate); }
+    public virtual void AddData(Animator anim, Settings settings) { _anim = anim; _FireRate = settings.FireRate; }
     public virtual void FireIsDown() { }
     public virtual void FireWasUp() { }
     public virtual void Reset () { }

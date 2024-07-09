@@ -36,7 +36,7 @@ MonoBehaviour:
       data:
         name: full
         TriggerSettings:
-          FireRate: 1000
+          FireRate: 200
     - rid: 473616364297781248
       type: {class: Magazine, ns: , asm: Assembly-CSharp}
       data:
@@ -53,8 +53,8 @@ MonoBehaviour:
           Recoil: 3
           BulletData: {fileID: 11400000, guid: c4d47d02be29cb2479c7515a7328c328, type: 2}
           RecoilSpeedGainMod: 1
-          MaxHeat: 5
-          HeatGainTime: 1
+          MaxHeat: 2.5
+          HeatGainTime: 0.5
           HeatGainCurve:
             serializedVersion: 2
             m_Curve:
@@ -106,9 +106,11 @@ MonoBehaviour:
             m_RotationOrder: 4
           CoolDownRatePerTic: 0.19
           CoolDownStartDelay: 0.08
+          CoolDownOverheatExtraStartDelay: 1
         _currentHeat: 0
         _currentTime: 0
         _currentRecoil: 0
+        _overHeat: 0
     - rid: 3779179857084416000
       type: {class: Magazine, ns: , asm: Assembly-CSharp}
       data:
@@ -178,6 +180,8 @@ MonoBehaviour:
             m_RotationOrder: 4
           CoolDownRatePerTic: 1
           CoolDownStartDelay: 1
+          CoolDownOverheatExtraStartDelay: 1
         _currentHeat: 0
         _currentTime: 0
         _currentRecoil: 0
+        _overHeat: 0

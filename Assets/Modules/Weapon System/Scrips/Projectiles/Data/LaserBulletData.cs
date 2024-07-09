@@ -6,6 +6,5 @@ using UnityEngine;
 public class LaserBulletData : BaseBulletData
 {
     public int Damage;
-    public float TicInterbalDamage;
-
+    public int MaxTargets;
 }
