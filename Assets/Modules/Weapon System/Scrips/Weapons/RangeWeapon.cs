@@ -144,5 +144,6 @@ public class RangeWeapon : BaseWeapon<RangeWeaponData>
     {
         _sprite.SetActive(false);
         _currentMag.Reset();
+        _currentTrigger.Reset();
     }
 }

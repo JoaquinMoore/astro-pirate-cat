@@ -13,7 +13,7 @@ public class BaseTrigger
     public virtual void AddData(Animator anim, Settings settings) { _anim = anim; _FireRate = settings.FireRate; }
     public virtual void FireIsDown() { }
     public virtual void FireWasUp() { }
-    public virtual void Reset () { }
+    public virtual void Reset () { Canfire = false; _anim.SetBool("Active", Canfire); }
     public virtual bool CanFire() { return Canfire; }
 
     public virtual BaseTrigger Clone()

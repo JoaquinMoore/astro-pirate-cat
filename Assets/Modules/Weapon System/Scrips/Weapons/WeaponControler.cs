@@ -19,6 +19,7 @@ public class WeaponControler : MonoBehaviour
 
     public event Action<Vector2> OnImpulse = delegate { };
 
+    [SerializeField] private bool _firing;
     void Start()
     {
         foreach (var item in _Data)
@@ -52,11 +53,11 @@ public class WeaponControler : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            _currentWeapon.Weapon.PrimaryFireIsDown();
+            PrimaryFireDown();
         }
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            _currentWeapon.Weapon.PrimaryFireWasUp();
+            PrimaryFireUp();
         }
 
 
@@ -85,11 +86,13 @@ public class WeaponControler : MonoBehaviour
     public void PrimaryFireDown()
     {
         _currentWeapon.Weapon.PrimaryFireIsDown();
+        _firing = true;
     }
 
     public void PrimaryFireUp()
     {
         _currentWeapon.Weapon.PrimaryFireWasUp();
+        _firing = false;
     }
 
     public void ChangeFireMode()
@@ -137,8 +140,13 @@ public class WeaponControler : MonoBehaviour
     }
 
 
+
+
+
+
     public void SwapPrimaryWeapon()
     {
+        StopAllCoroutines();
         WeaponSlot current = _currentWeapon;
         WeaponSlot selected = _selectedWeapon;
 
@@ -151,7 +159,28 @@ public class WeaponControler : MonoBehaviour
         _currentWeapon = selected;
         _selectedWeapon = current;
         _currentWeapon.Weapon.Reflesh();
+        _selectedWeapon.Weapon.Reflesh();
+        StartCoroutine(CheckNonActiveWeapon());
     }
+
+    //temp hasta que se me ocurra algo mejor
+    public IEnumerator CheckNonActiveWeapon()
+    {
+
+        yield return new WaitForSeconds(0.1f);
+        Debug.Log("test");
+        _selectedWeapon.Weapon.Deselect();
+        _selectedWeapon.Weapon.PrimaryFireWasUp();
+        CheckFiring();
+    }
+
+    public void CheckFiring()
+    {
+        if (_firing == true)
+            return;
+        _currentWeapon.Weapon.PrimaryFireWasUp();
+    }
+
     #endregion
 
 
@@ -166,6 +195,8 @@ public class WeaponControler : MonoBehaviour
 
         _weapons.Add(hol);
     }
+
+
 
     [System.Serializable]
     public class WeaponSlot
