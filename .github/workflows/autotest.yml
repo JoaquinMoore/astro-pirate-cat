@@ -3,7 +3,7 @@ name: AutoTest
 on:
   pull_request:
     branches:
-      - 'Matias-CIPipeline'
+      - 'main'
 
 jobs:
   run_tests:
