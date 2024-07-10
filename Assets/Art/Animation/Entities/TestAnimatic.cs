@@ -20,7 +20,8 @@ public class TestAnimatic : MonoBehaviour
 
     private void Start()
     {
-        _tittle.text = _currentJob.ToString();
+        if (_tittle)
+            _tittle.text = _currentJob.ToString();
 
         CustomCat();
     }
@@ -54,7 +55,8 @@ public class TestAnimatic : MonoBehaviour
         // Cambia el trabajo del gato
         var job = new Job[] { Job.Bucanero, Job.Ingeniero, Job.Minero, Job.Normal };
         _currentJob = job[Random.Range(0, job.Length)];
-        _tittle.text = _currentJob.ToString();
+        if (_tittle)
+            _tittle.text = _currentJob.ToString();
         _anim.Play(_currentJob.ToString());
     }
 }

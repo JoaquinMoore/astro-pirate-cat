@@ -382,6 +382,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teleport Particle System
       objectReference: {fileID: 0}
+    - target: {fileID: 1321586065912308507, guid: 73dcc1bef61c9d042a5a3df1b952544f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4351237402784578389, guid: 73dcc1bef61c9d042a5a3df1b952544f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -542,6 +546,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2235166508401253002, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2314296949428816124, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
       propertyPath: m_Color.b
       value: 0.2028302
@@ -553,6 +561,66 @@ PrefabInstance:
     - target: {fileID: 2314296949428816124, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231807542521773868, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.611
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231807542521773868, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.3686378
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231807542521773868, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231807542521773868, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5748189856329368036, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.611
+      objectReference: {fileID: 0}
+    - target: {fileID: 5748189856329368036, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.3686378
+      objectReference: {fileID: 0}
+    - target: {fileID: 5748189856329368036, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5748189856329368036, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7521777842334986880, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.611
+      objectReference: {fileID: 0}
+    - target: {fileID: 7521777842334986880, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7521777842334986880, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.3686378
+      objectReference: {fileID: 0}
+    - target: {fileID: 7521777842334986880, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7521777842334986880, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.5156
+      objectReference: {fileID: 0}
+    - target: {fileID: 7521777842334986880, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.07999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 7521777842334986880, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0574
       objectReference: {fileID: 0}
     - target: {fileID: 7582755322516713559, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
       propertyPath: m_Name
@@ -588,7 +656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7969333383908667378, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 2.8274
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7969333383908667378, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
       propertyPath: m_LocalPosition.x
@@ -624,7 +692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7969333383908667378, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.4137
+      value: -1.8
       objectReference: {fileID: 0}
     - target: {fileID: 7969333383908667378, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -663,6 +731,10 @@ PrefabInstance:
     - target: {fileID: 1706591787659976560, guid: d1edc0a648f52b54ca1517bce6c60d67, type: 3}
       propertyPath: m_Name
       value: Healing Particle System
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706591787659976560, guid: d1edc0a648f52b54ca1517bce6c60d67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1930386968198299334, guid: d1edc0a648f52b54ca1517bce6c60d67, type: 3}
       propertyPath: m_LocalPosition.x
