@@ -17,7 +17,7 @@ namespace HookTool
         public IEnumerator SetUp()
         {
             EditorSceneManager.LoadSceneInPlayMode(
-                "Assets/Modules/Hook/Tests/PlayMode/Rebuilds/HooktoolWithSwingAndApproachAnchors.unity",
+                "Assets/Modules/HookTool/Tests/PlayMode/Rebuilds/HooktoolWithSwingAndApproachAnchors.unity",
                 new LoadSceneParameters(LoadSceneMode.Single)
             );
 
