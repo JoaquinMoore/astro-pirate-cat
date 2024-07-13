@@ -18,13 +18,6 @@ namespace HookTool
 
         private DistanceJoint2D _joint;
 
-        private void Awake()
-        {
-            _joint = GetComponent<DistanceJoint2D>();
-            _joint.enabled = false;
-            _joint.autoConfigureDistance = true;
-        }
-
         public void Grab(Collider2D collider, GameObject hook)
         {
             if (collider.TryGetComponent<HookAnchor>(out var anchor))
@@ -39,6 +32,13 @@ namespace HookTool
                     StartCoroutine(Approach());
                 }
             }
+        }
+
+        private void Awake()
+        {
+            _joint = GetComponent<DistanceJoint2D>();
+            _joint.enabled = false;
+            _joint.autoConfigureDistance = true;
         }
 
         private IEnumerator Approach()
