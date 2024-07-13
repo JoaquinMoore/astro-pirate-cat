@@ -1,10 +1,11 @@
 using System;
 using System.Linq;
 using UnityEngine;
+using Utility;
 
 namespace DataPersistance
 {
-    public class DataPersistanceManager : MonoBehaviour
+    public class DataPersistanceManager : SingletonMono<DataPersistanceManager>
     {
         private const string ENCRYPTED_KEY = "astrocat";
 
