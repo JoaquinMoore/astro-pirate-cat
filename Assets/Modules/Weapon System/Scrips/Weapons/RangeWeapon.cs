@@ -133,17 +133,22 @@ public class RangeWeapon : BaseWeapon<RangeWeaponData>
     {
         _anims.SetFloat("FireRate", (_currentTrigger._FireRate / _timeInterbalFirerate));
         _currentMag.ReEquip();
+
     }
 
 
     public override void Select()
     {
         _sprite.SetActive(true);
+        _anims.enabled = true;
+        _currentTrigger.FireWasUp();
     }
     public override void Deselect()
     {
         _sprite.SetActive(false);
         _currentMag.Reset();
         _currentTrigger.Reset();
+        _anims.enabled = false;
+        _currentTrigger.FireWasUp();
     }
 }

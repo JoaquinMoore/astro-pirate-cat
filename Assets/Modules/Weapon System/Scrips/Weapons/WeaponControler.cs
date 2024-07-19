@@ -160,25 +160,6 @@ public class WeaponControler : MonoBehaviour
         _selectedWeapon = current;
         _currentWeapon.Weapon.Reflesh();
         _selectedWeapon.Weapon.Reflesh();
-        StartCoroutine(CheckNonActiveWeapon());
-    }
-
-    //temp hasta que se me ocurra algo mejor
-    public IEnumerator CheckNonActiveWeapon()
-    {
-
-        yield return new WaitForSeconds(0.1f);
-        Debug.Log("test");
-        _selectedWeapon.Weapon.Deselect();
-        _selectedWeapon.Weapon.PrimaryFireWasUp();
-        CheckFiring();
-    }
-
-    public void CheckFiring()
-    {
-        if (_firing == true)
-            return;
-        _currentWeapon.Weapon.PrimaryFireWasUp();
     }
 
     #endregion
