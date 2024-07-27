@@ -1,17 +1,15 @@
-﻿using UnityEngine;
+﻿using Newtonsoft.Json;
 
 namespace DataPersistance
 {
     public class JsonSerializationService : ISerializer
     {
-        public T Deserialize<T>(string data)
-        {
-            return JsonUtility.FromJson<T>(data);
-        }
+        public string Serialize<T>(T obj) => JsonConvert.SerializeObject(
+            obj,
+            Formatting.Indented,
+            new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore}
+        );
 
-        public string Serialize<T>(T obj)
-        {
-            return JsonUtility.ToJson(obj);
-        }
+        public T Deserialize<T>(string data) => JsonConvert.DeserializeObject<T>(data);
     }
 }
