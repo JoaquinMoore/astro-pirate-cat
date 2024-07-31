@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2943783951343160944
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 579566112010033200, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 579566112010033200, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 579566112010033200, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 579566112010033200, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 579566112010033200, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 579566112010033200, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 579566112010033200, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 579566112010033200, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 579566112010033200, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 579566112010033200, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471341426980117891, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 0.4666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471341426980117891, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471341426980117891, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 0.5294925
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471341426980117891, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key2.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471341426980117891, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key2.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471341426980117891, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key2.r
+      value: 0.02114594
+      objectReference: {fileID: 0}
+    - target: {fileID: 7771115826145300190, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
+      propertyPath: m_Name
+      value: Splash Green Particle Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
