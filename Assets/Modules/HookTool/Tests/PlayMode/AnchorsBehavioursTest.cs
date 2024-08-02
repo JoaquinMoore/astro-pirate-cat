@@ -5,7 +5,7 @@ using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 
-namespace HookTool
+namespace Core.HookTool
 {
     public class AnchorsBehavioursTest
     {
@@ -64,7 +64,7 @@ namespace HookTool
         private static void AssertGrab(HookTool hookTool, GameObject hook, HookAnchor anchor)
         {
             // Validation: Asegurar que al engancharse, el hook se posiciona sobre el anchor.
-            hookTool.Grab(anchor.GetComponent<Collider2D>(), hook);
+            hookTool.Grab(anchor, hook);
             Assert.AreEqual(hook.transform.position, anchor.transform.position);
         }
     }

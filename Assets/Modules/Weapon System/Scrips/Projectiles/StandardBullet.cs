@@ -1,12 +1,12 @@
+using HealthSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using HealthSystem;
 
 public class StandardBullet : BaseBullet
 {
 
-    public override IEnumerator OnInpact() {yield return null; Destroy(gameObject); StopAllCoroutines(); }
+    public override IEnumerator OnInpact() { yield return null; Destroy(gameObject); StopAllCoroutines(); }
 
     protected int _damage;
     protected float _speed;
@@ -27,7 +27,7 @@ public class StandardBullet : BaseBullet
         _rigidBody.position += (Vector2)_rigidBody.transform.right * Time.fixedDeltaTime * _speed;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) 
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         var hold = collision.GetComponent<IHurtable>();
 

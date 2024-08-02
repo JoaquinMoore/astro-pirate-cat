@@ -1,6 +1,6 @@
 {
     "name": "Hook",
-    "rootNamespace": "Hook",
+    "rootNamespace": "Core.HookTool",
     "references": [
         "GUID:1b5085ede21a2174ab66af55fda59d10"
     ],

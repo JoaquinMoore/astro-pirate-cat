@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace HookTool
+namespace Core.HookTool
 {
     [DisallowMultipleComponent]
     public class HookAnchor : MonoBehaviour

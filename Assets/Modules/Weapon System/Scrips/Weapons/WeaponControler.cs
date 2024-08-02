@@ -1,4 +1,3 @@
-using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,7 +25,7 @@ public class WeaponControler : MonoBehaviour
         {
             AddWeapons(item);
         }
-        
+
         _weapons[0].Weapon.Select();
         _currentWeapon = _weapons[0];
         _weapons[0].WeaponEquiped = true;
@@ -150,7 +149,7 @@ public class WeaponControler : MonoBehaviour
         WeaponSlot current = _currentWeapon;
         WeaponSlot selected = _selectedWeapon;
 
-        
+
         current.Weapon.PrimaryFireWasUp();
         current.Weapon.Deselect();
         selected.Weapon.Select();
