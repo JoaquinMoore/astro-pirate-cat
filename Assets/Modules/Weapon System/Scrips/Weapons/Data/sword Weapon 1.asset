@@ -13,41 +13,40 @@ MonoBehaviour:
   m_Name: sword Weapon 1
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 1440629363716621446, guid: e424099c33dda9643a06f5180bb0faa9, type: 3}
-  BulletData: {fileID: 0}
   Triggers:
-  - rid: 3779179902629838850
+  - rid: 6012065985212448784
   Magazines:
-  - rid: 3779179902629838848
+  - rid: 6012065985212448780
   FireSelector: 0
   MagazineSelector: 0
   SyncedSelector: 0
   references:
     version: 2
     RefIds:
-    - rid: 3779179902629838848
-      type: {class: Magazine, ns: , asm: Assembly-CSharp}
+    - rid: 6012065985212448780
+      type: {class: Magazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Magazine:
-          rid: 3779179902629838849
+          rid: 6012065985212448781
         Position: 0
-    - rid: 3779179902629838849
-      type: {class: MeleMagazine, ns: , asm: Assembly-CSharp}
+    - rid: 6012065985212448781
+      type: {class: MeleMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         name: Melle mag
         _settings:
           SpreadSpeedMod: 1
           MaxSpread: 0
-          Recoil: 1
+          Recoil: 0
           BulletData: {fileID: 11400000, guid: 418085b548a6add449c4b6afc1920fa6, type: 2}
-    - rid: 3779179902629838850
-      type: {class: Trigger, ns: , asm: Assembly-CSharp}
+    - rid: 6012065985212448784
+      type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Trigger:
-          rid: 3779179902629838851
+          rid: 6012065985212448785
         Position: 0
-    - rid: 3779179902629838851
-      type: {class: FullTrigger, ns: , asm: Assembly-CSharp}
+    - rid: 6012065985212448785
+      type: {class: FullTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         name: full
         TriggerSettings:
-          FireRate: 200
+          FireRate: 100

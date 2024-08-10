@@ -13,67 +13,53 @@ MonoBehaviour:
   m_Name: Ranged Weapon
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 1440629363716621446, guid: e424099c33dda9643a06f5180bb0faa9, type: 3}
-  BulletData: {fileID: 11400000, guid: 4988db502203fea4597058185f7e828b, type: 2}
   Triggers:
-  - rid: 473616207288205314
-  - rid: 473616207288205316
-  - rid: 473616252509618180
+  - rid: 6012065985212448772
+  - rid: 6012065985212448774
   Magazines:
-  - rid: 473616207288205312
-  Recoil: 0
+  - rid: 6012065985212448770
   FireSelector: 0
   MagazineSelector: 0
   SyncedSelector: 0
   references:
     version: 2
     RefIds:
-    - rid: 473616207288205312
-      type: {class: Magazine, ns: , asm: Assembly-CSharp}
+    - rid: 6012065985212448770
+      type: {class: Magazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Magazine:
-          rid: 473616207288205313
+          rid: 6012065985212448771
         Position: 0
-    - rid: 473616207288205313
-      type: {class: StandardMagazine, ns: , asm: Assembly-CSharp}
+    - rid: 6012065985212448771
+      type: {class: StandardMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         name: standard mag
         settings:
-          SpreadSpeedMod: 3
-          MaxSpread: 2
+          SpreadSpeedMod: 1
+          MaxSpread: 1
+          Recoil: 0
           BulletData: {fileID: 11400000, guid: 4988db502203fea4597058185f7e828b, type: 2}
-    - rid: 473616207288205314
-      type: {class: Trigger, ns: , asm: Assembly-CSharp}
+    - rid: 6012065985212448772
+      type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Trigger:
-          rid: 473616207288205315
+          rid: 6012065985212448773
         Position: 0
-    - rid: 473616207288205315
-      type: {class: SemiTrigger, ns: , asm: Assembly-CSharp}
+    - rid: 6012065985212448773
+      type: {class: SemiTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         name: semi
         TriggerSettings:
-          FireRate: 200
-    - rid: 473616207288205316
-      type: {class: Trigger, ns: , asm: Assembly-CSharp}
+          FireRate: 100
+    - rid: 6012065985212448774
+      type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Trigger:
-          rid: 473616207288205317
+          rid: 6012065985212448775
         Position: 1
-    - rid: 473616207288205317
-      type: {class: FullTrigger, ns: , asm: Assembly-CSharp}
+    - rid: 6012065985212448775
+      type: {class: FullTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         name: full
         TriggerSettings:
-          FireRate: 300
-    - rid: 473616252509618180
-      type: {class: Trigger, ns: , asm: Assembly-CSharp}
-      data:
-        _Trigger:
-          rid: 473616252509618181
-        Position: 2
-    - rid: 473616252509618181
-      type: {class: FullTrigger, ns: , asm: Assembly-CSharp}
-      data:
-        name: full
-        TriggerSettings:
-          FireRate: 1000
+          FireRate: 2000

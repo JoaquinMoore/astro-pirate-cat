@@ -13,121 +13,33 @@ MonoBehaviour:
   m_Name: laz weapon
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 1440629363716621446, guid: e424099c33dda9643a06f5180bb0faa9, type: 3}
-  BulletData: {fileID: 0}
   Triggers:
-  - rid: 473616207288205316
+  - rid: 6012065985212448778
   Magazines:
-  - rid: 473616364297781248
-  - rid: 3779179857084416000
+  - rid: 6012065985212448776
   FireSelector: 0
   MagazineSelector: 0
   SyncedSelector: 0
   references:
     version: 2
     RefIds:
-    - rid: 473616207288205316
-      type: {class: Trigger, ns: , asm: Assembly-CSharp}
-      data:
-        _Trigger:
-          rid: 473616207288205317
-        Position: 1
-    - rid: 473616207288205317
-      type: {class: FullTrigger, ns: , asm: Assembly-CSharp}
-      data:
-        name: full
-        TriggerSettings:
-          FireRate: 200
-    - rid: 473616364297781248
-      type: {class: Magazine, ns: , asm: Assembly-CSharp}
+    - rid: 6012065985212448776
+      type: {class: Magazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Magazine:
-          rid: 473616364297781249
+          rid: 6012065985212448777
         Position: 0
-    - rid: 473616364297781249
-      type: {class: LaserHeatMagazine, ns: , asm: Assembly-CSharp}
+    - rid: 6012065985212448777
+      type: {class: LaserHeatMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         name: laser mag
         _settings:
-          SpreadSpeedMod: 0.52
-          MaxSpread: 1
-          Recoil: 3
+          SpreadSpeedMod: 1
+          MaxSpread: 0
+          Recoil: 0
           BulletData: {fileID: 11400000, guid: c4d47d02be29cb2479c7515a7328c328, type: 2}
           RecoilSpeedGainMod: 1
-          MaxHeat: 2.5
-          HeatGainTime: 0.5
-          HeatGainCurve:
-            serializedVersion: 2
-            m_Curve:
-            - serializedVersion: 3
-              time: 0
-              value: 0
-              inSlope: 1
-              outSlope: 1
-              tangentMode: 34
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0
-            - serializedVersion: 3
-              time: 1
-              value: 1
-              inSlope: 1
-              outSlope: 1
-              tangentMode: 34
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0
-            m_PreInfinity: 2
-            m_PostInfinity: 2
-            m_RotationOrder: 4
-          CoolDownRate: 0.6
-          HeatLoseCurve:
-            serializedVersion: 2
-            m_Curve:
-            - serializedVersion: 3
-              time: 0
-              value: 1
-              inSlope: -1
-              outSlope: -1
-              tangentMode: 34
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0.33333334
-            - serializedVersion: 3
-              time: 1
-              value: 0
-              inSlope: -1
-              outSlope: -1
-              tangentMode: 34
-              weightedMode: 0
-              inWeight: 0.33333334
-              outWeight: 0
-            m_PreInfinity: 2
-            m_PostInfinity: 2
-            m_RotationOrder: 4
-          CoolDownRatePerTic: 0.19
-          CoolDownStartDelay: 0.08
-          CoolDownOverheatExtraStartDelay: 1
-        _currentHeat: 0
-        _currentTime: 0
-        _currentRecoil: 0
-        _overHeat: 0
-    - rid: 3779179857084416000
-      type: {class: Magazine, ns: , asm: Assembly-CSharp}
-      data:
-        _Magazine:
-          rid: 3779179857084416001
-        Position: 1
-    - rid: 3779179857084416001
-      type: {class: LaserHeatMagazine, ns: , asm: Assembly-CSharp}
-      data:
-        name: laser mag
-        _settings:
-          SpreadSpeedMod: 0.18
-          MaxSpread: 0.1
-          Recoil: 2
-          BulletData: {fileID: 11400000, guid: 1a1ae16903601454497c7addbd4712c8, type: 2}
-          RecoilSpeedGainMod: 1
-          MaxHeat: 10
+          MaxHeat: 5
           HeatGainTime: 1
           HeatGainCurve:
             serializedVersion: 2
@@ -185,3 +97,15 @@ MonoBehaviour:
         _currentTime: 0
         _currentRecoil: 0
         _overHeat: 0
+    - rid: 6012065985212448778
+      type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}
+      data:
+        _Trigger:
+          rid: 6012065985212448779
+        Position: 0
+    - rid: 6012065985212448779
+      type: {class: FullTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
+      data:
+        name: full
+        TriggerSettings:
+          FireRate: 100

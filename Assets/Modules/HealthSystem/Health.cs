@@ -30,6 +30,9 @@ namespace HealthSystem
             }
         }
 
+
+        public int PublicCurrentHealth => _currentHealth;
+        public int PublicMaxHealth => _data.MaxHealth;
         /// <summary>
         /// Reduce la vida. En caso de que llegue a 0, muere.
         /// </summary>

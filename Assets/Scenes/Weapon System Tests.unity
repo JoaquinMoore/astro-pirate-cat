@@ -4984,7 +4984,6 @@ MonoBehaviour:
   _Data:
   - {fileID: 11400000, guid: 5bea5b53e8454084db19dca58a55f5d4, type: 2}
   - {fileID: 11400000, guid: 4dfc1a29174ef534196fcadaa050fbeb, type: 2}
-  - {fileID: 11400000, guid: 54a23910e26ecbd43b41a1ee04ad7047, type: 2}
   TestingInputs: 1
   _weapons: []
   _weaponInt: 0
@@ -4994,6 +4993,7 @@ MonoBehaviour:
   _selectedWeapon:
     Weapon: {fileID: 0}
     WeaponEquiped: 0
+  _firing: 0
 --- !u!1 &1456028934
 GameObject:
   m_ObjectHideFlags: 0
