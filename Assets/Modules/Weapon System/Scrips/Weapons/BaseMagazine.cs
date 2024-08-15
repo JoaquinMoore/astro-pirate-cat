@@ -203,6 +203,13 @@ namespace WeaponSystem
 
             _currentRecoil = Mathf.Lerp(_currentRecoil, _recoil, Time.deltaTime * _settings.RecoilSpeedGainMod);
             _bulletHolder.ExternalInput();
+
+            if (_overHeat)
+            {
+                _wp._anims.SetBool("OverHeat", true);
+                _wp.StartCoroutine(CoolDown());
+            }
+
             base.Fire();
         }
 
@@ -220,6 +227,12 @@ namespace WeaponSystem
 
         IEnumerator CoolDown()
         {
+            if (_overHeat)
+            {
+                _wp._anims.SetBool("OverHeat", true);
+
+            }
+
             float cooldown = 0;
             cooldown = _overHeat == false ? _settings.CoolDownStartDelay : _overHeat == true ? _settings.CoolDownOverheatExtraStartDelay : _settings.CoolDownStartDelay;
             yield return new WaitForSeconds(cooldown);
@@ -238,6 +251,8 @@ namespace WeaponSystem
             _currentHeat = 0;
             _currentTime = 0;
             _overHeat = false;
+            _wp._anims.SetBool("OverHeat", false);
+
         }
 
         public override bool CanFire()

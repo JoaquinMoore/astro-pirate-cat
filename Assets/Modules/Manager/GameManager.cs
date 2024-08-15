@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : Utility.SingletonMono<GameManager>
 {
+    [SerializeField] private GameObject _player;
+    public GameObject player => _player;
 
     [field: SerializeField] public List<MaterialsVisual> Resources { get; private set; } 
     // Start is called before the first frame update

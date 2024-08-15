@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 41244469859357897}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.638, y: 0.258, z: 0}
+  m_LocalPosition: {x: 1.742, y: 0.121, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 1440629363716621446}
   - component: {fileID: 4117680519439271242}
   m_Layer: 0
-  m_Name: Weapon1
+  m_Name: Weapon1 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ Animator:
   m_GameObject: {fileID: 1390574107643488550}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d89d920784255284fa2c7c8faa7c1361, type: 2}
+  m_Controller: {fileID: 9100000, guid: 52cfada02d3e8984894ce8ac50cf2bce, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -168,13 +168,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7064147869198982557}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.042213224, y: 0.9991087, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0.81, y: 0.04, z: 0}
   m_LocalScale: {x: 0.31057, y: 0.31057, z: 0.31057}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6256616323451284448}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: -4.839}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &5248416157153259202
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -216,7 +216,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 225ac3bb107c124469299efa77e77338, type: 3}
+  m_Sprite: {fileID: 2124788367, guid: 061fc2defc82e5a4fa7a710ea7b7b8cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -8,7 +8,8 @@ namespace WeaponSystem
     public class WeaponControler : MonoBehaviour
     {
         [Header("Referencias")]
-        [SerializeField] private Transform _WeaponHolder;
+        [SerializeField] private Transform _WeaponSpawner;
+        [SerializeField] private Transform _WeaponRot;
         [SerializeField] private List<BaseWeaponData> _Data;
 
         [Header("Debug")]
@@ -112,7 +113,7 @@ namespace WeaponSystem
         {
 
             Vector2 pos = target - (Vector2)transform.position;
-            _WeaponHolder.transform.right = pos + new Vector2(0, _currentWeapon.Weapon.WeaponSpread());
+            _WeaponRot.transform.right = pos + new Vector2(0, _currentWeapon.Weapon.WeaponSpread());
 
 
             //if (pos.x > 0)
@@ -169,7 +170,7 @@ namespace WeaponSystem
 
         public void AddWeapons(BaseWeaponData data)
         {
-            BaseWeapon wep = Instantiate(data.WeaponPrefab, _WeaponHolder);
+            BaseWeapon wep = Instantiate(data.WeaponPrefab, _WeaponSpawner);
             wep.AddData(data, this);
             wep.Deselect();
             WeaponSlot hol = new();
