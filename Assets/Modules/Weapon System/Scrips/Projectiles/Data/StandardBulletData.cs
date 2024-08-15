@@ -11,5 +11,10 @@ namespace WeaponSystem
         public int _damage;
         public float _speed;
         public float _timer;
+
+        [Header("arte")]
+        public Material AlainceMat;
+        public GameObject AlainceParticle;
+
     }
 }

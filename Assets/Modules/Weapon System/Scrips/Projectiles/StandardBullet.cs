@@ -13,6 +13,7 @@ namespace WeaponSystem
         protected int _damage;
         protected float _speed;
         protected float _timer;
+        protected GameObject _particle;
         protected List<string> _targetsTag;
 
         private void OnEnable()
@@ -28,6 +29,8 @@ namespace WeaponSystem
             _damage = _data._damage;
             _speed = _data._speed;
             _timer = _data._timer;
+            GetComponent<SpriteRenderer>().material = _data.AlainceMat;
+            _particle = _data.AlainceParticle;
             StartCoroutine(DespawnTimer());
         }
         public override void Move()
@@ -51,6 +54,7 @@ namespace WeaponSystem
 
         public override void ResetBullet()
         {
+            Instantiate(_particle, transform.position, Quaternion.identity);
             StopAllCoroutines();
             _rigidBody.velocity = new Vector3(0f, 0f, 0f);
             _rigidBody.angularVelocity = 0f;

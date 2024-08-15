@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e32790f18e69240900d4899a35c650, type: 3}
   m_Name: Standar Bullet
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 8224477275265390374, guid: 601372732ee5b074b946fb57ded49ced, type: 3}
+  BulletPrefab: {fileID: 8423710872303376895, guid: 85c3b2c68c24b894cb3235adf2f84652, type: 3}
+  HardPrefCap: 1000
+  SoftPrefCap: 100
   _damage: 10
-  _speed: 10
+  _speed: 30
   _timer: 5
+  AlainceMat: {fileID: 2100000, guid: caae97e79e2a144479d6b6e82644029c, type: 2}
+  AlainceParticle: {fileID: 4828676028102639790, guid: 6049662207597734090dc0c9b1f48d65, type: 3}
