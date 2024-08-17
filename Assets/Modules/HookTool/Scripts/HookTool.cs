@@ -9,6 +9,7 @@ namespace Core.HookTool
         private const float MIN_APPROACH_DISTANCE = 0.01f;
 
         public float MinDistance => _minDistance;
+        public bool onTravel;
 
         [Header("Approach anchor")]
         [SerializeField, Min(0), Tooltip("La distancia minima a la que se puede acercar el gancho.")]
@@ -23,9 +24,11 @@ namespace Core.HookTool
         /// </summary>
         /// <param name="anchor">El anchor al que se engancha.</param>
         /// <param name="hook">El objeto que srivió como gancho.</param>
-        public void Grab(HookAnchor anchor, GameObject hook = null)
+        public bool Grab(HookAnchor anchor, GameObject hook = null)
         {
-            if (hook == null) hook = anchor.gameObject;
+            if (Vector2.Distance(anchor.transform.position, transform.position) <= _minDistance) return false;
+
+            hook = hook != null ? hook : anchor.gameObject;
 
             hook.transform.position = anchor.transform.position;
             _joint.connectedAnchor = hook.transform.position;
@@ -33,6 +36,8 @@ namespace Core.HookTool
             StopAllCoroutines();
 
             if (anchor.typeOfAnchor == HookAnchor.AnchorType.Approach) StartCoroutine(Approach());
+
+            return true;
         }
 
         private void Awake()
@@ -42,13 +47,20 @@ namespace Core.HookTool
             _joint.autoConfigureDistance = true;
         }
 
+        private void Update()
+        {
+        }
+
         private IEnumerator Approach()
         {
+            onTravel = true;
             while (_joint.distance >= Mathf.Max(_minDistance, MIN_APPROACH_DISTANCE))
             {
                 _joint.distance -= _approachSpeed * Time.deltaTime;
                 yield return null;
             }
+            onTravel = false;
+            _joint.enabled = false;
         }
     }
 }
