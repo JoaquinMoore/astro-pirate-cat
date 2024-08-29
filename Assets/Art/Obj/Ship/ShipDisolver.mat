@@ -44,6 +44,7 @@ Material:
     m_Floats:
     - _Force: 20
     - _Noise: 13.6
+    - _Step: 2
     m_Colors:
     - _Main_Color: {r: 0.44135368, g: 0.010409283, b: 0.014585668, a: 0}
   m_BuildTextureStacks: []

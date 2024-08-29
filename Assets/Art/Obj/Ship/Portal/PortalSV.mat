@@ -42,8 +42,8 @@ Material:
     - _QueueControl: 0
     - _ScaleNoise: 3.5
     m_Colors:
-    - _MainColor: {r: 0.5598834, g: 2.5280352, b: 2.6082377, a: 0}
-    - _SecondColor: {r: 0.06407974, g: 0.9056604, b: 0.9056604, a: 1}
+    - _MainColor: {r: 0.6192084, g: 2.1757967, b: 2.224952, a: 0}
+    - _SecondColor: {r: 0, g: 1, b: 1, a: 1}
     - _SkyColor1: {r: 0.6839622, g: 0.9399775, b: 1, a: 0}
     - _Speed1: {r: 0.05, g: 0, b: 0, a: 0}
     - _Speed2: {r: 0.01, g: 0, b: 0, a: 0}

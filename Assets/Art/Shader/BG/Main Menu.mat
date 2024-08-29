@@ -47,15 +47,15 @@ Material:
     m_Ints: []
     m_Floats:
     - _SkyTilling: 5
-    - _SkyTilling1: 100
-    - _SkyTilling2: 200
+    - _SkyTilling1: 80
+    - _SkyTilling2: 150
     - _Tilling: 0.1
     m_Colors:
     - _MainColor: {r: 0, g: 0, b: 0, a: 0}
     - _SkyColor: {r: 0, g: 0.83468914, b: 1, a: 1}
     - _SkyColor1: {r: 0, g: 0.84622765, b: 1, a: 1}
-    - _SkyColor2: {r: 0.592766, g: 0.5828587, b: 0.6981132, a: 1}
+    - _SkyColor2: {r: 0.36187258, g: 0.5448317, b: 0.7169812, a: 1}
     - _Speed: {r: 100, g: 100, b: 0, a: 0}
     - _Speed1: {r: 0.01, g: 0, b: 0, a: 0}
-    - _Speed2: {r: 0.02, g: 0, b: 0, a: 0}
+    - _Speed2: {r: 0.02, g: 0.01, b: 0, a: 0}
   m_BuildTextureStacks: []
