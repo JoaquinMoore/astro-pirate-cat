@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8253285406034209611
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ShieldFront
+  m_Shader: {fileID: -6465566751694194690, guid: c6f1cba6ebf3b9440ac6684aa6b4c175, type: 3}
+  m_Parent: {fileID: -876546973899608171, guid: c6f1cba6ebf3b9440ac6684aa6b4c175, type: 3}
+  m_ModifiedSerializedProperties: 16
+  m_ValidKeywords:
+  - _ALPHATEST_ON
+  - _SURFACE_TYPE_TRANSPARENT
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - SHADOWCASTER
+  - DepthOnly
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 6ef15529126f92844a4e87aaf3616ea3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Outside:
+        m_Texture: {fileID: 2800000, guid: 3837576ae9bdde843beebaadbb3f5591, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 1
+    - _AlphaClip: 1
+    - _Blend: 2
+    - _Cull: 0
+    - _Dots_Scale: 0.64
+    - _DstBlend: 1
+    - _QueueControl: 1
+    - _SrcBlend: 5
+    m_Colors:
+    - _Border_Color: {r: 0.32485634, g: 2.3748114, b: 1.8033357, a: 0}
+    - _Dots_Colors: {r: 0.37254903, g: 0.8862746, b: 0.8470589, a: 1}
+    - _Noise_Color: {r: 0.2811944, g: 0.8396226, b: 0.7953029, a: 1}
+    - _noise_direction: {r: 0.01, g: 0.01, b: 0, a: 0}
+    - _tyling: {r: 25, g: 25, b: 0, a: 0}
+  m_BuildTextureStacks: []
