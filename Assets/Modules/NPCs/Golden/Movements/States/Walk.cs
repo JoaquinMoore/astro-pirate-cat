@@ -1,12 +1,12 @@
+using Assets.Modules.Util.StateMachine;
 using UnityEngine;
 
 namespace Assets.Modules.NPCs.Golden.States
 {
-    public class Walk : State
+    public class Walk : State<Context>
     {
         public Walk(Context controller) : base(controller) { }
 
-        public override void OnEnter() => Debug.Log("Walk.OnEnter");
         public override void Update()
         {
             var hDirection = _context.Input.HorizontalDirection();
@@ -16,6 +16,5 @@ namespace Assets.Modules.NPCs.Golden.States
                 _context.SwitchState(new Idle(_context));
             }
         }
-        public override void OnExit() => Debug.Log("Walk.OnExit");
     }
 }
