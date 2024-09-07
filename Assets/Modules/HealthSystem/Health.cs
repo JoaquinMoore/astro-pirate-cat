@@ -51,6 +51,9 @@ namespace HealthSystem
             }
         }
 
+
+
+
         /// <summary>
         /// Aumenta la vida.
         /// </summary>
@@ -69,6 +72,11 @@ namespace HealthSystem
         private void Awake()
         {
             CurrentHealth = _data.MaxHealth;
+        }
+
+        public GameObject getGameObject()
+        {
+            return gameObject;
         }
     }
 }

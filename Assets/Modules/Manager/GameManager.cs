@@ -54,6 +54,12 @@ public class GameManager : Utility.SingletonMono<GameManager>
 
     #endregion
 
+    public bool CheckPlayerDistance(Vector3 Pos, float ReachDistance)
+    {
+        return Vector3.Distance(player.transform.position, Pos) <= ReachDistance;
+    }
+
+
 }
 
 

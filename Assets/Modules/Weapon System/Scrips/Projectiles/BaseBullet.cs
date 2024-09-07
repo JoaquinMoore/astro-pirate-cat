@@ -11,7 +11,7 @@ namespace WeaponSystem
 
         protected Rigidbody2D _rigidBody;
         protected CircleCollider2D _circleCollider;
-
+        protected GameObject _particle;
         private void Awake()
         {
             _rigidBody = GetComponent<Rigidbody2D>();

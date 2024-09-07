@@ -20,20 +20,30 @@ namespace WeaponSystem
         [SerializeField] private WeaponSlot _currentWeapon;
         [SerializeField] private WeaponSlot _selectedWeapon;
 
+        [SerializeField] private SpriteRenderer _ArmRef;
+
         public event Action<Vector2> OnImpulse = delegate { };
 
         [SerializeField] private bool _firing;
         void Start()
         {
+            _ArmRef = _WeaponRot.GetComponentInChildren<SpriteRenderer>();
+
+
             foreach (var item in _Data)
             {
                 AddWeapons(item);
             }
 
+
             _weapons[0].Weapon.Select();
             _currentWeapon = _weapons[0];
             _weapons[0].WeaponEquiped = true;
-            _selectedWeapon = _weapons[1];
+            if (_weapons.Count > 1)
+                _selectedWeapon = _weapons[1];
+
+            if (_ArmRef != null)
+                _ArmRef.enabled = !_currentWeapon.HideArmOnEquiped;
         }
 
 
@@ -153,6 +163,9 @@ namespace WeaponSystem
             WeaponSlot current = _currentWeapon;
             WeaponSlot selected = _selectedWeapon;
 
+            if (_ArmRef != null)
+                _ArmRef.enabled = !selected.HideArmOnEquiped;
+            Debug.Log(selected.HideArmOnEquiped);
 
             current.Weapon.PrimaryFireWasUp();
             current.Weapon.Deselect();
@@ -176,7 +189,7 @@ namespace WeaponSystem
             WeaponSlot hol = new();
             hol.Weapon = wep;
             wep.OnImpulseAction += impulse => OnImpulse(impulse);
-
+            hol.HideArmOnEquiped = data.HideArm;
             _weapons.Add(hol);
         }
 
@@ -187,6 +200,7 @@ namespace WeaponSystem
         {
             public BaseWeapon Weapon;
             public bool WeaponEquiped;
+            public bool HideArmOnEquiped;
         }
     }
 }

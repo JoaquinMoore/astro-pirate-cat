@@ -7,13 +7,14 @@ namespace WeaponSystem
 {
     public class StandardBullet : BaseBullet
     {
-
+        [Header("Visual")]
+        [SerializeField]private SpriteRenderer _mat;
         public override IEnumerator OnInpact() { yield return null; Destroy(gameObject); StopAllCoroutines(); }
 
         protected int _damage;
         protected float _speed;
         protected float _timer;
-        protected GameObject _particle;
+
         protected List<string> _targetsTag;
 
         private void OnEnable()
@@ -29,7 +30,10 @@ namespace WeaponSystem
             _damage = _data._damage;
             _speed = _data._speed;
             _timer = _data._timer;
-            GetComponent<SpriteRenderer>().material = _data.AlainceMat;
+            if (_mat == null)
+                GetComponent<SpriteRenderer>().material = _data.AlainceMat;
+            else
+               _mat.material = _data.AlainceMat;
             _particle = _data.AlainceParticle;
             StartCoroutine(DespawnTimer());
         }

@@ -14,12 +14,14 @@ namespace WeaponSystem
         [SerializeReference] private BaseMagazine _currentMag;
         BaseTrigger _currentTrigger;
 
+
         float _currentSpread;
 
         float _timeInterbalFirerate = 60f;
 
         public override void SetUpData(RangeWeaponData weaponData)
         {
+
             List<BaseTrigger> triggers = new();
             List<BaseMagazine> mags = new();
 
@@ -67,16 +69,15 @@ namespace WeaponSystem
                 return;
             }
 
-
+            _onFire = true;
             Fire();
         }
 
         public override void PrimaryFireWasUp()
         {
-            _anims.ResetTrigger("Fire");
-            _currentTrigger.FireWasUp();
-            _currentMag.FireIsUp();
+
             _currentSpread = 0;
+            _onFire = false;
         }
 
         public override void ChangeFireMode()
@@ -113,6 +114,16 @@ namespace WeaponSystem
             Spread();
         }
 
+        public override void EndAnimFire()
+        {
+            if (_onFire)
+                return;
+
+            _anims.ResetTrigger("Fire");
+            _currentTrigger.FireWasUp();
+            _currentMag.FireIsUp();
+        }
+
         public void Spread()
         {
             _currentSpread = _currentMag.SpreadMaker();
@@ -145,6 +156,7 @@ namespace WeaponSystem
             _currentTrigger.Reset();
             _anims.enabled = false;
             _currentTrigger.FireWasUp();
+            _currentMag.FireIsUp();
         }
         #endregion
 

@@ -15,6 +15,7 @@ MonoBehaviour:
   WeaponPrefab: {fileID: 1440629363716621446, guid: 03ebf96bcdad6954596fbbdfded3f258, type: 3}
   Triggers:
   - rid: 6012065985212448778
+  HideArm: 0
   Magazines:
   - rid: 6012065985212448776
   FireSelector: 0
@@ -39,8 +40,8 @@ MonoBehaviour:
           Recoil: 0
           BulletData: {fileID: 11400000, guid: c4d47d02be29cb2479c7515a7328c328, type: 2}
           RecoilSpeedGainMod: 1
-          MaxHeat: 2
-          HeatGainTime: 1
+          MaxHeat: 1
+          HeatGainTime: 0.5
           HeatGainCurve:
             serializedVersion: 2
             m_Curve:
@@ -65,7 +66,7 @@ MonoBehaviour:
             m_PreInfinity: 2
             m_PostInfinity: 2
             m_RotationOrder: 4
-          CoolDownRate: 1
+          CoolDownRate: 0.01
           HeatLoseCurve:
             serializedVersion: 2
             m_Curve:
@@ -91,12 +92,13 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           CoolDownRatePerTic: 1
-          CoolDownStartDelay: 1
+          CoolDownStartDelay: 0
           CoolDownOverheatExtraStartDelay: 1
         _currentHeat: 0
         _currentTime: 0
         _currentRecoil: 0
         _overHeat: 0
+        _sprite1: {fileID: 0}
     - rid: 6012065985212448778
       type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
@@ -108,4 +110,4 @@ MonoBehaviour:
       data:
         name: full
         TriggerSettings:
-          FireRate: 100
+          FireRate: 1000

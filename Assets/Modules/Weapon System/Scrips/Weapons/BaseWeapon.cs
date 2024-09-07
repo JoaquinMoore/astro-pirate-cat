@@ -13,6 +13,7 @@ namespace WeaponSystem
 
         public Animator _anims;
 
+        protected bool _onFire;
         public virtual void AddData(BaseWeaponData weaponData, WeaponControler father) { }
 
         public virtual void PrimaryFireIsDown() { }
@@ -21,6 +22,7 @@ namespace WeaponSystem
         public virtual void ChangeMagMode() { }
         public virtual float WeaponSpread() { return default; }
         public virtual void AnimFire() { }
+        public virtual void EndAnimFire() { }
         public virtual void Reflesh() { }
         public virtual void Select() { }
         public virtual void Deselect() { }

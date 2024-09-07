@@ -152,6 +152,8 @@ namespace WeaponSystem
         [SerializeField] float _currentTime;
         [SerializeField] float _currentRecoil;
         [SerializeField] bool _overHeat;
+        [SerializeField] SpriteRenderer _sprite1;
+
 
         [System.Serializable]
         public class LaserHeatSettings : Settings
@@ -184,7 +186,13 @@ namespace WeaponSystem
             }
             _bulletHolder.SetUp(settings.BulletData);
 
+            var hold = wp.GetComponentsInChildren<SpriteRenderer>();
 
+            foreach (var trans in hold)
+            {
+                if (trans.tag == "Wep")
+                    _sprite1 = trans;
+            }
 
 
             base.AddData(shootpivot, wp, settings);
@@ -201,6 +209,7 @@ namespace WeaponSystem
             float Pertage = _settings.HeatGainCurve.Evaluate(_currentTime / _settings.HeatGainTime);
             _currentHeat = Mathf.Lerp(0, _settings.MaxHeat, Pertage);
 
+            _sprite1.color = new Color(1,1,1, Mathf.Lerp(1, 0, Pertage));
             _currentRecoil = Mathf.Lerp(_currentRecoil, _recoil, Time.deltaTime * _settings.RecoilSpeedGainMod);
             _bulletHolder.ExternalInput();
 
@@ -246,7 +255,7 @@ namespace WeaponSystem
                 _currentTime -= Time.fixedDeltaTime;
                 float Pertage = _settings.HeatGainCurve.Evaluate(_currentTime / _settings.HeatGainTime);
                 _currentHeat = Mathf.Lerp(0, amount, Pertage);
-
+                _sprite1.color = new Color(1, 1, 1, Mathf.Lerp(1, 0, Pertage));
             }
             _currentHeat = 0;
             _currentTime = 0;

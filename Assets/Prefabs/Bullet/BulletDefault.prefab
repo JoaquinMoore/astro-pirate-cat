@@ -40,6 +40,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BulletDefault
       objectReference: {fileID: 0}
+    - target: {fileID: 3130701740937781237, guid: 99236baa5d886634996f76d29bfe342d, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3751889468938711805, guid: 99236baa5d886634996f76d29bfe342d, type: 3}
       propertyPath: m_Radius
       value: 0.48
@@ -108,12 +112,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 669929417228809149, guid: 99236baa5d886634996f76d29bfe342d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3130701740937781237, guid: 99236baa5d886634996f76d29bfe342d, type: 3}
-      insertIndex: 3
+      insertIndex: 2
       addedObject: {fileID: 8423710872303376895}
   m_SourcePrefab: {fileID: 100100000, guid: 99236baa5d886634996f76d29bfe342d, type: 3}
 --- !u!212 &4393191993014124872 stripped
@@ -138,3 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f99a2186ea232243970b1499e221c45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mat: {fileID: 0}
