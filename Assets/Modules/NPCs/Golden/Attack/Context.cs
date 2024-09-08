@@ -12,15 +12,13 @@ namespace Assets.Modules.NPCs.Golden.Attack
         private WeaponControler _weaponControler;
         private IDistanceCalculator _distanceCalculator;
         private ITargetDetector _targetDetector;
-        private SpriteRenderer _spriteRenderer;
         private GameObject _target;
 
         public void Start()
         {
             _distanceCalculator = GetComponent<IDistanceCalculator>();
             _targetDetector = GetComponent<ITargetDetector>();
-            _spriteRenderer = GetComponent<SpriteRenderer>();
-            // _weaponControler = GetComponent<WeaponControler>();
+            _weaponsController = GetComponent<WeaponsController>();
             Initialize(new IdleAttackState(this));
         }
 
@@ -31,8 +29,6 @@ namespace Assets.Modules.NPCs.Golden.Attack
             _target = _targetDetector.DetectTarget();
             return _distanceCalculator.CalculateDistanceToTarget(_target);
         }
-
-        public void SetSpriteColor(Color color) => _spriteRenderer.color = color;
 
         public void Attack()
         {
