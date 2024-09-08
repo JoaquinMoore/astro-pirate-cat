@@ -1,4 +1,4 @@
-using Assets.Modules.NPCs.Golden.Interfaces;
+using Assets.Modules.NPCs.Golden.Movements.Interfaces;
 using UnityEngine;
 
 public class MockInput : MonoBehaviour, IInput

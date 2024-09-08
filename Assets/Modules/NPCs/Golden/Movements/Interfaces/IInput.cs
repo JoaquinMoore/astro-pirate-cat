@@ -1,4 +1,4 @@
-namespace Assets.Modules.NPCs.Golden.Interfaces
+namespace Assets.Modules.NPCs.Golden.Movements.Interfaces
 {
     public interface IInput
     {

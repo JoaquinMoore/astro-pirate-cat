@@ -1,12 +1,12 @@
 using Zenject;
 using UnityEngine;
-using Assets.Modules.NPCs.Golden.States;
-using Assets.Modules.NPCs.Golden.Interfaces;
 using Assets.Modules.Util.StateMachine;
+using Assets.Modules.NPCs.Golden.Movements.States;
+using Assets.Modules.NPCs.Golden.Movements.Interfaces;
 
-namespace Assets.Modules.NPCs.Golden
+namespace Assets.Modules.NPCs.Golden.Movements
 {
-    public class Context : StateContext<Context>
+    public class MovementContext : StateContext<MovementContext>
     {
         [field: SerializeField] public float Speed { get; private set; }
         public IInput Input { get; private set; }

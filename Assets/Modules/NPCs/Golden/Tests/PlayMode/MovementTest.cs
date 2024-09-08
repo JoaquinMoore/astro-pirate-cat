@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
-using Assets.Modules.NPCs.Golden;
+using Assets.Modules.NPCs.Golden.Movements;
 
 public class MovementTest
 {
-    private Context _goldenMovementContext;
+    private MovementContext _goldenMovementContext;
     private MockInput _mockInput;
 
     private struct Case
@@ -26,7 +26,7 @@ public class MovementTest
             new LoadSceneParameters(LoadSceneMode.Single)
         );
         yield return null;
-        _goldenMovementContext = Object.FindObjectOfType<Context>();
+        _goldenMovementContext = Object.FindObjectOfType<MovementContext>();
         _mockInput = _goldenMovementContext.GetComponent<MockInput>();
     }
 

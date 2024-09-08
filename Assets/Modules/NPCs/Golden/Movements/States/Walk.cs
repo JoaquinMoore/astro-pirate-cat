@@ -1,11 +1,11 @@
 using Assets.Modules.Util.StateMachine;
 using UnityEngine;
 
-namespace Assets.Modules.NPCs.Golden.States
+namespace Assets.Modules.NPCs.Golden.Movements.States
 {
-    public class Walk : State<Context>
+    public class Walk : State<MovementContext>
     {
-        public Walk(Context controller) : base(controller) { }
+        public Walk(MovementContext controller) : base(controller) { }
 
         public override void Update()
         {

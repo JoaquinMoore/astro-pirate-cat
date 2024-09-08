@@ -1,10 +1,10 @@
 using Assets.Modules.Util.StateMachine;
 
-namespace Assets.Modules.NPCs.Golden.States
+namespace Assets.Modules.NPCs.Golden.Movements.States
 {
-    public class Idle : State<Context>
+    public class Idle : State<MovementContext>
     {
-        public Idle(Context controller) : base(controller) { }
+        public Idle(MovementContext controller) : base(controller) { }
 
         public override void Update() {
             if (_context.Input.HorizontalDirection() != 0 || _context.Input.VerticalDirection() != 0) {
