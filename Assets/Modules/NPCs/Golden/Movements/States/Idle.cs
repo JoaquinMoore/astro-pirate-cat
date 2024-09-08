@@ -1,5 +1,4 @@
 using Assets.Modules.Util.StateMachine;
-using UnityEngine;
 
 namespace Assets.Modules.NPCs.Golden.States
 {
