@@ -8,9 +8,7 @@ namespace Assets.Modules.NPCs.Golden
 {
     public class Context : StateContext<Context>
     {
-        [SerializeField]
-        private float _speed;
-        [Inject]
+        [field: SerializeField] public float Speed { get; private set; }
         public IInput Input { get; private set; }
 
         private void Start() => Initialize(new Idle(this));
