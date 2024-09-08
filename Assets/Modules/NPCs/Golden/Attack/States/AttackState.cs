@@ -10,9 +10,15 @@ namespace Assets.Modules.NPCs.Golden.Attack.States
         {
             var distance = _context.CalculateDistanceToTarget();
             if (distance <= _context.MeleeWeaponDistance)
+            {
                 _context.SelectMeleeWeapon();
+                _context.Attack();
+            }
             else if (distance <= _context.RangeWeaponDistance)
+            {
                 _context.SelectRangeWeapon();
+                _context.Attack();
+            }
             else
                 _context.SwitchState(new IdleAttackState(_context));
         }
