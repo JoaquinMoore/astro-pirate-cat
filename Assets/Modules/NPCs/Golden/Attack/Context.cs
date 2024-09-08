@@ -9,7 +9,7 @@ namespace Assets.Modules.NPCs.Golden.Attack
     {
         [SerializeField] public float RangeWeaponDistance;
         [SerializeField] public float MeleeWeaponDistance;
-        private WeaponControler _weaponControler;
+        private IWeaponsController _weaponsController;
         private IDistanceCalculator _distanceCalculator;
         private ITargetDetector _targetDetector;
         private GameObject _target;
@@ -18,12 +18,12 @@ namespace Assets.Modules.NPCs.Golden.Attack
         {
             _distanceCalculator = GetComponent<IDistanceCalculator>();
             _targetDetector = GetComponent<ITargetDetector>();
-            _weaponsController = GetComponent<WeaponsController>();
+            _weaponsController = GetComponent<IWeaponsController>();
             Initialize(new IdleAttackState(this));
         }
 
-        public void SelectRangeWeapon() {}
-        public void SelectMeleeWeapon() {}
+        public void SelectRangeWeapon() => _weaponsController.SelectRangeWeapon();
+        public void SelectMeleeWeapon() => _weaponsController.SelectMeleeWeapon();
         public float CalculateDistanceToTarget()
         {
             _target = _targetDetector.DetectTarget();
@@ -32,9 +32,8 @@ namespace Assets.Modules.NPCs.Golden.Attack
 
         public void Attack()
         {
-            // _weaponControler.MouseAim(_target.transform.position);
-            // _weaponControler.PrimaryFireUp();
-            // _weaponControler.PrimaryFireDown();
+            _weaponsController.SetTarget(_target);
+            _weaponsController.Attack();
         }
     }
 }
