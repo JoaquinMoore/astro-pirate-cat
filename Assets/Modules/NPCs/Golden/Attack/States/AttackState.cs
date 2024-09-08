@@ -2,9 +2,9 @@ using Assets.Modules.Util.StateMachine;
 
 namespace Assets.Modules.NPCs.Golden.Attack.States
 {
-    public class AttackState : State<Context>
+    public class AttackState : State<AttackContext>
     {
-        public AttackState(Context context) : base(context) { }
+        public AttackState(AttackContext context) : base(context) { }
 
         public override void Update()
         {

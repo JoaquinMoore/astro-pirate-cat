@@ -5,7 +5,7 @@ using Assets.Modules.NPCs.Golden.Attack.States;
 
 namespace Assets.Modules.NPCs.Golden.Attack
 {
-    public class Context : StateContext<Context>
+    public class AttackContext : StateContext<AttackContext>
     {
         [SerializeField] public float RangeWeaponDistance;
         [SerializeField] public float MeleeWeaponDistance;
