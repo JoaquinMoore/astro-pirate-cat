@@ -39,7 +39,7 @@ namespace Assets.Modules.NPCs.Golden.Tests.PlayMode.Attack
         }
 
         [UnityTest]
-        public IEnumerator TestMeleeAttackTest()
+        public IEnumerator TestMeleeAttack()
         {
             _distanceCalculator.DistanceToReturn = _attackContext.MeleeWeaponDistance - 1;
             _targetDetector.Target = new GameObject();
@@ -52,7 +52,7 @@ namespace Assets.Modules.NPCs.Golden.Tests.PlayMode.Attack
         }
 
         [UnityTest]
-        public IEnumerator TestRangeAttackTest()
+        public IEnumerator TestRangeAttack()
         {
             _distanceCalculator.DistanceToReturn = _attackContext.MeleeWeaponDistance + 1;
             _targetDetector.Target = new GameObject();
