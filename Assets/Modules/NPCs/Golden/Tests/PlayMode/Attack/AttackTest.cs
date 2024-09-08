@@ -41,7 +41,7 @@ namespace Assets.Modules.NPCs.Golden.Tests.PlayMode.Attack
         [UnityTest]
         public IEnumerator TestMeleeAttackTest()
         {
-            _distanceCalculator.DistanceToReturn = _attackContext.RangeWeaponDistance - 1;
+            _distanceCalculator.DistanceToReturn = _attackContext.MeleeWeaponDistance - 1;
             _targetDetector.Target = new GameObject();
             _weaponsController.Reset();
             yield return null;
