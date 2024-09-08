@@ -1,4 +1,3 @@
-using Zenject;
 using UnityEngine;
 using Assets.Modules.Util.StateMachine;
 using Assets.Modules.NPCs.Golden.Movements.States;
