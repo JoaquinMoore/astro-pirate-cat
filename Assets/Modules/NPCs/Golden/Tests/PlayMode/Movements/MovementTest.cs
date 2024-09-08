@@ -13,13 +13,6 @@ namespace Assets.Modules.NPCs.Golden.Tests.PlayMode.Movements
         private MovementContext _goldenMovementContext;
         private MockInput _mockInput;
 
-        private struct Case
-        {
-            public Vector2 direction;
-            public Vector2 expectedPosition;
-            public float seconds;
-        }
-
         [UnitySetUp]
         public IEnumerator SetUp()
         {
@@ -27,7 +20,7 @@ namespace Assets.Modules.NPCs.Golden.Tests.PlayMode.Movements
                 "Assets/Modules/NPCs/Golden/Tests/PlayMode/Rebuilds/MovementBasic.unity",
                 new LoadSceneParameters(LoadSceneMode.Single)
             );
-            yield return null;
+            yield return new WaitForSeconds(1);
             _goldenMovementContext = Object.FindObjectOfType<MovementContext>();
             _mockInput = _goldenMovementContext.GetComponent<MockInput>();
         }
