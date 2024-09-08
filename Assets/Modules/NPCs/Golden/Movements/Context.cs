@@ -11,7 +11,12 @@ namespace Assets.Modules.NPCs.Golden
         [field: SerializeField] public float Speed { get; private set; }
         public IInput Input { get; private set; }
 
-        private void Start() => Initialize(new Idle(this));
-        public void Move(Vector2 direction) => transform.Translate(direction.normalized * _speed * Time.deltaTime);
+        private void Start()
+        {
+            Input = GetComponent<IInput>();
+            Initialize(new Idle(this));
+        }
+
+        public void Move(Vector2 direction) => transform.Translate(direction.normalized * Speed * Time.deltaTime);
     }
 }
