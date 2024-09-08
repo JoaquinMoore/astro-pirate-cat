@@ -7,8 +7,8 @@ namespace Assets.Modules.NPCs.Golden.Attack
 {
     public class AttackContext : StateContext<AttackContext>
     {
-        [SerializeField] public float RangeWeaponDistance;
-        [SerializeField] public float MeleeWeaponDistance;
+        [field: SerializeField] public float RangeWeaponDistance { get; private set; }
+        [field: SerializeField] public float MeleeWeaponDistance { get; private set; }
         private IWeaponsController _weaponsController;
         private IDistanceCalculator _distanceCalculator;
         private ITargetDetector _targetDetector;
