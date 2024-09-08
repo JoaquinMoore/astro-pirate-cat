@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1dface0530a45e438d064b15c034cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
+  <Speed>k__BackingField: 0
 --- !u!114 &8844781701972487559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,5 +111,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a9b13b0be05bd24e9b320190ad70c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RangeWeaponDistance: 2
-  MeleeWeaponDistance: 10
+  <RangeWeaponDistance>k__BackingField: 5
+  <MeleeWeaponDistance>k__BackingField: 1
