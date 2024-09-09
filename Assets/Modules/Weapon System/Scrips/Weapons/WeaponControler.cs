@@ -140,7 +140,7 @@ namespace WeaponSystem
             _weaponInt += (int)direction;
             _weaponInt = (int)Mathf.Repeat(_weaponInt, _weapons.Count);
 
-            if (_weapons[_weaponInt].WeaponEquiped)
+            if (_weapons[_weaponInt].WeaponEquiped && _weapons.Count > 2)
                 _weaponInt += (int)direction;
 
             if (_weaponInt < 0)
@@ -159,6 +159,9 @@ namespace WeaponSystem
 
         public void SwapPrimaryWeapon()
         {
+            if (_weapons.Count == 1)
+                return;
+
             StopAllCoroutines();
             WeaponSlot current = _currentWeapon;
             WeaponSlot selected = _selectedWeapon;
@@ -190,6 +193,7 @@ namespace WeaponSystem
             hol.Weapon = wep;
             wep.OnImpulseAction += impulse => OnImpulse(impulse);
             hol.HideArmOnEquiped = data.HideArm;
+
             _weapons.Add(hol);
         }
 

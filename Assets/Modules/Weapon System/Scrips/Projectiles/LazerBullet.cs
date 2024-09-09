@@ -19,6 +19,12 @@ namespace WeaponSystem
         private IHurtable _fardestTarget;
         [SerializeField] private float _fardestTargetDist;
 
+
+        private void OnDisable()
+        {
+            _fardestTargetDist = 0;
+        }
+
         public override void VisualSetUp(BaseBulletData data)
         {
             LazerBulletData _data = data as LazerBulletData;
@@ -41,7 +47,7 @@ namespace WeaponSystem
             else
                 curdist = VisualLenght;
 
-
+            Debug.Log(_targets.Count);
 
             _lr.SetPosition(0, transform.position);
             _lr.SetPosition(1, transform.position + (transform.right * curdist));
