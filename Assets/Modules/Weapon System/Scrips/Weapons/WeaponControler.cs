@@ -25,6 +25,10 @@ namespace WeaponSystem
         public event Action<Vector2> OnImpulse = delegate { };
 
         [SerializeField] private bool _firing;
+
+        Vector3 oritnalpos;
+
+
         void Start()
         {
             _ArmRef = _WeaponRot.GetComponentInChildren<SpriteRenderer>();
@@ -44,6 +48,7 @@ namespace WeaponSystem
 
             if (_ArmRef != null)
                 _ArmRef.enabled = !_currentWeapon.HideArmOnEquiped;
+            oritnalpos = _WeaponRot.transform.position;
         }
 
 
@@ -60,7 +65,13 @@ namespace WeaponSystem
 
         public void TestingInput()
         {
-            MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            bool test = false;
+
+            if (Input.mousePosition.x > 500)
+            {
+                test = true;
+            }
+            MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition), test);
 
 
 
@@ -119,18 +130,28 @@ namespace WeaponSystem
         }
 
 
-        public void MouseAim(Vector2 target)
+        public void MouseAim(Vector2 target, bool flip = false)
         {
+            float rot = 0;
+            Vector2 pos = Vector2.zero;
 
-            Vector2 pos = target - (Vector2)transform.position;
+
+            if (flip == true)
+            {
+                _WeaponRot.transform.position = oritnalpos;
+                rot = 0;
+                pos = target - (Vector2)transform.position;
+            }
+            else
+            {
+                _WeaponRot.transform.position = new Vector3(oritnalpos.x * -1, oritnalpos.y, oritnalpos.z);
+                rot = 180;
+                Debug.Log("called");
+                pos = new Vector2(target.x * -1, target.y ) - (Vector2)transform.position;
+            }
+
             _WeaponRot.transform.right = pos + new Vector2(0, _currentWeapon.Weapon.WeaponSpread());
-
-
-            //if (pos.x > 0)
-            //    CurrentWeapon.weaponSpriteRenderer.flipY = false;
-            //else
-            //    CurrentWeapon.weaponSpriteRenderer.flipY = true;
-
+            _WeaponRot.transform.eulerAngles = new Vector3(0, rot, _WeaponRot.transform.eulerAngles.z);
         }
 
 
