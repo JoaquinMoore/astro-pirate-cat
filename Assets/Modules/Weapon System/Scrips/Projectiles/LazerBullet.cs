@@ -60,6 +60,26 @@ namespace WeaponSystem
         }
 
 
+        public override void UpdateTartetListVisual()
+        {
+            float newdist = 0;
+            Debug.Log("ca");
+
+            foreach (var item in _targets)
+            {
+                float dist = Vector3.Distance(transform.position, item.getGameObject().transform.position);
+
+                if (newdist < dist && _fardestTarget == null)
+                {
+                    newdist = dist;
+                }
+
+
+            }
+            _fardestTargetDist = newdist;
+            Debug.Log(newdist);
+        }
+
         public void VisualLenghtCalc()
         {
             if (_fardestTarget == null)
