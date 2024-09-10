@@ -3,186 +3,229 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponControler : MonoBehaviour
+namespace WeaponSystem
 {
-    [Header("Referencias")]
-    [SerializeField] private Transform _WeaponHolder;
-    [SerializeField] private List<BaseWeaponData> _Data;
-
-    [Header("Debug")]
-    public bool TestingInputs;
-    [SerializeField] private List<WeaponSlot> _weapons;
-    [SerializeField] private int _weaponInt;
-
-    [SerializeField] private WeaponSlot _currentWeapon;
-    [SerializeField] private WeaponSlot _selectedWeapon;
-
-    public event Action<Vector2> OnImpulse = delegate { };
-
-    [SerializeField] private bool _firing;
-    void Start()
+    public class WeaponControler : MonoBehaviour
     {
-        foreach (var item in _Data)
+        [Header("Referencias")]
+        [SerializeField] private Transform _WeaponSpawner;
+        [SerializeField] private Transform _WeaponRot;
+        [SerializeField] private List<BaseWeaponData> _Data;
+
+        [Header("Debug")]
+        public bool TestingInputs;
+        [SerializeField] private List<WeaponSlot> _weapons;
+        [SerializeField] private int _weaponInt;
+
+        [SerializeField] private WeaponSlot _currentWeapon;
+        [SerializeField] private WeaponSlot _selectedWeapon;
+
+        [SerializeField] private SpriteRenderer _ArmRef;
+
+        public event Action<Vector2> OnImpulse = delegate { };
+
+        [SerializeField] private bool _firing;
+
+        Vector3 oritnalpos;
+
+
+        void Start()
         {
-            AddWeapons(item);
+            _ArmRef = _WeaponRot.GetComponentInChildren<SpriteRenderer>();
+
+
+            foreach (var item in _Data)
+            {
+                AddWeapons(item);
+            }
+
+
+            _weapons[0].Weapon.Select();
+            _currentWeapon = _weapons[0];
+            _weapons[0].WeaponEquiped = true;
+            if (_weapons.Count > 1)
+                _selectedWeapon = _weapons[1];
+
+            if (_ArmRef != null)
+                _ArmRef.enabled = !_currentWeapon.HideArmOnEquiped;
+            oritnalpos = _WeaponRot.transform.position;
         }
-        
-        _weapons[0].Weapon.Select();
-        _currentWeapon = _weapons[0];
-        _weapons[0].WeaponEquiped = true;
-        _selectedWeapon = _weapons[1];
-    }
 
 
-    void Update()
-    {
-
-
-
-        if (TestingInputs)
+        void Update()
         {
-            TestingInput();
+
+
+
+            if (TestingInputs)
+            {
+                TestingInput();
+            }
         }
-    }
 
-    public void TestingInput()
-    {
-        MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-
-
-
-        if (Input.GetKey(KeyCode.Mouse0))
+        public void TestingInput()
         {
-            PrimaryFireDown();
+            bool test = false;
+
+            if (Input.mousePosition.x > 500)
+            {
+                test = true;
+            }
+            MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition), test);
+
+
+
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
+                PrimaryFireDown();
+            }
+            if (Input.GetKeyUp(KeyCode.Mouse0))
+            {
+                PrimaryFireUp();
+            }
+
+
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                _currentWeapon.Weapon.ChangeFireMode();
+            }
+
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                _currentWeapon.Weapon.ChangeMagMode();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                SwapPrimaryWeapon();
+            }
+
+            if (Input.mouseScrollDelta.y != 0)
+            {
+                ChangeSecondaryWeapon(Input.mouseScrollDelta.y);
+            }
         }
-        if (Input.GetKeyUp(KeyCode.Mouse0))
+
+        #region Inputs
+        public void PrimaryFireDown()
         {
-            PrimaryFireUp();
+            _currentWeapon.Weapon.PrimaryFireIsDown();
+            _firing = true;
         }
 
+        public void PrimaryFireUp()
+        {
+            _currentWeapon.Weapon.PrimaryFireWasUp();
+            _firing = false;
+        }
 
-        if (Input.GetKeyDown(KeyCode.V))
+        public void ChangeFireMode()
         {
             _currentWeapon.Weapon.ChangeFireMode();
         }
 
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            _currentWeapon.Weapon.ChangeMagMode();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q))
+        public void ChangePrimaryWeapon()
         {
             SwapPrimaryWeapon();
         }
 
-        if (Input.mouseScrollDelta.y != 0)
+
+        public void MouseAim(Vector2 target, bool flip = false)
         {
-            ChangeSecondaryWeapon(Input.mouseScrollDelta.y);
+            float rot = 0;
+            Vector2 pos = Vector2.zero;
+
+
+            if (flip == true)
+            {
+                _WeaponRot.transform.position = oritnalpos;
+                rot = 0;
+                pos = target - (Vector2)transform.position;
+            }
+            else
+            {
+                _WeaponRot.transform.position = new Vector3(oritnalpos.x * -1, oritnalpos.y, oritnalpos.z);
+                rot = 180;
+                Debug.Log("called");
+                pos = new Vector2(target.x * -1, target.y ) - (Vector2)transform.position;
+            }
+
+            _WeaponRot.transform.right = pos + new Vector2(0, _currentWeapon.Weapon.WeaponSpread());
+            _WeaponRot.transform.eulerAngles = new Vector3(0, rot, _WeaponRot.transform.eulerAngles.z);
         }
-    }
-
-    #region Inputs
-    public void PrimaryFireDown()
-    {
-        _currentWeapon.Weapon.PrimaryFireIsDown();
-        _firing = true;
-    }
-
-    public void PrimaryFireUp()
-    {
-        _currentWeapon.Weapon.PrimaryFireWasUp();
-        _firing = false;
-    }
-
-    public void ChangeFireMode()
-    {
-        _currentWeapon.Weapon.ChangeFireMode();
-    }
-
-    public void ChangePrimaryWeapon()
-    {
-        SwapPrimaryWeapon();
-    }
 
 
-    public void MouseAim(Vector2 target)
-    {
+        public void ChangeSecondaryWeapon(float direction)
+        {
 
-        Vector2 pos = target - (Vector2)transform.position;
-        _WeaponHolder.transform.right = pos + new Vector2(0, _currentWeapon.Weapon.WeaponSpread());
-
-
-        //if (pos.x > 0)
-        //    CurrentWeapon.weaponSpriteRenderer.flipY = false;
-        //else
-        //    CurrentWeapon.weaponSpriteRenderer.flipY = true;
-
-    }
-
-
-    public void ChangeSecondaryWeapon(float direction)
-    {
-
-        _weaponInt += (int)direction;
-        _weaponInt = (int)Mathf.Repeat(_weaponInt, _weapons.Count);
-
-        if (_weapons[_weaponInt].WeaponEquiped)
             _weaponInt += (int)direction;
-
-        if (_weaponInt < 0)
-        {
             _weaponInt = (int)Mathf.Repeat(_weaponInt, _weapons.Count);
-            return;
+
+            if (_weapons[_weaponInt].WeaponEquiped && _weapons.Count > 2)
+                _weaponInt += (int)direction;
+
+            if (_weaponInt < 0)
+            {
+                _weaponInt = (int)Mathf.Repeat(_weaponInt, _weapons.Count);
+                return;
+            }
+            _selectedWeapon = _weapons[_weaponInt];
+
         }
-        _selectedWeapon = _weapons[_weaponInt];
-
-    }
 
 
 
 
 
 
-    public void SwapPrimaryWeapon()
-    {
-        StopAllCoroutines();
-        WeaponSlot current = _currentWeapon;
-        WeaponSlot selected = _selectedWeapon;
+        public void SwapPrimaryWeapon()
+        {
+            if (_weapons.Count == 1)
+                return;
 
-        
-        current.Weapon.PrimaryFireWasUp();
-        current.Weapon.Deselect();
-        selected.Weapon.Select();
-        _currentWeapon.WeaponEquiped = false;
-        _selectedWeapon.WeaponEquiped = true;
-        _currentWeapon = selected;
-        _selectedWeapon = current;
-        _currentWeapon.Weapon.Reflesh();
-        _selectedWeapon.Weapon.Reflesh();
-    }
+            StopAllCoroutines();
+            WeaponSlot current = _currentWeapon;
+            WeaponSlot selected = _selectedWeapon;
 
-    #endregion
+            if (_ArmRef != null)
+                _ArmRef.enabled = !selected.HideArmOnEquiped;
+            Debug.Log(selected.HideArmOnEquiped);
 
+            current.Weapon.PrimaryFireWasUp();
+            current.Weapon.Deselect();
+            selected.Weapon.Select();
+            _currentWeapon.WeaponEquiped = false;
+            _selectedWeapon.WeaponEquiped = true;
+            _currentWeapon = selected;
+            _selectedWeapon = current;
+            _currentWeapon.Weapon.Reflesh();
+            _selectedWeapon.Weapon.Reflesh();
+        }
 
-    public void AddWeapons(BaseWeaponData data)
-    {
-        BaseWeapon wep = Instantiate(data.WeaponPrefab, _WeaponHolder);
-        wep.AddData(data, this);
-        wep.Deselect();
-        WeaponSlot hol = new();
-        hol.Weapon = wep;
-        wep.OnImpulseAction += impulse => OnImpulse(impulse);
-
-        _weapons.Add(hol);
-    }
+        #endregion
 
 
+        public void AddWeapons(BaseWeaponData data)
+        {
+            BaseWeapon wep = Instantiate(data.WeaponPrefab, _WeaponSpawner);
+            wep.AddData(data, this);
+            wep.Deselect();
+            WeaponSlot hol = new();
+            hol.Weapon = wep;
+            wep.OnImpulseAction += impulse => OnImpulse(impulse);
+            hol.HideArmOnEquiped = data.HideArm;
 
-    [System.Serializable]
-    public class WeaponSlot
-    {
-        public BaseWeapon Weapon;
-        public bool WeaponEquiped;
+            _weapons.Add(hol);
+        }
+
+
+
+        [System.Serializable]
+        public class WeaponSlot
+        {
+            public BaseWeapon Weapon;
+            public bool WeaponEquiped;
+            public bool HideArmOnEquiped;
+        }
     }
 }

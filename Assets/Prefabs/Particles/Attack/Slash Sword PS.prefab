@@ -4780,7 +4780,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 6269e0713e0bb9643b66093291176d91, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4845,6 +4845,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 1571523540375484273, guid: 33c633e0b2e3d094cb58b31a9a370f73, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6269e0713e0bb9643b66093291176d91, type: 2}
     - target: {fileID: 3724296833239253852, guid: 33c633e0b2e3d094cb58b31a9a370f73, type: 3}
       propertyPath: m_Name
       value: Ligth Particle
@@ -4975,6 +4979,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7797350403765035752, guid: d6dcc13f287cdc94aba855e1b37661d7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6269e0713e0bb9643b66093291176d91, type: 2}
     m_RemovedComponents:
     - {fileID: 3700714790500790704, guid: d6dcc13f287cdc94aba855e1b37661d7, type: 3}
     m_RemovedGameObjects: []
@@ -4994,6 +5002,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9121464115489048541}
     m_Modifications:
+    - target: {fileID: 4602024254854910875, guid: f49f1023309bc7c429fcad819cf255f7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6269e0713e0bb9643b66093291176d91, type: 2}
     - target: {fileID: 6642973003831902599, guid: f49f1023309bc7c429fcad819cf255f7, type: 3}
       propertyPath: m_RootOrder
       value: -1
