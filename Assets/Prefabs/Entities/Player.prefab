@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 2093215202366372469}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.821, y: -0.88, z: 0}
+  m_LocalPosition: {x: -0.346, y: -0.266, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -133,7 +133,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3820374218616572042
 Transform:
   m_ObjectHideFlags: 0
@@ -143,7 +143,7 @@ Transform:
   m_GameObject: {fileID: 2849981975980318127}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.652, y: -0.833, z: 0}
+  m_LocalPosition: {x: 0.16, y: -0.362, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -218,7 +218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6515150755702918496
 RectTransform:
   m_ObjectHideFlags: 0
@@ -311,7 +311,7 @@ Transform:
   m_GameObject: {fileID: 4280579980684917001}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.522, y: -0.833, z: 0}
+  m_LocalPosition: {x: -0.183, y: -0.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -446,11 +446,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1885901568058411777, guid: 9904114eb9893254aa95ab9a06823ec8, type: 3}
       propertyPath: m_Size.x
-      value: 5.25
+      value: 2.1442308
       objectReference: {fileID: 0}
     - target: {fileID: 1885901568058411777, guid: 9904114eb9893254aa95ab9a06823ec8, type: 3}
       propertyPath: m_Size.y
-      value: 7.2166667
+      value: 2.9903846
       objectReference: {fileID: 0}
     - target: {fileID: 1885901568058411777, guid: 9904114eb9893254aa95ab9a06823ec8, type: 3}
       propertyPath: m_Sprite
@@ -540,11 +540,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 426929876175768763, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 426929876175768763, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2235166508401253002, guid: 3eea909ad2e5d8441a3afaa9d532a1de, type: 3}
       propertyPath: m_PreserveAspect
