@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 9
   spritePivot: {x: 0.8703004, y: 0.31877896}
-  spritePixelsToUnits: 120
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -114,11 +114,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 288
-        width: 571
-        height: 288
+        y: 69
+        width: 136
+        height: 69
       alignment: 9
-      pivot: {x: 0.8828197, y: 0.33570543}
+      pivot: {x: 0.8957593, y: 0.33376047}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: Laser_1
       rect:
         serializedVersion: 2
-        x: 571
-        y: 288
-        width: 571
-        height: 288
+        x: 136
+        y: 69
+        width: 136
+        height: 69
       alignment: 9
-      pivot: {x: 0.8828197, y: 0.3357054}
+      pivot: {x: 0.8957593, y: 0.3337605}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: Laser_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 571
-        height: 288
+        x: 272
+        y: 69
+        width: 136
+        height: 69
       alignment: 9
-      pivot: {x: 0.8828197, y: 0.3357054}
+      pivot: {x: 0.8957593, y: 0.3337605}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,12 +176,12 @@ TextureImporter:
       name: Laser_3
       rect:
         serializedVersion: 2
-        x: 571
+        x: 0
         y: 0
-        width: 571
-        height: 288
+        width: 136
+        height: 69
       alignment: 9
-      pivot: {x: 0.8828197, y: 0.3357054}
+      pivot: {x: 0.8957593, y: 0.3337605}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,6 +189,27 @@ TextureImporter:
       bones: []
       spriteID: 088fd01d35d64234aac3760261d01812
       internalID: -486219665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_4
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 0
+        width: 136
+        height: 69
+      alignment: 9
+      pivot: {x: 0.8957593, y: 0.3337605}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a74a8c1d04f288e41833bc9e7bea1a29
+      internalID: 1735015416
       vertices: []
       indices: 
       edges: []
@@ -208,6 +229,7 @@ TextureImporter:
       Laser_1: -1053207580
       Laser_2: -1084455935
       Laser_3: -486219665
+      Laser_4: 1735015416
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

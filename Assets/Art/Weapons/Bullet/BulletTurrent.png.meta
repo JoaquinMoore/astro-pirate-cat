@@ -115,8 +115,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 140
-        height: 131
+        width: 31.666666
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,10 +134,10 @@ TextureImporter:
       name: BulletTurrent_1
       rect:
         serializedVersion: 2
-        x: 140
+        x: 31
         y: 0
-        width: 140
-        height: 131
+        width: 31.666666
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,10 +155,10 @@ TextureImporter:
       name: BulletTurrent_2
       rect:
         serializedVersion: 2
-        x: 280
+        x: 62
         y: 0
-        width: 140
-        height: 131
+        width: 31.666666
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
