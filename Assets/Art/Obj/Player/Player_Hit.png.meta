@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 160
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -114,9 +114,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 235
-        height: 326
+        y: 440
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,10 +134,10 @@ TextureImporter:
       name: Player_Hit_1
       rect:
         serializedVersion: 2
-        x: 235
-        y: 0
-        width: 235
-        height: 326
+        x: 150
+        y: 440
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,10 +155,10 @@ TextureImporter:
       name: Player_Hit_2
       rect:
         serializedVersion: 2
-        x: 470
-        y: 0
-        width: 235
-        height: 326
+        x: 300
+        y: 440
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,10 +176,10 @@ TextureImporter:
       name: Player_Hit_3
       rect:
         serializedVersion: 2
-        x: 705
-        y: 0
-        width: 235
-        height: 326
+        x: 450
+        y: 440
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,10 +197,10 @@ TextureImporter:
       name: Player_Hit_4
       rect:
         serializedVersion: 2
-        x: 940
-        y: 0
-        width: 235
-        height: 326
+        x: 600
+        y: 440
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,10 +218,10 @@ TextureImporter:
       name: Player_Hit_5
       rect:
         serializedVersion: 2
-        x: 1175
-        y: 0
-        width: 235
-        height: 326
+        x: 750
+        y: 440
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,10 +239,10 @@ TextureImporter:
       name: Player_Hit_6
       rect:
         serializedVersion: 2
-        x: 1410
-        y: 0
-        width: 235
-        height: 326
+        x: 0
+        y: 220
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,10 +260,10 @@ TextureImporter:
       name: Player_Hit_7
       rect:
         serializedVersion: 2
-        x: 1645
-        y: 0
-        width: 235
-        height: 326
+        x: 150
+        y: 220
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,10 +281,10 @@ TextureImporter:
       name: Player_Hit_8
       rect:
         serializedVersion: 2
-        x: 1880
-        y: 0
-        width: 235
-        height: 326
+        x: 300
+        y: 220
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,10 +302,10 @@ TextureImporter:
       name: Player_Hit_9
       rect:
         serializedVersion: 2
-        x: 2115
-        y: 0
-        width: 235
-        height: 326
+        x: 450
+        y: 220
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,10 +323,10 @@ TextureImporter:
       name: Player_Hit_10
       rect:
         serializedVersion: 2
-        x: 2350
-        y: 0
-        width: 235
-        height: 326
+        x: 600
+        y: 220
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,10 +344,10 @@ TextureImporter:
       name: Player_Hit_11
       rect:
         serializedVersion: 2
-        x: 2585
-        y: 0
-        width: 235
-        height: 326
+        x: 750
+        y: 220
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,10 +365,10 @@ TextureImporter:
       name: Player_Hit_12
       rect:
         serializedVersion: 2
-        x: 2820
+        x: 0
         y: 0
-        width: 235
-        height: 326
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -386,10 +386,10 @@ TextureImporter:
       name: Player_Hit_13
       rect:
         serializedVersion: 2
-        x: 3055
+        x: 150
         y: 0
-        width: 235
-        height: 326
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -407,10 +407,10 @@ TextureImporter:
       name: Player_Hit_14
       rect:
         serializedVersion: 2
-        x: 3290
+        x: 300
         y: 0
-        width: 235
-        height: 326
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -428,10 +428,10 @@ TextureImporter:
       name: Player_Hit_15
       rect:
         serializedVersion: 2
-        x: 3525
+        x: 450
         y: 0
-        width: 235
-        height: 326
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -449,10 +449,10 @@ TextureImporter:
       name: Player_Hit_16
       rect:
         serializedVersion: 2
-        x: 3760
+        x: 600
         y: 0
-        width: 235
-        height: 326
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -470,10 +470,10 @@ TextureImporter:
       name: Player_Hit_17
       rect:
         serializedVersion: 2
-        x: 3995
+        x: 750
         y: 0
-        width: 235
-        height: 326
+        width: 150
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
