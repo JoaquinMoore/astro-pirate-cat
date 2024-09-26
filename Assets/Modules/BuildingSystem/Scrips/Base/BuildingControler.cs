@@ -12,9 +12,10 @@ namespace BuildSystem
 
         public void SetUp(BuildingVisual visual, BuildingModel model, BuildingBase based)
         {
+            _base = based;
             _visual = visual;
             _model = model;
-            _base = based;
+
         }
 
         public void VirtualUpdate()
@@ -55,5 +56,6 @@ namespace BuildSystem
         {
             _model.Damage();
         }
+
     }
 }

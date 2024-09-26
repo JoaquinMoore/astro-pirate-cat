@@ -25,6 +25,7 @@ namespace BuildSystem
             _hpFuncion = settings.HPRef;
             _hpFuncion.OnDamage.AddListener(Damage);
             _hpFuncion.OnDie.AddListener(Death);
+
         }
 
         public virtual void VirtualUpdate() { }
@@ -33,8 +34,10 @@ namespace BuildSystem
 
         public virtual void Damage()
         {
+
             if (!_controler._base._Col.enabled)
                 return;
+
             _controler._visual.TriggerHit();
             //_controler._visual.PlayAudio(HitSond);
         }

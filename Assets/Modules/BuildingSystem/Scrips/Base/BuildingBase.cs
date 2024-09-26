@@ -34,9 +34,16 @@ namespace BuildSystem
             if (!_Col.enabled)
                 return;
             _controler.Damage();
+
         }
 
-
         public virtual void AnimDeathAction() { }
+
+
+        public void SelectTask(GameObject obs)
+        {
+            _controler.SelectTask(obs);
+        }
+
     }
 }

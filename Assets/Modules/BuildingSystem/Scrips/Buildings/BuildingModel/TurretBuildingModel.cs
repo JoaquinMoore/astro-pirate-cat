@@ -15,7 +15,7 @@ namespace BuildSystem
             RepairFuncion = new(settings.RepairSettings, _controler);
             TurretFuncion = new(settings.TurretSettings, _controler);
         }
-
+        
         public override void VirtualUpdate()
         {
             if (_controler._base._Col.enabled)
@@ -28,7 +28,11 @@ namespace BuildSystem
             RepairFuncion.StartRepairs(obs);
         }
 
-
+        public override void Death()
+        {
+            TurretFuncion.Stop();
+            base.Death();
+        }
         [System.Serializable]
         public class Settings : BuildSettings
         {

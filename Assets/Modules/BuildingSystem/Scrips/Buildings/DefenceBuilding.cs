@@ -29,10 +29,10 @@ namespace BuildSystem
                 Debug.Log(_controler._model._hpFuncion.PublicCurrentHealth);
             }
 
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                SelectTask(Instantiate(testobj));
-            }
+            //if (Input.GetKeyDown(KeyCode.S))
+            //{
+            //    SelectTask(Instantiate(testobj));
+            //}
             base.Update();
         }
         public void Focus()
@@ -52,9 +52,5 @@ namespace BuildSystem
 
 
 
-        public void SelectTask(GameObject obs)
-        {
-            _controler.SelectTask(obs);
-        }
     }
 }

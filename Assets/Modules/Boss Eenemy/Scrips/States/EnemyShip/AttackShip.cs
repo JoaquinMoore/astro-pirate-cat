@@ -125,6 +125,7 @@ namespace NPC.Boss.Ship
             }
             turret.rotation = Quaternion.Euler(0, 0, AuxAnlge);
             controler.PrimaryFireUp();
+            controler.MouseAim(controler.transform.position + controler.transform.right * 2);
             turretitem.DoneAttacking = true;
         }
 

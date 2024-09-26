@@ -116,6 +116,8 @@ namespace NPC.Boss.Ship
 
         public override void Exit()
         {
+            if (context._stop != true)
+                context.Anim.SetBool("IsMove", true);
             context.Mov.ResumeMov();
             Debug.Log("finished");
             Spawning = false;

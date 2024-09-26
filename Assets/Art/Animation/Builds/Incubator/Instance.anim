@@ -43,7 +43,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Force
-    path: 
+    path: Healing
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -56,7 +56,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 146615986
       attribute: 2358329520
       script: {fileID: 0}
       typeID: 212
@@ -112,7 +112,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Force
-    path: 
+    path: Healing
     classID: 212
     script: {fileID: 0}
     flags: 0

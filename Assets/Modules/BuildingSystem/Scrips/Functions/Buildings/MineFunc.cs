@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using HealthSystem;
 
 namespace BuildSystem
 {
@@ -13,7 +14,7 @@ namespace BuildSystem
         float _detectionRaduis;
         int _explosionDamage;
         float _explosionTimer;
-        string _tag;
+        int _layerID;
         private List<GameObject> _AllEnemys = new();
         //private List<Joaquin.Enemies.Enemy> _AllEnemys = new ();
         private float _Timer;
@@ -25,7 +26,7 @@ namespace BuildSystem
             public float DetectionRaduis;
             public int ExplosionDamage;
             public float ExplosionTimer;
-            public string Tag;
+            public int LayerID;
         }
 
         public MineFunc(Settings settings, BuildingControler model)
@@ -36,7 +37,7 @@ namespace BuildSystem
             _detectionRaduis = settings.DetectionRaduis;
             _explosionDamage = settings.ExplosionDamage;
             _explosionTimer = settings.ExplosionTimer;
-            _tag = settings.Tag;
+            _layerID = settings.LayerID;
         }
 
         public void CheckNearby()
@@ -48,7 +49,7 @@ namespace BuildSystem
                 if (_AllEnemys.Contains(item.collider.gameObject))
                     continue;
 
-                if (item.collider.tag == _tag && item.collider.enabled)
+                if (item.collider.gameObject.layer == _layerID && item.collider.gameObject.GetComponent<Collider2D>().enabled)
                 {
                     _AllEnemys.Add(item.collider.gameObject);
                 }
@@ -58,8 +59,10 @@ namespace BuildSystem
             {
                 if (Vector2.Distance(item.transform.position, _controler._base.transform.position) <= _explosionRaduis)
                     _Triggered = true;
-            }
 
+
+            }
+            Debug.Log(_AllEnemys.Count);
             if (!_Triggered)
                 return;
 
@@ -72,20 +75,20 @@ namespace BuildSystem
 
             if (_Timer >= _explosionTimer)
             {
+                _controler._visual.Destroy(true);
                 _Triggered = false;
                 foreach (var item in _AllEnemys)
                 {
-                    //if (item.death == true)
-                    //{
-                    //    _AllEnemys.Clear();
-                    //    return;
-                    //}
-                    //else
-                    //    item.Damage(_explosionDamage);
-                    item.GetComponent<BoxCollider2D>().enabled = false;
-                    item.SetActive(false);
+                    if (item == null)
+                        continue;
+                    var hold = item.GetComponent<Health>();
+                    if (hold == null)
+                        continue;
+
+                    hold.Hurt(_explosionDamage);
+
+                    //item.SetActive(false);
                 }
-                _controler._model.Death();
                 _AllEnemys.Clear();
                 _Timer = 0;
             }

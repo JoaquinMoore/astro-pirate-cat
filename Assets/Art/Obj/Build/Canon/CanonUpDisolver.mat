@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: CanonUpDisolver
   m_Shader: {fileID: -6465566751694194690, guid: 424948e29f2960c4d813c24dc4e5a37a, type: 3}
-  m_Parent: {fileID: 2100000, guid: bd411374f7594664d84f6574889cf057, type: 2}
+  m_Parent: {fileID: 2100000, guid: 05921d13c8e42f64dab2677ae33ed5fd, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []

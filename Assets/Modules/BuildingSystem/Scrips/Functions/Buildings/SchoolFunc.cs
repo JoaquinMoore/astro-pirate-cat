@@ -10,6 +10,7 @@ namespace BuildSystem
         List<TeachingSlots> slots = new();
 
         BuildingControler _model;
+        [System.Serializable]
         public class Settings
         {
             public float GraduatingTime;

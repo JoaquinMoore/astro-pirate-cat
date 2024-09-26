@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using HealthSystem;
 using NPC.FSM;
-
+using UnityEngine.UI;
 namespace NPC.Boss
 {
     public class BossBase : MonoBehaviour
     {
+
+        [Header("Visual")]
+        [SerializeField] protected Slider _slider;
+
         [SerializeField] protected Animator _anim;
         [SerializeField] protected Health _hp;
 
@@ -16,8 +20,8 @@ namespace NPC.Boss
         [SerializeField] protected IdleBoss.IdleSettings _idleSettings = new();
 
         public IdleBoss.IdleSettings IdleSettings => _idleSettings;
-
-
+        public Animator Anim => _anim;
+        public bool _stop;
         // Start is called before the first frame update
         public virtual void Start()
         {

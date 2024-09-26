@@ -35,10 +35,11 @@ namespace WeaponSystem
                 AddWeapons(item);
             }
 
+            if (_weapons.Count > 0)
+            {
+                EquipFirstWep();
+            }
 
-            _weapons[0].Weapon.Select();
-            _currentWeapon = _weapons[0];
-            _weapons[0].WeaponEquiped = true;
             if (_weapons.Count > 1)
                 _selectedWeapon = _weapons[1];
 
@@ -124,13 +125,15 @@ namespace WeaponSystem
 
             Vector2 pos = target - (Vector2)transform.position;
             _WeaponRot.transform.right = pos + new Vector2(0, _currentWeapon.Weapon.WeaponSpread());
+            _currentWeapon.Weapon.MousePos(target);
+        }
 
 
-            //if (pos.x > 0)
-            //    CurrentWeapon.weaponSpriteRenderer.flipY = false;
-            //else
-            //    CurrentWeapon.weaponSpriteRenderer.flipY = true;
-
+        public void EquipFirstWep()
+        {
+            _weapons[0].Weapon.Select();
+            _currentWeapon = _weapons[0];
+            _weapons[0].WeaponEquiped = true;
         }
 
 

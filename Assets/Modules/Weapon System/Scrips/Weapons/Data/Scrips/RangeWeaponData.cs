@@ -50,6 +50,16 @@ namespace WeaponSystem
             Magazines.Add(hold);
         }
 
+        [ContextMenu("Add Parabolic Magazine")]
+        public void Parabolic()
+        {
+            Magazine hold = new()
+            {
+                _Magazine = new ParabolicMagazine() { name = "Parabolic mag" },
+                Position = Magazines.Count,
+            };
+            Magazines.Add(hold);
+        }
     }
     [System.Serializable]
     public class Magazine

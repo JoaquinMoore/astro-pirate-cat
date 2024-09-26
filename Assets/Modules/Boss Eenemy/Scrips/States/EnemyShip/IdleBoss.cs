@@ -35,9 +35,9 @@ namespace NPC.Boss
         public override void Enter()
         {
             Stop = false;
-            
 
-
+            if (context._stop != true)
+                context.Anim.SetBool("IsMove",true);
         }
 
         public override void LogicUpdate()
