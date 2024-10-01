@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 5347897925265333099}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.010785635}
-  m_LocalScale: {x: 0.3636, y: 0.3636, z: 1}
+  m_LocalPosition: {x: 0, y: 0.289, z: -0.010785635}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5937412144465177139}
@@ -110,8 +110,8 @@ Transform:
   m_GameObject: {fileID: 5553503449713683645}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.010785635}
-  m_LocalScale: {x: 0.3636, y: 0.3636, z: 1}
+  m_LocalPosition: {x: 0, y: 0.28899956, z: -0.010785635}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5937412144465177139}
@@ -194,8 +194,8 @@ Transform:
   m_GameObject: {fileID: 5593606843309960262}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.221, y: 1.026, z: -0.010785635}
-  m_LocalScale: {x: 0.3636, y: 0.3636, z: 1}
+  m_LocalPosition: {x: -0.154, y: 0.80799955, z: -0.010785635}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5937412144465177139}
@@ -306,15 +306,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4548245208195246163, guid: c13e0f8e281bd3846b35b166451fdb42, type: 3}
       propertyPath: m_Size.x
-      value: 0.96
+      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: 4548245208195246163, guid: c13e0f8e281bd3846b35b166451fdb42, type: 3}
       propertyPath: m_Size.y
-      value: 5.22606
+      value: 2.907566
       objectReference: {fileID: 0}
     - target: {fileID: 4548245208195246163, guid: c13e0f8e281bd3846b35b166451fdb42, type: 3}
       propertyPath: m_Offset.y
-      value: 0.8230299
+      value: 0.70181274
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

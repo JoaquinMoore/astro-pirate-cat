@@ -116,6 +116,14 @@ PrefabInstance:
       propertyPath: _ModelSettings.TurretSettings.LookingAngle
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 8057515631711652771, guid: 7b80884d11bcefe4b8b4de0d47f55be4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dba5f60e6a5ddaa4d90f317e4d77d510, type: 3}
+    - target: {fileID: 8057515631711652771, guid: 7b80884d11bcefe4b8b4de0d47f55be4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 05921d13c8e42f64dab2677ae33ed5fd, type: 2}
     - target: {fileID: 8372664924378729274, guid: 7b80884d11bcefe4b8b4de0d47f55be4, type: 3}
       propertyPath: m_Positions.Array.data[0].x
       value: 0
@@ -219,6 +227,10 @@ PrefabInstance:
     - target: {fileID: 8372664924378729274, guid: 7b80884d11bcefe4b8b4de0d47f55be4, type: 3}
       propertyPath: m_Positions.Array.data[12].y
       value: -11.349998
+      objectReference: {fileID: 0}
+    - target: {fileID: 8403792642235966627, guid: 7b80884d11bcefe4b8b4de0d47f55be4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

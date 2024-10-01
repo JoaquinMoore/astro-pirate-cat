@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 7465178895825064352, guid: 7b80884d11bcefe4b8b4de0d47f55be4, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 05921d13c8e42f64dab2677ae33ed5fd, type: 2}
+      objectReference: {fileID: 2100000, guid: b44a556a1e535e2468ff561dcb31f0f0, type: 2}
     - target: {fileID: 7564514117480580746, guid: 7b80884d11bcefe4b8b4de0d47f55be4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.09
@@ -120,6 +120,10 @@ PrefabInstance:
       propertyPath: _ModelSettings.TurretSettings.LookingAngle
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8057515631711652771, guid: 7b80884d11bcefe4b8b4de0d47f55be4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 319f1bc247f83c441aa6fdcdb2a6f6b0, type: 3}
     - target: {fileID: 8372664924378729274, guid: 7b80884d11bcefe4b8b4de0d47f55be4, type: 3}
       propertyPath: m_Positions.Array.data[0].x
       value: 0

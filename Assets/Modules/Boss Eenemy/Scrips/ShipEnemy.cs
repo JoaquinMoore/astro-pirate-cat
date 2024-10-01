@@ -85,8 +85,13 @@ namespace NPC.Boss.Ship
 
         public override void OnDeath()
         {
-            
             _anim.SetBool("Death", true);
+        }
+
+        public override void OnDeathAnim()
+        {
+            StopAllCoroutines();
+            Destroy(gameObject);
         }
 
         public override void OnDamaged()

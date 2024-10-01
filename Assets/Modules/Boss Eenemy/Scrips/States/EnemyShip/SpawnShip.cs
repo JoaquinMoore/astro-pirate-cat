@@ -10,7 +10,7 @@ namespace NPC.Boss.Ship
         private SpawnSettings _settings;
 
         private bool Spawning;
-
+        
 
         public SpawnShip(ShipEnemy boss, FiniteStateMachine fsm) : base(boss, fsm)
         {

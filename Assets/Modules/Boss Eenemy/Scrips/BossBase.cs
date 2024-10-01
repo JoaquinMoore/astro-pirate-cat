@@ -39,6 +39,7 @@ namespace NPC.Boss
 
         public virtual void OnDamaged() { }
         public virtual void OnDeath() { }
+        public virtual void OnDeathAnim() { }
 
         public virtual void SetTarget(Transform target) { }
         public virtual Transform GetTarget() { return default; }
