@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
-  m_Name: Cannon 1
+  m_Name: Cannon Vertical
   m_EditorClassIdentifier: 
-  WeaponPrefab: {fileID: 8341731157138684931, guid: bb6eb79078b3d1846b6f9c3c347e0c06, type: 3}
+  WeaponPrefab: {fileID: 5409877870343586736, guid: b683204bdd2961b468067bc3c6d771f1, type: 3}
   Triggers:
   - rid: 2248387085135249408
   HideArm: 0

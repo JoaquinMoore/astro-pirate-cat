@@ -33,6 +33,12 @@ namespace BuildSystem
             TurretFuncion.Stop();
             base.Death();
         }
+
+        public override void FullHp()
+        {
+            TurretFuncion.Resume();
+        }
+
         [System.Serializable]
         public class Settings : BuildSettings
         {

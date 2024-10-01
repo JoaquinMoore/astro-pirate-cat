@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
-  m_Name: Cannon
+  m_Name: Cannon Left
   m_EditorClassIdentifier: 
-  WeaponPrefab: {fileID: 3693368504367935500, guid: 4cdd27033f65af3449727c98a22d245c, type: 3}
+  WeaponPrefab: {fileID: 3326320117398333886, guid: bfa4815a976377a4aa45370ab2f81caf, type: 3}
   Triggers:
   - rid: 2248387085135249408
   HideArm: 0
   Magazines:
-  - rid: 6012065985212448770
+  - rid: 2248387516189114368
   FireSelector: 0
   MagazineSelector: 0
   SyncedSelector: 0
@@ -36,16 +36,16 @@ MonoBehaviour:
         name: full
         TriggerSettings:
           FireRate: 100
-    - rid: 6012065985212448770
+    - rid: 2248387516189114368
       type: {class: Magazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Magazine:
-          rid: 6012065985212448771
+          rid: 2248387516189114369
         Position: 0
-    - rid: 6012065985212448771
-      type: {class: StandardMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
+    - rid: 2248387516189114369
+      type: {class: ParabolicMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: standard mag
+        name: Parabolic mag
         settings:
           SpreadSpeedMod: 0
           MaxSpread: 0

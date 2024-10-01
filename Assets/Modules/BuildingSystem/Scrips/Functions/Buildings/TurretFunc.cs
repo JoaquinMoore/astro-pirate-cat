@@ -68,7 +68,13 @@ namespace BuildSystem
         public void Stop()
         {
             _WeaponHandler.PrimaryFireUp();
+            _WeaponHandler.gameObject.SetActive(false);
         }
+        public void Resume()
+        {
+            _WeaponHandler.gameObject.SetActive(true);
+        }
+
         public void FindEnemies()
         {
 

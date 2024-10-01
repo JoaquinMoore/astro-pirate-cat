@@ -73,6 +73,7 @@ namespace BuildSystem
             _model._visual.FullHp();
             _model._base._Col.enabled = true;
             if (_currentParticle) Object.Destroy(_currentParticle);
+            _model._model.FullHp();
         }
 
     }

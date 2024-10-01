@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1575434765329356784}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.1, y: -0.65, z: 0}
+  m_LocalPosition: {x: 13.1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -118,7 +118,7 @@ Transform:
   m_GameObject: {fileID: 5090671698649748355}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.1, y: 2.86, z: 0}
+  m_LocalPosition: {x: 6.5, y: 3.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 8341731157138684931}
   - component: {fileID: 1621064717068634998}
   m_Layer: 0
-  m_Name: CannonGun 1
+  m_Name: CannonGun Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -209,6 +209,7 @@ MonoBehaviour:
   _height: {fileID: 6453743695761311463}
   _vertexCount: 12
   _mouseaim: 0
+  _visualdebugline: 1
   references:
     version: 2
     RefIds:
@@ -258,18 +259,18 @@ LineRenderer:
   m_SortingOrder: 20
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 1.3284726, y: 0.43243027, z: 0}
-  - {x: 2.6138895, y: 0.77638865, z: 0}
-  - {x: 3.8562505, y: 1.0318747, z: 0}
-  - {x: 5.0555563, y: 1.1988888, z: 0}
-  - {x: 6.2118063, y: 1.2774305, z: 0}
-  - {x: 7.325001, y: 1.2674999, z: 0}
-  - {x: 8.39514, y: 1.169097, z: 0}
-  - {x: 9.422223, y: 0.9822221, z: 0}
-  - {x: 10.406251, y: 0.70687485, z: 0}
-  - {x: 11.347222, y: 0.34305573, z: 0}
-  - {x: 12.245139, y: -0.10923529, z: 0}
-  - {x: 13.099999, y: -0.64999914, z: 0}
+  - {x: 1.0840282, y: 0.4949999, z: 0}
+  - {x: 2.169444, y: 0.9000001, z: 0}
+  - {x: 3.2562494, y: 1.2150002, z: 0}
+  - {x: 4.344445, y: 1.44, z: 0}
+  - {x: 5.4340277, y: 1.5749998, z: 0}
+  - {x: 6.5250006, y: 1.6199999, z: 0}
+  - {x: 7.61736, y: 1.5749998, z: 0}
+  - {x: 8.711112, y: 1.44, z: 0}
+  - {x: 9.806249, y: 1.2150002, z: 0}
+  - {x: 10.902778, y: 0.9000006, z: 0}
+  - {x: 12.000693, y: 0.49500084, z: 0}
+  - {x: 13.100001, y: 0.0000009536743, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.1

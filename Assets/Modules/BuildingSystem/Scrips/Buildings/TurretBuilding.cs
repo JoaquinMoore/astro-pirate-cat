@@ -37,7 +37,7 @@ namespace BuildSystem
         {
             _controler.SelectTask(obs);
         }
-
+        
 
         private void OnDrawGizmos()
         {

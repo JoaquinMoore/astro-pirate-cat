@@ -18,10 +18,12 @@ namespace WeaponSystem
         [Header("Debug")]
         List<Vector3> _linePoints = new();
         [SerializeField] bool _mouseaim;
+        [SerializeField] bool _visualdebugline;
         Vector3 mousepos;
         void Start()
         {
             LineSmoothVisual();
+            _visualdebugline = false;
         }
 
 
@@ -99,7 +101,10 @@ namespace WeaponSystem
 
         private void OnDrawGizmos()
         {
-            //LineSmoothVisual();
+            if (_visualdebugline)
+            {
+                LineSmoothVisual();
+            }
         }
 
     }

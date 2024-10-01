@@ -51,7 +51,7 @@ namespace BuildSystem
             if (_controler._base._Col != null)
                 _controler._base._Col.enabled = false;
         }
-
+        public virtual void FullHp() { }
 
         [System.Serializable]
         public class BuildSettings
