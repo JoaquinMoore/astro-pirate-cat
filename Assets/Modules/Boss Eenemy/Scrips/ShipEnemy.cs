@@ -91,7 +91,7 @@ namespace NPC.Boss.Ship
         public override void OnDeathAnim()
         {
             StopAllCoroutines();
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
 
         public override void OnDamaged()
