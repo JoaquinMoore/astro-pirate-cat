@@ -118,11 +118,11 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: b426189c8cb75aa4285be9e29b2199d0, type: 2}
     - target: {fileID: 7922386314941039170, guid: d0a20eeb021518d4baa4898a79ad3e91, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.74
+      value: 2.82
       objectReference: {fileID: 0}
     - target: {fileID: 7922386314941039170, guid: d0a20eeb021518d4baa4898a79ad3e91, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.25
+      value: 1.22
       objectReference: {fileID: 0}
     - target: {fileID: 7922386314941039170, guid: d0a20eeb021518d4baa4898a79ad3e91, type: 3}
       propertyPath: m_LocalPosition.z
@@ -201,6 +201,7 @@ MonoBehaviour:
     ShoolSettings:
       GraduatingTime: 0.5
       particle: {fileID: 0}
+      Types: 0
     MountingSettings:
       Pos: []
       BonusFireRate: 0

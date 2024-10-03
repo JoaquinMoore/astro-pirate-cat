@@ -53,6 +53,7 @@ namespace BuildSystem
         }
         public virtual void FullHp() { }
 
+        public virtual void ReadyToAnim() { }
         [System.Serializable]
         public class BuildSettings
         {

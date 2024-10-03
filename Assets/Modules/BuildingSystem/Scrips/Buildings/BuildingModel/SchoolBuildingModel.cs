@@ -39,7 +39,10 @@ namespace BuildSystem
             _repairfunc.StartRepairs(obs);
         }
 
-
+        public override void ReadyToAnim()
+        {
+            _schoolfunc.Anims();
+        }
         [System.Serializable]
         public class Settings : BuildSettings
         {

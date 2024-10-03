@@ -12,6 +12,7 @@ namespace BuildSystem
         // Start is called before the first frame update
         void Start()
         {
+            Debug.Log("1");
             _ModelSettings.Controler = _controler;
             SetUp(new BuildingVisual(_VisualSettings), new SchoolBuildingModel(_ModelSettings));
         }

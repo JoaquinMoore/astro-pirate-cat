@@ -12,10 +12,11 @@ namespace BuildSystem
 
         public void SetUp(BuildingVisual visual, BuildingModel model, BuildingBase based)
         {
-            _base = based;
+            Debug.Log("3");
             _visual = visual;
+            _base = based;
             _model = model;
-
+            _model.ReadyToAnim();
         }
 
         public void VirtualUpdate()

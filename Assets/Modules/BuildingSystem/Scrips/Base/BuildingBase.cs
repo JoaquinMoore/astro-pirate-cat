@@ -26,6 +26,7 @@ namespace BuildSystem
 
         public void SetUp(BuildingVisual visual, BuildingModel based)
         {
+            Debug.Log("2");
             _controler.SetUp(visual, based, this);
         }
 

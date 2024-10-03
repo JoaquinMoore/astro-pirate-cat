@@ -7,9 +7,10 @@ namespace BuildSystem
     {
         private SpriteRenderer[] _renderes;
         protected Animator _animatiorControler;
-
+        public Animator AnimatiorControler => _animatiorControler;
         public BuildingVisual(VisualSettings settings)
         {
+            Debug.Log("4");
             _animatiorControler = settings.AnimatiorControler;
             _renderes = settings._Renderes;
         }
