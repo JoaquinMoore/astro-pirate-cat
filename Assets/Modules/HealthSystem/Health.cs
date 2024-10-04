@@ -30,6 +30,9 @@ namespace HealthSystem
             }
         }
 
+
+        public int PublicCurrentHealth => _currentHealth;
+        public int PublicMaxHealth => _data.MaxHealth;
         /// <summary>
         /// Reduce la vida. En caso de que llegue a 0, muere.
         /// </summary>
@@ -40,6 +43,7 @@ namespace HealthSystem
 
             if (CurrentHealth <= 0)
             {
+                Debug.Log("die");
                 OnDie?.Invoke();
             }
             else
@@ -47,6 +51,9 @@ namespace HealthSystem
                 OnDamage?.Invoke();
             }
         }
+
+
+
 
         /// <summary>
         /// Aumenta la vida.
@@ -66,6 +73,11 @@ namespace HealthSystem
         private void Awake()
         {
             CurrentHealth = _data.MaxHealth;
+        }
+
+        public GameObject getGameObject()
+        {
+            return gameObject;
         }
     }
 }

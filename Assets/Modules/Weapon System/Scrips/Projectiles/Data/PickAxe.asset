@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b972ee17589290640b3c52971d80a936, type: 3}
+  m_Name: PickAxe
+  m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 935761914064177371, guid: ce92d1e474a134c48986ee8a5a8e2c54, type: 3}
+  HardPrefCap: 1000
+  SoftPrefCap: 100
+  Damage: 60
+  MaxTargets: 5
+  ParticlePref: {fileID: 5189728838646632562, guid: 5c300366d6c7cd84f9086789002efea1, type: 3}

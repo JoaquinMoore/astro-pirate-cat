@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3004372876969096726}
   - component: {fileID: 5292457553137483080}
-  - component: {fileID: 4569863969712457196}
+  - component: {fileID: 605248252937642893}
   - component: {fileID: 2850443086408276646}
   - component: {fileID: 7278549747526012167}
   - component: {fileID: 4928126093834017490}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BulletCanon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,8 +79,8 @@ SpriteRenderer:
   m_SortingOrder: 19
   m_Sprite: {fileID: 21300000, guid: 9d923d5b79f8373459a669eacf99ecd2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+  m_FlipX: 1
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 3.5555556, y: 3.5555556}
   m_AdaptiveModeThreshold: 0.5
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4569863969712457196
+--- !u!114 &605248252937642893
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,16 +97,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6437063501052403049}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aca86b022b6dca4189b88820f668941, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fea45b7aa22a4641b46e2f60f89c2f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 0}
-  _enemyMat: {fileID: 0}
-  _enemyParticle: {fileID: 0}
-  _alliedMat: {fileID: 0}
-  _alliedParticle: {fileID: 0}
-  _speed: 1000
-  _timeDestroy: 5
+  _mat: {fileID: 0}
+  _effect: {fileID: 7614194320595016750, guid: ac8fdf62ed65aa34383df304481d26fa, type: 3}
+  _distance: 1
+  _points: []
+  _point: {x: 0, y: 0, z: 0}
+  _id: 0
 --- !u!70 &2850443086408276646
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

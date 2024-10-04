@@ -32,7 +32,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 0.6886792
+        value: 0.68868
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -43,7 +43,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.r
-    path: 
+    path: School Miner (1)
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -62,7 +62,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 0.6886792
+        value: 0.68868
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -73,7 +73,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.g
-    path: 
+    path: School Miner (1)
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -92,7 +92,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 0.6886792
+        value: 0.68868
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -103,7 +103,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.b
-    path: 
+    path: School Miner (1)
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -113,7 +113,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 21300000, guid: 7a69c4fa56cc42c479ce5e88f4d3c8cd, type: 3}
     attribute: m_Sprite
-    path: 
+    path: School Miner (1)
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -125,7 +125,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 1969426685
       attribute: 2526845255
       script: {fileID: 0}
       typeID: 212
@@ -134,7 +134,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 0
+      path: 1969426685
       attribute: 4215373228
       script: {fileID: 0}
       typeID: 212
@@ -143,7 +143,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 0
+      path: 1969426685
       attribute: 2334886179
       script: {fileID: 0}
       typeID: 212
@@ -152,7 +152,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 0
+      path: 1969426685
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -198,7 +198,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 0.6886792
+        value: 0.68868
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -209,7 +209,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.r
-    path: 
+    path: School Miner (1)
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -228,7 +228,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 0.6886792
+        value: 0.68868
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -239,7 +239,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.g
-    path: 
+    path: School Miner (1)
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -258,7 +258,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 0.6886792
+        value: 0.68868
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -269,7 +269,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.b
-    path: 
+    path: School Miner (1)
     classID: 212
     script: {fileID: 0}
     flags: 0

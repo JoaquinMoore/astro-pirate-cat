@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - SpawnPoint
+  - Wep
+  - Wep2
   layers:
   - Default
   - TransparentFX
@@ -11,10 +14,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Alies
+  - FOWMain
+  - FOWSecond
   - 
   - 
   - 
@@ -40,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: FOW
+    uniqueID: 355262643
     locked: 0
