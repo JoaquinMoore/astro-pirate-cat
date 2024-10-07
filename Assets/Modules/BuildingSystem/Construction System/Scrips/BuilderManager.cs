@@ -77,6 +77,28 @@ public class BuilderManager : MonoBehaviour
 
 
 
+    public void PlaceHolo()
+    {
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public bool Checkcolitions()
     {
