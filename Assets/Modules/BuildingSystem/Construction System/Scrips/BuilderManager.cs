@@ -25,9 +25,10 @@ public class BuilderManager : MonoBehaviour
     [SerializeField] private List<UnNamedClass1> _current_Builds_Refs;
     [SerializeField] private UnNamedClass2 _current_Prices_Gross;
 
-    [SerializeField] private Vector2 holder;
-
     [SerializeField] private Grid _grid;
+
+    [SerializeField] private Vector2 _ColSize;
+    [SerializeField] private Vector2 _ColOffset;
 
     void Start()
     {
@@ -43,17 +44,30 @@ public class BuilderManager : MonoBehaviour
 
     void Update()
     {
-        MousePosition();
+        Inputs();
 
-        if (Checkcolitions())
+
+
+
+
+
+
+
+    }
+
+
+    public void Inputs()
+    {
+        MousePosition();
+        CheckVisual();
+
+        if (Input.GetKeyDown(KeyCode.Alpha0) && Checkcolitions())
         {
-            _spriteRefs.color = _nonBlockColor;
-        }
-        else
-        {
-            _spriteRefs.color = _blockColor;
+            PlaceHolo();
         }
     }
+
+
 
 
 
@@ -94,7 +108,17 @@ public class BuilderManager : MonoBehaviour
 
 
 
-
+    public void CheckVisual()
+    {
+        if (Checkcolitions())
+        {
+            _spriteRefs.color = _nonBlockColor;
+        }
+        else
+        {
+            _spriteRefs.color = _blockColor;
+        }
+    }
 
 
 
@@ -102,7 +126,7 @@ public class BuilderManager : MonoBehaviour
 
     public bool Checkcolitions()
     {
-        return Physics2D.OverlapBox(_holoHolder.transform.position, _spriteRefs.size, 0, _placedMask) == null;
+        return Physics2D.OverlapBox(_holoHolder.transform.position + (Vector3)_ColOffset, _ColSize, 0, _placedMask) == null;
     }
 
 
