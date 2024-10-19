@@ -79,5 +79,6 @@ public enum MaterialType
 {
     mat1,
     mat2,
-    mat3
+    mat3,
+    mat4
 }
