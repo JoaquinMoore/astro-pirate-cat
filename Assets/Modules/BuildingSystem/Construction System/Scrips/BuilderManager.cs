@@ -203,6 +203,7 @@ namespace BuildSystem
                 foreach (var item in _current_Builds_Refs)
                     Destroy(item.HoloLoc);
                 _current_Builds_Refs.Clear();
+                ClearPrices();
             }
             else if(_selectedToDemolish.Count <= 0)
             {
@@ -215,10 +216,6 @@ namespace BuildSystem
             UIManager.SwichMode(_destruction);
 
 
-
-
-            //_current_Builds_Refs.Clear();
-            //_selectedToDemolish.Clear();
         }
 
 
@@ -461,6 +458,17 @@ namespace BuildSystem
 
 
         #region Functions
+
+        public void ClearPrices()
+        {
+            foreach (var item in _current_Prices_Gross_Code)
+                item.Amount = 0;
+            foreach (var item in _current_Prices_Gross_Visual)
+                item.Amount = 0;
+            UIManager.Gross(_current_Prices_Gross_Visual);
+        }
+
+
 
         public void LockInputs(bool input)
         {
