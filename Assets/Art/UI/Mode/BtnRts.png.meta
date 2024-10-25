@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a46a2456db0484e4998df59127079c31
+guid: 184e5a99eefecaf488e9a975ea663076
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Arrow BTN_0
+      name: BtnRts_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 120
-        height: 120
+        width: 178
+        height: 187
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f480470b076d3534798317cd2ae14212
-      internalID: -1885066782
+      spriteID: 9c22f23477f62e145b3d530432aafc97
+      internalID: 2014917376
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arrow BTN_1
+      name: BtnRts_1
       rect:
         serializedVersion: 2
-        x: 120
+        x: 178
         y: 0
-        width: 120
-        height: 120
+        width: 178
+        height: 187
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,29 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c02c59933286254ca9a4fd9a1843fbc
-      internalID: -383476136
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arrow BTN_2
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 120
-        height: 120
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b3e49fe18eb30e4d95c530c5010d112
-      internalID: -343383747
+      spriteID: 55e9c465729cc0b42852dd2883e79fab
+      internalID: -934002444
       vertices: []
       indices: 
       edges: []
@@ -183,9 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Arrow BTN_0: -1885066782
-      Arrow BTN_1: -383476136
-      Arrow BTN_2: -343383747
+      BtnRts_0: 2014917376
+      BtnRts_1: -934002444
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

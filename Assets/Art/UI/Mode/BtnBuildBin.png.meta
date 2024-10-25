@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a46a2456db0484e4998df59127079c31
+guid: 27e46c93dacb0ab488f4cbf454f0aead
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Arrow BTN_0
+      name: BtnBuildBin_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 120
-        height: 120
+        width: 228
+        height: 223
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f480470b076d3534798317cd2ae14212
-      internalID: -1885066782
+      spriteID: 0d426eb039d6d2c46948a4dcd3d90459
+      internalID: -2039415872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arrow BTN_1
+      name: BtnBuildBin_1
       rect:
         serializedVersion: 2
-        x: 120
+        x: 228
         y: 0
-        width: 120
-        height: 120
+        width: 228
+        height: 223
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c02c59933286254ca9a4fd9a1843fbc
-      internalID: -383476136
+      spriteID: 6c2f42f783adc37419e141478323d1f4
+      internalID: 392850139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arrow BTN_2
+      name: BtnBuildBin_2
       rect:
         serializedVersion: 2
-        x: 240
+        x: 456
         y: 0
-        width: 120
-        height: 120
+        width: 228
+        height: 223
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b3e49fe18eb30e4d95c530c5010d112
-      internalID: -343383747
+      spriteID: c363f75d05bf2a14c917c1ec9d98a14a
+      internalID: 114054313
       vertices: []
       indices: 
       edges: []
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Arrow BTN_0: -1885066782
-      Arrow BTN_1: -383476136
-      Arrow BTN_2: -343383747
+      BtnBuildBin_0: -2039415872
+      BtnBuildBin_1: 392850139
+      BtnBuildBin_2: 114054313
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
