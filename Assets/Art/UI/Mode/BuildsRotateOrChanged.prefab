@@ -246,7 +246,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 60
-  m_Sprite: {fileID: 1238925706, guid: 8c3f04adba68d7946b7e4090defb310e, type: 3}
+  m_Sprite: {fileID: -413169495, guid: 8c3f04adba68d7946b7e4090defb310e, type: 3}
   m_Color: {r: 0.16078432, g: 0.8745099, b: 0.8745099, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -274,7 +274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2305909682659461474
 RectTransform:
   m_ObjectHideFlags: 0
@@ -522,7 +522,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3812897532947496744}
   m_Layer: 0
-  m_Name: Builds Rotation
+  m_Name: BuildsRotateOrChanged
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

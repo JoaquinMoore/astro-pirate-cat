@@ -77,8 +77,9 @@ public class Materials
 
 public enum MaterialType
 {
-    mat1,
-    mat2,
-    mat3,
-    mat4
+    Croqueta,
+    Aquafish,
+    Catnipfish,
+    Goldfish,
+    CurrentCrew
 }

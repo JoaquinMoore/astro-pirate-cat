@@ -29,7 +29,8 @@ namespace BuildSystem
         [Header("Destruction Hammer Config")]
 
         private string _type;
-        [SerializeField] private HudButtons DestroyButton;
+        //[SerializeField] private HudButtons DestroyButton;
+        [SerializeField] private Button DestroyButton;
 
 
         // Start is called before the first frame update
@@ -111,8 +112,7 @@ namespace BuildSystem
         }
         public void ButtonsSetUp()
         {
-
-
+            /*
             DestroyButton.ButtonRef = Instantiate(_button, _Hud_transform).GetComponent<Button>();
             DestroyButton.Father = this;
 
@@ -125,6 +125,13 @@ namespace BuildSystem
             {
                 AddButton(item);
             }
+            */
+
+            DestroyButton.onClick.RemoveAllListeners();
+            DestroyButton.onClick.AddListener(SwitchDestroyMode);
+
+            foreach (var item in _buttons)
+                AddButton(item);
         }
 
         public void AddButton(HudButtons item)
