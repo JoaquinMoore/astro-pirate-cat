@@ -5,6 +5,6 @@ namespace DataPersistance
     [System.Serializable]
     public class GameData
     {
-        public Dictionary<string, Player.Data> playersData = new();
+        //public Dictionary<string, Player.Data> playersData = new();
     }
 }
