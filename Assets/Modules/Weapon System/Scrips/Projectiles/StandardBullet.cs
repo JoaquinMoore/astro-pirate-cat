@@ -49,16 +49,33 @@ namespace WeaponSystem
             if (hold != null)
             {
                 hold.Hurt(_damage);
+<<<<<<< HEAD
+=======
+                OnImpact();
+>>>>>>> main
                 ResetBullet();
             }
         }
 
+<<<<<<< HEAD
         public override IEnumerator DespawnTimer() { yield return new WaitForSeconds(_timer); ResetBullet(); }
 
 
         public override void ResetBullet()
         {
             Instantiate(_particle, transform.position, Quaternion.identity);
+=======
+        public virtual void OnImpact() { Instantiate(_particle, transform.position, Quaternion.identity); }
+
+
+        public override IEnumerator DespawnTimer() { yield return new WaitForSeconds(_timer); ResetBullet(); }
+
+
+
+        public override void ResetBullet()
+        {
+
+>>>>>>> main
             StopAllCoroutines();
             _rigidBody.velocity = new Vector3(0f, 0f, 0f);
             _rigidBody.angularVelocity = 0f;

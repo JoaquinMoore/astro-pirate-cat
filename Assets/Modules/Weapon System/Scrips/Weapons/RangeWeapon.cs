@@ -145,13 +145,23 @@ namespace WeaponSystem
         #region Selection
         public override void Select()
         {
+<<<<<<< HEAD
             _sprite.SetActive(true);
+=======
+            if (_sprite != null)
+                _sprite.SetActive(true);
+>>>>>>> main
             _anims.enabled = true;
             _currentTrigger.FireWasUp();
         }
         public override void Deselect()
         {
+<<<<<<< HEAD
             _sprite.SetActive(false);
+=======
+            if (_sprite != null)
+                _sprite.SetActive(false);
+>>>>>>> main
             _currentMag.Reset();
             _currentTrigger.Reset();
             _anims.enabled = false;

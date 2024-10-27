@@ -43,6 +43,7 @@ namespace HealthSystem
 
             if (CurrentHealth <= 0)
             {
+                Debug.Log("die");
                 OnDie?.Invoke();
             }
             else

@@ -18,7 +18,11 @@ namespace WeaponSystem
         float _maxSpread;
         float _currentSpread;
 
+<<<<<<< HEAD
         private IObjectPool<BaseBullet> _pool;
+=======
+        protected IObjectPool<BaseBullet> _pool;
+>>>>>>> main
 
         public virtual void AddData(Transform shootpivot, RangeWeapon wp, Settings settings)
         {
@@ -52,6 +56,10 @@ namespace WeaponSystem
             hold.transform.position = _ShootPivot.position;
             hold.transform.right = _ShootPivot.right;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
         public virtual bool CanFire() { return _CanFire; }
         public virtual float SpreadMaker() { return Random.Range(-_currentSpread, _currentSpread); }
         public virtual float RecoilReturn() { return _recoil; }
@@ -121,6 +129,10 @@ namespace WeaponSystem
         {
             base.AddData(shootpivot, wp, settings);
             CreatePool();
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
         }
 
         public override void Fire()
@@ -299,7 +311,10 @@ namespace WeaponSystem
         }
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     public class MeleMagazine : BaseMagazine
     {
         BaseBullet _bulletHolder;
@@ -345,4 +360,57 @@ namespace WeaponSystem
         }
 
     }
+<<<<<<< HEAD
+=======
+
+    public class ParabolicMagazine : BaseMagazine
+    {
+
+        public ParabolicSettings settings = new();
+        protected ParabolicWeapon _pwp;
+
+        [System.Serializable]
+        public class ParabolicSettings : Settings
+        {
+
+        }
+
+        public override void AddData(Transform shootpivot, RangeWeapon wp, Settings settings)
+        {
+            base.AddData(shootpivot, wp, settings);
+            CreatePool();
+            _pwp = _wp as ParabolicWeapon;
+        }
+
+        public override void Fire()
+        {
+            SpawnProjectile(settings);
+            base.Fire();
+        }
+
+        public override void SpawnProjectile(Settings settings)
+        {
+            BaseBullet hold = _pool.Get();
+            if (hold == null)
+                return;
+            hold.BulletsPool = _pool;
+            hold.transform.position = _ShootPivot.position;
+            hold.transform.right = _ShootPivot.right;
+
+            ParabolicExplosiveBullet var = hold as ParabolicExplosiveBullet;
+
+
+            var.ReciveList(_pwp.GivePoints());
+        }
+        public override BaseMagazine Clone()
+        {
+            return new ParabolicMagazine();
+        }
+        public override Settings GiveSettings()
+        {
+            return settings;
+        }
+
+    }
+>>>>>>> main
 }

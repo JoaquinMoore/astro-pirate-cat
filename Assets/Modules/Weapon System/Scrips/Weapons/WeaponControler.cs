@@ -25,10 +25,13 @@ namespace WeaponSystem
         public event Action<Vector2> OnImpulse = delegate { };
 
         [SerializeField] private bool _firing;
+<<<<<<< HEAD
 
         Vector3 oritnalpos;
 
 
+=======
+>>>>>>> main
         void Start()
         {
             _ArmRef = _WeaponRot.GetComponentInChildren<SpriteRenderer>();
@@ -39,16 +42,26 @@ namespace WeaponSystem
                 AddWeapons(item);
             }
 
+            if (_weapons.Count > 0)
+            {
+                EquipFirstWep();
+            }
 
+<<<<<<< HEAD
             _weapons[0].Weapon.Select();
             _currentWeapon = _weapons[0];
             _weapons[0].WeaponEquiped = true;
+=======
+>>>>>>> main
             if (_weapons.Count > 1)
                 _selectedWeapon = _weapons[1];
 
             if (_ArmRef != null)
                 _ArmRef.enabled = !_currentWeapon.HideArmOnEquiped;
+<<<<<<< HEAD
             oritnalpos = _WeaponRot.transform.position;
+=======
+>>>>>>> main
         }
 
 
@@ -65,6 +78,7 @@ namespace WeaponSystem
 
         public void TestingInput()
         {
+<<<<<<< HEAD
             bool test = false;
 
             if (Input.mousePosition.x > 500)
@@ -72,6 +86,9 @@ namespace WeaponSystem
                 test = true;
             }
             MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition), test);
+=======
+            MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+>>>>>>> main
 
 
 
@@ -130,6 +147,7 @@ namespace WeaponSystem
         }
 
 
+<<<<<<< HEAD
         public void MouseAim(Vector2 target, bool flip = false)
         {
             float rot = 0;
@@ -155,13 +173,36 @@ namespace WeaponSystem
         }
 
 
+=======
+        public void MouseAim(Vector2 target)
+        {
+
+            Vector2 pos = target - (Vector2)transform.position;
+            _WeaponRot.transform.right = pos + new Vector2(0, _currentWeapon.Weapon.WeaponSpread());
+            _currentWeapon.Weapon.MousePos(target);
+        }
+
+
+        public void EquipFirstWep()
+        {
+            _weapons[0].Weapon.Select();
+            _currentWeapon = _weapons[0];
+            _weapons[0].WeaponEquiped = true;
+        }
+
+
+>>>>>>> main
         public void ChangeSecondaryWeapon(float direction)
         {
 
             _weaponInt += (int)direction;
             _weaponInt = (int)Mathf.Repeat(_weaponInt, _weapons.Count);
 
+<<<<<<< HEAD
             if (_weapons[_weaponInt].WeaponEquiped && _weapons.Count > 2)
+=======
+            if (_weapons[_weaponInt].WeaponEquiped)
+>>>>>>> main
                 _weaponInt += (int)direction;
 
             if (_weaponInt < 0)
@@ -180,9 +221,12 @@ namespace WeaponSystem
 
         public void SwapPrimaryWeapon()
         {
+<<<<<<< HEAD
             if (_weapons.Count == 1)
                 return;
 
+=======
+>>>>>>> main
             StopAllCoroutines();
             WeaponSlot current = _currentWeapon;
             WeaponSlot selected = _selectedWeapon;
@@ -214,7 +258,10 @@ namespace WeaponSystem
             hol.Weapon = wep;
             wep.OnImpulseAction += impulse => OnImpulse(impulse);
             hol.HideArmOnEquiped = data.HideArm;
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
             _weapons.Add(hol);
         }
 
