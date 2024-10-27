@@ -5,7 +5,7 @@ using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 
-namespace HookTool
+namespace HookToolSystem
 {
     public class AnchorsBehavioursTest
     {
