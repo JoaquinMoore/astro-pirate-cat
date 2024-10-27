@@ -50,8 +50,6 @@ namespace WeaponSystem
             Magazines.Add(hold);
         }
 
-<<<<<<< HEAD
-=======
         [ContextMenu("Add Parabolic Magazine")]
         public void Parabolic()
         {
@@ -62,7 +60,6 @@ namespace WeaponSystem
             };
             Magazines.Add(hold);
         }
->>>>>>> main
     }
     [System.Serializable]
     public class Magazine
