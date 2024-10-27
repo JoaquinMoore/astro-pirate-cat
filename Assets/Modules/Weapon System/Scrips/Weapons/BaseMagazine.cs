@@ -18,7 +18,11 @@ namespace WeaponSystem
         float _maxSpread;
         float _currentSpread;
 
+<<<<<<< HEAD
+        private IObjectPool<BaseBullet> _pool;
+=======
         protected IObjectPool<BaseBullet> _pool;
+>>>>>>> main
 
         public virtual void AddData(Transform shootpivot, RangeWeapon wp, Settings settings)
         {
@@ -52,7 +56,10 @@ namespace WeaponSystem
             hold.transform.position = _ShootPivot.position;
             hold.transform.right = _ShootPivot.right;
         }
+<<<<<<< HEAD
+=======
 
+>>>>>>> main
         public virtual bool CanFire() { return _CanFire; }
         public virtual float SpreadMaker() { return Random.Range(-_currentSpread, _currentSpread); }
         public virtual float RecoilReturn() { return _recoil; }
@@ -122,7 +129,10 @@ namespace WeaponSystem
         {
             base.AddData(shootpivot, wp, settings);
             CreatePool();
+<<<<<<< HEAD
+=======
 
+>>>>>>> main
         }
 
         public override void Fire()
@@ -301,6 +311,10 @@ namespace WeaponSystem
         }
     }
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> main
     public class MeleMagazine : BaseMagazine
     {
         BaseBullet _bulletHolder;
@@ -346,6 +360,8 @@ namespace WeaponSystem
         }
 
     }
+<<<<<<< HEAD
+=======
 
     public class ParabolicMagazine : BaseMagazine
     {
@@ -396,4 +412,5 @@ namespace WeaponSystem
         }
 
     }
+>>>>>>> main
 }

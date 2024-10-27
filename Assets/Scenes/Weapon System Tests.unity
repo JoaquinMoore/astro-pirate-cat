@@ -463,7 +463,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+  m_LocalScale: {x: 0.29289, y: 0.29289, z: 0.29289}
+=======
   m_LocalScale: {x: 1, y: 1, z: 1}
+>>>>>>> main
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 858721754}
@@ -3228,7 +3232,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.262, y: 0.296, z: 0}
+<<<<<<< HEAD
+  m_LocalScale: {x: 0.29289, y: 0.29289, z: 0.29289}
+=======
   m_LocalScale: {x: 1, y: 1, z: 1}
+>>>>>>> main
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 274467022}
@@ -5455,12 +5463,20 @@ MonoBehaviour:
   _WeaponRot: {fileID: 1762866592}
   _Data:
   - {fileID: 11400000, guid: 4dfc1a29174ef534196fcadaa050fbeb, type: 2}
+<<<<<<< HEAD
+  - {fileID: 11400000, guid: dd3972ff04a9aa843bb7fcf1a2223159, type: 2}
+  - {fileID: 11400000, guid: d8f7e36812b0c5d41bd0205a2204370d, type: 2}
+  - {fileID: 11400000, guid: 5bea5b53e8454084db19dca58a55f5d4, type: 2}
+  - {fileID: 11400000, guid: 008ea312aef49214fa21d004b92197f1, type: 2}
+=======
   - {fileID: 11400000, guid: d8f7e36812b0c5d41bd0205a2204370d, type: 2}
   - {fileID: 11400000, guid: dd3972ff04a9aa843bb7fcf1a2223159, type: 2}
   - {fileID: 11400000, guid: 008ea312aef49214fa21d004b92197f1, type: 2}
   - {fileID: 11400000, guid: e122e05135971094096d3fb430e26689, type: 2}
   - {fileID: 11400000, guid: 5bea5b53e8454084db19dca58a55f5d4, type: 2}
+>>>>>>> main
   - {fileID: 11400000, guid: 54a23910e26ecbd43b41a1ee04ad7047, type: 2}
+  - {fileID: 11400000, guid: e122e05135971094096d3fb430e26689, type: 2}
   TestingInputs: 1
   _weapons: []
   _weaponInt: 0
