@@ -5,7 +5,9 @@ using UnityEngine;
 public class GameManager : Utility.SingletonMono<GameManager>
 {
     [SerializeField] private GameObject _player;
+    [field: SerializeField] public float _limitsize { get; private set; }
     public GameObject player => _player;
+
 
     [field: SerializeField] public List<MaterialsVisual> Resources { get; private set; } 
     // Start is called before the first frame update

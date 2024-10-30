@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 namespace BuildSystem
 {
@@ -12,14 +13,22 @@ namespace BuildSystem
     {
         [Header("Refs")]
         [SerializeField] private GameObject _holoHolder;
+        [SerializeField] private GameObject _VisualHoldRef;
+        [SerializeField] private GameObject _rotationRef;
+        [SerializeField] private GameObject _ArrowsRef;
+        [SerializeField] private TextMeshPro _ErrorTextRef;
+        [SerializeField] private LimitBuild _LimitSize;
 
         [Header("Visual Config")]
+        [SerializeField] private List<ErrorData> _errorTypes;
+        [SerializeField] private float _textShowTime;
         [SerializeField] private float _lerpAmount;
         [SerializeField] private Color _nonBlockColor;
         [SerializeField] private Color _blockColor;
         [SerializeField] private Vector3 _gridMouseAdjustment;
         [SerializeField] private AnimationCurve _visualRampUp;
         [SerializeField] private float _RampUpSpeed;
+        [SerializeField] private Vector3 _rotationVisualAdjustment;
 
         [Header("Config")]
         [SerializeField] private LayerMask _DetectionMask;
@@ -52,6 +61,8 @@ namespace BuildSystem
         [SerializeField] private List<BuildingData> _selectedToDemolish;
         [SerializeField] private List<BuildingData> _selectedToDemolish_Empty;
 
+        [SerializeField] private TextMeshPro _text;
+
 
         private BoxCollider2D _colRefDest;
         private BuildingBase _buildRefDest;
@@ -60,17 +71,25 @@ namespace BuildSystem
 
         public static BuildManagerUI UIManager;
 
+        private IEnumerator _error;
+
+        private float _limitsize;
+
         [SerializeField] private List<SaveData> _SaveList = new();
         
+
+
 
         void Start()
         {
             _grid = GetComponent<Grid>();
+            _text = _rotationRef.GetComponentInChildren<TextMeshPro>();
+            _rotationRef.SetActive(false);
             BuildManagerUI.Manager = this;
             UIManager.SwichMode(false);
             _spriteRefs = _holoHolder.GetComponent<SpriteRenderer>();
             _spriteRefs.color = new Color(0, 0, 0, 0);
-
+            _limitsize = GameManager.Instance._limitsize;
             foreach (var item in GameManager.Instance.Resources)
             {
                 Materials holder = new() { Type = item.Type, };
@@ -79,6 +98,7 @@ namespace BuildSystem
                 _current_Prices_Gross_Code.Add(holder);
                 _current_Prices_Gross_Visual.Add(holder2);
             }
+            _ErrorTextRef.gameObject.SetActive(false);
         }
 
 
@@ -86,6 +106,10 @@ namespace BuildSystem
         {
 
             ScreenControls();
+
+            if (_limitsize != GameManager.Instance._limitsize)
+                _limitsize = GameManager.Instance._limitsize;
+
 
             if (_lockUI)
                 return;
@@ -131,10 +155,19 @@ namespace BuildSystem
             MousePosition();
             CheckVisual();
 
-            if (Input.GetKeyDown(KeyCode.Mouse0) && Checkcolitions())
+            if (Input.GetKeyDown(KeyCode.Mouse0) && Checkcolitions() && CheckDistance())
             {
                 PlaceHolo();
             }
+            else if(Input.GetKeyDown(KeyCode.Mouse0) && !Checkcolitions() && CheckDistance())
+            {
+                ErrorFinder(ErrorType.PlaceError);
+            }
+            else if (Input.GetKeyDown(KeyCode.Mouse0) && Checkcolitions() && !CheckDistance())
+            {
+                ErrorFinder(ErrorType.Distance);
+            }
+
 
             if (Input.mouseScrollDelta.y != 0)
             {
@@ -227,6 +260,10 @@ namespace BuildSystem
             _holoHolder.transform.position = Vector3.Lerp(_holoHolder.transform.position, _grid.CellToWorld(gridposs) + new Vector3(_grid.cellSize.x / 2, _grid.cellSize.y / 2, 0), Time.deltaTime * _lerpAmount);
             _holoHolder.transform.position = new Vector3(_holoHolder.transform.position.x, _holoHolder.transform.position.y, 0);
 
+            Vector3 hold = new Vector3(0, -_ColSize.y, 0);
+            _VisualHoldRef.transform.position = Vector3.Lerp(_VisualHoldRef.transform.position, _grid.CellToWorld(gridposs) + new Vector3(_grid.cellSize.x / 2, _grid.cellSize.y / 2, 0) +_rotationVisualAdjustment + hold, Time.deltaTime * _lerpAmount);
+            _VisualHoldRef.transform.position = new Vector3(_VisualHoldRef.transform.position.x, _VisualHoldRef.transform.position.y, 0);
+
         }
 
 
@@ -245,11 +282,29 @@ namespace BuildSystem
         }
 
 
-        public void GetData(BuildData data)
+        public void GetData(BuildData data, bool variants)
         {
             if (data == null)
                 return;
             _dataRefs = data;
+
+            if (_dataRefs.BuildRefs.Count > 1)
+            {
+                _rotationRef.SetActive(true);
+                if (variants)
+                {
+                    _ArrowsRef.SetActive(false);
+                    _text.text = "Variaciones";
+                }
+                else
+                {
+                    _text.text = "Rotacion";
+                    _ArrowsRef.SetActive(true);
+                }
+
+            }
+            else
+                _rotationRef.SetActive(false);
 
             //misc resets
             if (_destruction)
@@ -283,6 +338,13 @@ namespace BuildSystem
             StopAllCoroutines();
             AddToGross(holder.Prices);
             _current_Builds_Refs.Add(holder);
+
+
+            if (CheckGrossOverFlow())
+            {
+                Debug.Log("aaa");
+                ErrorFinder(ErrorType.NotEnoughtMoney);
+            }
         }
 
 
@@ -571,7 +633,8 @@ namespace BuildSystem
 
         public void CheckVisual()
         {
-            if (Checkcolitions())
+            Debug.Log(Checkcolitions() && CheckDistance());
+            if (Checkcolitions() && CheckDistance())
             {
                 _spriteRefs.color = _nonBlockColor;
             }
@@ -602,7 +665,10 @@ namespace BuildSystem
             return Physics2D.OverlapBox(_holoHolder.transform.position + (Vector3)_ColOffset, _ColSize, 0, _DetectionMask) == null;
         }
 
-
+        public bool CheckDistance()
+        {
+            return Vector3.Distance(_holoHolder.transform.position, transform.position) < _limitsize;
+        }
         public BuildingBase FindPlacedObjects()
         {
             var holder = Physics2D.OverlapBox(Camera.main.ScreenToWorldPoint(Input.mousePosition), _DestroyDetectionBoxSize, 0, _BuildingMask);
@@ -610,10 +676,38 @@ namespace BuildSystem
                 return holder.GetComponentInParent<BuildingBase>();
             else
                 return null;
-
-
         }
 
+        public void ErrorFinder(ErrorType type)
+        {
+            if (_error != null)
+                StopCoroutine(_error);
+            _error = ErrorShower(_errorTypes.Find(x => x.Type == type));
+            StartCoroutine(_error);
+        }
+
+
+        public IEnumerator ErrorShower(ErrorData error)
+        {
+            _ErrorTextRef.text = error.ErrorDescription;
+            _ErrorTextRef.gameObject.SetActive(true);
+            yield return new WaitForSeconds(_textShowTime);
+            _ErrorTextRef.gameObject.SetActive(false);
+            Debug.Log("patata");
+        }
+
+        public bool CheckGrossOverFlow()
+        {
+            foreach (var item in _current_Prices_Gross_Code)
+            {
+                if (GameManager.Instance.CheckAmount(item))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
         #endregion
 
 
@@ -633,6 +727,21 @@ namespace BuildSystem
             public GameObject GameBuildRef;
             public Vector2 Pos;
             public List<Materials> Prices = new();
+        }
+
+        [System.Serializable]
+        public class ErrorData
+        {
+            [TextArea(4, 20)] public string ErrorDescription;
+            public ErrorType Type;
+        }
+
+        public enum ErrorType
+        {
+            PlaceError,
+            NotEnoughtMoney,
+            Distance,
+            Type4
         }
     }
 }

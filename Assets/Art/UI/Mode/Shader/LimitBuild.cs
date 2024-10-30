@@ -7,14 +7,20 @@ public class LimitBuild : MonoBehaviour
 
     public void Start()
     {
+        _size = GameManager.Instance._limitsize;
         _mat.SetFloat("_ScaleOrigin", transform.localScale.x > transform.localScale.y ? transform.localScale.x : transform.localScale.y);
         DrawCircle(_size);
     }
 
     private void Update()
     {
-        DrawCircle(_size);
+        if (_size != GameManager.Instance._limitsize)
+        {
+            _size = GameManager.Instance._limitsize;
+            DrawCircle(_size);
+        }
     }
+
 
 #if UNITY_EDITOR
     private void OnValidate()

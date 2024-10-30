@@ -15,6 +15,7 @@ namespace BuildSystem
         public static BuilderManager Manager;
 
         [Header("Config")]
+        [SerializeField] private HudButtons DestroyButton;
         [SerializeField] private List<HudButtons> _buttons = new();
         [SerializeField] private List<ResourceHud> _resources = new();
 
@@ -30,7 +31,7 @@ namespace BuildSystem
 
         private string _type;
         //[SerializeField] private HudButtons DestroyButton;
-        [SerializeField] private Button DestroyButton;
+
 
 
         // Start is called before the first frame update
@@ -112,23 +113,15 @@ namespace BuildSystem
         }
         public void ButtonsSetUp()
         {
-            /*
+
             DestroyButton.ButtonRef = Instantiate(_button, _Hud_transform).GetComponent<Button>();
             DestroyButton.Father = this;
-
             DestroyButton.SetUp();
-
+            DestroyButton._event.triggers.Clear();
             DestroyButton.ButtonRef.onClick.RemoveAllListeners();
             DestroyButton.ButtonRef.onClick.AddListener(SwitchDestroyMode);
 
-            foreach (var item in _buttons)
-            {
-                AddButton(item);
-            }
-            */
 
-            DestroyButton.onClick.RemoveAllListeners();
-            DestroyButton.onClick.AddListener(SwitchDestroyMode);
 
             foreach (var item in _buttons)
                 AddButton(item);
@@ -137,9 +130,6 @@ namespace BuildSystem
         public void AddButton(HudButtons item)
         {
             item.ButtonRef = Instantiate(_button, _Hud_transform).GetComponent<Button>();
-
-
-
 
             item.Father = this;
             item.SetUp();
@@ -152,9 +142,9 @@ namespace BuildSystem
         }
 
 
-        public void SendData(BuildData Data)
+        public void SendData(BuildData Data, bool variants)
         {
-            Manager.GetData(Data);
+            Manager.GetData(Data, variants);
         }
 
 
@@ -167,7 +157,7 @@ namespace BuildSystem
                 holder.Text.text = items.Amount.ToString();
                 holder.Pref.SetActive(true);
             }
-            DescriptionHolder.Header.text = button.Name;
+            DescriptionHolder.Header.text = button.name;
             DescriptionHolder.Text.text = button.Description;
 
             DescriptionHolder.Holder.gameObject.transform.position = button.ButtonRef.transform.position;
@@ -228,17 +218,16 @@ namespace BuildSystem
     [System.Serializable]
     public class HudButtons
     {
+        public string name;
+        [TextArea(4, 20)] public string Description;
         [HideInInspector] public Button ButtonRef;
-        [Header("Data Config")]
         public BuildData Data = new();
-        public string Name;
-        [TextArea(4,20)]public string Description;
 
+        [HideInInspector] public EventTrigger _event;
 
         [Header("visual Config")]
         public Sprite IconSprite;
-        
-
+        public bool Variants;
 
         [HideInInspector] public BuildManagerUI Father;
         public void SetUp()
@@ -246,35 +235,36 @@ namespace BuildSystem
             //set up visual
             ButtonRef.onClick.AddListener(Call);
             Image maintext = ButtonRef.gameObject.GetComponent<Image>();
-            maintext.color = Color.blue;
 
             var hold = ButtonRef.gameObject.GetComponentsInChildren<Image>();
             foreach (var itema in hold)
             {
                 if (itema != maintext)
                     itema.sprite = IconSprite;
+                Debug.Log(itema.sprite);
             }
-            
+
 
             //set up event stuff fml
 
-            EventTrigger eventhold = ButtonRef.GetComponent<EventTrigger>();
+            _event = ButtonRef.GetComponent<EventTrigger>();
             EventTrigger.Entry hover = new EventTrigger.Entry() { eventID = EventTriggerType.PointerEnter };
             EventTrigger.Entry exitHover = new EventTrigger.Entry() { eventID = EventTriggerType.PointerExit };
             hover.callback.AddListener(OnHover);
             exitHover.callback.AddListener(OnExit);
-            eventhold.triggers.Add(hover);
-            eventhold.triggers.Add(exitHover);
+            _event.triggers.Add(hover);
+            _event.triggers.Add(exitHover);
 
         }
 
         public void Call()
         {
-            Father.SendData(Data);
+            Father.SendData(Data, Variants);
         }
 
         public void OnHover(BaseEventData data)
         {
+            Debug.Log("cal");
             Father.OnHover(this);
         }
         public void OnExit(BaseEventData data)
