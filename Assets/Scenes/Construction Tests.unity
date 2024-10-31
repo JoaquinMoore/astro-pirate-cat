@@ -1794,17 +1794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4c18d7fe5e68c4d8d384e6b0333188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestroyButton:
-    name: 
-    Description: 
-    ButtonRef: {fileID: 0}
-    Data:
-      BuildRefs: []
-      Prices: []
-    _event: {fileID: 0}
-    IconSprite: {fileID: 0}
-    Variants: 0
-    Father: {fileID: 0}
+  _destroyButtonSprite: {fileID: 0}
   _buttons:
   - name: 
     Description: algo
@@ -2512,6 +2502,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9077412915698062053, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
+      propertyPath: _destroyButtonSprite
+      value: 
+      objectReference: {fileID: -2039415872, guid: 27e46c93dacb0ab488f4cbf454f0aead, type: 3}
     - target: {fileID: 9077412915698062053, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
       propertyPath: _buttons.Array.data[6].Variants
       value: 1

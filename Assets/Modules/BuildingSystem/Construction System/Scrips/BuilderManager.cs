@@ -325,8 +325,6 @@ namespace BuildSystem
 
         public void PlaceHolo()
         {
-
-
             BuildingData holder = new();
             Vector2 pos = GetGridPoss();
 
@@ -633,7 +631,6 @@ namespace BuildSystem
 
         public void CheckVisual()
         {
-            Debug.Log(Checkcolitions() && CheckDistance());
             if (Checkcolitions() && CheckDistance())
             {
                 _spriteRefs.color = _nonBlockColor;

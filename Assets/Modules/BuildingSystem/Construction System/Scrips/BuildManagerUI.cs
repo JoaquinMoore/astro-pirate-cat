@@ -15,7 +15,7 @@ namespace BuildSystem
         public static BuilderManager Manager;
 
         [Header("Config")]
-        [SerializeField] private HudButtons DestroyButton;
+        [SerializeField] private Sprite _destroyButtonSprite;
         [SerializeField] private List<HudButtons> _buttons = new();
         [SerializeField] private List<ResourceHud> _resources = new();
 
@@ -27,8 +27,8 @@ namespace BuildSystem
         [SerializeField] private DestrictionStuff DescriptionHolder;
 
 
-        [Header("Destruction Hammer Config")]
-
+        //[Header("Destruction Hammer Config")]
+        private HudButtons _destroyButton = new();
         private string _type;
         //[SerializeField] private HudButtons DestroyButton;
 
@@ -113,14 +113,13 @@ namespace BuildSystem
         }
         public void ButtonsSetUp()
         {
-
-            DestroyButton.ButtonRef = Instantiate(_button, _Hud_transform).GetComponent<Button>();
-            DestroyButton.Father = this;
-            DestroyButton.SetUp();
-            DestroyButton._event.triggers.Clear();
-            DestroyButton.ButtonRef.onClick.RemoveAllListeners();
-            DestroyButton.ButtonRef.onClick.AddListener(SwitchDestroyMode);
-
+            _destroyButton.IconSprite = _destroyButtonSprite;
+            _destroyButton.ButtonRef = Instantiate(_button, _Hud_transform).GetComponent<Button>();
+            _destroyButton.Father = this;
+            _destroyButton.SetUp();
+            //DestroyButton._event.triggers.Clear();
+            _destroyButton.ButtonRef.onClick.RemoveAllListeners();
+            _destroyButton.ButtonRef.onClick.AddListener(SwitchDestroyMode);
 
 
             foreach (var item in _buttons)
@@ -150,6 +149,12 @@ namespace BuildSystem
 
         public void OnHover(HudButtons button)
         {
+            if (button.Data.BuildRefs.Count == 0)
+            {
+                ChangeLock(true);
+                return;
+            }
+
 
             foreach (var items in button.Data.Prices)
             {
@@ -176,10 +181,10 @@ namespace BuildSystem
         }
 
 
-
         public void ChangeLock(bool intput)
         {
             Manager.LockInputs(intput);
+            Debug.Log(intput);
         }
 
         [System.Serializable]
@@ -271,5 +276,7 @@ namespace BuildSystem
         {
             Father.HoverExit();
         }
+
+
     }
 }
