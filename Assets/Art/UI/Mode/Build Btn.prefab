@@ -386,15 +386,15 @@ PrefabInstance:
     - target: {fileID: 6917381683919847737, guid: 2bf3dcd74522d554d85c38d35054bc51, type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
       value: 
-      objectReference: {fileID: 1262018604, guid: 0a3996138cf8e5343bf6a133cd54feec, type: 3}
+      objectReference: {fileID: 1020859210, guid: 0a3996138cf8e5343bf6a133cd54feec, type: 3}
     - target: {fileID: 6917381683919847737, guid: 2bf3dcd74522d554d85c38d35054bc51, type: 3}
       propertyPath: m_SpriteState.m_SelectedSprite
       value: 
-      objectReference: {fileID: 1262018604, guid: 0a3996138cf8e5343bf6a133cd54feec, type: 3}
+      objectReference: {fileID: 1020859210, guid: 0a3996138cf8e5343bf6a133cd54feec, type: 3}
     - target: {fileID: 6917381683919847737, guid: 2bf3dcd74522d554d85c38d35054bc51, type: 3}
       propertyPath: m_SpriteState.m_HighlightedSprite
       value: 
-      objectReference: {fileID: 1020859210, guid: 0a3996138cf8e5343bf6a133cd54feec, type: 3}
+      objectReference: {fileID: 1262018604, guid: 0a3996138cf8e5343bf6a133cd54feec, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
