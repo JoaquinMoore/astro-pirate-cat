@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4c18d7fe5e68c4d8d384e6b0333188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _destroyButtonSprite: {fileID: 0}
+  _destroyButtonSprite: {fileID: 526166588, guid: b695d02448d5e844a805312b3c8db20a, type: 3}
   _buttons:
   - name: Mine
     Description: "Explota cuando un enemigo pasa por encima. Su radio de da\xF1o
@@ -147,7 +147,8 @@ MonoBehaviour:
     Variants: 0
     Father: {fileID: 0}
   - name: Capsuler
-    Description: Crea tripulantes cada cierto tiempo.
+    Description: Crea tripulantes cada cierto tiempo. Debes sacar al tripulante creado
+      para que cree uno nuevo.
     ButtonRef: {fileID: 0}
     Data:
       BuildRefs:
@@ -181,12 +182,13 @@ MonoBehaviour:
     Data:
       BuildRefs:
       - {fileID: 2160764772320258808, guid: a5c6762990f73d54ab75be1a568684f8, type: 3}
+      - {fileID: 2160764772320258808, guid: a5c6762990f73d54ab75be1a568684f8, type: 3}
       Prices:
       - Type: 0
         Amount: 60
     _event: {fileID: 0}
     IconSprite: {fileID: -602472642, guid: b695d02448d5e844a805312b3c8db20a, type: 3}
-    Variants: 0
+    Variants: 1
     Father: {fileID: 0}
   _resources:
   - Ref: {fileID: 6130574146274150835}
@@ -2211,7 +2213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3047922222171170130, guid: 57ba9b114521f4040b8adb0fede16a44, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 54.21
+      value: 41.33
       objectReference: {fileID: 0}
     - target: {fileID: 3047922222171170130, guid: 57ba9b114521f4040b8adb0fede16a44, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2219,7 +2221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3047922222171170130, guid: 57ba9b114521f4040b8adb0fede16a44, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 81.215
+      value: 54.095
       objectReference: {fileID: 0}
     - target: {fileID: 3047922222171170130, guid: 57ba9b114521f4040b8adb0fede16a44, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2235,7 +2237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3462096327309373696, guid: 57ba9b114521f4040b8adb0fede16a44, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 42.11
+      value: 21.43
       objectReference: {fileID: 0}
     - target: {fileID: 3462096327309373696, guid: 57ba9b114521f4040b8adb0fede16a44, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2243,7 +2245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3462096327309373696, guid: 57ba9b114521f4040b8adb0fede16a44, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 21.055
+      value: 10.715
       objectReference: {fileID: 0}
     - target: {fileID: 3462096327309373696, guid: 57ba9b114521f4040b8adb0fede16a44, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2333,9 +2335,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7215507197989321902, guid: 57ba9b114521f4040b8adb0fede16a44, type: 3}
+      propertyPath: m_text
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7226504957154117806, guid: 57ba9b114521f4040b8adb0fede16a44, type: 3}
       propertyPath: m_Name
       value: Aqua PriceBuild
+      objectReference: {fileID: 0}
+    - target: {fileID: 9107706479121590524, guid: 57ba9b114521f4040b8adb0fede16a44, type: 3}
+      propertyPath: m_text
+      value: + 1020
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
