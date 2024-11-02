@@ -25,15 +25,7 @@ Transform:
   m_GameObject: {fileID: 41244469859357897}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-<<<<<<< HEAD
-<<<<<<<< HEAD:Assets/Modules/Weapon System/Scrips/Weapons/Prefs/BonIcher.prefab
   m_LocalPosition: {x: 0.744, y: 0.218, z: 0}
-========
-  m_LocalPosition: {x: 0.381, y: 0.175, z: 0}
->>>>>>>> main:Assets/Modules/Weapon System/Scrips/Weapons/Prefs/Fishaber.prefab
-=======
-  m_LocalPosition: {x: 0.744, y: 0.218, z: 0}
->>>>>>> main
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -65,16 +57,8 @@ Transform:
   m_GameObject: {fileID: 570117505774647385}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.262, y: 0.296, z: 0}
-<<<<<<< HEAD
-<<<<<<<< HEAD:Assets/Modules/Weapon System/Scrips/Weapons/Prefs/BonIcher.prefab
-  m_LocalScale: {x: 0.29288998, y: 0.29288998, z: 0.29288998}
-========
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
->>>>>>>> main:Assets/Modules/Weapon System/Scrips/Weapons/Prefs/Fishaber.prefab
-=======
-  m_LocalScale: {x: 1, y: 1, z: 1}
->>>>>>> main
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 671496118266474120}
@@ -120,7 +104,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: bea25ef2a8dc5b940a4507cf57be3a35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -144,15 +128,7 @@ GameObject:
   - component: {fileID: 1440629363716621446}
   - component: {fileID: 4117680519439271242}
   m_Layer: 0
-<<<<<<< HEAD
-<<<<<<<< HEAD:Assets/Modules/Weapon System/Scrips/Weapons/Prefs/BonIcher.prefab
   m_Name: BonIcher
-========
-  m_Name: Fishaber
->>>>>>>> main:Assets/Modules/Weapon System/Scrips/Weapons/Prefs/Fishaber.prefab
-=======
-  m_Name: BonIcher
->>>>>>> main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -278,19 +254,9 @@ Transform:
   m_GameObject: {fileID: 7064147869198982557}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-<<<<<<< HEAD
-<<<<<<<< HEAD:Assets/Modules/Weapon System/Scrips/Weapons/Prefs/BonIcher.prefab
-  m_LocalPosition: {x: 0.847, y: -0.95, z: 0}
-  m_LocalScale: {x: 1.060364, y: 1.060364, z: 1.060364}
-========
-  m_LocalPosition: {x: 0.256, y: -0.269, z: 0}
+  m_LocalPosition: {x: 0.311, y: -0.287, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
->>>>>>>> main:Assets/Modules/Weapon System/Scrips/Weapons/Prefs/Fishaber.prefab
-=======
-  m_LocalPosition: {x: 0.233, y: -0.271, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
->>>>>>> main
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 890142701035714272}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -334,17 +300,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-<<<<<<< HEAD
-  m_SortingOrder: 0
-<<<<<<<< HEAD:Assets/Modules/Weapon System/Scrips/Weapons/Prefs/BonIcher.prefab
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: b580ec39f035aee4aa87d97883ca1185, type: 3}
-========
-  m_Sprite: {fileID: 21300000, guid: c886724218077d84b946f3fca8b9bab6, type: 3}
->>>>>>>> main:Assets/Modules/Weapon System/Scrips/Weapons/Prefs/Fishaber.prefab
-=======
-  m_SortingOrder: 13
-  m_Sprite: {fileID: 21300000, guid: b580ec39f035aee4aa87d97883ca1185, type: 3}
->>>>>>> main
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
