@@ -16,6 +16,7 @@ MonoBehaviour:
   Triggers:
   - rid: 6012065985212448772
   - rid: 6012065985212448774
+  HideArm: 0
   Magazines:
   - rid: 6012065985212448770
   FireSelector: 0
@@ -37,7 +38,7 @@ MonoBehaviour:
         settings:
           SpreadSpeedMod: 1
           MaxSpread: 1
-          Recoil: 0
+          Recoil: 2
           BulletData: {fileID: 11400000, guid: 4988db502203fea4597058185f7e828b, type: 2}
     - rid: 6012065985212448772
       type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}

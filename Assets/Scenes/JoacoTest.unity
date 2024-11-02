@@ -390,45 +390,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &870655589 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1736234634865184432, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-  m_PrefabInstance: {fileID: 1987763551}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &870655595 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7002139680976742402, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-  m_PrefabInstance: {fileID: 1987763551}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &870655596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 870655589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9900e47b138f1f94db92edc6a9a03681, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _WeaponSpawner: {fileID: 870655595}
-  _WeaponRot: {fileID: 870655595}
-  _Data:
-  - {fileID: 11400000, guid: 5bea5b53e8454084db19dca58a55f5d4, type: 2}
-  TestingInputs: 1
-  _weapons: []
-  _weaponInt: 0
-  _currentWeapon:
-    Weapon: {fileID: 0}
-    WeaponEquiped: 0
-    HideArmOnEquiped: 0
-  _selectedWeapon:
-    Weapon: {fileID: 0}
-    WeaponEquiped: 0
-    HideArmOnEquiped: 0
-  _ArmRef: {fileID: 0}
-  _firing: 0
 --- !u!1001 &1987763551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -440,10 +401,6 @@ PrefabInstance:
     - target: {fileID: 1736234634865184432, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: _approachSpeed
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7002139680976742402, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
       propertyPath: m_LocalPosition.x
@@ -489,29 +446,10 @@ PrefabInstance:
       propertyPath: m_Distance
       value: 4.6496587
       objectReference: {fileID: 0}
-    - target: {fileID: 9109213566697081313, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9109213566697081313, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9109213566697081313, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9109213566697081313, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: m_SleepingMode
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1736234634865184432, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 870655596}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
 --- !u!1 &2025227230
 GameObject:
