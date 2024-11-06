@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
@@ -23,15 +24,22 @@ namespace BuildSystem
         [SerializeField] private string _resourcename;
 
         [SerializeField] private GameObject _button;
+        [SerializeField] private GameObject _Trashbutton;
         [SerializeField] private Transform _Hud_transform;
         [SerializeField] private DestrictionStuff DescriptionHolder;
 
+        [Header("Visual")]
+        [SerializeField, Tooltip("Tiempo para que se apague la visual cuando pasa el raton por ensima")] 
+        private float _UnhoverVisualButton;
 
         //[Header("Destruction Hammer Config")]
         private HudButtons _destroyButton = new();
         private string _type;
-        //[SerializeField] private HudButtons DestroyButton;
+        private HudButtons _currentButton;
 
+        private bool fuck;
+        //[SerializeField] private HudButtons DestroyButton;
+        
 
 
         // Start is called before the first frame update
@@ -42,7 +50,7 @@ namespace BuildSystem
             int id = 0;
             DescriptionHolder.Holder.gameObject.SetActive(false);
 
-
+            //VisualUpdate();
             foreach (var item in _resources)
             {
                 
@@ -52,6 +60,7 @@ namespace BuildSystem
                 item.Price = stuff.Find(x => x.gameObject.name == _pricename);
                 item.Resource = stuff.Find(x => x.gameObject.name == _resourcename);
 
+                item.Price.color = Color.red;
                 item.Mat = GameManager.Instance.Resources[id];
 
                 GameObject holder = Instantiate(DescriptionHolder.PricePref, DescriptionHolder.PriceTransform);
@@ -66,43 +75,95 @@ namespace BuildSystem
                 hold.Pref.SetActive(false);
                 DescriptionHolder.Prices.Add(hold);
 
-
-
-
-
-
                 id++;
-            }
 
+                item.Price.gameObject.SetActive(false);
+                //item.Ref.SetActive(false);
+            }
+            VisualUpdate();
         }
+
+        private void OnEnable()
+        {
+            fuck = false;
+            _currentButton.Unselected();
+            _currentButton = null;
+        }
+        private void OnDisable()
+        {
+            fuck = false;
+        }
+
 
         // Update is called once per frame
         void Update()
         {
-
+            if (_currentButton != null)
+            {
+                _currentButton.Selected();
+            }
         }
 
         private void FixedUpdate()
         {
             VisualUpdate();
+            if (fuck == false)
+                Visualfix();
+
         }
 
         public void SwichMode(bool mode)
         {
             if (mode)
+            {
                 _type = "+ ";
+                foreach (var item in _resources)
+                {
+                    item.Price.color = Color.green;
+                }
+                if (_currentButton != null)
+                    _currentButton.Unselected();
+            }
             else
+            {
                 _type = "- ";
+                foreach (var item in _resources)
+                {
+                    item.Price.color = Color.red;
+                }
+            }
+
         }
 
         public void VisualUpdate()
         {
             foreach (var item in _resources)
             {
+                if (item.AddedValue > 0)
+                    item.Price.gameObject.SetActive(true);
                 item.Resource.text = item.Mat.Amount.ToString();
                 item.Price.text = _type + item.AddedValue.ToString();
             }
+
+            foreach (var item in _buttons)
+            {
+                if (item._text == null)
+                    continue;
+                item._text.text = item.Data.CurrentBuildingAmount + "/" + item.Data.BuildingAmount;
+            }
         }
+
+        public void Visualfix()
+        {
+            foreach (var item in _resources)
+            {
+                item.Resource.gameObject.SetActive(false);
+
+                item.Resource.gameObject.SetActive(true);
+            }
+            fuck = true;
+        }
+
 
         public void Gross(List<Materials> mats)
         {
@@ -114,10 +175,9 @@ namespace BuildSystem
         public void ButtonsSetUp()
         {
             _destroyButton.IconSprite = _destroyButtonSprite;
-            _destroyButton.ButtonRef = Instantiate(_button, _Hud_transform).GetComponent<Button>();
+            _destroyButton.ButtonRef = Instantiate(_Trashbutton, _Hud_transform).GetComponent<Button>();
             _destroyButton.Father = this;
             _destroyButton.SetUp();
-            //DestroyButton._event.triggers.Clear();
             _destroyButton.ButtonRef.onClick.RemoveAllListeners();
             _destroyButton.ButtonRef.onClick.AddListener(SwitchDestroyMode);
 
@@ -131,6 +191,7 @@ namespace BuildSystem
             item.ButtonRef = Instantiate(_button, _Hud_transform).GetComponent<Button>();
 
             item.Father = this;
+            item._timer = _UnhoverVisualButton;
             item.SetUp();
         }
 
@@ -141,9 +202,34 @@ namespace BuildSystem
         }
 
 
-        public void SendData(BuildData Data, bool variants)
+        public void SendData(BuildData Data, bool variants, HudButtons button)
         {
+            if (_currentButton != null)
+                _currentButton.Unselected();
             Manager.GetData(Data, variants);
+            _currentButton = button;
+        }
+
+
+        public void ChangeValueData(BuildingBase building, bool add)
+        {
+            foreach (var item in _buttons)
+            {
+                var hold = item.Data.BuildRefs.Find(x => x == building.gameObject);
+                var hold2 = item.Data.BuildRefs.Find(x => x == PrefabUtility.GetPrefabInstanceHandle(building));
+                Debug.Log(PrefabUtility.GetPrefabInstanceHandle(building));
+                if (hold != null || hold2 != null)
+                {
+                    if (add)
+                        item.Data.CurrentBuildingAmount++;
+                    else
+                        item.Data.CurrentBuildingAmount--;
+                    Debug.Log(item.Data.CurrentBuildingAmount);
+                    break;
+                }
+
+            }
+
         }
 
 
@@ -226,13 +312,21 @@ namespace BuildSystem
         public string name;
         [TextArea(4, 20)] public string Description;
         [HideInInspector] public Button ButtonRef;
+
+
+
         public BuildData Data = new();
 
         [HideInInspector] public EventTrigger _event;
-
+        [HideInInspector] public TextMeshProUGUI _text;
+        [HideInInspector] public Animator _anim;
+        [HideInInspector] public float _timer;
         [Header("visual Config")]
         public Sprite IconSprite;
         public bool Variants;
+
+        private bool selected;
+        private IEnumerator animsel;
 
         [HideInInspector] public BuildManagerUI Father;
         public void SetUp()
@@ -240,7 +334,7 @@ namespace BuildSystem
             //set up visual
             ButtonRef.onClick.AddListener(Call);
             Image maintext = ButtonRef.gameObject.GetComponent<Image>();
-
+            _anim = ButtonRef.GetComponent<Animator>();
             var hold = ButtonRef.gameObject.GetComponentsInChildren<Image>();
             foreach (var itema in hold)
             {
@@ -249,6 +343,7 @@ namespace BuildSystem
                 Debug.Log(itema.sprite);
             }
 
+            _text = ButtonRef.GetComponentInChildren<TextMeshProUGUI>();
 
             //set up event stuff fml
 
@@ -264,19 +359,45 @@ namespace BuildSystem
 
         public void Call()
         {
-            Father.SendData(Data, Variants);
+            Father.SendData(Data, Variants, this);
+            _anim.SetTrigger("SelectedT");
         }
 
         public void OnHover(BaseEventData data)
         {
-            Debug.Log("cal");
             Father.OnHover(this);
         }
         public void OnExit(BaseEventData data)
         {
             Father.HoverExit();
+            if (!selected)
+            {
+                if (animsel != null)
+                    Father.StopCoroutine(animsel);
+
+                animsel = unHoveredTimer();
+                Father.StartCoroutine(animsel);
+            }
+                
+        }
+
+        public void Selected()
+        {
+
+            selected = true;
+            _anim.SetTrigger("Selected");
+        }
+        public void Unselected()
+        {
+            selected = false;
+            _anim.SetTrigger("NormalT");
         }
 
 
+        IEnumerator unHoveredTimer()
+        {
+            yield return new WaitForSeconds(_timer);
+            _anim.SetTrigger("NormalT");
+        }
     }
 }

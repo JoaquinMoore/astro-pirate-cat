@@ -379,11 +379,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35231522}
   m_CullTransparentMesh: 1
---- !u!1 &40264633 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8551386558915332207, guid: c6f4cf4d663d16b4c8b0fcd10fe7e42e, type: 3}
-  m_PrefabInstance: {fileID: 354616981}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &56489968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1911712063816069599, guid: c8da2a006798370459dce6c6e154af4c, type: 3}
@@ -1119,6 +1114,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 1
   m_VerticalFit: 1
+--- !u!1 &326715397 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5468911485992223417, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
+  m_PrefabInstance: {fileID: 866011642}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &337021805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1805,7 +1805,12 @@ MonoBehaviour:
       Prices:
       - Type: 0
         Amount: 9
+      BuildingAmount: 0
+      CurrentBuildingAmount: 0
     _event: {fileID: 0}
+    _text: {fileID: 0}
+    _anim: {fileID: 0}
+    _timer: 0
     IconSprite: {fileID: 499550748, guid: 5d9162a1940056f4ea2e4f6bb1408021, type: 3}
     Variants: 0
     Father: {fileID: 0}
@@ -1821,7 +1826,12 @@ MonoBehaviour:
         Amount: 10
       - Type: 2
         Amount: 19
+      BuildingAmount: 0
+      CurrentBuildingAmount: 0
     _event: {fileID: 0}
+    _text: {fileID: 0}
+    _anim: {fileID: 0}
+    _timer: 0
     IconSprite: {fileID: 525924626, guid: 5d9162a1940056f4ea2e4f6bb1408021, type: 3}
     Variants: 0
     Father: {fileID: 0}
@@ -1857,6 +1867,7 @@ MonoBehaviour:
   _pricename: Amount
   _resourcename: Resource
   _button: {fileID: 6723200626510492746, guid: 29692b1fa944c7b469eda9281c646e1c, type: 3}
+  _Trashbutton: {fileID: 0}
   _Hud_transform: {fileID: 301082172}
   DescriptionHolder:
     Holder: {fileID: 2119215443}
@@ -1865,6 +1876,7 @@ MonoBehaviour:
     Header: {fileID: 729940860}
     Text: {fileID: 1217932668}
     Prices: []
+  _UnhoverVisualButton: 0
 --- !u!1 &726976875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2156,7 +2168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 96344743904915485, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 12.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 96344743904915485, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2180,7 +2192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 351815286020075687, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 42.11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 351815286020075687, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2236,7 +2248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1950615335947215951, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 54.21
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1950615335947215951, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2340,7 +2352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2208546658088314101, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 54.21
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2208546658088314101, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2384,7 +2396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3001886100256807428, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 42.11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3001886100256807428, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2456,7 +2468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3742320696005545558, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 54.21
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3742320696005545558, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2480,7 +2492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5001147663550050556, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 21.43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5001147663550050556, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2572,7 +2584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6854502912573400238, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 41.33
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6854502912573400238, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2631,6 +2643,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9077412915698062053, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
+      propertyPath: _Trashbutton
+      value: 
+      objectReference: {fileID: 1909231104292651184, guid: 3124f9137336ffc409710a51c35ad03a, type: 3}
+    - target: {fileID: 9077412915698062053, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
+      propertyPath: _UnhoverVisualButton
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077412915698062053, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
+      propertyPath: _buttons.Array.data[1].Data.BuildingAmount
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077412915698062053, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
+      propertyPath: _buttons.Array.data[1].Data.Prices.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077412915698062053, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
       propertyPath: _buttons.Array.data[1].Data.BuildRefs.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -2642,6 +2670,30 @@ PrefabInstance:
       propertyPath: _buttons.Array.data[1].Data.BuildRefs.Array.data[3]
       value: 
       objectReference: {fileID: 4979367902854402153, guid: 7b80884d11bcefe4b8b4de0d47f55be4, type: 3}
+    - target: {fileID: 9077412915698062053, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
+      propertyPath: _buttons.Array.data[1].Data.Prices.Array.data[1].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077412915698062053, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
+      propertyPath: _buttons.Array.data[1].Data.Prices.Array.data[2].Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077412915698062053, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
+      propertyPath: _buttons.Array.data[1].Data.Prices.Array.data[3].Type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077412915698062053, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
+      propertyPath: _buttons.Array.data[1].Data.Prices.Array.data[1].Amount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077412915698062053, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
+      propertyPath: _buttons.Array.data[1].Data.Prices.Array.data[2].Amount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077412915698062053, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
+      propertyPath: _buttons.Array.data[1].Data.Prices.Array.data[3].Amount
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9086102208405453184, guid: 73cf3206ed029fb47bbeb1af0c783562, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5036,10 +5088,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3335d0573f2021140ab1c33a2b67f30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hud: {fileID: 326715397}
   _holoHolder: {fileID: 926299534}
   _VisualHoldRef: {fileID: 491231978}
   _rotationRef: {fileID: 1144203289}
-  _ArrowsRef: {fileID: 40264633}
   _ErrorTextRef: {fileID: 1388804460}
   _LimitSize: {fileID: 0}
   _errorTypes:
@@ -5084,18 +5136,20 @@ MonoBehaviour:
   _rotationVisualAdjustment: {x: 0, y: -0.2, z: 0}
   _DetectionMask:
     serializedVersion: 2
-    m_Bits: 1088
+    m_Bits: 3136
   _PlacedHoloMaskID: 10
   _DestroyDetectionBoxSize: {x: 1, y: 1}
   _BuildingMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 3072
   _BoxDestroySprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   _BuildInterval: 0.73
   _spriteRefs: {fileID: 0}
   _dataRefs:
     BuildRefs: []
     Prices: []
+    BuildingAmount: 0
+    CurrentBuildingAmount: 0
   _current_Builds_Refs: []
   _current_Prices_Gross_Code: []
   _current_Prices_Gross_Visual: []
@@ -5109,6 +5163,7 @@ MonoBehaviour:
   _selectedToDemolish: []
   _selectedToDemolish_Empty: []
   _text: {fileID: 0}
+  _buildRefDest: {fileID: 0}
   _SaveList: []
 --- !u!156049354 &1904628977
 Grid:
@@ -5487,19 +5542,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 531698608670735934, guid: bcba8bb74c338794089b0c35590046ea, type: 3}
       propertyPath: <Resources>k__BackingField.Array.data[0].Amount
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 531698608670735934, guid: bcba8bb74c338794089b0c35590046ea, type: 3}
       propertyPath: <Resources>k__BackingField.Array.data[1].Amount
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 531698608670735934, guid: bcba8bb74c338794089b0c35590046ea, type: 3}
       propertyPath: <Resources>k__BackingField.Array.data[2].Amount
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 531698608670735934, guid: bcba8bb74c338794089b0c35590046ea, type: 3}
       propertyPath: <Resources>k__BackingField.Array.data[3].Amount
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 531698608670735934, guid: bcba8bb74c338794089b0c35590046ea, type: 3}
       propertyPath: <Resources>k__BackingField.Array.data[4].Amount
