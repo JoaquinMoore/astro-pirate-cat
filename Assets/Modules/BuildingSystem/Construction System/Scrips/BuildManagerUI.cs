@@ -216,7 +216,7 @@ namespace BuildSystem
             foreach (var item in _buttons)
             {
                 var hold = item.Data.BuildRefs.Find(x => x == building.gameObject);
-                var hold2 = item.Data.BuildRefs.Find(x => x == PrefabUtility.GetPrefabInstanceHandle(building));
+                var hold2 = item.Data.BuildRefs.Find(x => x == PrefabUtility.IsPartOfAnyPrefab(building));
                 Debug.Log(PrefabUtility.GetPrefabInstanceHandle(building));
                 if (hold != null || hold2 != null)
                 {
