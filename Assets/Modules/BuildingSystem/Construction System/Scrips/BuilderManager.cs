@@ -209,7 +209,7 @@ namespace BuildSystem
             _dataRefs = new();
             StopAllCoroutines();
             ClearList();
-            _hud.SetActive(true);
+            _hud.gameObject.SetActive(true);
 
         }
 
@@ -273,7 +273,7 @@ namespace BuildSystem
             _holoHolder.transform.position = Vector3.Lerp(_holoHolder.transform.position, _grid.CellToWorld(gridposs) + new Vector3(_grid.cellSize.x / 2, _grid.cellSize.y / 2, 0), Time.deltaTime * _lerpAmount);
             _holoHolder.transform.position = new Vector3(_holoHolder.transform.position.x, _holoHolder.transform.position.y, 0);
 
-            Vector3 hold = new Vector3(0, -_ColSize.y, 0);
+            Vector3 hold = new Vector3(0, -_ColSize.y / 2, 0);
             _VisualHoldRef.transform.position = Vector3.Lerp(_VisualHoldRef.transform.position, _grid.CellToWorld(gridposs) + new Vector3(_grid.cellSize.x / 2, _grid.cellSize.y / 2, 0) +_rotationVisualAdjustment + hold, Time.deltaTime * _lerpAmount);
             _VisualHoldRef.transform.position = new Vector3(_VisualHoldRef.transform.position.x, _VisualHoldRef.transform.position.y, 0);
 
