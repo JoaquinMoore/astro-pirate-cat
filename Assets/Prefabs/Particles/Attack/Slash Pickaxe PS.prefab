@@ -4841,6 +4841,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 331226008801051533}
     m_Modifications:
+    - target: {fileID: 4602024254854910875, guid: f49f1023309bc7c429fcad819cf255f7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6269e0713e0bb9643b66093291176d91, type: 2}
     - target: {fileID: 6642973003831902599, guid: f49f1023309bc7c429fcad819cf255f7, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -4983,6 +4987,10 @@ PrefabInstance:
       propertyPath: ColorModule.gradient.maxGradient.key3.g
       value: 0.89299846
       objectReference: {fileID: 0}
+    - target: {fileID: 7413854556770737886, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6269e0713e0bb9643b66093291176d91, type: 2}
     - target: {fileID: 7771115826145300190, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
       propertyPath: m_Name
       value: Splash Particle

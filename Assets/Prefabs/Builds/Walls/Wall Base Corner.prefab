@@ -16,29 +16,37 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f9dea2a6bdfc4734a8d52274673c2731, type: 2}
+    - target: {fileID: 1700541378485771063, guid: dfccda61e12b19042ba8ee6b735279ef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2004407148394998595, guid: dfccda61e12b19042ba8ee6b735279ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.02
+      value: -0.001
       objectReference: {fileID: 0}
     - target: {fileID: 2004407148394998595, guid: dfccda61e12b19042ba8ee6b735279ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.51
+      value: 0.885
       objectReference: {fileID: 0}
     - target: {fileID: 2318165868680244707, guid: dfccda61e12b19042ba8ee6b735279ef, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 8b1576928c643d34894ed9df69920ef2, type: 3}
     - target: {fileID: 2318165868680244707, guid: dfccda61e12b19042ba8ee6b735279ef, type: 3}
+      propertyPath: m_SortingOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318165868680244707, guid: dfccda61e12b19042ba8ee6b735279ef, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8763778057515684e9faaf1e4c547e7b, type: 2}
     - target: {fileID: 3786504695515361485, guid: dfccda61e12b19042ba8ee6b735279ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.68
+      value: 7.933
       objectReference: {fileID: 0}
     - target: {fileID: 3786504695515361485, guid: dfccda61e12b19042ba8ee6b735279ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -41.89
+      value: -1.488
       objectReference: {fileID: 0}
     - target: {fileID: 3786504695515361485, guid: dfccda61e12b19042ba8ee6b735279ef, type: 3}
       propertyPath: m_LocalPosition.z
@@ -107,6 +115,10 @@ PrefabInstance:
     - target: {fileID: 5480799798466728075, guid: dfccda61e12b19042ba8ee6b735279ef, type: 3}
       propertyPath: m_Name
       value: Wall Base Corner
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230723377989185027, guid: dfccda61e12b19042ba8ee6b735279ef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

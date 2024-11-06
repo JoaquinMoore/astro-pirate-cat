@@ -7,9 +7,10 @@ namespace BuildSystem
     {
         private SpriteRenderer[] _renderes;
         protected Animator _animatiorControler;
-
+        public Animator AnimatiorControler => _animatiorControler;
         public BuildingVisual(VisualSettings settings)
         {
+            Debug.Log("4");
             _animatiorControler = settings.AnimatiorControler;
             _renderes = settings._Renderes;
         }
@@ -18,13 +19,14 @@ namespace BuildSystem
 
         public void FullHp()
         {
-            //_animatiorControler.SetTrigger("FullHp");
+            _animatiorControler.SetBool("Destroid", false);
+            _animatiorControler.ResetTrigger("Damaged");
         }
-        public void TriggerHit() { } //=> _animatiorControler.SetTrigger("hit");
+        public void TriggerHit() { _animatiorControler.SetTrigger("Damaged");}
         public void Destroy(bool state)
         {
-            //_animatiorControler.SetBool("destroy", state);
-            //_animatiorControler.ResetTrigger("FullHp");
+            _animatiorControler.SetBool("Destroid", state);
+            Debug.Log("anim");
         }
         //public void PlayAudio(AudioDataSO data)
         //{

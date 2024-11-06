@@ -6,11 +6,13 @@ namespace BuildSystem
 {
     public class RepairFunc
     {
-        int _repaitAmount;
-        float _repairIntervals;
-        GameObject _repairParticles;
+        private int _repaitAmount;
+        private float _repairIntervals;
+        private GameObject _repairParticles;
+        private Vector2 _particleOffset;
+        private BuildingControler _model;
+
         private GameObject _currentParticle;
-        BuildingControler _model;
         //private AudioDataSO _reapirSound;
 
         [System.Serializable]
@@ -19,6 +21,7 @@ namespace BuildSystem
             public int RepairAmounts;
             public float ReapirIntervals;
             public GameObject RepairParticles;
+            public Vector2 ParticleOffset;
             //public AudioDataSO ReapirSound;
         }
 
@@ -27,6 +30,7 @@ namespace BuildSystem
             _repaitAmount = settings.RepairAmounts;
             _repairIntervals = settings.ReapirIntervals;
             _repairParticles = settings.RepairParticles;
+            _particleOffset = settings.ParticleOffset;
             _model = model;
             //_reapirSound = settings.ReapirSound;
         }
@@ -36,8 +40,9 @@ namespace BuildSystem
         {
             if (npc != null)
                 npc.transform.position = (_model._base.transform.position + (Vector3)(Random.insideUnitCircle * 2));
-            if (!_currentParticle)
-                _currentParticle = Object.Instantiate(_repairParticles, _model._base.transform.position, _model._base.transform.rotation);
+            if (_repairParticles != null)
+                _currentParticle = Object.Instantiate(_repairParticles, _model._base.transform.position + (Vector3)_particleOffset, _model._base.transform.rotation);
+            Debug.Log(_currentParticle);
             _model._base.StartCoroutine(Repair());
             //_model._visual.PlayAudio(_reapirSound);
             //task.Finish();
@@ -67,8 +72,8 @@ namespace BuildSystem
             _model._visual.Destroy(false);
             _model._visual.FullHp();
             _model._base._Col.enabled = true;
-
             if (_currentParticle) Object.Destroy(_currentParticle);
+            _model._model.FullHp();
         }
 
     }

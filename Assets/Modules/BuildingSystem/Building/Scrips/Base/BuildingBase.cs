@@ -26,6 +26,7 @@ namespace BuildSystem
 
         public void SetUp(BuildingVisual visual, BuildingModel based)
         {
+            Debug.Log("2");
             _controler.SetUp(visual, based, this);
         }
 
@@ -34,9 +35,16 @@ namespace BuildSystem
             if (!_Col.enabled)
                 return;
             _controler.Damage();
+
         }
 
-
         public virtual void AnimDeathAction() { }
+
+
+        public void SelectTask(GameObject obs)
+        {
+            _controler.SelectTask(obs);
+        }
+
     }
 }

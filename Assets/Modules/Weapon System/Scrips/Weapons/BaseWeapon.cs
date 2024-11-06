@@ -26,6 +26,7 @@ namespace WeaponSystem
         public virtual void Reflesh() { }
         public virtual void Select() { }
         public virtual void Deselect() { }
+        public virtual void MousePos(Vector3 pos) { }
     }
 
     public class BaseWeapon<T> : BaseWeapon where T : BaseWeaponData

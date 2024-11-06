@@ -63,6 +63,23 @@ namespace NPC.Boss.Ship
             }
             float hpcurrent = _curspeed * _settings.HpCurve.Evaluate((float)_settings.Hp.PublicCurrentHealth/ _settings.Hp.PublicMaxHealth);
 
+            _ship.Anim.SetFloat("Blend", (float)_settings.Hp.PublicCurrentHealth / _settings.Hp.PublicMaxHealth);
+
+
+
+            if ((float)_settings.Hp.PublicCurrentHealth / _settings.Hp.PublicMaxHealth <= 0.5)
+            {
+                _ship._stop = true;
+                _ship.Anim.SetBool("IsMove", false);
+                _ship.Anim.SetBool("StopMove", true);
+            }
+
+
+            if (hpcurrent <= 0)
+            {
+                _ship._stop = true;
+                _ship.Anim.SetBool("IsMove", false);
+            }
 
 
             Vector2 pos = (Vector2)_MovePos - (Vector2)_ship.transform.position;
@@ -122,7 +139,7 @@ namespace NPC.Boss.Ship
 
         IEnumerator DeSpeedMod()
         {
-
+            _ship.Anim.SetBool("IsMove", false);
             while (_curspeed > 0)
             {
                 Debug.Log(_curspeed);
@@ -130,6 +147,7 @@ namespace NPC.Boss.Ship
                 _curspeed -= _settings.Speed_ModPerTic;
             }
             _curspeed = 0;
+
             _stop = true;
         }
 

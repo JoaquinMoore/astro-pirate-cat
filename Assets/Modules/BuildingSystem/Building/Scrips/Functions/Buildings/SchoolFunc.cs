@@ -4,26 +4,43 @@ using UnityEngine;
 
 namespace BuildSystem
 {
+    public enum Type 
+    {
+        Weapon,
+        Welder,
+        Miner
+    }
+
     public class SchoolFunc
     {
-        float _graduatingTime;
+
+        bool anim;
+        Settings _settings;
         List<TeachingSlots> slots = new();
 
         BuildingControler _model;
+        [System.Serializable]
         public class Settings
         {
             public float GraduatingTime;
             public GameObject particle;
+            public Type Types;
         }
 
 
         public SchoolFunc(Settings settings, BuildingControler model)
         {
-            _graduatingTime = settings.GraduatingTime;
-
+            Debug.Log("5");
+            _settings = settings;
             _model = model;
-        }
+            Debug.Log(_model._visual);
 
+            //
+        }
+        public void Anims()
+        {
+            _model._visual.AnimatiorControler.SetTrigger(_settings.Types.ToString());
+        }
 
         public void GiveStuddent(MountingFunc.Slots slot)
         {
@@ -31,7 +48,7 @@ namespace BuildSystem
             {
                 slot = slot,
                 Particle = null,
-                _maxTimer = _graduatingTime
+                _maxTimer = _settings.GraduatingTime
             };
 
             slots.Add(teachslot);

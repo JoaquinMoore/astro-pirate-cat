@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 namespace NPC.Boss.Ship
 {
     public class ShipEnemy : BossBase
@@ -14,11 +15,14 @@ namespace NPC.Boss.Ship
         [SerializeField] private SpawnShip.SpawnSettings _spawnsettings = new();
         [SerializeField] private AttackShip.WepSettings _attacksettings = new();
 
+
+
+
         public SpawnShip.SpawnSettings Spawnsettings => _spawnsettings;
         public AttackShip.WepSettings Attacksettings => _attacksettings;
         public ShipMovement Mov => _mov;
-
         Vector3 _pos;
+
         // Start is called before the first frame update
         public override void Start()
         {
@@ -63,7 +67,7 @@ namespace NPC.Boss.Ship
         void Update()
         {
             _fsm.CurrentState.LogicUpdate();
-
+            _slider.value = (float)_movsettings.Hp.PublicCurrentHealth / _movsettings.Hp.PublicMaxHealth;
 
         }
         public override void SetTarget(Transform target)
@@ -76,6 +80,23 @@ namespace NPC.Boss.Ship
         public override Transform GetTarget()
         {
             return _target;
+        }
+
+
+        public override void OnDeath()
+        {
+            _anim.SetBool("Death", true);
+        }
+
+        public override void OnDeathAnim()
+        {
+            StopAllCoroutines();
+            Destroy(this.gameObject);
+        }
+
+        public override void OnDamaged()
+        {
+            _anim.SetTrigger("Hit");
         }
 
         private void FixedUpdate()

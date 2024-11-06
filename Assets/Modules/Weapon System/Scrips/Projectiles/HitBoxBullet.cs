@@ -88,6 +88,11 @@ namespace WeaponSystem
 
         }
 
+        public virtual void UpdateTartetListVisual()
+        {
+
+        }
+
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -99,6 +104,7 @@ namespace WeaponSystem
             {
                 _targets.Add(hold);
             }
+            UpdateTartetListVisual();
         }
 
         private void OnTriggerStay2D(Collider2D collision)
@@ -121,6 +127,7 @@ namespace WeaponSystem
             {
                 _targets.Remove(hold);
             }
+            UpdateTartetListVisual();
         }
 
 

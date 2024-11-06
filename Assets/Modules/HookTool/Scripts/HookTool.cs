@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace HookTool
+namespace HookToolSystem
 {
     [RequireComponent(typeof(DistanceJoint2D))]
     public class HookTool : MonoBehaviour
@@ -18,10 +18,11 @@ namespace HookTool
 
         private DistanceJoint2D _joint;
 
-        public void Grab(Collider2D collider, GameObject hook)
+        public void Grab(Collider2D collider, GameObject hook = null)
         {
             if (collider.TryGetComponent<HookAnchor>(out var anchor))
             {
+                hook = hook != null ? hook : collider.gameObject;
                 hook.transform.position = collider.transform.position;
                 _joint.connectedAnchor = hook.transform.position;
                 _joint.enabled = true;

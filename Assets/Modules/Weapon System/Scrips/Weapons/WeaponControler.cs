@@ -25,6 +25,10 @@ namespace WeaponSystem
         public event Action<Vector2> OnImpulse = delegate { };
 
         [SerializeField] private bool _firing;
+
+        Vector3 oritnalpos;
+
+
         void Start()
         {
             _ArmRef = _WeaponRot.GetComponentInChildren<SpriteRenderer>();
@@ -35,6 +39,10 @@ namespace WeaponSystem
                 AddWeapons(item);
             }
 
+            if (_weapons.Count > 0)
+            {
+                EquipFirstWep();
+            }
 
             _weapons[0].Weapon.Select();
             _currentWeapon = _weapons[0];
@@ -44,6 +52,7 @@ namespace WeaponSystem
 
             if (_ArmRef != null)
                 _ArmRef.enabled = !_currentWeapon.HideArmOnEquiped;
+            oritnalpos = _WeaponRot.transform.position;
         }
 
 
@@ -60,6 +69,13 @@ namespace WeaponSystem
 
         public void TestingInput()
         {
+            bool test = false;
+
+            if (Input.mousePosition.x > 500)
+            {
+                test = true;
+            }
+            MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition), test);
             MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
 
@@ -119,18 +135,45 @@ namespace WeaponSystem
         }
 
 
+        public void MouseAim(Vector2 target, bool flip = false)
+        {
+            float rot = 0;
+            Vector2 pos = Vector2.zero;
+
+
+            if (flip == true)
+            {
+                _WeaponRot.transform.position = oritnalpos;
+                rot = 0;
+                pos = target - (Vector2)transform.position;
+            }
+            else
+            {
+                _WeaponRot.transform.position = new Vector3(oritnalpos.x * -1, oritnalpos.y, oritnalpos.z);
+                rot = 180;
+                Debug.Log("called");
+                pos = new Vector2(target.x * -1, target.y ) - (Vector2)transform.position;
+            }
+
+            _WeaponRot.transform.right = pos + new Vector2(0, _currentWeapon.Weapon.WeaponSpread());
+            _WeaponRot.transform.eulerAngles = new Vector3(0, rot, _WeaponRot.transform.eulerAngles.z);
+        }
+
+
         public void MouseAim(Vector2 target)
         {
 
             Vector2 pos = target - (Vector2)transform.position;
             _WeaponRot.transform.right = pos + new Vector2(0, _currentWeapon.Weapon.WeaponSpread());
+            _currentWeapon.Weapon.MousePos(target);
+        }
 
 
-            //if (pos.x > 0)
-            //    CurrentWeapon.weaponSpriteRenderer.flipY = false;
-            //else
-            //    CurrentWeapon.weaponSpriteRenderer.flipY = true;
-
+        public void EquipFirstWep()
+        {
+            _weapons[0].Weapon.Select();
+            _currentWeapon = _weapons[0];
+            _weapons[0].WeaponEquiped = true;
         }
 
 
@@ -140,6 +183,7 @@ namespace WeaponSystem
             _weaponInt += (int)direction;
             _weaponInt = (int)Mathf.Repeat(_weaponInt, _weapons.Count);
 
+            if (_weapons[_weaponInt].WeaponEquiped && _weapons.Count > 2)
             if (_weapons[_weaponInt].WeaponEquiped)
                 _weaponInt += (int)direction;
 
@@ -159,6 +203,9 @@ namespace WeaponSystem
 
         public void SwapPrimaryWeapon()
         {
+            if (_weapons.Count == 1)
+                return;
+
             StopAllCoroutines();
             WeaponSlot current = _currentWeapon;
             WeaponSlot selected = _selectedWeapon;
@@ -190,6 +237,7 @@ namespace WeaponSystem
             hol.Weapon = wep;
             wep.OnImpulseAction += impulse => OnImpulse(impulse);
             hol.HideArmOnEquiped = data.HideArm;
+
             _weapons.Add(hol);
         }
 

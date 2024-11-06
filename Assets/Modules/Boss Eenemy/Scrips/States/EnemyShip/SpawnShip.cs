@@ -10,7 +10,7 @@ namespace NPC.Boss.Ship
         private SpawnSettings _settings;
 
         private bool Spawning;
-
+        
 
         public SpawnShip(ShipEnemy boss, FiniteStateMachine fsm) : base(boss, fsm)
         {
@@ -116,6 +116,8 @@ namespace NPC.Boss.Ship
 
         public override void Exit()
         {
+            if (context._stop != true)
+                context.Anim.SetBool("IsMove", true);
             context.Mov.ResumeMov();
             Debug.Log("finished");
             Spawning = false;

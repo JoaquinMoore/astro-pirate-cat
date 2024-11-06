@@ -21,7 +21,6 @@ public class Ship : MonoBehaviour
         {
             OpenShipMenu();
         }
-        Debug.Log(DistanceCheck());
     }
 
 
