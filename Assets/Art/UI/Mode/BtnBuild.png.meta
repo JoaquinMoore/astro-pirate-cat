@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a46a2456db0484e4998df59127079c31
+guid: 0a3996138cf8e5343bf6a133cd54feec
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -110,13 +110,76 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Arrow BTN_0
+      name: BtnBuild_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 302
+        width: 232
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12951580f3a386e44bac0ae94cd90249
+      internalID: -1134913278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnBuild_1
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 302
+        width: 232
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c87b67f6441946d40a396dc92b3610f3
+      internalID: 1020859210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnBuild_2
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 302
+        width: 232
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc570c30c69b91f4180a4b6d19b68c9d
+      internalID: 1262018604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnBuild_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 120
-        height: 120
+        width: 232
+        height: 302
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f480470b076d3534798317cd2ae14212
-      internalID: -1885066782
+      spriteID: 56f09aabfaefd7443995d9edfe63126e
+      internalID: -2068697458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arrow BTN_1
+      name: BtnBuild_4
       rect:
         serializedVersion: 2
-        x: 120
+        x: 232
         y: 0
-        width: 120
-        height: 120
+        width: 232
+        height: 302
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c02c59933286254ca9a4fd9a1843fbc
-      internalID: -383476136
+      spriteID: c2f4299cfca1d50469afc2b197214217
+      internalID: 448537012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arrow BTN_2
+      name: BtnBuild_5
       rect:
         serializedVersion: 2
-        x: 240
+        x: 464
         y: 0
-        width: 120
-        height: 120
+        width: 232
+        height: 302
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b3e49fe18eb30e4d95c530c5010d112
-      internalID: -343383747
+      spriteID: 4593b9bee7ed4eb448882a04b9894290
+      internalID: -2068190107
       vertices: []
       indices: 
       edges: []
@@ -183,9 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Arrow BTN_0: -1885066782
-      Arrow BTN_1: -383476136
-      Arrow BTN_2: -343383747
+      BtnBuild_0: -1134913278
+      BtnBuild_1: 1020859210
+      BtnBuild_2: 1262018604
+      BtnBuild_3: -2068697458
+      BtnBuild_4: 448537012
+      BtnBuild_5: -2068190107
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
