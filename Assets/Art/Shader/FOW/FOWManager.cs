@@ -31,7 +31,7 @@ public class FOWManager : MonoBehaviour
 
     public void SaveFunc()
     {
-        SaveTextureToFileUtility.SaveRenderTextureToFile(_rt, _filepath + "/" + _name , SaveTextureToFileUtility.SaveTextureFileFormat.JPG);
+        SaveTextureToFileUtilityco.SaveRenderTextureToFile(_rt, _filepath + "/" + _name , SaveTextureToFileUtilityco.SaveTextureFileFormat.JPG);
        
         Debug.Log("ca");
     }
