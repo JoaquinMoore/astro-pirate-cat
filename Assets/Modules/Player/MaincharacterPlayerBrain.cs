@@ -1,13 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class MaincharacterPlayerBrain : MonoBehaviour
+public class MainCharacterPlayerBrain : IBrain<MainCharacterController>
 {
-    private void Awake()
+    public void Awake(MainCharacterController controller)
     {
-        _controller = GetComponent<MaincharacterController>();
+        _controller = controller;
     }
 
-    private IMaincharacterController _controller;
+    public void Think()
+    {
+        Debug.Log("El jugador está pensando");
+    }
+
+    private MainCharacterController _controller;
 }

@@ -1,43 +1,39 @@
-using HookToolSystem;
-using System.Linq;
-using UnityEngine;
+using UnityServiceLocator;
 
-public class MaincharacterController : MonoBehaviour, IMaincharacterController
+public class MainCharacterController : MonoBehaviour
 {
+    /// <summary>
+    /// Aplica un impulso personaje en una direccion.
+    /// </summary>
+    /// <param name="force">Impulso a aplicar.</param>
     public void Impulse(Vector2 force)
     {
         _rigidBody.AddForce(force, ForceMode2D.Impulse);
     }
 
-    public void Hook(Collider2D target, GameObject hookHead)
+    /// <summary>
+    /// Indica donde debe engancharse.
+    /// </summary>
+    /// <param name="target">Objetivo al cual engancharse.</param>
+    /// <param name="hook">Objeto que sirvió como hook.</param>
+    public void Hook(Collider2D target, GameObject hook)
     {
-        _hookTool.Grab(target, hookHead);
-    }
-
-    public void Shoot()
-    {
-    }
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            var targets = Physics2D.OverlapCircleAll(mousePos, 1f);
-
-            if (targets.Any())
-            {
-                var target = targets.OrderBy(c => Vector2.Distance(c.transform.position, mousePos)).First();
-                _hookTool.Grab(target, null);
-            }
-        }
+        _hookTool.Grab(target, hook);
     }
 
     private void Awake()
     {
         _hookTool = GetComponent<HookTool>();
+        _rigidBody = GetComponent<Rigidbody2D>();
+        ServiceLocator.For(this).TryGet(out _brain);
+    }
+
+    private void Update()
+    {
+        _brain.Think();
     }
 
     private HookTool _hookTool;
     private Rigidbody2D _rigidBody;
+    private IBrain<MainCharacterController> _brain;
 }
