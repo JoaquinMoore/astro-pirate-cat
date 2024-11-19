@@ -9,7 +9,7 @@ public class MainCharacterPlayerBrain : IBrain<MainCharacterController>
 
     public void Think()
     {
-        Debug.Log("El jugador está pensando");
+        Debug.Log("El jugador esta pensando");
     }
 
     private MainCharacterController _controller;

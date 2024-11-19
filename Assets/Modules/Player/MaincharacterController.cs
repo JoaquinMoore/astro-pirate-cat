@@ -2,6 +2,7 @@ using UnityServiceLocator;
 using UnityEngine;
 using HookToolSystem;
 
+[RequireComponent(typeof(HookTool), typeof(Rigidbody2D))]
 public class MainCharacterController : MonoBehaviour
 {
     /// <summary>
@@ -17,7 +18,7 @@ public class MainCharacterController : MonoBehaviour
     /// Indica donde debe engancharse.
     /// </summary>
     /// <param name="target">Objetivo al cual engancharse.</param>
-    /// <param name="hook">Objeto que sirvió como hook.</param>
+    /// <param name="hook">Objeto que sirviï¿½ como hook.</param>
     public void Hook(Collider2D target, GameObject hook)
     {
         _hookTool.Grab(target, hook);
