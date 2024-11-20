@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
   m_Name: welder
   m_EditorClassIdentifier: 
-  WeaponPrefab: {fileID: 1440629363716621446, guid: 974412b97bf99d5449f524e5b4451de7, type: 3}
+  WeaponPrefab: {fileID: 1791708719272366185, guid: 9de0ceb0f58cf1e4ea1620bed9d4f4cc, type: 3}
   Triggers:
   - rid: 6012065985212448784
   HideArm: 0

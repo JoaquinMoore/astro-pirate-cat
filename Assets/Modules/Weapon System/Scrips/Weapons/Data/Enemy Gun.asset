@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
   m_Name: Enemy Gun
   m_EditorClassIdentifier: 
-  WeaponPrefab: {fileID: 1440629363716621446, guid: acb9245f92d7a2a469ff39538ec68cf1, type: 3}
+  WeaponPrefab: {fileID: 1791708719272366185, guid: 91bf83f195ae0554d85078628ffa0b27, type: 3}
   Triggers:
   - rid: 2248387085135249408
   HideArm: 0

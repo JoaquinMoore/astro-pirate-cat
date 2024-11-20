@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
   m_Name: laz weapon
   m_EditorClassIdentifier: 
-  WeaponPrefab: {fileID: 1440629363716621446, guid: 03ebf96bcdad6954596fbbdfded3f258, type: 3}
+  WeaponPrefab: {fileID: 1791708719272366185, guid: 176abf918595cd942a1cbc6da0cde55d, type: 3}
   Triggers:
   - rid: 6012065985212448778
   HideArm: 0

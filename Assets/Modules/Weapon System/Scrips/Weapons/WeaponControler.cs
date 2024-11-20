@@ -52,7 +52,7 @@ namespace WeaponSystem
 
             if (_ArmRef != null)
                 _ArmRef.enabled = !_currentWeapon.HideArmOnEquiped;
-            oritnalpos = _WeaponRot.transform.position;
+            oritnalpos = _WeaponRot.transform.localPosition;
         }
 
 
@@ -76,7 +76,7 @@ namespace WeaponSystem
                 test = true;
             }
             MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition), test);
-            MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            //MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
 
 
@@ -143,13 +143,13 @@ namespace WeaponSystem
 
             if (flip == true)
             {
-                _WeaponRot.transform.position = oritnalpos;
+                _WeaponRot.transform.localPosition = oritnalpos;
                 rot = 0;
                 pos = target - (Vector2)transform.position;
             }
             else
             {
-                _WeaponRot.transform.position = new Vector3(oritnalpos.x * -1, oritnalpos.y, oritnalpos.z);
+                _WeaponRot.transform.localPosition = new Vector3(oritnalpos.x * -1, oritnalpos.y, oritnalpos.z);
                 rot = 180;
                 Debug.Log("called");
                 pos = new Vector2(target.x * -1, target.y ) - (Vector2)transform.position;

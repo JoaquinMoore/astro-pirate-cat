@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
   m_Name: Player gun
   m_EditorClassIdentifier: 
-  WeaponPrefab: {fileID: 1440629363716621446, guid: e424099c33dda9643a06f5180bb0faa9, type: 3}
+  WeaponPrefab: {fileID: 1791708719272366185, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
   Triggers:
   - rid: 6012065985212448772
   - rid: 6012065985212448774
+  HideArm: 0
   Magazines:
   - rid: 6012065985212448770
   FireSelector: 0

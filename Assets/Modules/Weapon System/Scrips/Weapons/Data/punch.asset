@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
   m_Name: punch
   m_EditorClassIdentifier: 
-  WeaponPrefab: {fileID: 1440629363716621446, guid: b24ba9905dcee1e488c30248ec98d032, type: 3}
+  WeaponPrefab: {fileID: 1791708719272366185, guid: 7eb1548e38d272d488f65695f2369c98, type: 3}
   Triggers:
   - rid: 6012065985212448784
   HideArm: 1
