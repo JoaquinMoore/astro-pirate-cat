@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
   m_Name: Ship Gun
   m_EditorClassIdentifier: 
-  WeaponPrefab: {fileID: 1440629363716621446, guid: 9547140d3e2a14c459bbadfc298e2b3a, type: 3}
+  WeaponPrefab: {fileID: 3434299139494881736, guid: 75445db4710089d49aa97e07823bbbb2, type: 3}
   Triggers:
   - rid: 2248387085135249408
   HideArm: 0
