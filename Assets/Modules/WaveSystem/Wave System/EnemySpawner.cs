@@ -256,7 +256,7 @@ public class EnemySpawner : MonoBehaviour//, IPause
     public class SpecialWaveData
     {
         public Transform _BaseSpawnPoint;
-        public List<EventWave.TypeAmount> _BaseWaveData;
+        public List<SpawnWavePool.TypeAmount> _BaseWaveData;
         public GameObject BossRef;
     }
 }

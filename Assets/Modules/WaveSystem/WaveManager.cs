@@ -1,67 +1,98 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class WaveManager : MonoBehaviour//, IPause
 {
-    public static UnityEvent StartEffect = new();
-    public static UnityEvent<List<Wave>> ReciveNewList = new();
-    public static bool StartWave;
+    public static UnityEvent<List<SpawnWavePool.TypeAmount>> ReciveSpawns = new();
+    public static UnityEvent FinishedWave = new();
+    public static bool _startWave;
 
     [SerializeField] List<Wave> _Wave = new();
+
+
     [field: SerializeField] public Material MatWave { get; private set; }
 
+    [Header("debug")]
     private int _indexWave = 0;
-    private Wave _currentWave;
+    [field: SerializeField] private Wave _currentWave;
     private bool Locked;
     private bool onetime;
 
+    [SerializeField] private SpawnWavePool _wave;
+
     public static int IndexWave;
+
 
     #region Unity Functions
     void Start()
     {
-        StartEffect.AddListener(TriggerEffect);
-        ReciveNewList.AddListener(ReciveList);
+        _wave = GetComponentInChildren<SpawnWavePool>();
+
+        ReciveSpawns.AddListener(ReciveList);
+        FinishedWave.AddListener(WaveFinished);
         _currentWave = _Wave[Random.Range(0, _Wave.Count)];
-        _currentWave.Reset();
+        //_currentWave.Reset();
         //GameManager.Instance._PauseGame.Add(this);
-        MatWave.SetInt("_Actived", 1);
+        //MatWave.SetInt("_Actived", 1);
         IndexWave = _indexWave;
+        StartCoroutine(WaveWaitTimer());
     }
 
     void Update()
     {
         if (Locked) return;
 
-        _currentWave.Event();
+        //_currentWave.Event();
     }
     #endregion
 
-    #region Reciving Events
-    public void TriggerEffect()
+    #region Wave Stuff
+    public void StartWave()
     {
         _indexWave++;
         IndexWave = _indexWave;
-        StartWave = true;
-        MatWave.SetInt("_Actived", 0);
+        _startWave = true;
+        _wave.StartSpecial();
+        //MatWave.SetInt("_Actived", 0);
         //StartCoroutine(UIManager.Instance?.ChangedWave(_indexWave));
         //
         //AudioManager.Instance.Play(SoundName.Alert_Wave.ToString());
+        //EnemySpawner.StartWave?.Invoke(this);
+
+        _currentWave.Event();
+
     }
 
-    public void ReciveList(List<Wave> list)
+    public void WaveFinished()
     {
-        if (list.Count == 0)
+        Debug.Log("aaaaaaa");
+        if (_currentWave.WaveChilds.Count == 0)
             return;
 
-        StartWave = false;
-        MatWave.SetInt("_Actived", 1);
+        _startWave = false;
+        //MatWave.SetInt("_Actived", 1);
         _Wave.Clear();
-        _Wave = new List<Wave>(list);
+        _Wave = new List<Wave>(_currentWave.WaveChilds);
         _currentWave = _Wave[Random.Range(0, _Wave.Count)];
-        _currentWave.Reset();
+        //_currentWave.Reset();
+        StartCoroutine(WaveWaitTimer());
+
     }
+
+
+    public IEnumerator WaveWaitTimer()
+    {
+        yield return new WaitForSeconds(_currentWave.TimeForWave);
+        StartWave();
+    }
+
+    public void ReciveList(List<SpawnWavePool.TypeAmount> Spawns)
+    {
+        _wave.StartSpawning(Spawns);
+    }
+
     #endregion
 
     #region Pause
@@ -76,12 +107,13 @@ public class WaveManager : MonoBehaviour//, IPause
     }
     #endregion
 
-    #region Skip Waiting
+    #region Skip Wave
     public void SkipWait()
     {
         if (_currentWave != null)
         {
-            _currentWave.SkipTimer();
+            StopAllCoroutines();
+            StartWave();
         }
     }
 
