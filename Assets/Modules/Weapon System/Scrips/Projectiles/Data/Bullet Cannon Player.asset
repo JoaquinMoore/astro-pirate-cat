@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40e32790f18e69240900d4899a35c650, type: 3}
-  m_Name: Player Cannon
+  m_Name: Bullet Cannon Player
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 605248252937642893, guid: 8b12cf60519671349a2bc08553e21048, type: 3}
   HardPrefCap: 1000

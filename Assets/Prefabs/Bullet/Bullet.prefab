@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7056905702214425262}
   - component: {fileID: 7008870281133858056}
-  - component: {fileID: 669929417228809149}
   - component: {fileID: 3751889468938711805}
   - component: {fileID: 5720644934866754858}
   - component: {fileID: 5734463417037810559}
@@ -76,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 59
+  m_SortingOrder: 40
   m_Sprite: {fileID: 975590711, guid: b7aed3448b1fec342bbcf78c297dfd02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -88,21 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &669929417228809149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3130701740937781237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aca86b022b6dca4189b88820f668941, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _particle: {fileID: 7771115826145300190, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
-  _speed: 1000
-  _timeDestroy: 5
 --- !u!58 &3751889468938711805
 CircleCollider2D:
   m_ObjectHideFlags: 0

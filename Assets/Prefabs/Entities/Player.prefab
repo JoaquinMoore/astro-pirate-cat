@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 8030742773967105181}
   - component: {fileID: 3474568736520994727}
   - component: {fileID: 499287348797686842}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -133,8 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9557a7483bb657499d66a555ea1a926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minDistance: 0
-  _approachSpeed: 0
+  _minDistance: 10
+  _approachSpeed: 5
 --- !u!114 &6161283069179757519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   _WeaponRot: {fileID: 3820374218616572042}
   _Data:
   - {fileID: 11400000, guid: 5bea5b53e8454084db19dca58a55f5d4, type: 2}
-  TestingInputs: 0
+  TestingInputs: 1
   _weapons: []
   _weaponInt: 0
   _currentWeapon:
@@ -203,7 +203,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -380,7 +380,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 38
+  m_SortingOrder: 18
   m_Sprite: {fileID: 21300000, guid: 2a80da2a1dcbcab4eb4aedaab1663bfe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -614,7 +614,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 40
+  m_SortingOrder: 19
   m_Sprite: {fileID: 21300000, guid: c81fc167d230d1f40acafa330e62c2b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -863,6 +863,30 @@ PrefabInstance:
     - target: {fileID: 4308813062482856628, guid: 251bd73b0242fa447a87aaccc99b543c, type: 3}
       propertyPath: _data.<MaxHealth>k__BackingField
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4308813062482856628, guid: 251bd73b0242fa447a87aaccc99b543c, type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4308813062482856628, guid: 251bd73b0242fa447a87aaccc99b543c, type: 3}
+      propertyPath: OnDamage.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4308813062482856628, guid: 251bd73b0242fa447a87aaccc99b543c, type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1736234634865184432}
+    - target: {fileID: 4308813062482856628, guid: 251bd73b0242fa447a87aaccc99b543c, type: 3}
+      propertyPath: OnDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1736234634865184432}
+    - target: {fileID: 4308813062482856628, guid: 251bd73b0242fa447a87aaccc99b543c, type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4308813062482856628, guid: 251bd73b0242fa447a87aaccc99b543c, type: 3}
+      propertyPath: OnDamage.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6860509031216667454, guid: 251bd73b0242fa447a87aaccc99b543c, type: 3}
       propertyPath: m_Size.x

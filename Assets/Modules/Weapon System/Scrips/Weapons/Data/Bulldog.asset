@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
-  m_Name: Cannon Left
+  m_Name: Bulldog
   m_EditorClassIdentifier: 
-  WeaponPrefab: {fileID: 3326320117398333886, guid: bfa4815a976377a4aa45370ab2f81caf, type: 3}
+  WeaponPrefab: {fileID: 8174378311341352700, guid: f8c5dcd118e697d4f9686d9355e90374, type: 3}
   Triggers:
   - rid: 2248387085135249408
   HideArm: 0
   Magazines:
-  - rid: 2248387516189114368
+  - rid: 6012065985212448770
   FireSelector: 0
   MagazineSelector: 0
   SyncedSelector: 0
@@ -33,21 +33,21 @@ MonoBehaviour:
     - rid: 2248387085135249409
       type: {class: FullTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: Weapon
+        name: Punch
         TriggerSettings:
-          FireRate: 50
-    - rid: 2248387516189114368
+          FireRate: 20
+    - rid: 6012065985212448770
       type: {class: Magazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Magazine:
-          rid: 2248387516189114369
+          rid: 6012065985212448771
         Position: 0
-    - rid: 2248387516189114369
-      type: {class: ParabolicMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
+    - rid: 6012065985212448771
+      type: {class: StandardMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: Bullet
+        name: Magazine
         settings:
           SpreadSpeedMod: 0
           MaxSpread: 0
           Recoil: 0
-          BulletData: {fileID: 11400000, guid: fa2324795db4e564cbe225acb64135e6, type: 2}
+          BulletData: {fileID: 11400000, guid: 88bd837f3d21cc546b766db4bfa97f98, type: 2}

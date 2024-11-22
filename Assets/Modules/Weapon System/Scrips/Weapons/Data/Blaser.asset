@@ -10,44 +10,44 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
-  m_Name: punch
+  m_Name: Blaser
   m_EditorClassIdentifier: 
-  WeaponPrefab: {fileID: 1791708719272366185, guid: 7eb1548e38d272d488f65695f2369c98, type: 3}
+  WeaponPrefab: {fileID: 1791708719272366185, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
   Triggers:
-  - rid: 6012065985212448784
-  HideArm: 1
+  - rid: 6012065985212448772
+  HideArm: 0
   Magazines:
-  - rid: 6012065985212448780
+  - rid: 6012065985212448770
   FireSelector: 0
   MagazineSelector: 0
   SyncedSelector: 0
   references:
     version: 2
     RefIds:
-    - rid: 6012065985212448780
+    - rid: 6012065985212448770
       type: {class: Magazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Magazine:
-          rid: 6012065985212448781
+          rid: 6012065985212448771
         Position: 0
-    - rid: 6012065985212448781
-      type: {class: MeleMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
+    - rid: 6012065985212448771
+      type: {class: StandardMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: Melle mag
-        _settings:
-          SpreadSpeedMod: 1
+        name: Bullet
+        settings:
+          SpreadSpeedMod: 0
           MaxSpread: 0
-          Recoil: 0
-          BulletData: {fileID: 11400000, guid: 88bd837f3d21cc546b766db4bfa97f98, type: 2}
-    - rid: 6012065985212448784
+          Recoil: 1
+          BulletData: {fileID: 11400000, guid: 4988db502203fea4597058185f7e828b, type: 2}
+    - rid: 6012065985212448772
       type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Trigger:
-          rid: 6012065985212448785
+          rid: 6012065985212448773
         Position: 0
-    - rid: 6012065985212448785
-      type: {class: FullTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
+    - rid: 6012065985212448773
+      type: {class: SemiTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: full
+        name: Lanzador
         TriggerSettings:
-          FireRate: 100
+          FireRate: 20

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
-  m_Name: laz weapon
+  m_Name: Laser
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 5977768245461570003, guid: 496ae615a81840943a6894c51d78a9a6, type: 3}
   Triggers:
@@ -33,7 +33,7 @@ MonoBehaviour:
     - rid: 6012065985212448777
       type: {class: LaserHeatMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: laser mag
+        name: Magazines
         _settings:
           SpreadSpeedMod: 1
           MaxSpread: 0
@@ -108,6 +108,6 @@ MonoBehaviour:
     - rid: 6012065985212448779
       type: {class: FullTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: full
+        name: Laser
         TriggerSettings:
           FireRate: 1000

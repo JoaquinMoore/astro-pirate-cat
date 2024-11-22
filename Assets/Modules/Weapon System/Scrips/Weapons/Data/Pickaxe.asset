@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
-  m_Name: Welder
+  m_Name: Pickaxe
   m_EditorClassIdentifier: 
-  WeaponPrefab: {fileID: 6088096710855041058, guid: 8ebdd3a23c912644b8d6d663af5ee029, type: 3}
+  WeaponPrefab: {fileID: 6715654363128062651, guid: a817f36e4b985cf439d1c490c7acb7b6, type: 3}
   Triggers:
   - rid: 6012065985212448784
   HideArm: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
           SpreadSpeedMod: 1
           MaxSpread: 0
           Recoil: 0
-          BulletData: {fileID: 11400000, guid: 2e2a3c92ef32d224ebf855fd72f36189, type: 2}
+          BulletData: {fileID: 11400000, guid: ae419413898ce2a468b9847660fcd449, type: 2}
     - rid: 6012065985212448784
       type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:

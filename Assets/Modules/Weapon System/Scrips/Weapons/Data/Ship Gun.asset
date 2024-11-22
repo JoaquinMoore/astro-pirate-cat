@@ -15,7 +15,7 @@ MonoBehaviour:
   WeaponPrefab: {fileID: 3434299139494881736, guid: 75445db4710089d49aa97e07823bbbb2, type: 3}
   Triggers:
   - rid: 2248387085135249408
-  HideArm: 0
+  HideArm: 1
   Magazines:
   - rid: 6012065985212448770
   FireSelector: 0
@@ -33,9 +33,9 @@ MonoBehaviour:
     - rid: 2248387085135249409
       type: {class: FullTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: full
+        name: Weapon
         TriggerSettings:
-          FireRate: 500
+          FireRate: 20
     - rid: 6012065985212448770
       type: {class: Magazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
@@ -45,9 +45,9 @@ MonoBehaviour:
     - rid: 6012065985212448771
       type: {class: StandardMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: standard mag
+        name: Bullet
         settings:
           SpreadSpeedMod: 2
           MaxSpread: 10
           Recoil: 0
-          BulletData: {fileID: 11400000, guid: 776d5c2bc89f467449840b4205ad20ce, type: 2}
+          BulletData: {fileID: 11400000, guid: b08045fbd4117224b912120c757f4477, type: 2}

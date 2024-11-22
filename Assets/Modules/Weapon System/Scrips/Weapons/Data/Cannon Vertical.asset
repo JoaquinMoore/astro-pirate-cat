@@ -33,9 +33,9 @@ MonoBehaviour:
     - rid: 2248387085135249409
       type: {class: FullTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: full
+        name: Weapon
         TriggerSettings:
-          FireRate: 100
+          FireRate: 50
     - rid: 2248387516189114368
       type: {class: Magazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
@@ -45,7 +45,7 @@ MonoBehaviour:
     - rid: 2248387516189114369
       type: {class: ParabolicMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: Parabolic mag
+        name: Bullet
         settings:
           SpreadSpeedMod: 0
           MaxSpread: 0
