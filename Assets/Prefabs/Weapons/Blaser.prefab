@@ -81,6 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _anims: {fileID: 6862828244387711133}
   _shootPivot: {fileID: 9073714191902221106}
+  _flashRef: {fileID: 7186877302397601129}
   _sprite: {fileID: 8221808430283909541}
   _selector:
     rid: -2
@@ -248,5 +249,10 @@ PrefabInstance:
 --- !u!4 &4018061699868476985 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2971861878639133862, guid: d25737e4eb7bef84a9360aeee92d3c2a, type: 3}
+  m_PrefabInstance: {fileID: 2232986559304221343}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7186877302397601129 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9025710245727881206, guid: d25737e4eb7bef84a9360aeee92d3c2a, type: 3}
   m_PrefabInstance: {fileID: 2232986559304221343}
   m_PrefabAsset: {fileID: 0}

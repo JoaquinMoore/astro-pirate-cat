@@ -41,6 +41,6 @@ namespace WeaponSystem
     public class Trigger
     {
         [SerializeReference] public BaseTrigger _Trigger;
-        public int Position;
+        [HideInInspector] public int Position;
     }
 }
