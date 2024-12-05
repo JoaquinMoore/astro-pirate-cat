@@ -25,6 +25,7 @@ namespace WeaponSystem
 
             List<BaseTrigger> triggers = new();
             List<BaseMagazine> mags = new();
+            _softSpeedCap = weaponData.SoftSpeedCap;
 
             foreach (var item in weaponData.Triggers)
             {

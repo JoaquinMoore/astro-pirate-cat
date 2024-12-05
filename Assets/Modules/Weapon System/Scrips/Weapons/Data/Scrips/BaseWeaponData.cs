@@ -7,6 +7,8 @@ namespace WeaponSystem
     public class BaseWeaponData : ScriptableObject
     {
         public BaseWeapon WeaponPrefab;
+        public float SoftSpeedCap;
+
 
         [SerializeReference] public List<Trigger> Triggers;
         public bool HideArm;

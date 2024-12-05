@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: Blaser
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 1791708719272366185, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
+  SoftSpeedCap: 3
   Triggers:
   - rid: 6012065985212448772
   HideArm: 0
   Magazines:
   - rid: 6012065985212448770
-  FireSelector: 0
-  MagazineSelector: 0
   SyncedSelector: 0
   references:
     version: 2
@@ -50,4 +49,4 @@ MonoBehaviour:
       data:
         name: Lanzador
         TriggerSettings:
-          FireRate: 20
+          FireRate: 200

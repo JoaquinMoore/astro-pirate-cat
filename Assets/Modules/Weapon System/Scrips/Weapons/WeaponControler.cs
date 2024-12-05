@@ -53,8 +53,14 @@ namespace WeaponSystem
             if (_ArmRef != null)
                 _ArmRef.enabled = !_currentWeapon.HideArmOnEquiped;
             oritnalpos = _WeaponRot.transform.localPosition;
+
+            //OnImpulse += test;
         }
 
+        public void test(Vector2 inpult)
+        {
+            Debug.Log(inpult);
+        }
 
         void Update()
         {
@@ -236,11 +242,16 @@ namespace WeaponSystem
             WeaponSlot hol = new();
             hol.Weapon = wep;
             wep.OnImpulseAction += impulse => OnImpulse(impulse);
+            Debug.Log(wep.OnImpulseAction);
             hol.HideArmOnEquiped = data.HideArm;
 
             _weapons.Add(hol);
         }
 
+        public float GetSoftSpeedCap()
+        {
+            return _selectedWeapon.Weapon.SoftSpeedCap;
+        }
 
 
         [System.Serializable]

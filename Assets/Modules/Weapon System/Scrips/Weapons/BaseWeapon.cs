@@ -1,6 +1,4 @@
-using System.Collections;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace WeaponSystem
@@ -8,6 +6,10 @@ namespace WeaponSystem
     public class BaseWeapon : MonoBehaviour
     {
         public Action<Vector2> OnImpulseAction;
+
+        protected float _softSpeedCap;
+
+        public float SoftSpeedCap => _softSpeedCap;
 
         protected virtual BaseWeaponData _data { get; }
 

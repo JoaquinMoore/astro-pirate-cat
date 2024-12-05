@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
-  m_Name: Golden
+  m_Name: Blaser 1
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 1791708719272366185, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
-  SoftSpeedCap: 0
+  SoftSpeedCap: 7
   Triggers:
-  - rid: 2248387085135249408
+  - rid: 6012065985212448772
   HideArm: 0
   Magazines:
   - rid: 6012065985212448770
@@ -23,18 +23,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 2248387085135249408
-      type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}
-      data:
-        _Trigger:
-          rid: 2248387085135249409
-        Position: 0
-    - rid: 2248387085135249409
-      type: {class: FullTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
-      data:
-        name: Weapon
-        TriggerSettings:
-          FireRate: 20
     - rid: 6012065985212448770
       type: {class: Magazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
@@ -48,5 +36,17 @@ MonoBehaviour:
         settings:
           SpreadSpeedMod: 0
           MaxSpread: 0
-          Recoil: 0
-          BulletData: {fileID: 11400000, guid: 776d5c2bc89f467449840b4205ad20ce, type: 2}
+          Recoil: 1
+          BulletData: {fileID: 11400000, guid: 4988db502203fea4597058185f7e828b, type: 2}
+    - rid: 6012065985212448772
+      type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}
+      data:
+        _Trigger:
+          rid: 6012065985212448773
+        Position: 0
+    - rid: 6012065985212448773
+      type: {class: SemiTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
+      data:
+        name: Lanzador
+        TriggerSettings:
+          FireRate: 200
