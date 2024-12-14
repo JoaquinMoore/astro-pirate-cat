@@ -57,6 +57,7 @@ namespace WeaponSystem
         public override void ResetBullet()
         {
             Instantiate(_particle, transform.position, Quaternion.identity);
+            bulletsPool.Release(this);
         }
 
         public virtual void OnImpact() { Instantiate(_particle, transform.position, Quaternion.identity); }
