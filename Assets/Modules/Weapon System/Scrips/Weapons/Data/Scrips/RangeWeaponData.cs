@@ -11,9 +11,7 @@ namespace WeaponSystem
 
 
 
-        public bool FireSelector;
-        public bool MagazineSelector;
-        public bool SyncedSelector;
+        [HideInInspector] public bool SyncedSelector;
 
 
 
@@ -65,6 +63,6 @@ namespace WeaponSystem
     public class Magazine
     {
         [SerializeReference] public BaseMagazine _Magazine;
-        public int Position;
+        [HideInInspector] public int Position;
     }
 }

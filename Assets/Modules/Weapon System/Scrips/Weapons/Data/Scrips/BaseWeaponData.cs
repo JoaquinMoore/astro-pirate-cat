@@ -7,6 +7,8 @@ namespace WeaponSystem
     public class BaseWeaponData : ScriptableObject
     {
         public BaseWeapon WeaponPrefab;
+        public float SoftSpeedCap;
+
 
         [SerializeReference] public List<Trigger> Triggers;
         public bool HideArm;
@@ -41,6 +43,6 @@ namespace WeaponSystem
     public class Trigger
     {
         [SerializeReference] public BaseTrigger _Trigger;
-        public int Position;
+        [HideInInspector] public int Position;
     }
 }

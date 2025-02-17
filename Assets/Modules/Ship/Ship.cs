@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using HealthSystem;
+using UnityEngine.UI;
 public class Ship : MonoBehaviour
 {
     [SerializeField] private GameObject _player;
     [SerializeField] private float _Distance;
-
+    [SerializeField] private Health _hp;
+    [SerializeField] private Slider _slider;
+    [SerializeField] private Animator _anim;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +40,8 @@ public class Ship : MonoBehaviour
     public void Ondamage()
     {
         Debug.Log("ow");
+        _slider.value = (float)_hp.PublicCurrentHealth / _hp.PublicMaxHealth;
+        _anim.SetFloat("Life", (float)_hp.PublicCurrentHealth / _hp.PublicMaxHealth);
     }
 
     public void Ondeath()

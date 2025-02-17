@@ -52,9 +52,15 @@ namespace WeaponSystem
 
             if (_ArmRef != null)
                 _ArmRef.enabled = !_currentWeapon.HideArmOnEquiped;
-            oritnalpos = _WeaponRot.transform.position;
+            oritnalpos = _WeaponRot.transform.localPosition;
+
+            //OnImpulse += test;
         }
 
+        public void test(Vector2 inpult)
+        {
+            Debug.Log(inpult);
+        }
 
         void Update()
         {
@@ -76,7 +82,7 @@ namespace WeaponSystem
                 test = true;
             }
             MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition), test);
-            MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            //MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
 
 
@@ -143,13 +149,13 @@ namespace WeaponSystem
 
             if (flip == true)
             {
-                _WeaponRot.transform.position = oritnalpos;
+                _WeaponRot.transform.localPosition = oritnalpos;
                 rot = 0;
                 pos = target - (Vector2)transform.position;
             }
             else
             {
-                _WeaponRot.transform.position = new Vector3(oritnalpos.x * -1, oritnalpos.y, oritnalpos.z);
+                _WeaponRot.transform.localPosition = new Vector3(oritnalpos.x * -1, oritnalpos.y, oritnalpos.z);
                 rot = 180;
                 Debug.Log("called");
                 pos = new Vector2(target.x * -1, target.y ) - (Vector2)transform.position;
@@ -236,11 +242,16 @@ namespace WeaponSystem
             WeaponSlot hol = new();
             hol.Weapon = wep;
             wep.OnImpulseAction += impulse => OnImpulse(impulse);
+            Debug.Log(wep.OnImpulseAction);
             hol.HideArmOnEquiped = data.HideArm;
 
             _weapons.Add(hol);
         }
 
+        public float GetSoftSpeedCap()
+        {
+            return _selectedWeapon.Weapon.SoftSpeedCap;
+        }
 
 
         [System.Serializable]

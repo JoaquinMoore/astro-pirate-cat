@@ -6,8 +6,8 @@ namespace WeaponSystem
 {
     public class BaseBullet : BaseProjectile
     {
-        protected IObjectPool<BaseBullet> bulletsPool;
-        public IObjectPool<BaseBullet> BulletsPool { set => bulletsPool = value; }
+        protected IObjectPool<BaseBullet> _bulletsPool;
+        public IObjectPool<BaseBullet> BulletsPool { set => _bulletsPool = value; }
 
         protected Rigidbody2D _rigidBody;
         protected CircleCollider2D _circleCollider;
@@ -28,6 +28,6 @@ namespace WeaponSystem
 
         public virtual void ExternalInput() { }
         public virtual IEnumerator DespawnTimer() { yield return null; }
-        public virtual void ResetBullet() { }
+        public virtual void ResetBullet() { _bulletsPool.Release(this); }
     }
 }

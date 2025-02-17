@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
-  m_Name: welder
+  m_Name: Welder
   m_EditorClassIdentifier: 
-  WeaponPrefab: {fileID: 1440629363716621446, guid: 974412b97bf99d5449f524e5b4451de7, type: 3}
+  WeaponPrefab: {fileID: 6088096710855041058, guid: 8ebdd3a23c912644b8d6d663af5ee029, type: 3}
   Triggers:
   - rid: 6012065985212448784
   HideArm: 0
@@ -33,7 +33,7 @@ MonoBehaviour:
     - rid: 6012065985212448781
       type: {class: MeleMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: Melle mag
+        name: Magazine
         _settings:
           SpreadSpeedMod: 1
           MaxSpread: 0
@@ -48,6 +48,6 @@ MonoBehaviour:
     - rid: 6012065985212448785
       type: {class: FullTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: full
+        name: Punch
         TriggerSettings:
           FireRate: 100

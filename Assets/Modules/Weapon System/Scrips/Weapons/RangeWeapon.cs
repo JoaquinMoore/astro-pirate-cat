@@ -8,6 +8,7 @@ namespace WeaponSystem
     public class RangeWeapon : BaseWeapon<RangeWeaponData>
     {
         [SerializeField] private Transform _shootPivot;
+        [SerializeField] private GameObject _flashRef;
         [SerializeField] private GameObject _sprite;
 
         [SerializeReference] private BaseSelector _selector;
@@ -24,6 +25,7 @@ namespace WeaponSystem
 
             List<BaseTrigger> triggers = new();
             List<BaseMagazine> mags = new();
+            _softSpeedCap = weaponData.SoftSpeedCap;
 
             foreach (var item in weaponData.Triggers)
             {
@@ -111,14 +113,15 @@ namespace WeaponSystem
             _currentTrigger.FireIsDown();
             _currentMag.Fire();
             OnImpulseAction.Invoke(-transform.right * _currentMag.RecoilReturn());
+            _flashRef.SetActive(true);
             Spread();
         }
 
         public override void EndAnimFire()
         {
+            _flashRef.SetActive(false);
             if (_onFire)
                 return;
-
             _anims.ResetTrigger("Fire");
             _currentTrigger.FireWasUp();
             _currentMag.FireIsUp();
