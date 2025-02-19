@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: testoverheat
+  m_Name: Overheat
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -25,11 +25,11 @@ AnimationClip:
     - time: 0.33333334
       value: {fileID: -1084455935, guid: 061fc2defc82e5a4fa7a710ea7b7b8cf, type: 3}
     - time: 0.6666667
-      value: {fileID: 178232924, guid: 061fc2defc82e5a4fa7a710ea7b7b8cf, type: 3}
+      value: {fileID: -486219665, guid: 061fc2defc82e5a4fa7a710ea7b7b8cf, type: 3}
     - time: 1
       value: {fileID: -1053207580, guid: 061fc2defc82e5a4fa7a710ea7b7b8cf, type: 3}
     attribute: m_Sprite
-    path: Sprite
+    path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -41,7 +41,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 850496168
+      path: 0
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -52,7 +52,7 @@ AnimationClip:
     pptrCurveMapping:
     - {fileID: -1053207580, guid: 061fc2defc82e5a4fa7a710ea7b7b8cf, type: 3}
     - {fileID: -1084455935, guid: 061fc2defc82e5a4fa7a710ea7b7b8cf, type: 3}
-    - {fileID: 178232924, guid: 061fc2defc82e5a4fa7a710ea7b7b8cf, type: 3}
+    - {fileID: -486219665, guid: 061fc2defc82e5a4fa7a710ea7b7b8cf, type: 3}
     - {fileID: -1053207580, guid: 061fc2defc82e5a4fa7a710ea7b7b8cf, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2

@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
-  m_Name: Chiguagua
+  m_Name: Golden Blaser
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 1791708719272366185, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
+  SoftSpeedCap: 0
   Triggers:
   - rid: 2248387085135249408
   HideArm: 0
   Magazines:
   - rid: 6012065985212448770
-  FireSelector: 0
-  MagazineSelector: 0
   SyncedSelector: 0
   references:
     version: 2
@@ -50,4 +49,4 @@ MonoBehaviour:
           SpreadSpeedMod: 0
           MaxSpread: 0
           Recoil: 0
-          BulletData: {fileID: 11400000, guid: 776d5c2bc89f467449840b4205ad20ce, type: 2}
+          BulletData: {fileID: 11400000, guid: afade058a7b92a84f9fb6e079f9bf111, type: 2}

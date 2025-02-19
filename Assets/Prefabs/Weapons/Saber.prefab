@@ -64,6 +64,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saber
       objectReference: {fileID: 0}
+    - target: {fileID: 9073714191902221106, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.884
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073714191902221106, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.442
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7186877302397601129, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}

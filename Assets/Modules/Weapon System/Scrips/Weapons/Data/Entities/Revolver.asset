@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
-  m_Name: Blaser 1
+  m_Name: Revolver
   m_EditorClassIdentifier: 
-  WeaponPrefab: {fileID: 1791708719272366185, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
-  SoftSpeedCap: 7
+  WeaponPrefab: {fileID: 1529795167217710192, guid: 7663679a72153f8459b1f02d4d0387ca, type: 3}
+  SoftSpeedCap: 3
   Triggers:
   - rid: 6012065985212448772
   HideArm: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
           SpreadSpeedMod: 0
           MaxSpread: 0
           Recoil: 1
-          BulletData: {fileID: 11400000, guid: 4988db502203fea4597058185f7e828b, type: 2}
+          BulletData: {fileID: 11400000, guid: c7f7357cda6c5df41bd0cadb4b1900f7, type: 2}
     - rid: 6012065985212448772
       type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:

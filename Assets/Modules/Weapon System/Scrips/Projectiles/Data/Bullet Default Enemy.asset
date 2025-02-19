@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40e32790f18e69240900d4899a35c650, type: 3}
+  m_Name: Bullet Default Enemy
+  m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 8423710872303376895, guid: 85c3b2c68c24b894cb3235adf2f84652, type: 3}
+  HardPrefCap: 1000
+  SoftPrefCap: 100
+  ParticlePref: {fileID: 7771115826145300190, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
+  _damage: 10
+  _speed: 10
+  _timer: 5
+  AlainceMat: {fileID: 2100000, guid: 4cab99caf975cd2479e745b1b2d8ceb4, type: 2}

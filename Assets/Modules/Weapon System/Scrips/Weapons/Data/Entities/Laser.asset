@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: Laser
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 5977768245461570003, guid: 496ae615a81840943a6894c51d78a9a6, type: 3}
+  SoftSpeedCap: 0
   Triggers:
   - rid: 6012065985212448778
   HideArm: 0
   Magazines:
   - rid: 6012065985212448776
-  FireSelector: 0
-  MagazineSelector: 0
   SyncedSelector: 0
   references:
     version: 2
@@ -37,7 +36,7 @@ MonoBehaviour:
         _settings:
           SpreadSpeedMod: 1
           MaxSpread: 0
-          Recoil: 0
+          Recoil: 1
           BulletData: {fileID: 11400000, guid: c4d47d02be29cb2479c7515a7328c328, type: 2}
           RecoilSpeedGainMod: 1
           MaxHeat: 1
