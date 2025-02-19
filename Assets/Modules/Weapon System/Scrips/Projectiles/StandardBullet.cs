@@ -23,7 +23,7 @@ namespace WeaponSystem
                 StartCoroutine(DespawnTimer());
         }
 
-        public override void SetUp(BaseBulletData data)
+        public override void SetUp(BaseBulletData data, BaseMagazine action)
         {
             StandardBulletData _data = data as StandardBulletData;
 
@@ -34,8 +34,8 @@ namespace WeaponSystem
                 GetComponent<SpriteRenderer>().material = _data.AlainceMat;
             else
                _mat.material = _data.AlainceMat;
-            _particle = _data.AlainceParticle;
             StartCoroutine(DespawnTimer());
+            base.SetUp(data, action);
         }
         public override void Move()
         {
@@ -56,11 +56,11 @@ namespace WeaponSystem
 
         public override void ResetBullet()
         {
-            Instantiate(_particle, transform.position, Quaternion.identity);
+
             base.ResetBullet();
         }
 
-        public virtual void OnImpact() { Instantiate(_particle, transform.position, Quaternion.identity); }
+        public virtual void OnImpact() { }
 
 
         public override IEnumerator DespawnTimer() { yield return new WaitForSeconds(_timer); ResetBullet(); }

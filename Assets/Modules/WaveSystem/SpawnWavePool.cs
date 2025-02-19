@@ -20,12 +20,16 @@ public class SpawnWavePool : MonoBehaviour
     private float _spawnInterval;
     [SerializeField, Tooltip("La distancia entre los puntos de spawns y el jugador minima que se requiere para spawnear un enemigo")]
     private float _PlayerDistance;
+    [SerializeField, Tooltip("El area donde los enemigos pueden spawnear alrededor de un punto de spawns")]
+    private float _AreaOfSpawn;
     [SerializeField, Tooltip("el tiempo que uno decide para el failsafe con cada enemigos, este valor se multiplica con la cantidad total de enemigos")]
     private float _TimeFromEachSpawn;
     [SerializeField, Tooltip("este es un tiempo extra que se añade al failsafe encima del tiempo en cada enemigo")]
     private float _ExtraTime;
     [SerializeField, Tooltip("Cada cuantas oleadas queres que se cree la oleada especial")]
-    private float _SpecialWave;
+    private int _SpecialWave;
+
+
 
     [SerializeField, Tooltip("Pools de los enemigos")]
     private List<EnemyPool> _enemyPools;
@@ -46,8 +50,6 @@ public class SpawnWavePool : MonoBehaviour
     public static UnityEvent Sendspawns = new();
 
     private bool TimerStarted;
-
-    //private IObjectPool<testenemy> pool;
 
     void Start()
     {
@@ -205,11 +207,11 @@ public class SpawnWavePool : MonoBehaviour
     
         for (currentEnemies = 0; currentEnemies < totalEnemies;)
         {
-            var holder = waveSpawns[UnityEngine.Random.Range(0, index)];
+            var holder = waveSpawns[Random.Range(0, index)];
             EnemyList listholder = EnemyList.Find(enemy => enemy.Tag == holder.tag);
             EnemyPool poolholder = _enemyPools.Find(enemy => enemy.tag == holder.tag);
 
-            spawnPoint = CheckForPlayerView(spawnpoint[UnityEngine.Random.Range(0, spawnpoint.Count)]);
+            spawnPoint = CheckForPlayerView(spawnpoint[Random.Range(0, spawnpoint.Count)]);
 
 
 
@@ -219,7 +221,7 @@ public class SpawnWavePool : MonoBehaviour
             if (listholder.Enemys.Count < listholder.MaxAmount)
             {
                 enemy = poolholder.Pool.Get();
-                enemy.transform.position = spawnPoint.SpawnPoint.position;
+                enemy.transform.position = (Vector2)spawnPoint.SpawnPoint.position + (Random.insideUnitCircle *_AreaOfSpawn);
                 currentEnemies++;
                 listholder.Enemys.Add(enemy);
                 failsafe--;
@@ -310,7 +312,10 @@ public class SpawnWavePool : MonoBehaviour
     {
         foreach (var item in _SpawnPoints)
         {
+            Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(item.SpawnPoint.position, _PlayerDistance);
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(item.SpawnPoint.position, _AreaOfSpawn);
         }
     }
 

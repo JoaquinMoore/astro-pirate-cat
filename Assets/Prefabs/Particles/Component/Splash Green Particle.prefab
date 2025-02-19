@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7771115826145300190, guid: 2b6e4a94301bfdb49a9ef8b11857187b, type: 3}
       propertyPath: m_Name
-      value: Splash Green Particle Variant
+      value: Splash Green Particle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

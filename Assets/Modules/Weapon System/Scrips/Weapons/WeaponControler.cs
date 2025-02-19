@@ -8,6 +8,7 @@ namespace WeaponSystem
     public class WeaponControler : MonoBehaviour
     {
         [Header("Referencias")]
+        [SerializeField] private Transform _WeaponAnimRot;
         [SerializeField] private Transform _WeaponSpawner;
         [SerializeField] private Transform _WeaponRot;
         [SerializeField] private List<BaseWeaponData> _Data;
@@ -57,15 +58,15 @@ namespace WeaponSystem
             //OnImpulse += test;
         }
 
-        public void test(Vector2 inpult)
+        public void VisualLink()
         {
-            Debug.Log(inpult);
+
         }
 
         void Update()
         {
 
-
+            VisualLink();
 
             if (TestingInputs)
             {
@@ -149,15 +150,14 @@ namespace WeaponSystem
 
             if (flip == true)
             {
-                _WeaponRot.transform.localPosition = oritnalpos;
+                _WeaponRot.transform.localPosition = oritnalpos + _WeaponAnimRot.transform.localPosition;
                 rot = 0;
                 pos = target - (Vector2)transform.position;
             }
             else
             {
-                _WeaponRot.transform.localPosition = new Vector3(oritnalpos.x * -1, oritnalpos.y, oritnalpos.z);
+                _WeaponRot.transform.localPosition = new Vector3(oritnalpos.x * -1, oritnalpos.y, oritnalpos.z) - _WeaponAnimRot.transform.localPosition;
                 rot = 180;
-                Debug.Log("called");
                 pos = new Vector2(target.x * -1, target.y ) - (Vector2)transform.position;
             }
 

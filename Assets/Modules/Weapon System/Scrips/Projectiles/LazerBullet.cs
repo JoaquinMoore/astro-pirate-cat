@@ -109,7 +109,7 @@ namespace WeaponSystem
         {
             foreach (var item in _targets)
             {
-                GameObject par = Instantiate(_particle, transform);
+                Particle par = _baseMagRef.SpawnParticle(transform.transform);
                 float distance = Vector3.Distance(transform.position, item.getGameObject().transform.position);
 
                 par.transform.localPosition = transform.right + new Vector3(distance, 0,0);

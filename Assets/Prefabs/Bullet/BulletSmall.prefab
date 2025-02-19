@@ -58,11 +58,11 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: b9bdd4f69304cd2439d3b36f17854cfa, type: 2}
     - target: {fileID: 7008870281133858056, guid: 99236baa5d886634996f76d29bfe342d, type: 3}
       propertyPath: m_FlipX
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7008870281133858056, guid: 99236baa5d886634996f76d29bfe342d, type: 3}
       propertyPath: m_FlipY
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7008870281133858056, guid: 99236baa5d886634996f76d29bfe342d, type: 3}
       propertyPath: m_Sprite
@@ -142,6 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f99a2186ea232243970b1499e221c45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _baseMagRef:
+    name: 
   _mat: {fileID: 7723973326329623113}
 --- !u!212 &7723973326329623113 stripped
 SpriteRenderer:

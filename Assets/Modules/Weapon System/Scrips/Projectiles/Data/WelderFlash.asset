@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b972ee17589290640b3c52971d80a936, type: 3}
-  m_Name: Welder
+  m_Name: WelderFlash
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 935761914064177371, guid: ce92d1e474a134c48986ee8a5a8e2c54, type: 3}
   HardPrefCap: 1000
   SoftPrefCap: 100
+  ParticlePref: {fileID: 0}
   Damage: 20
   MaxTargets: 5
-  ParticlePref: {fileID: 3307679550257397123, guid: f9125cb3c4c426e48aeb6501fee45594, type: 3}

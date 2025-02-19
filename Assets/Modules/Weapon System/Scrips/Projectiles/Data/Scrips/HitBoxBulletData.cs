@@ -9,6 +9,6 @@ namespace WeaponSystem
     {
         public int Damage;
         public int MaxTargets;
-        public GameObject ParticlePref;
+
     }
 }
