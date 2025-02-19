@@ -113,6 +113,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3779168910475466531}
   - {fileID: 7132318417092966344}
   - {fileID: 2180881582228624191}
   - {fileID: 3820374218616572042}
@@ -147,6 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c7ee4a45c00514f9c341bc4272ff9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxSpeed: 10
+  debugvelociy: {x: 0, y: 0}
+  debugvelociymag: 0
 --- !u!114 &2797715545247019765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9900e47b138f1f94db92edc6a9a03681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _WeaponAnimRot: {fileID: 3779168910475466531}
   _WeaponSpawner: {fileID: 802149076083064397}
   _WeaponRot: {fileID: 3820374218616572042}
   _Data:
@@ -233,7 +238,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.005
+  m_Distance: 1.2556171
   m_MaxDistanceOnly: 0
 --- !u!212 &3474568736520994727
 SpriteRenderer:
@@ -626,6 +631,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &5676769268931190521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3779168910475466531}
+  m_Layer: 13
+  m_Name: AnimArmPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3779168910475466531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5676769268931190521}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7002139680976742402}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7626470805197890922
 GameObject:
   m_ObjectHideFlags: 0
