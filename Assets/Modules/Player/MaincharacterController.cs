@@ -33,12 +33,12 @@ public class MaincharacterController : MonoBehaviour, IMaincharacterController
 
         Vector2 pos = (Vector2)Input.mousePosition - (Vector2)transform.position;
 
-        if (pos.x < 0)
-            test = false;
-        else
+        if (pos.x > 500)
             test = true;
 
         _weaponcontroller.MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition), test);
+
+
     }
 
     public void LimitVelocity(float Hlimit, float Slimit)

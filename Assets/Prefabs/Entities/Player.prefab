@@ -180,7 +180,7 @@ MonoBehaviour:
   _WeaponRot: {fileID: 3820374218616572042}
   _Data:
   - {fileID: 11400000, guid: 5bea5b53e8454084db19dca58a55f5d4, type: 2}
-  TestingInputs: 1
+  TestingInputs: 0
   _weapons: []
   _weaponInt: 0
   _currentWeapon:
@@ -238,7 +238,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.2556171
+  m_Distance: 0.005
   m_MaxDistanceOnly: 0
 --- !u!212 &3474568736520994727
 SpriteRenderer:

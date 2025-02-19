@@ -144,25 +144,19 @@ namespace WeaponSystem
 
         public void MouseAim(Vector2 target, bool flip = false)
         {
-            float rot = 0;
             Vector2 pos = Vector2.zero;
 
-
+            pos = target - (Vector2)transform.position;
+            _WeaponRot.transform.right = pos + new Vector2(0, _currentWeapon.Weapon.WeaponSpread());
             if (flip == true)
             {
                 _WeaponRot.transform.localPosition = oritnalpos + _WeaponAnimRot.transform.localPosition;
-                rot = 0;
-                pos = target - (Vector2)transform.position;
             }
             else
             {
                 _WeaponRot.transform.localPosition = new Vector3(oritnalpos.x * -1, oritnalpos.y, oritnalpos.z) - _WeaponAnimRot.transform.localPosition;
-                rot = 180;
-                pos = new Vector2(target.x * -1, target.y ) - (Vector2)transform.position;
+                _WeaponRot.transform.localEulerAngles = new Vector3(180, 0, -_WeaponRot.transform.eulerAngles.z);
             }
-
-            _WeaponRot.transform.right = pos + new Vector2(0, _currentWeapon.Weapon.WeaponSpread());
-            _WeaponRot.transform.eulerAngles = new Vector3(0, rot, _WeaponRot.transform.eulerAngles.z);
         }
 
 
