@@ -491,82 +491,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6161283069179757519, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: _hookabletargets.m_Bits
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161283069179757519, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: _visualhookcurve.m_Curve.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161283069179757519, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: _visualhookcurve.m_Curve.Array.data[1].time
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161283069179757519, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: _visualhookcurve.m_Curve.Array.data[2].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161283069179757519, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: _visualhookcurve.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161283069179757519, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: _visualhookcurve.m_Curve.Array.data[2].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161283069179757519, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: _visualhookcurve.m_Curve.Array.data[0].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161283069179757519, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: _visualhookcurve.m_Curve.Array.data[1].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161283069179757519, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: _visualhookcurve.m_Curve.Array.data[2].inSlope
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161283069179757519, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: _visualhookcurve.m_Curve.Array.data[0].outSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161283069179757519, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: _visualhookcurve.m_Curve.Array.data[1].inWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161283069179757519, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: _visualhookcurve.m_Curve.Array.data[1].outSlope
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161283069179757519, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: _visualhookcurve.m_Curve.Array.data[2].inWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161283069179757519, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: _visualhookcurve.m_Curve.Array.data[2].outSlope
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161283069179757519, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: _visualhookcurve.m_Curve.Array.data[0].outWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161283069179757519, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: _visualhookcurve.m_Curve.Array.data[1].outWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161283069179757519, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: _visualhookcurve.m_Curve.Array.data[0].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161283069179757519, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: _visualhookcurve.m_Curve.Array.data[1].tangentMode
-      value: 69
-      objectReference: {fileID: 0}
-    - target: {fileID: 6161283069179757519, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: _visualhookcurve.m_Curve.Array.data[2].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
     - target: {fileID: 7002139680976742402, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.547598
@@ -630,10 +554,6 @@ PrefabInstance:
     - target: {fileID: 7880573360192158915, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8030742773967105181, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
-      propertyPath: m_Distance
-      value: 4.6496587
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
