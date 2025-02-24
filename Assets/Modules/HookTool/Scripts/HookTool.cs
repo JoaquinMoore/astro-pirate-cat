@@ -17,15 +17,20 @@ namespace HookToolSystem
         private float _approachSpeed;
 
         private DistanceJoint2D _joint;
+        private GameObject _currentAnchor;
 
         public void Grab(Collider2D collider, GameObject hook = null)
         {
+            if (collider?.gameObject == _currentAnchor)
+                return;
+
             if (collider && collider.TryGetComponent<HookAnchor>(out var anchor))
             {
                 hook = hook != null ? hook : collider.gameObject;
                 hook.transform.position = collider.transform.position;
                 _joint.connectedAnchor = hook.transform.position;
                 _joint.enabled = true;
+                _currentAnchor = collider.gameObject;
 
                 if (anchor.typeOfAnchor == HookAnchor.AnchorType.Approach)
                 {
@@ -42,6 +47,7 @@ namespace HookToolSystem
         public void Ungrab()
         {
             _joint.enabled = false;
+            _currentAnchor = null;
         }
 
         private void Awake()
