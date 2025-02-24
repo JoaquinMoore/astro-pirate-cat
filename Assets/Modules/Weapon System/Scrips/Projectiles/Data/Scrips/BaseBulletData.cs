@@ -4,6 +4,16 @@ using UnityEngine;
 
 namespace WeaponSystem
 {
+    public enum Aliance
+    {
+        allies = 7,
+        enemy = 6,
+        neutral = 0
+
+    };
+
+
+
     public class BaseBulletData : ScriptableObject
     {
         public BaseBullet BulletPrefab;
@@ -13,6 +23,6 @@ namespace WeaponSystem
 
         [Header("Data")]
         public GameObject ParticlePref;
-
+        [Tooltip("esto ")] public Aliance Aliance;
     }
 }

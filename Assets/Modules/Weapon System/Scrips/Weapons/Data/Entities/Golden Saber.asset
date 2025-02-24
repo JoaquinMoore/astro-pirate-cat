@@ -18,7 +18,7 @@ MonoBehaviour:
   - rid: 2248387085135249408
   HideArm: 0
   Magazines:
-  - rid: 6012065985212448770
+  - rid: 4213665501660577792
   SyncedSelector: 0
   references:
     version: 2
@@ -35,18 +35,18 @@ MonoBehaviour:
         name: Punch
         TriggerSettings:
           FireRate: 20
-    - rid: 6012065985212448770
+    - rid: 4213665501660577792
       type: {class: Magazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Magazine:
-          rid: 6012065985212448771
+          rid: 4213665501660577793
         Position: 0
-    - rid: 6012065985212448771
-      type: {class: StandardMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
+    - rid: 4213665501660577793
+      type: {class: MeleMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: Magazine
-        settings:
-          SpreadSpeedMod: 0
+        name: Melle mag
+        _settings:
+          SpreadSpeedMod: 1
           MaxSpread: 0
           Recoil: 0
           BulletData: {fileID: 11400000, guid: 418085b548a6add449c4b6afc1920fa6, type: 2}

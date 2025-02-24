@@ -92,6 +92,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1791708719272366185, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
+      propertyPath: _flashRef
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4804763857686872613, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
       propertyPath: m_Size.y
       value: 0.96
@@ -165,7 +169,8 @@ PrefabInstance:
       value: Laser
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7186877302397601129, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5032906827749306957, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
       insertIndex: 0

@@ -45,8 +45,6 @@ namespace WeaponSystem
         }
         public override void ExternalInput()
         {
-            Debug.Log(_targets.Count);
-
             for (int i = 0; i < _targets.Count; i++)
             {
                 if (_targets[i] == null)

@@ -15,6 +15,7 @@ MonoBehaviour:
   BulletPrefab: {fileID: 935761914064177371, guid: ce92d1e474a134c48986ee8a5a8e2c54, type: 3}
   HardPrefCap: 1000
   SoftPrefCap: 100
+  ParticlePref: {fileID: 812560458045284063, guid: 44e08743c1ec1b74cb1a5951db741abb, type: 3}
+  Aliance: 6
   Damage: 20
   MaxTargets: 5
-  ParticlePref: {fileID: 812560458045284063, guid: 44e08743c1ec1b74cb1a5951db741abb, type: 3}

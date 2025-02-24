@@ -47,8 +47,6 @@ namespace WeaponSystem
             else
                 curdist = VisualLenght;
 
-            Debug.Log(_targets.Count);
-
 
             _lr.SetPosition(0, transform.position);
             _lr.SetPosition(1, transform.position + (transform.right * curdist));
@@ -64,8 +62,6 @@ namespace WeaponSystem
         public override void UpdateTartetListVisual()
         {
             float newdist = 0;
-            Debug.Log("ca");
-
             foreach (var item in _targets)
             {
                 float dist = Vector3.Distance(transform.position, item.getGameObject().transform.position);
@@ -78,7 +74,6 @@ namespace WeaponSystem
 
             }
             _fardestTargetDist = newdist;
-            Debug.Log(newdist);
         }
 
         public void VisualLenghtCalc()
@@ -113,8 +108,6 @@ namespace WeaponSystem
                 float distance = Vector3.Distance(transform.position, item.getGameObject().transform.position);
 
                 par.transform.localPosition = transform.right + new Vector3(distance, 0,0);
-
-                par.transform.SetParent(null);
             }
         }
 

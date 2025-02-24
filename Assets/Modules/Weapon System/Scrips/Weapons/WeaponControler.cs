@@ -83,7 +83,6 @@ namespace WeaponSystem
                 test = true;
             }
             MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition), test);
-            //MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
 
 
@@ -236,7 +235,6 @@ namespace WeaponSystem
             WeaponSlot hol = new();
             hol.Weapon = wep;
             wep.OnImpulseAction += impulse => OnImpulse(impulse);
-            Debug.Log(wep.OnImpulseAction);
             hol.HideArmOnEquiped = data.HideArm;
 
             _weapons.Add(hol);

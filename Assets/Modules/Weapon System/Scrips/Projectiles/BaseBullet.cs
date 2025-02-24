@@ -20,7 +20,9 @@ namespace WeaponSystem
             _circleCollider = GetComponent<CircleCollider2D>();
         }
 
-        public virtual void SetUp(BaseBulletData data, BaseMagazine action) { _baseMagRef = action; }
+        public virtual void SetUp(BaseBulletData data, BaseMagazine action) { _baseMagRef = action; gameObject.layer = (int)data.Aliance;}
+
+
 
         private void FixedUpdate()
         {

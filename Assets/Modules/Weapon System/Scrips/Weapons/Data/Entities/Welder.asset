@@ -13,27 +13,26 @@ MonoBehaviour:
   m_Name: Welder
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 6088096710855041058, guid: 8ebdd3a23c912644b8d6d663af5ee029, type: 3}
+  SoftSpeedCap: 0
   Triggers:
   - rid: 6012065985212448784
   HideArm: 0
   Magazines:
-  - rid: 6012065985212448780
-  FireSelector: 0
-  MagazineSelector: 0
+  - rid: 4213665501660577800
   SyncedSelector: 0
   references:
     version: 2
     RefIds:
-    - rid: 6012065985212448780
+    - rid: 4213665501660577800
       type: {class: Magazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Magazine:
-          rid: 6012065985212448781
+          rid: 4213665501660577801
         Position: 0
-    - rid: 6012065985212448781
+    - rid: 4213665501660577801
       type: {class: MeleMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: Magazine
+        name: Melle mag
         _settings:
           SpreadSpeedMod: 1
           MaxSpread: 0

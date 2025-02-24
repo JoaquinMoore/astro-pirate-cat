@@ -244,8 +244,10 @@ namespace WeaponSystem
                     _sprite1 = trans;
             }
 
-
             base.AddData(shootpivot, wp, settings);
+
+
+            CreateParticlePool();
         }
 
         public override void Fire()

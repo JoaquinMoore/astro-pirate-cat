@@ -13,27 +13,26 @@ MonoBehaviour:
   m_Name: Pickaxe
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 6715654363128062651, guid: a817f36e4b985cf439d1c490c7acb7b6, type: 3}
+  SoftSpeedCap: 0
   Triggers:
   - rid: 6012065985212448784
   HideArm: 0
   Magazines:
-  - rid: 6012065985212448780
-  FireSelector: 0
-  MagazineSelector: 0
+  - rid: 4213665501660577796
   SyncedSelector: 0
   references:
     version: 2
     RefIds:
-    - rid: 6012065985212448780
+    - rid: 4213665501660577796
       type: {class: Magazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Magazine:
-          rid: 6012065985212448781
+          rid: 4213665501660577797
         Position: 0
-    - rid: 6012065985212448781
+    - rid: 4213665501660577797
       type: {class: MeleMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: Magazine
+        name: Melle mag
         _settings:
           SpreadSpeedMod: 1
           MaxSpread: 0

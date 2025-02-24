@@ -11,7 +11,6 @@ public class Particle : MonoBehaviour
 
     private void OnDisable()
     {
-        Debug.Log("aaa");
         if (_particlePool != null)
             _particlePool.Release(this);
     }
