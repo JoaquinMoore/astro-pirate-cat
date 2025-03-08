@@ -4,10 +4,13 @@ using UnityEngine;
 
 public static class RadiusDetector
 {
-    public static IEnumerable<Transform> CircleDetector(Vector2 center, float radius, LayerMask layerMask)
+    public static IEnumerable<Collider2D> CircleDetector(Vector2 center, float radius, LayerMask layerMask)
     {
-        return Physics2D.OverlapCircleAll(center, radius, layerMask).
-            Where(c => c != null).
-            Select(c => c.transform);
+        return Physics2D.OverlapCircleAll(center, radius, layerMask).Where(c => c != null);
+    }
+
+    public static IEnumerable<Collider2D> CircleDetector(Vector2 center, float radius)
+    {
+        return CircleDetector(center, radius, LayerMask.GetMask("Default"));
     }
 }

@@ -27,7 +27,7 @@ namespace BuildSystem
             _model._base.transform.position,
             _viewRange,
             _enemyLayerMask
-        );
+        ).Select(c => c.transform);
 
         private Transform _NearEnemy
         {

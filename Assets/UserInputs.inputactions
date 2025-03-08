@@ -1,6 +1,55 @@
 {
     "name": "UserInputs",
-    "maps": [],
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "d3895a02-0641-441a-b50a-7b6344659132",
+            "actions": [
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "38bdc6b7-c3f4-4d77-89f9-4a1fc5db4953",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hook",
+                    "type": "Button",
+                    "id": "854699f0-26d8-4af4-a6c1-099d91c3e33d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7f7a1d9d-9525-44cc-b4d1-8582c3e8f5cb",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2d4e3621-9aee-44b5-9297-4c92e7e54ea0",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Hook",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
     "controlSchemes": [
         {
             "name": "Keyboard&Mouse",
