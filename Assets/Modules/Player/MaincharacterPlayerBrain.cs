@@ -20,7 +20,7 @@ public class MaincharacterPlayerBrain : MonoBehaviour
     {
         _controller.Attack(_attackAction.IsPressed());
 
-        if (_hookAction.IsPressed())
+        if (_hookAction.WasPressedThisFrame())
         {
             var target = RadiusDetector.CircleDetector(Mouse.current.WorldPosition(), 2).OrderBy(c => Vector2.Distance(Mouse.current.WorldPosition(), c.transform.position)).FirstOrDefault();
             _controller.Hook(target);
