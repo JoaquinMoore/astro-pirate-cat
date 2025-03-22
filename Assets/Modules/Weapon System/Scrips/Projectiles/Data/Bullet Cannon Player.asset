@@ -15,8 +15,9 @@ MonoBehaviour:
   BulletPrefab: {fileID: 605248252937642893, guid: 8b12cf60519671349a2bc08553e21048, type: 3}
   HardPrefCap: 1000
   SoftPrefCap: 100
+  ParticlePref: {fileID: 4828676028102639790, guid: 6049662207597734090dc0c9b1f48d65, type: 3}
+  Aliance: 7
   _damage: 10
   _speed: 7.2
   _timer: 12
   AlainceMat: {fileID: 2100000, guid: caae97e79e2a144479d6b6e82644029c, type: 2}
-  AlainceParticle: {fileID: 4828676028102639790, guid: 6049662207597734090dc0c9b1f48d65, type: 3}

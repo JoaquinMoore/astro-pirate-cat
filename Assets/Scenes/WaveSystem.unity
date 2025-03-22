@@ -481,7 +481,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Wave:
   - {fileID: 11400000, guid: 364f9ad8e58877f47817f570dd9f6ee4, type: 2}
+  _FinalWave: 5
   <MatWave>k__BackingField: {fileID: 0}
+  _indexWave: 6
   _currentWave: {fileID: 0}
   _wave: {fileID: 0}
 --- !u!4 &975017110
@@ -549,9 +551,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnInterval: 0.67
   _PlayerDistance: 12
+  _AreaOfSpawn: 3.85
   _TimeFromEachSpawn: 1
   _ExtraTime: 0.5
-  _SpecialWave: 2
+  _SpecialWave: 0
   _enemyPools:
   - tag: 0
     EnemyPrefab: {fileID: 4358793287331068711, guid: 59de94648a7c37743ba3c953c18cb0e1, type: 3}

@@ -16,8 +16,10 @@ namespace HookToolSystem
         [SerializeField, Min(0)]
         private float _approachSpeed;
 
+        private GameObject _hook;
         private DistanceJoint2D _joint;
         private GameObject _currentAnchor;
+
 
         public void Grab(Collider2D collider, GameObject hook = null)
         {
@@ -26,9 +28,9 @@ namespace HookToolSystem
 
             if (collider && collider.TryGetComponent<HookAnchor>(out var anchor))
             {
-                hook = hook != null ? hook : collider.gameObject;
-                hook.transform.position = collider.transform.position;
-                _joint.connectedAnchor = hook.transform.position;
+                _hook = hook != null ? hook : collider.gameObject;
+                _hook.transform.position = collider.transform.position;
+                _joint.connectedAnchor = _hook.transform.position;
                 _joint.enabled = true;
                 _currentAnchor = collider.gameObject;
 
@@ -50,12 +52,23 @@ namespace HookToolSystem
             _currentAnchor = null;
         }
 
+        public void UnGrab()
+        {
+            _joint.connectedAnchor = default;
+            _joint.enabled = false;
+            StopAllCoroutines();
+        }
+
         private void Awake()
         {
             _joint = GetComponent<DistanceJoint2D>();
             _joint.enabled = false;
             _joint.autoConfigureDistance = true;
         }
+
+
+
+
 
         private IEnumerator Approach()
         {

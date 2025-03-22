@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
-  m_Name: Golden
+  m_Name: Chiguagua
   m_EditorClassIdentifier: 
-  WeaponPrefab: {fileID: 1791708719272366185, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
+  WeaponPrefab: {fileID: 1529795167217710192, guid: 7663679a72153f8459b1f02d4d0387ca, type: 3}
   SoftSpeedCap: 0
   Triggers:
   - rid: 2248387085135249408

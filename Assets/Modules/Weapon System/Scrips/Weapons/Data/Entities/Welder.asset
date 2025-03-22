@@ -10,43 +10,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
-  m_Name: Blaser 1
+  m_Name: Welder
   m_EditorClassIdentifier: 
-  WeaponPrefab: {fileID: 1791708719272366185, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
-  SoftSpeedCap: 7
+  WeaponPrefab: {fileID: 6088096710855041058, guid: 8ebdd3a23c912644b8d6d663af5ee029, type: 3}
+  SoftSpeedCap: 0
   Triggers:
-  - rid: 6012065985212448772
+  - rid: 6012065985212448784
   HideArm: 0
   Magazines:
-  - rid: 6012065985212448770
+  - rid: 4213665501660577800
   SyncedSelector: 0
   references:
     version: 2
     RefIds:
-    - rid: 6012065985212448770
+    - rid: 4213665501660577800
       type: {class: Magazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Magazine:
-          rid: 6012065985212448771
+          rid: 4213665501660577801
         Position: 0
-    - rid: 6012065985212448771
-      type: {class: StandardMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
+    - rid: 4213665501660577801
+      type: {class: MeleMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: Bullet
-        settings:
-          SpreadSpeedMod: 0
+        name: Melle mag
+        _settings:
+          SpreadSpeedMod: 1
           MaxSpread: 0
-          Recoil: 1
-          BulletData: {fileID: 11400000, guid: 4988db502203fea4597058185f7e828b, type: 2}
-    - rid: 6012065985212448772
+          Recoil: 0
+          BulletData: {fileID: 11400000, guid: 2e2a3c92ef32d224ebf855fd72f36189, type: 2}
+    - rid: 6012065985212448784
       type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Trigger:
-          rid: 6012065985212448773
+          rid: 6012065985212448785
         Position: 0
-    - rid: 6012065985212448773
-      type: {class: SemiTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
+    - rid: 6012065985212448785
+      type: {class: FullTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: Lanzador
+        name: Punch
         TriggerSettings:
-          FireRate: 200
+          FireRate: 100

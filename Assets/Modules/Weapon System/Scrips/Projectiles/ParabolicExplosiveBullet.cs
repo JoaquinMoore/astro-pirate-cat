@@ -66,7 +66,6 @@ namespace WeaponSystem
 
         public override void OnImpact()
         {
-            Instantiate(_particle, transform.position, Quaternion.identity);
             Instantiate(_effect, transform.position, Quaternion.identity);
 
             base.OnImpact();

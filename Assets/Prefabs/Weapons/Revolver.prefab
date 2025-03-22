@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4018061699868476985, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018061699868476985, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.046
+      objectReference: {fileID: 0}
     - target: {fileID: 4804763857686872613, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -58,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: a20db44daa9aa404195b3262ff946d4c, type: 2}
     - target: {fileID: 8221808430283909541, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
       propertyPath: m_Name
-      value: Revolver Variant
+      value: Revolver
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -9,9 +9,10 @@ namespace WeaponSystem
         protected IObjectPool<BaseBullet> _bulletsPool;
         public IObjectPool<BaseBullet> BulletsPool { set => _bulletsPool = value; }
 
+        public BaseMagazine _baseMagRef;
+
         protected Rigidbody2D _rigidBody;
         protected CircleCollider2D _circleCollider;
-        protected GameObject _particle;
         private void Awake()
         {
             _rigidBody = GetComponent<Rigidbody2D>();
@@ -19,15 +20,24 @@ namespace WeaponSystem
             _circleCollider = GetComponent<CircleCollider2D>();
         }
 
-        public virtual void SetUp(BaseBulletData data) { }
+        public virtual void SetUp(BaseBulletData data, BaseMagazine action) { _baseMagRef = action; gameObject.layer = (int)data.Aliance;}
+
+
 
         private void FixedUpdate()
         {
             Move();
         }
 
+
+
+
         public virtual void ExternalInput() { }
         public virtual IEnumerator DespawnTimer() { yield return null; }
-        public virtual void ResetBullet() { _bulletsPool.Release(this); }
+        public virtual void ResetBullet()
+        {
+            _baseMagRef.SpawnParticle(transform);
+            _bulletsPool.Release(this); 
+        }
     }
 }

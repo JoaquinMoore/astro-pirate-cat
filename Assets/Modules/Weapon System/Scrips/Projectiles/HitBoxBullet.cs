@@ -11,22 +11,21 @@ namespace WeaponSystem
 
 
 
-
+        protected HitBoxBulletData _data;
         private bool visual;
         private int _damage;
         private int _maxTargets;
 
         protected List<string> _targetsTag;
-        public override void SetUp(BaseBulletData data)
+        public override void SetUp(BaseBulletData data, BaseMagazine action)
         {
             visual = false;
-            HitBoxBulletData _data = data as HitBoxBulletData;
-
-            _particle = _data.ParticlePref;
+            _data = data as HitBoxBulletData;
             _maxTargets = _data.MaxTargets;
             _damage = _data.Damage;
             gameObject.SetActive(false);
             VisualSetUp(data);
+            base.SetUp(data, action);
         }
 
         public virtual void VisualSetUp(BaseBulletData data)
@@ -46,8 +45,6 @@ namespace WeaponSystem
         }
         public override void ExternalInput()
         {
-            Debug.Log(_targets.Count);
-
             for (int i = 0; i < _targets.Count; i++)
             {
                 if (_targets[i] == null)

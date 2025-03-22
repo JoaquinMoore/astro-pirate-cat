@@ -46,7 +46,8 @@ public class Ship : MonoBehaviour
 
     public void Ondeath()
     {
-        Destroy(gameObject);
+
+        GameManager.Instance.FailState();
     }
 
 

@@ -10,7 +10,7 @@ public class GameManager : Utility.SingletonMono<GameManager>
 
 
     [field: SerializeField] public List<MaterialsVisual> Resources { get; private set; } 
-    // Start is called before the first frame update
+
 
     // Update is called once per frame
     void Update()
@@ -52,6 +52,20 @@ public class GameManager : Utility.SingletonMono<GameManager>
 
 
 
+
+
+    #endregion
+
+    #region GameStates
+
+    public void WinState()
+    {
+        UIManager.MenuManager.ChangeScreen(1);
+    }
+    public void FailState()
+    {
+        UIManager.MenuManager.ChangeScreen(0);
+    }
 
 
     #endregion

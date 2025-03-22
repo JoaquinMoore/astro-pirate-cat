@@ -113,13 +113,15 @@ namespace WeaponSystem
             _currentTrigger.FireIsDown();
             _currentMag.Fire();
             OnImpulseAction.Invoke(-transform.right * _currentMag.RecoilReturn());
-            _flashRef.SetActive(true);
+            if (_flashRef != null)
+                _flashRef.SetActive(true);
             Spread();
         }
 
         public override void EndAnimFire()
         {
-            _flashRef.SetActive(false);
+            if (_flashRef != null)
+                _flashRef.SetActive(false);
             if (_onFire)
                 return;
             _anims.ResetTrigger("Fire");

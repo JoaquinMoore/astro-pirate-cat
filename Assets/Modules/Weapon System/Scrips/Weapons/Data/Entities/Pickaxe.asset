@@ -10,35 +10,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
-  m_Name: Saber
+  m_Name: Pickaxe
   m_EditorClassIdentifier: 
-  WeaponPrefab: {fileID: 797500202586654871, guid: afabc4564ce353e48b224b4f00936cb3, type: 3}
+  WeaponPrefab: {fileID: 6715654363128062651, guid: a817f36e4b985cf439d1c490c7acb7b6, type: 3}
+  SoftSpeedCap: 0
   Triggers:
   - rid: 6012065985212448784
-  HideArm: 1
+  HideArm: 0
   Magazines:
-  - rid: 6012065985212448780
-  FireSelector: 0
-  MagazineSelector: 0
+  - rid: 4213665501660577796
   SyncedSelector: 0
   references:
     version: 2
     RefIds:
-    - rid: 6012065985212448780
+    - rid: 4213665501660577796
       type: {class: Magazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Magazine:
-          rid: 6012065985212448781
+          rid: 4213665501660577797
         Position: 0
-    - rid: 6012065985212448781
+    - rid: 4213665501660577797
       type: {class: MeleMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: Magazine
+        name: Melle mag
         _settings:
           SpreadSpeedMod: 1
           MaxSpread: 0
           Recoil: 0
-          BulletData: {fileID: 11400000, guid: 418085b548a6add449c4b6afc1920fa6, type: 2}
+          BulletData: {fileID: 11400000, guid: ae419413898ce2a468b9847660fcd449, type: 2}
     - rid: 6012065985212448784
       type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:

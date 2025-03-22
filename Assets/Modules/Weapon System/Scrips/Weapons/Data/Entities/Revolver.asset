@@ -10,44 +10,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad0efe9c6bbd4964bbfa8254781d3d86, type: 3}
-  m_Name: Knucless
+  m_Name: Revolver
   m_EditorClassIdentifier: 
-  WeaponPrefab: {fileID: 8174378311341352700, guid: f8c5dcd118e697d4f9686d9355e90374, type: 3}
+  WeaponPrefab: {fileID: 1529795167217710192, guid: 7663679a72153f8459b1f02d4d0387ca, type: 3}
+  SoftSpeedCap: 3
   Triggers:
-  - rid: 6012065985212448784
+  - rid: 6012065985212448772
   HideArm: 0
   Magazines:
-  - rid: 6012065985212448780
-  FireSelector: 0
-  MagazineSelector: 0
+  - rid: 6012065985212448770
   SyncedSelector: 0
   references:
     version: 2
     RefIds:
-    - rid: 6012065985212448780
+    - rid: 6012065985212448770
       type: {class: Magazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Magazine:
-          rid: 6012065985212448781
+          rid: 6012065985212448771
         Position: 0
-    - rid: 6012065985212448781
-      type: {class: MeleMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
+    - rid: 6012065985212448771
+      type: {class: StandardMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: Magazine
-        _settings:
-          SpreadSpeedMod: 1
+        name: Bullet
+        settings:
+          SpreadSpeedMod: 0
           MaxSpread: 0
-          Recoil: 0
-          BulletData: {fileID: 11400000, guid: 88bd837f3d21cc546b766db4bfa97f98, type: 2}
-    - rid: 6012065985212448784
+          Recoil: 1
+          BulletData: {fileID: 11400000, guid: c7f7357cda6c5df41bd0cadb4b1900f7, type: 2}
+    - rid: 6012065985212448772
       type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Trigger:
-          rid: 6012065985212448785
+          rid: 6012065985212448773
         Position: 0
-    - rid: 6012065985212448785
-      type: {class: FullTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
+    - rid: 6012065985212448773
+      type: {class: SemiTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: Punch
+        name: Lanzador
         TriggerSettings:
-          FireRate: 100
+          FireRate: 200

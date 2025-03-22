@@ -78,7 +78,7 @@ SpriteRenderer:
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.98, y: 0.76}
+  m_Size: {x: 1.175, y: 0.59583336}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -92,10 +92,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1791708719272366185, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
+      propertyPath: _flashRef
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804763857686872613, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
+      propertyPath: m_Size.y
+      value: 0.96
+      objectReference: {fileID: 0}
     - target: {fileID: 4804763857686872613, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -486219665, guid: 061fc2defc82e5a4fa7a710ea7b7b8cf, type: 3}
+      objectReference: {fileID: 178232924, guid: 061fc2defc82e5a4fa7a710ea7b7b8cf, type: 3}
     - target: {fileID: 4804763857686872613, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -107,6 +115,10 @@ PrefabInstance:
     - target: {fileID: 4804763857686872613, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
       propertyPath: m_SortingOrder
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804763857686872613, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5032906827749306957, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -157,7 +169,8 @@ PrefabInstance:
       value: Laser
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7186877302397601129, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5032906827749306957, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
       insertIndex: 0

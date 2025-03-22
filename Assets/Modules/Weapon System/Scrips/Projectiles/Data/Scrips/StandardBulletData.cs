@@ -14,7 +14,6 @@ namespace WeaponSystem
 
         [Header("arte")]
         public Material AlainceMat;
-        public GameObject AlainceParticle;
 
     }
 }

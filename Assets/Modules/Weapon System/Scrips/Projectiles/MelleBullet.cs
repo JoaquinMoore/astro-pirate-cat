@@ -9,12 +9,9 @@ namespace WeaponSystem
         public override void ExternalInputVisual()
         {
 
-            if (_particle == null)
+            if (_data.ParticlePref == null)
                 return;
-
-            GameObject particlehold = Instantiate(_particle,transform.position,transform.rotation);
-
-
+            Particle particlehold = _baseMagRef.SpawnParticle(gameObject.transform);
 
             if (Input.mousePosition.x > 500)
             {

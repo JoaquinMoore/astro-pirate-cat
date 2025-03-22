@@ -8,6 +8,7 @@ namespace WeaponSystem
     public class WeaponControler : MonoBehaviour
     {
         [Header("Referencias")]
+        [SerializeField] private Transform _WeaponAnimRot;
         [SerializeField] private Transform _WeaponSpawner;
         [SerializeField] private Transform _WeaponRot;
         [SerializeField] private List<BaseWeaponData> _Data;
@@ -57,15 +58,15 @@ namespace WeaponSystem
             //OnImpulse += test;
         }
 
-        public void test(Vector2 inpult)
+        public void VisualLink()
         {
-            Debug.Log(inpult);
+
         }
 
         void Update()
         {
 
-
+            VisualLink();
 
             if (TestingInputs)
             {
@@ -82,7 +83,6 @@ namespace WeaponSystem
                 test = true;
             }
             MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition), test);
-            //MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
 
 
@@ -143,26 +143,19 @@ namespace WeaponSystem
 
         public void MouseAim(Vector2 target, bool flip = false)
         {
-            float rot = 0;
             Vector2 pos = Vector2.zero;
 
-
+            pos = target - (Vector2)transform.position;
+            _WeaponRot.transform.right = pos + new Vector2(0, _currentWeapon.Weapon.WeaponSpread());
             if (flip == true)
             {
-                _WeaponRot.transform.localPosition = oritnalpos;
-                rot = 0;
-                pos = target - (Vector2)transform.position;
+                _WeaponRot.transform.localPosition = oritnalpos + _WeaponAnimRot.transform.localPosition;
             }
             else
             {
-                _WeaponRot.transform.localPosition = new Vector3(oritnalpos.x * -1, oritnalpos.y, oritnalpos.z);
-                rot = 180;
-                Debug.Log("called");
-                pos = new Vector2(target.x * -1, target.y ) - (Vector2)transform.position;
+                _WeaponRot.transform.localPosition = new Vector3(oritnalpos.x * -1, oritnalpos.y, oritnalpos.z) - _WeaponAnimRot.transform.localPosition;
+                _WeaponRot.transform.localEulerAngles = new Vector3(180, 0, -_WeaponRot.transform.eulerAngles.z);
             }
-
-            _WeaponRot.transform.right = pos + new Vector2(0, _currentWeapon.Weapon.WeaponSpread());
-            _WeaponRot.transform.eulerAngles = new Vector3(0, rot, _WeaponRot.transform.eulerAngles.z);
         }
 
 
@@ -242,7 +235,6 @@ namespace WeaponSystem
             WeaponSlot hol = new();
             hol.Weapon = wep;
             wep.OnImpulseAction += impulse => OnImpulse(impulse);
-            Debug.Log(wep.OnImpulseAction);
             hol.HideArmOnEquiped = data.HideArm;
 
             _weapons.Add(hol);

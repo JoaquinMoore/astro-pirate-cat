@@ -19,6 +19,7 @@ namespace WeaponSystem
         float _currentSpread;
 
         protected IObjectPool<BaseBullet> _pool;
+        protected IObjectPool<Particle> _particlePool;
 
         public virtual void AddData(Transform shootpivot, RangeWeapon wp, Settings settings)
         {
@@ -40,10 +41,24 @@ namespace WeaponSystem
             _pool = hold.Build();
         }
 
+        public void CreateParticlePool()
+        {
+
+            TempPool<Particle> Phold = new(CreateParticle);
+            Phold.SetActionOnGet(OnGetParticleFromPool);
+            Phold.SetActionOnRelease(OnReleaseParticleToPool);
+            Phold.SetActionOnDestroy(OnDestroyParticlePooledObject);
+            Phold.SetDefaultCapacity(_projectile.SoftPrefCap);
+            Phold.SetMaxSize(_projectile.HardPrefCap);
+
+            _particlePool = Phold.Build();
+        }
+
+
 
         public virtual void Fire() { _currentSpread = Mathf.Lerp(_currentSpread, _maxSpread, Time.deltaTime * _spreadSpeedMod); }
         public virtual void FireIsUp() { _currentSpread = 0; }
-        public virtual void SpawnProjectile(Settings settings)
+        public virtual void SpawnProjectile()
         {
             BaseBullet hold = _pool.Get();
             if (hold == null)
@@ -51,6 +66,16 @@ namespace WeaponSystem
             hold.BulletsPool = _pool;
             hold.transform.position = _ShootPivot.position;
             hold.transform.right = _ShootPivot.right;
+        }
+
+        public virtual Particle SpawnParticle(Transform pos)
+        {
+            Particle hold = _particlePool.Get();
+            if (hold == null)
+                return null;
+            hold.PaticlePool = _particlePool;
+            hold.transform.position = pos.transform.position;
+            return hold;
         }
 
         public virtual bool CanFire() { return _CanFire; }
@@ -61,15 +86,15 @@ namespace WeaponSystem
         public virtual void ReEquip() { }
 
 
+
+
+        #region ProjectilePref
         public BaseBullet CreateProjectile()
         {
             BaseBullet instance = Object.Instantiate(_projectile.BulletPrefab);
-            instance.SetUp(_projectile);
+            instance.SetUp(_projectile, this);
             return instance;
         }
-
-
-
         public void OnGetFromPool(BaseBullet pooledBullet)
         {
             pooledBullet.gameObject.SetActive(true);
@@ -85,9 +110,30 @@ namespace WeaponSystem
             Object.Destroy(pooledBullet.gameObject);
         }
 
+        #endregion
 
+        #region ParticlePref
+        public Particle CreateParticle()
+        {
+            Particle instance = Object.Instantiate(_projectile.ParticlePref).GetComponent<Particle>();
+            return instance;
+        }
+        public void OnGetParticleFromPool(Particle pooledBullet)
+        {
+            pooledBullet.gameObject.SetActive(true);
+        }
 
+        public void OnReleaseParticleToPool(Particle pooledBullet)
+        {
+            pooledBullet.gameObject.SetActive(false);
+        }
 
+        public void OnDestroyParticlePooledObject(Particle pooledBullet)
+        {
+            Object.Destroy(pooledBullet.gameObject);
+        }
+
+        #endregion
 
         public virtual BaseMagazine Clone()
         {
@@ -124,12 +170,12 @@ namespace WeaponSystem
         {
             base.AddData(shootpivot, wp, settings);
             CreatePool();
-
+            CreateParticlePool();
         }
 
         public override void Fire()
         {
-            SpawnProjectile(settings);
+            SpawnProjectile();
             base.Fire();
         }
 
@@ -188,7 +234,7 @@ namespace WeaponSystem
                 _bulletHolder = Object.Instantiate(settings.BulletData.BulletPrefab, shootpivot);
                 _bulletHolder.transform.position = shootpivot.position;
             }
-            _bulletHolder.SetUp(settings.BulletData);
+            _bulletHolder.SetUp(settings.BulletData, this);
 
             var hold = wp.GetComponentsInChildren<SpriteRenderer>();
 
@@ -198,8 +244,10 @@ namespace WeaponSystem
                     _sprite1 = trans;
             }
 
-
             base.AddData(shootpivot, wp, settings);
+
+
+            CreateParticlePool();
         }
 
         public override void Fire()
@@ -229,6 +277,9 @@ namespace WeaponSystem
         public override void FireIsUp()
         {
             if (_overHeat && _currentHeat != _settings.MaxHeat)
+                return;
+
+            if (_wp.gameObject.activeSelf == false)
                 return;
 
             _wp.StopAllCoroutines();
@@ -313,18 +364,18 @@ namespace WeaponSystem
 
         public override void AddData(Transform shootpivot, RangeWeapon wp, Settings settings)
         {
+
             _settings = settings;
-            //_settings = settings as LaserHeatSettings;
             if (_bulletHolder == null)
             {
                 _bulletHolder = Object.Instantiate(settings.BulletData.BulletPrefab, shootpivot);
                 _bulletHolder.transform.position = shootpivot.position;
             }
-            _bulletHolder.SetUp(settings.BulletData);
-
-
+            _bulletHolder.SetUp(settings.BulletData, this);
 
             base.AddData(shootpivot, wp, settings);
+            CreateParticlePool();
+
         }
 
 
@@ -366,16 +417,17 @@ namespace WeaponSystem
         {
             base.AddData(shootpivot, wp, settings);
             CreatePool();
+            CreateParticlePool();
             _pwp = _wp as ParabolicWeapon;
         }
 
         public override void Fire()
         {
-            SpawnProjectile(settings);
+            SpawnProjectile();
             base.Fire();
         }
 
-        public override void SpawnProjectile(Settings settings)
+        public override void SpawnProjectile()
         {
             BaseBullet hold = _pool.Get();
             if (hold == null)
@@ -389,6 +441,9 @@ namespace WeaponSystem
 
             var.ReciveList(_pwp.GivePoints());
         }
+
+
+
         public override BaseMagazine Clone()
         {
             return new ParabolicMagazine();

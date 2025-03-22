@@ -10,15 +10,17 @@ public class WaveManager : MonoBehaviour//, IPause
     public static bool _startWave;
 
     [SerializeField] List<Wave> _Wave = new();
-
+    [SerializeField, Tooltip("Sirve para indicar a que oleada el juego esta listo para terminar (nota: esto termina con el ciclo de oleadas y habra que reiniciarlo una ves este la opcion añadida)")]
+    private int _FinalWave;
 
     [field: SerializeField] public Material MatWave { get; private set; }
 
     [Header("debug")]
-    private int _indexWave = 0;
+    [field: SerializeField] private int _indexWave = 0;
     [field: SerializeField] private Wave _currentWave;
     private bool Locked;
     private bool onetime;
+    private bool freemode;
 
     [SerializeField] private SpawnWavePool _wave;
 
@@ -67,9 +69,15 @@ public class WaveManager : MonoBehaviour//, IPause
 
     public void WaveFinished()
     {
-        Debug.Log("aaaaaaa");
         if (_currentWave.WaveChilds.Count == 0)
             return;
+
+        if (_indexWave >= _FinalWave && freemode == false)
+        {
+            GameManager.Instance.WinState();
+            return;
+        }
+
 
         _startWave = false;
         //MatWave.SetInt("_Actived", 1);
@@ -81,6 +89,12 @@ public class WaveManager : MonoBehaviour//, IPause
 
     }
 
+
+    public void Freemode()
+    {
+        freemode = true;
+        WaveFinished();
+    }
 
     public IEnumerator WaveWaitTimer()
     {
