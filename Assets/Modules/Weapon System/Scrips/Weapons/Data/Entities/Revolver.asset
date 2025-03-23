@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Revolver
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 1529795167217710192, guid: 7663679a72153f8459b1f02d4d0387ca, type: 3}
-  SoftSpeedCap: 3
+  SoftSpeedCap: 1
   Triggers:
   - rid: 6012065985212448772
   HideArm: 0

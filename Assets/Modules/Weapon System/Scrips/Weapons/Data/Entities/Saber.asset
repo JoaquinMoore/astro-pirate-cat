@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Saber
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 797500202586654871, guid: afabc4564ce353e48b224b4f00936cb3, type: 3}
-  SoftSpeedCap: 0
+  SoftSpeedCap: 1
   Triggers:
   - rid: 6012065985212448784
   HideArm: 0
@@ -34,9 +34,9 @@ MonoBehaviour:
       data:
         name: Melle mag
         _settings:
-          SpreadSpeedMod: 1
+          SpreadSpeedMod: 0
           MaxSpread: 0
-          Recoil: 0
+          Recoil: -1
           BulletData: {fileID: 11400000, guid: 418085b548a6add449c4b6afc1920fa6, type: 2}
     - rid: 6012065985212448784
       type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}

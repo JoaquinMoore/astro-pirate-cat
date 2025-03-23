@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Bulldog
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 8174378311341352700, guid: f8c5dcd118e697d4f9686d9355e90374, type: 3}
-  SoftSpeedCap: 0
+  SoftSpeedCap: 1
   Triggers:
-  - rid: 2248387085135249408
+  - rid: 1113679375604383762
   HideArm: 0
   Magazines:
   - rid: 4213665456022355972
@@ -23,16 +23,16 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 2248387085135249408
+    - rid: 1113679375604383762
       type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Trigger:
-          rid: 2248387085135249409
+          rid: 1113679375604383763
         Position: 0
-    - rid: 2248387085135249409
+    - rid: 1113679375604383763
       type: {class: FullTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: Punch
+        name: full
         TriggerSettings:
           FireRate: 20
     - rid: 4213665456022355972

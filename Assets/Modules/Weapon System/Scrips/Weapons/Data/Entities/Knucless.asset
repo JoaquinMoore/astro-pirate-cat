@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Knucless
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 8174378311341352700, guid: f8c5dcd118e697d4f9686d9355e90374, type: 3}
-  SoftSpeedCap: 0
+  SoftSpeedCap: 1
   Triggers:
   - rid: 6012065985212448784
   HideArm: 0

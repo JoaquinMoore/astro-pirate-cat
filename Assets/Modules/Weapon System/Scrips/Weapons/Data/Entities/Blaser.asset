@@ -13,40 +13,40 @@ MonoBehaviour:
   m_Name: Blaser
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 1791708719272366185, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
-  SoftSpeedCap: 3
+  SoftSpeedCap: 1
   Triggers:
-  - rid: 6012065985212448772
+  - rid: 1113679375604383750
   HideArm: 0
   Magazines:
-  - rid: 6012065985212448770
+  - rid: 1113679375604383746
   SyncedSelector: 0
   references:
     version: 2
     RefIds:
-    - rid: 6012065985212448770
+    - rid: 1113679375604383746
       type: {class: Magazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Magazine:
-          rid: 6012065985212448771
+          rid: 1113679375604383747
         Position: 0
-    - rid: 6012065985212448771
+    - rid: 1113679375604383747
       type: {class: StandardMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: Bullet
+        name: standard mag
         settings:
           SpreadSpeedMod: 0
           MaxSpread: 0
           Recoil: 1
           BulletData: {fileID: 11400000, guid: 4988db502203fea4597058185f7e828b, type: 2}
-    - rid: 6012065985212448772
+    - rid: 1113679375604383750
       type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Trigger:
-          rid: 6012065985212448773
+          rid: 1113679375604383751
         Position: 0
-    - rid: 6012065985212448773
+    - rid: 1113679375604383751
       type: {class: SemiTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: Lanzador
+        name: semi
         TriggerSettings:
           FireRate: 200

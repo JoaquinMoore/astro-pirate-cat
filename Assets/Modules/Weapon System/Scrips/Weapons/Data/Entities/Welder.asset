@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Welder
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 6088096710855041058, guid: 8ebdd3a23c912644b8d6d663af5ee029, type: 3}
-  SoftSpeedCap: 0
+  SoftSpeedCap: 1
   Triggers:
   - rid: 6012065985212448784
   HideArm: 0
