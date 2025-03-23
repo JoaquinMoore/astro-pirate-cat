@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Chiguagua
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 1529795167217710192, guid: 7663679a72153f8459b1f02d4d0387ca, type: 3}
-  SoftSpeedCap: 0
+  SoftSpeedCap: 1
   Triggers:
-  - rid: 2248387085135249408
+  - rid: 1113679375604383760
   HideArm: 0
   Magazines:
   - rid: 6012065985212448770
@@ -23,16 +23,16 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 2248387085135249408
+    - rid: 1113679375604383760
       type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Trigger:
-          rid: 2248387085135249409
+          rid: 1113679375604383761
         Position: 0
-    - rid: 2248387085135249409
+    - rid: 1113679375604383761
       type: {class: FullTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: Weapon
+        name: full
         TriggerSettings:
           FireRate: 20
     - rid: 6012065985212448770

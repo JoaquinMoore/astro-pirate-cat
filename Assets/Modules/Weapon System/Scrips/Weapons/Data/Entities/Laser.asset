@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Laser
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 5977768245461570003, guid: 496ae615a81840943a6894c51d78a9a6, type: 3}
-  SoftSpeedCap: 0
+  SoftSpeedCap: 1
   Triggers:
-  - rid: 6012065985212448778
+  - rid: 1113679375604383764
   HideArm: 0
   Magazines:
   - rid: 6012065985212448776
@@ -23,6 +23,18 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 1113679375604383764
+      type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}
+      data:
+        _Trigger:
+          rid: 1113679375604383765
+        Position: 0
+    - rid: 1113679375604383765
+      type: {class: SemiTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
+      data:
+        name: semi
+        TriggerSettings:
+          FireRate: 1000
     - rid: 6012065985212448776
       type: {class: Magazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
@@ -98,15 +110,3 @@ MonoBehaviour:
         _currentRecoil: 0
         _overHeat: 0
         _sprite1: {fileID: 0}
-    - rid: 6012065985212448778
-      type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}
-      data:
-        _Trigger:
-          rid: 6012065985212448779
-        Position: 0
-    - rid: 6012065985212448779
-      type: {class: FullTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
-      data:
-        name: Laser
-        TriggerSettings:
-          FireRate: 1000

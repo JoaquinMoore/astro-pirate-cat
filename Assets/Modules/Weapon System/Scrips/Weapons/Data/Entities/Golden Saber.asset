@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Golden Saber
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 797500202586654871, guid: afabc4564ce353e48b224b4f00936cb3, type: 3}
-  SoftSpeedCap: 0
+  SoftSpeedCap: 1
   Triggers:
-  - rid: 2248387085135249408
+  - rid: 1113679375604383756
   HideArm: 0
   Magazines:
   - rid: 4213665501660577792
@@ -23,16 +23,16 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 2248387085135249408
+    - rid: 1113679375604383756
       type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Trigger:
-          rid: 2248387085135249409
+          rid: 1113679375604383757
         Position: 0
-    - rid: 2248387085135249409
+    - rid: 1113679375604383757
       type: {class: FullTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: Punch
+        name: full
         TriggerSettings:
           FireRate: 20
     - rid: 4213665501660577792

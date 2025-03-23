@@ -15,6 +15,7 @@ public class Ship : MonoBehaviour
     void Start()
     {
         _player = GameManager.Instance.player;
+        Ondamage();
     }
 
     // Update is called once per frame

@@ -13,40 +13,40 @@ MonoBehaviour:
   m_Name: Golden Blaser
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 1791708719272366185, guid: 7e35742bd084ad54680e959a5912d61b, type: 3}
-  SoftSpeedCap: 0
+  SoftSpeedCap: 1
   Triggers:
-  - rid: 2248387085135249408
+  - rid: 1113679375604383752
   HideArm: 0
   Magazines:
-  - rid: 6012065985212448770
+  - rid: 1113679375604383758
   SyncedSelector: 0
   references:
     version: 2
     RefIds:
-    - rid: 2248387085135249408
+    - rid: 1113679375604383752
       type: {class: Trigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Trigger:
-          rid: 2248387085135249409
+          rid: 1113679375604383753
         Position: 0
-    - rid: 2248387085135249409
+    - rid: 1113679375604383753
       type: {class: FullTrigger, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: Weapon
+        name: full
         TriggerSettings:
           FireRate: 20
-    - rid: 6012065985212448770
+    - rid: 1113679375604383758
       type: {class: Magazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
         _Magazine:
-          rid: 6012065985212448771
-        Position: 0
-    - rid: 6012065985212448771
+          rid: 1113679375604383759
+        Position: 1
+    - rid: 1113679375604383759
       type: {class: StandardMagazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:
-        name: Bullet
+        name: standard mag
         settings:
-          SpreadSpeedMod: 0
+          SpreadSpeedMod: 1
           MaxSpread: 0
           Recoil: 0
           BulletData: {fileID: 11400000, guid: afade058a7b92a84f9fb6e079f9bf111, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pickaxe
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 6715654363128062651, guid: a817f36e4b985cf439d1c490c7acb7b6, type: 3}
-  SoftSpeedCap: 0
+  SoftSpeedCap: 1
   Triggers:
   - rid: 6012065985212448784
   HideArm: 0
