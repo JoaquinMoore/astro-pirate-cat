@@ -46,13 +46,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dontDestroyOnLoad: 0
   _player: {fileID: 0}
+  <_limitsize>k__BackingField: 20
   <Resources>k__BackingField:
   - Type: 0
-    Amount: 0
-    Icon: {fileID: 0}
+    Amount: 10
+    Icon: {fileID: -661643919, guid: 9f4ebd10cbe6189469eef6ed29637436, type: 3}
   - Type: 1
-    Amount: 0
-    Icon: {fileID: 0}
+    Amount: 20
+    Icon: {fileID: -197166444, guid: 9f4ebd10cbe6189469eef6ed29637436, type: 3}
   - Type: 2
-    Amount: 0
-    Icon: {fileID: 0}
+    Amount: 30
+    Icon: {fileID: -1606427204, guid: 9f4ebd10cbe6189469eef6ed29637436, type: 3}
+  - Type: 3
+    Amount: 10
+    Icon: {fileID: -1207147773, guid: 9f4ebd10cbe6189469eef6ed29637436, type: 3}
+  - Type: 4
+    Amount: 10
+    Icon: {fileID: -1291054456, guid: 9f4ebd10cbe6189469eef6ed29637436, type: 3}
