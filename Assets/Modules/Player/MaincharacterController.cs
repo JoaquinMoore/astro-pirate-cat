@@ -1,13 +1,24 @@
 using HookToolSystem;
 using WeaponSystem;
 using UnityEngine;
-using UnityServiceLocator;
 
+using UnityEngine.UI;
+using HealthSystem;
 public class MaincharacterController : MonoBehaviour, IMaincharacterController
 {
-    public void Hook(Collider2D target, GameObject hookHead = null)
+    public void Hook(Vector3 target)
     {
-        _hookTool.Grab(target, hookHead);
+        _hookTool.Hooking(target);
+    }
+    public void UnHook()
+    {
+        _hookTool.Ungrab();
+    }
+
+
+    public bool Hooking()
+    {
+        return _hookTool.Hooking();
     }
 
     public void Attack(bool value)
@@ -27,6 +38,19 @@ public class MaincharacterController : MonoBehaviour, IMaincharacterController
         _weaponcontroller.MouseAim(target);
     }
 
+    public void SwapPrimWeapon()
+    {
+        _weaponcontroller.SwapPrimaryWeapon();
+        _softmaxSpeed = _weaponcontroller.GetSoftSpeedCap();
+    }
+
+    public void ScrollWeapons(float rot)
+    {
+        _weaponcontroller.ChangeSecondaryWeapon(rot);
+    }
+
+
+
     protected void Impulse(Vector2 force)
     {
         _rigidBody.AddForce(force, ForceMode2D.Impulse);
@@ -42,12 +66,34 @@ public class MaincharacterController : MonoBehaviour, IMaincharacterController
         _rigidBody.velocity = Vector2.ClampMagnitude(_rigidBody.velocity, Hlimit);
     }
 
+
+
+    public void OnHit()
+    {
+        _anims.SetTrigger("Hit");
+        _hpBar.value = (float)_hp.PublicCurrentHealth / (float)_hp.PublicMaxHealth;
+    }
+
+    public void OnHeal()
+    {
+
+    }
+
+    public void OnDeath()
+    {
+        _anims.SetTrigger("Death");
+        GameManager.Instance.FailState();
+    }
+
     private void Awake()
     {
-        ServiceLocator.For(this)
-            .Get(out _rigidBody)
-            .Get(out _hookTool)
-            .Get(out _weaponcontroller);
+        _rigidBody = GetComponent<Rigidbody2D>();
+        _hookTool = GetComponent<HookTool>();
+        _weaponcontroller = GetComponent<WeaponControler>();
+
+        _hpBar = GetComponentInChildren<Slider>();
+        _anims = GetComponent<Animator>();
+        _hp = GetComponentInChildren<Health>();
 
         _weaponcontroller.OnImpulse += Impulse;
     }
@@ -65,6 +111,11 @@ public class MaincharacterController : MonoBehaviour, IMaincharacterController
     private HookTool _hookTool;
     private Rigidbody2D _rigidBody;
     private WeaponControler _weaponcontroller;
+
+    private Slider _hpBar;
+    private Animator _anims;
+    private Health _hp;
+
 
     [Header("Config")]
     [SerializeField]
