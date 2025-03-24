@@ -161,7 +161,6 @@ namespace WeaponSystem
 
         public void MouseAim(Vector2 target)
         {
-
             Vector2 pos = target - (Vector2)transform.position;
             _WeaponRot.transform.right = pos + new Vector2(0, _currentWeapon.Weapon.WeaponSpread());
             _currentWeapon.Weapon.MousePos(target);
