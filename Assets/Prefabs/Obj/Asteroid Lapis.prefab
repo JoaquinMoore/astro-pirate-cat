@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2569548601086043914, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8941177
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569548601086043914, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: m_Color.g
+      value: 0.57254905
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569548601086043914, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: m_Color.r
+      value: 0.16078432
+      objectReference: {fileID: 0}
     - target: {fileID: 6085498157384548396, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
       propertyPath: m_Name
       value: Asteroid Lapis
@@ -57,19 +69,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 586538400, guid: 35ee308e2aa13db4895d1d23039df972, type: 3}
     - target: {fileID: 8346389212451236140, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: da3cbf7b300b2d641bfc4a954927bbba, type: 2}
     - target: {fileID: 8545125166899260571, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
-      propertyPath: _allSprites.Array.data[0]
+      propertyPath: '_allSprites.Array.data[0]'
       value: 
       objectReference: {fileID: 586538400, guid: 35ee308e2aa13db4895d1d23039df972, type: 3}
     - target: {fileID: 8545125166899260571, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
-      propertyPath: _allSprites.Array.data[1]
+      propertyPath: '_allSprites.Array.data[1]'
       value: 
       objectReference: {fileID: -1187908365, guid: 35ee308e2aa13db4895d1d23039df972, type: 3}
     - target: {fileID: 8545125166899260571, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
-      propertyPath: _allSprites.Array.data[2]
+      propertyPath: '_allSprites.Array.data[2]'
       value: 
       objectReference: {fileID: -1098395449, guid: 35ee308e2aa13db4895d1d23039df972, type: 3}
     m_RemovedComponents: []
