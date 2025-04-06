@@ -34,7 +34,7 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        GetComponent<Rigidbody2D>().velocity = - transform.right * _speed * Time.deltaTime;
+        GetComponent<Rigidbody2D>().linearVelocity = - transform.right * _speed * Time.deltaTime;
         _time += Time.deltaTime;
 
         if (_time >= _timeDestroy)

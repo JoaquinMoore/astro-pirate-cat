@@ -58,12 +58,12 @@ public class MaincharacterController : MonoBehaviour, IMaincharacterController
 
     private void LimitVelocity(float Hlimit, float Slimit)
     {
-        if (_rigidBody.velocity.magnitude > Slimit)
+        if (_rigidBody.linearVelocity.magnitude > Slimit)
         {
-            _rigidBody.velocity = Vector2.Lerp(_rigidBody.velocity, _rigidBody.velocity.normalized * Slimit, ((_rigidBody.velocity.magnitude - Slimit) / 5) * Time.deltaTime);
+            _rigidBody.linearVelocity = Vector2.Lerp(_rigidBody.linearVelocity, _rigidBody.linearVelocity.normalized * Slimit, ((_rigidBody.linearVelocity.magnitude - Slimit) / 5) * Time.deltaTime);
         }
 
-        _rigidBody.velocity = Vector2.ClampMagnitude(_rigidBody.velocity, Hlimit);
+        _rigidBody.linearVelocity = Vector2.ClampMagnitude(_rigidBody.linearVelocity, Hlimit);
     }
 
 
