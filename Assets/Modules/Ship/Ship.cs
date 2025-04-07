@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using HealthSystem;
+using UnityEngine;
 using UnityEngine.UI;
 public class Ship : MonoBehaviour
 {
@@ -41,8 +39,8 @@ public class Ship : MonoBehaviour
     public void Ondamage()
     {
         Debug.Log("ow");
-        _slider.value = (float)_hp.PublicCurrentHealth / _hp.PublicMaxHealth;
-        _anim.SetFloat("Life", (float)_hp.PublicCurrentHealth / _hp.PublicMaxHealth);
+        _slider.value = (float)_hp.CurrentHealth / _hp.PublicMaxHealth;
+        _anim.SetFloat("Life", (float)_hp.CurrentHealth / _hp.PublicMaxHealth);
     }
 
     public void Ondeath()

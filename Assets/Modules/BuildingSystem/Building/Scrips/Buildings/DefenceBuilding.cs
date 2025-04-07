@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -26,7 +24,7 @@ namespace BuildSystem
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Damage();
-                Debug.Log(_controler._model._hpFuncion.PublicCurrentHealth);
+                Debug.Log(_controler._model._hpFuncion.CurrentHealth);
             }
 
             //if (Input.GetKeyDown(KeyCode.S))

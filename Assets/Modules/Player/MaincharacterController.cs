@@ -1,11 +1,17 @@
-using HookToolSystem;
-using WeaponSystem;
-using UnityEngine;
-
-using UnityEngine.UI;
 using HealthSystem;
-public class MaincharacterController : MonoBehaviour, IMaincharacterController
+using HookToolSystem;
+using UnityEngine;
+using UnityEngine.UI;
+using WeaponSystem;
+
+public class MaincharacterController : MonoBehaviour
 {
+    // Servicios
+    // HealthService
+    // HookService
+    // WeaponService
+    // MovementService
+
     public void Hook(Vector3 target)
     {
         _hookTool.Hooking(target);
@@ -14,7 +20,6 @@ public class MaincharacterController : MonoBehaviour, IMaincharacterController
     {
         _hookTool.Ungrab();
     }
-
 
     public bool Hooking()
     {
@@ -71,7 +76,7 @@ public class MaincharacterController : MonoBehaviour, IMaincharacterController
     public void OnHit()
     {
         _anims.SetTrigger("Hit");
-        _hpBar.value = (float)_hp.PublicCurrentHealth / (float)_hp.PublicMaxHealth;
+        _hpBar.value = _hp.CurrentHealth / (float)_hp.PublicMaxHealth;
     }
 
     public void OnHeal()

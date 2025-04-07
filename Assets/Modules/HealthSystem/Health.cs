@@ -7,7 +7,7 @@ namespace HealthSystem
     public class Health : MonoBehaviour, IHurtable, IHealable
     {
         [Serializable]
-        public struct Data
+        private struct Data
         {
             [field: SerializeField, Min(0)]
             public int MaxHealth { get; private set; }
@@ -16,12 +16,9 @@ namespace HealthSystem
         [SerializeField]
         private Data _data;
 
-        [SerializeField, Min(0)]
-        private int _currentHealth;
-
         public UnityEvent OnDie, OnHeal, OnDamage;
 
-        private int CurrentHealth
+        public int CurrentHealth
         {
             get => _currentHealth;
             set
@@ -30,13 +27,8 @@ namespace HealthSystem
             }
         }
 
-
-        public int PublicCurrentHealth => _currentHealth;
         public int PublicMaxHealth => _data.MaxHealth;
-        /// <summary>
-        /// Reduce la vida. En caso de que llegue a 0, muere.
-        /// </summary>
-        /// <param name="damage">Cantidad de vida a reducir.</param>
+
         public void Hurt(int damage)
         {
             CurrentHealth -= Mathf.Abs(damage);
@@ -51,17 +43,15 @@ namespace HealthSystem
             }
         }
 
-
-
-
-        /// <summary>
-        /// Aumenta la vida.
-        /// </summary>
-        /// <param name="amount">Cantidad de vida a aumentar.</param>
         public void Heal(int amount)
         {
             CurrentHealth += Mathf.Abs(amount);
             OnHeal?.Invoke();
+        }
+
+        public GameObject GetGameObject()
+        {
+            return gameObject;
         }
 
         private void OnValidate()
@@ -74,9 +64,6 @@ namespace HealthSystem
             CurrentHealth = _data.MaxHealth;
         }
 
-        public GameObject getGameObject()
-        {
-            return gameObject;
-        }
+        private int _currentHealth;
     }
 }

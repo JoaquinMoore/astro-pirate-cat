@@ -64,7 +64,7 @@ namespace WeaponSystem
             float newdist = 0;
             foreach (var item in _targets)
             {
-                float dist = Vector3.Distance(transform.position, item.getGameObject().transform.position);
+                float dist = Vector3.Distance(transform.position, item.GetGameObject().transform.position);
 
                 if (newdist < dist && _fardestTarget == null)
                 {
@@ -86,7 +86,7 @@ namespace WeaponSystem
 
             foreach (var item in _targets)
             {
-                float dist = Vector3.Distance(transform.position, item.getGameObject().transform.position);
+                float dist = Vector3.Distance(transform.position, item.GetGameObject().transform.position);
 
                 if (_fardestTargetDist < dist)
                 {
@@ -105,7 +105,7 @@ namespace WeaponSystem
             foreach (var item in _targets)
             {
                 Particle par = _baseMagRef.SpawnParticle(transform.transform);
-                float distance = Vector3.Distance(transform.position, item.getGameObject().transform.position);
+                float distance = Vector3.Distance(transform.position, item.GetGameObject().transform.position);
 
                 par.transform.localPosition = transform.right + new Vector3(distance, 0,0);
             }
