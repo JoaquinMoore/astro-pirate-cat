@@ -50,7 +50,6 @@ GameObject:
   - component: {fileID: 8267652064139511894}
   - component: {fileID: 5546336221751571815}
   - component: {fileID: 8317513665757830152}
-  - component: {fileID: 358192857592002227}
   m_Layer: 5
   m_Name: WaveCanvas
   m_TagString: Untagged
@@ -99,7 +98,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 901
+  m_SortingOrder: 902
   m_TargetDisplay: 0
 --- !u!114 &8267652064139511894
 MonoBehaviour:
@@ -153,19 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44de3acc7a7dc084d9a971511bea783d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &358192857592002227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157736967891501541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71edb82977adaa448a7a4dec7d173b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _canvas: {fileID: 5472957930783549263}
 --- !u!1 &1336533231935285441
 GameObject:
   m_ObjectHideFlags: 0

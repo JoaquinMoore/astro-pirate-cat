@@ -79,20 +79,32 @@ PrefabInstance:
       value: SpriteMinimap
       objectReference: {fileID: 0}
     - target: {fileID: 5267759165219528939, guid: 557f58aa3794e8549b01f1adfb8cb81d, type: 3}
+      propertyPath: m_Size.x
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 5267759165219528939, guid: 557f58aa3794e8549b01f1adfb8cb81d, type: 3}
+      propertyPath: m_Size.y
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5267759165219528939, guid: 557f58aa3794e8549b01f1adfb8cb81d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: bf1d43b01cc01ce4aaa6986701068edc, type: 3}
+      objectReference: {fileID: -779805294, guid: 9d180b02d9a6c27448f0b6b1f3e09054, type: 3}
     - target: {fileID: 5267759165219528939, guid: 557f58aa3794e8549b01f1adfb8cb81d, type: 3}
       propertyPath: m_Color.g
       value: 0.86353207
       objectReference: {fileID: 0}
+    - target: {fileID: 5267759165219528939, guid: 557f58aa3794e8549b01f1adfb8cb81d, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6063592318626878280, guid: 557f58aa3794e8549b01f1adfb8cb81d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6063592318626878280, guid: 557f58aa3794e8549b01f1adfb8cb81d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6063592318626878280, guid: 557f58aa3794e8549b01f1adfb8cb81d, type: 3}
       propertyPath: m_LocalPosition.x

@@ -51,7 +51,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _SkyTilling: 5
-    - _SkyTilling1: 210
+    - _SkyTilling1: 78.1
     - _SkyTilling2: 150
     - _Tilling: 0.1
     m_Colors:
