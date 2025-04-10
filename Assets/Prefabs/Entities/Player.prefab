@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 7002139680976742402}
   - component: {fileID: 4140086628041880852}
   - component: {fileID: 6161283069179757519}
+  - component: {fileID: 2797715545247019765}
   - component: {fileID: 6698339815021138942}
   - component: {fileID: 9109213566697081313}
   - component: {fileID: 8030742773967105181}
@@ -173,9 +174,9 @@ MonoBehaviour:
   _hookabletargets:
     serializedVersion: 2
     m_Bits: 72
-  _hookSpeed: 1.5
-  _hookReturnSpeed: 2
-  _hookDetectionRadius: 0.5
+  _hookSpeed: 10
+  _hookReturnSpeed: 8
+  _hookDetectionRadius: 1
   _minDistance: 10
   _approachSpeed: 5
 --- !u!114 &6161283069179757519
@@ -192,6 +193,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxSpeed: 10
   _softmaxSpeed: 5
+--- !u!114 &2797715545247019765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736234634865184432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80c6b22c45f91f4cb91a68e3ac7f17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6698339815021138942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,8 +462,8 @@ LineRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
-    textureScale: {x: 1, y: 1}
+    textureMode: 1
+    textureScale: {x: 0.8, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
@@ -1378,17 +1391,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpriteMinimap
       objectReference: {fileID: 0}
-    - target: {fileID: 1770718261800206848, guid: 557f58aa3794e8549b01f1adfb8cb81d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 5267759165219528939, guid: 557f58aa3794e8549b01f1adfb8cb81d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -702350670, guid: 9d180b02d9a6c27448f0b6b1f3e09054, type: 3}
     - target: {fileID: 6063592318626878280, guid: 557f58aa3794e8549b01f1adfb8cb81d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6063592318626878280, guid: 557f58aa3794e8549b01f1adfb8cb81d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6063592318626878280, guid: 557f58aa3794e8549b01f1adfb8cb81d, type: 3}
       propertyPath: m_LocalScale.z

@@ -539,7 +539,7 @@
     "m_StageCapability": 3,
     "m_BareResource": false,
     "m_Texture": {
-        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_SerializedTexture": "",
         "m_Guid": ""
     },
     "m_DefaultType": 0
@@ -682,21 +682,21 @@
     "m_Guid": {
         "m_GuidSerialized": "8e776bb3-d6a8-40d2-a1f3-991c32d969d2"
     },
-    "m_Name": "MainTexture",
+    "m_Name": "Texture",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "MainTexture",
-    "m_DefaultReferenceName": "_MainTexture",
-    "m_OverrideReferenceName": "_MainTex",
+    "m_RefNameGeneratedByDisplayName": "Texture",
+    "m_DefaultReferenceName": "_Texture",
+    "m_OverrideReferenceName": "_Tex",
     "m_GeneratePropertyBlock": false,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
     "m_DismissedVersion": 0,
     "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
+    "overrideHLSLDeclaration": true,
+    "hlslDeclarationOverride": 2,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_SerializedTexture": "",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -817,7 +817,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"da12adf0cc078b54bab4113ae505e847\",\"type\":3}}",
+        "m_SerializedTexture": "",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -886,6 +886,9 @@
     "m_AlphaClip": false,
     "m_CastShadows": true,
     "m_ReceiveShadows": true,
+    "m_DisableTint": false,
+    "m_AdditionalMotionVectorMode": 0,
+    "m_AlembicMotionVectors": false,
     "m_SupportsLODCrossFade": false,
     "m_CustomEditorGUI": "",
     "m_SupportVFX": false
@@ -1146,7 +1149,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
     "m_ObjectId": "729dc08933d84eb29c217980e31db1e5",
     "m_Id": 0,
-    "m_DisplayName": "MainTexture",
+    "m_DisplayName": "Texture",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -1273,8 +1276,8 @@
     "m_ObjectId": "8e154eef606c4a3cae411b7be49ef174",
     "m_Title": "Stars",
     "m_Position": {
-        "x": -414.0001220703125,
-        "y": 368.0000305175781
+        "x": -413.9999694824219,
+        "y": 368.0
     }
 }
 
@@ -1435,11 +1438,7 @@
     "m_Type": "UnityEditor.ShaderGraph.CategoryData",
     "m_ObjectId": "af266eae71c240358077c35117b8c0e8",
     "m_Name": "",
-    "m_ChildObjectList": [
-        {
-            "m_Id": "4712de9e3d1c45098fdeb20d1bb28f77"
-        }
-    ]
+    "m_ChildObjectList": []
 }
 
 {
@@ -1640,6 +1639,9 @@
     "m_Name": "Sky",
     "m_ChildObjectList": [
         {
+            "m_Id": "4712de9e3d1c45098fdeb20d1bb28f77"
+        },
+        {
             "m_Id": "508a49fe64eb4262a53ba492e0d2a888"
         },
         {
@@ -1721,7 +1723,7 @@
     "m_Title": "BG",
     "m_Position": {
         "x": -383.0,
-        "y": 12.000003814697266
+        "y": 12.000007629394532
     }
 }
 
@@ -1737,7 +1739,7 @@
     "m_StageCapability": 2,
     "m_BareResource": false,
     "m_Texture": {
-        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_SerializedTexture": "",
         "m_Guid": ""
     },
     "m_DefaultType": 0
