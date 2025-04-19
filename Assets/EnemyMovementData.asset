@@ -15,3 +15,4 @@ MonoBehaviour:
   MaxSpeed: 5
   SteeringForce: 2
   SlowingRadius: 2
+  FleeRadius: 5

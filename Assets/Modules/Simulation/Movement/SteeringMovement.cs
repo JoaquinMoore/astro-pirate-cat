@@ -17,8 +17,22 @@ public class SteeringMovement
     public SteeringMovement Seek(Vector2 target)
     {
         var distance = target - (Vector2)_host.position;
-        var desiredDirection = _data.MaxSpeed * Mathf.Clamp01(distance.magnitude / _data.SlowingRadius) * distance.normalized;
+        distance -= distance.normalized * _data.FleeRadius;
+        var desiredDirection = _data.MaxSpeed * Mathf.Clamp01(distance.magnitude / _data.SlowingRadius) * Mathf.Clamp01(distance.magnitude / _data.FleeRadius) * distance.normalized;
         _steering += desiredDirection - _velocity;
+        return this;
+    }
+
+    public SteeringMovement Flee(Vector2 target)
+    {
+        var distance = target - (Vector2)_host.position;
+
+        if (distance.magnitude < _data.FleeRadius)
+        {
+            var desiredDirection = _data.MaxSpeed * distance.normalized;
+            _steering += _velocity - desiredDirection;
+        }
+
         return this;
     }
 

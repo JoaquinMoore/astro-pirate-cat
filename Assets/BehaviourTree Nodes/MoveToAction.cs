@@ -14,6 +14,8 @@ public partial class MoveToAction : Action
 
     SteeringMovement _movementService;
 
+    Vector2 TargetPosition => Target.Value.transform.position;
+
     protected override Status OnStart()
     {
         _movementService = new(Data, Self.Value.transform);
@@ -23,7 +25,8 @@ public partial class MoveToAction : Action
     protected override Status OnUpdate()
     {
         Self.Value.transform.position += (Vector3)_movementService
-            .Seek(Target.Value.transform.position)
+            .Seek(TargetPosition)
+            .Flee(TargetPosition)
             .GetNextPosition() * Time.deltaTime;
 
         Debug.Log("Me estoy moviendo hacia " + Target.Value.name);
