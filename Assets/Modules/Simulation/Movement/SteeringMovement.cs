@@ -8,6 +8,8 @@ public class SteeringMovement
     readonly SteeringMovementDataSO _data;
     readonly Transform _host;
 
+    Vector2 HostPosition => _host.position;
+
     public SteeringMovement(SteeringMovementDataSO data, Transform host)
     {
         _data = data;
@@ -16,21 +18,47 @@ public class SteeringMovement
 
     public SteeringMovement Seek(Vector2 target)
     {
-        var distance = target - (Vector2)_host.position;
+        var distance = target - HostPosition;
         distance -= distance.normalized * _data.FleeRadius;
-        var desiredDirection = _data.MaxSpeed * Mathf.Clamp01(distance.magnitude / _data.SlowingRadius) * Mathf.Clamp01(distance.magnitude / _data.FleeRadius) * distance.normalized;
+
+        var slowingFactor = Mathf.Clamp01(distance.magnitude / _data.SlowingRadius);
+        var fleeFactor = Mathf.Clamp01(distance.magnitude / _data.FleeRadius);
+        var desiredDirection = _data.MaxSpeed * slowingFactor * fleeFactor * distance.normalized;
         _steering += desiredDirection - _velocity;
+
         return this;
     }
 
     public SteeringMovement Flee(Vector2 target)
     {
-        var distance = target - (Vector2)_host.position;
+        var distance = target - HostPosition;
 
         if (distance.magnitude < _data.FleeRadius)
         {
-            var desiredDirection = _data.MaxSpeed * distance.normalized;
+            var fleeFactor = 1 - Mathf.Clamp01(distance.magnitude / _data.FleeRadius);
+            var desiredDirection = _data.MaxSpeed * fleeFactor * distance.normalized;
             _steering += _velocity - desiredDirection;
+        }
+
+        return this;
+    }
+
+    public SteeringMovement Separation()
+    {
+        var neighbors = Physics2D.OverlapCircleAll(HostPosition, _data.SeparationRadius, LayerMask.GetMask("Boid"));
+        Vector2 averagePosition = default;
+        Debug.Log(neighbors.Length);
+
+        if (neighbors.Length > 0)
+        {
+            Debug.Log("Estoy separando");
+            foreach (var boid in neighbors)
+            {
+                var distance = (Vector2)boid.transform.position - HostPosition;
+                averagePosition += distance;
+            }
+
+            _steering -= (averagePosition / neighbors.Length).normalized * _data.MaxSpeed;
         }
 
         return this;

@@ -2,11 +2,12 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags:
   - SpawnPoint
   - Wep
   - Wep2
+  - Boid
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Buildings
   - Minimap
   - World And Minimap
-  - 
+  - Boid
   - 
   - 
   - 
@@ -47,3 +48,5 @@ TagManager:
   - name: FOW
     uniqueID: 355262643
     locked: 0
+  m_RenderingLayers:
+  - Default

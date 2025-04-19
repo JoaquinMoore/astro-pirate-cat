@@ -16,3 +16,4 @@ MonoBehaviour:
   SteeringForce: 2
   SlowingRadius: 2
   FleeRadius: 5
+  SeparationRadius: 1

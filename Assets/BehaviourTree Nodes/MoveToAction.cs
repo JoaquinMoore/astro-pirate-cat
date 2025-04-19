@@ -27,6 +27,7 @@ public partial class MoveToAction : Action
         Self.Value.transform.position += (Vector3)_movementService
             .Seek(TargetPosition)
             .Flee(TargetPosition)
+            .Separation()
             .GetNextPosition() * Time.deltaTime;
 
         Debug.Log("Me estoy moviendo hacia " + Target.Value.name);

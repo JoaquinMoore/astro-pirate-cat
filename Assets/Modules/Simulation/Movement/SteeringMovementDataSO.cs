@@ -7,4 +7,5 @@ public class SteeringMovementDataSO : ScriptableObject
     public float SteeringForce;
     public float SlowingRadius;
     public float FleeRadius;
+    public float SeparationRadius;
 }
