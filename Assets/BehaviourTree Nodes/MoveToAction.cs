@@ -30,7 +30,6 @@ public partial class MoveToAction : Action
             .Separation()
             .GetNextPosition() * Time.deltaTime;
 
-        Debug.Log("Me estoy moviendo hacia " + Target.Value.name);
         return Status.Running;
     }
 }

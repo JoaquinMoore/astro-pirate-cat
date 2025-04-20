@@ -47,11 +47,9 @@ public class SteeringMovement
     {
         var neighbors = Physics2D.OverlapCircleAll(HostPosition, _data.SeparationRadius, LayerMask.GetMask("Boid"));
         Vector2 averagePosition = default;
-        Debug.Log(neighbors.Length);
 
         if (neighbors.Length > 0)
         {
-            Debug.Log("Estoy separando");
             foreach (var boid in neighbors)
             {
                 var distance = (Vector2)boid.transform.position - HostPosition;
