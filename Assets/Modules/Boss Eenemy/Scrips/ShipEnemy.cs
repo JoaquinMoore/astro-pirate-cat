@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -67,7 +65,7 @@ namespace NPC.Boss.Ship
         void Update()
         {
             _fsm.CurrentState.LogicUpdate();
-            _slider.value = (float)_movsettings.Hp.PublicCurrentHealth / _movsettings.Hp.PublicMaxHealth;
+            _slider.value = (float)_movsettings.Hp.CurrentHealth / _movsettings.Hp.PublicMaxHealth;
 
         }
         public override void SetTarget(Transform target)

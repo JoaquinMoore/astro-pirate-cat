@@ -5,6 +5,6 @@ namespace HealthSystem
     public interface IHurtable
     {
         void Hurt(int damage);
-        public GameObject getGameObject();
+        public GameObject GetGameObject();
     }
 }

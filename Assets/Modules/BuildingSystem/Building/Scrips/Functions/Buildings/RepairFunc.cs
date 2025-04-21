@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace BuildSystem
@@ -50,7 +49,7 @@ namespace BuildSystem
 
         IEnumerator Repair()
         {
-            if (_model._model._hpFuncion.PublicCurrentHealth >= _model._model._hpFuncion.PublicMaxHealth)
+            if (_model._model._hpFuncion.CurrentHealth >= _model._model._hpFuncion.PublicMaxHealth)
             {
                 //AudioManager.Instance.Stop(Model.Data.RepairsSoundName.ToString());
                 FinishRepairs();

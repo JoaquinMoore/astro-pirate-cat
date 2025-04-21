@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using HealthSystem;
+using System.Collections;
+using UnityEngine;
 
 
 namespace NPC.Boss.Ship
@@ -61,13 +60,13 @@ namespace NPC.Boss.Ship
                 _sinTime = 0;
                 return;
             }
-            float hpcurrent = _curspeed * _settings.HpCurve.Evaluate((float)_settings.Hp.PublicCurrentHealth/ _settings.Hp.PublicMaxHealth);
+            float hpcurrent = _curspeed * _settings.HpCurve.Evaluate((float)_settings.Hp.CurrentHealth / _settings.Hp.PublicMaxHealth);
 
-            _ship.Anim.SetFloat("Blend", (float)_settings.Hp.PublicCurrentHealth / _settings.Hp.PublicMaxHealth);
+            _ship.Anim.SetFloat("Blend", (float)_settings.Hp.CurrentHealth / _settings.Hp.PublicMaxHealth);
 
 
 
-            if ((float)_settings.Hp.PublicCurrentHealth / _settings.Hp.PublicMaxHealth <= 0.5)
+            if ((float)_settings.Hp.CurrentHealth / _settings.Hp.PublicMaxHealth <= 0.5)
             {
                 _ship._stop = true;
                 _ship.Anim.SetBool("IsMove", false);
@@ -166,7 +165,7 @@ namespace NPC.Boss.Ship
                 SetPos();
                 return;
             }
-            
+
 
             _MovePos = _startingPos + pos;
 
