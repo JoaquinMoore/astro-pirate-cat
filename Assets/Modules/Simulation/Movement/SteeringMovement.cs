@@ -21,9 +21,8 @@ public class SteeringMovement
         var distance = target - HostPosition;
         distance -= distance.normalized * _data.FleeRadius;
 
-        var slowingFactor = Mathf.Clamp01(distance.magnitude / _data.SlowingRadius);
-        var fleeFactor = Mathf.Clamp01(distance.magnitude / _data.FleeRadius);
-        var desiredDirection = _data.MaxSpeed * slowingFactor * fleeFactor * distance.normalized;
+        var slowingFactor = Mathf.Clamp01((distance.magnitude - _data.FleeRadius) / _data.SlowingRadius);
+        var desiredDirection = _data.MaxSpeed * slowingFactor * distance.normalized;
         _steering += desiredDirection - _velocity;
 
         return this;
