@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: b737c53d738abe34a944002add3a225a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5460169360626783628
+    second: GoldenHit_0
+  - first:
+      213: 5804189649873931730
+    second: GoldenHit_1
+  - first:
+      213: 6595662943151731808
+    second: GoldenHit_2
+  - first:
+      213: 8653111801371511892
+    second: GoldenHit_3
+  - first:
+      213: 1903983624513694816
+    second: GoldenHit_4
+  - first:
+      213: 1384774238648737070
+    second: GoldenHit_5
+  - first:
+      213: -3247308311353680710
+    second: GoldenHit_6
+  - first:
+      213: 4206562260520223306
+    second: GoldenHit_7
+  - first:
+      213: 3362181627147523932
+    second: GoldenHit_8
+  - first:
+      213: -4927906798910210380
+    second: GoldenHit_9
+  - first:
+      213: 3480374064810773495
+    second: GoldenHit_10
+  - first:
+      213: 5189511618700847200
+    second: GoldenHit_11
+  - first:
+      213: 6273843555234026325
+    second: GoldenHit_12
+  - first:
+      213: -6413837835907868803
+    second: GoldenHit_13
+  - first:
+      213: 5438551328661487647
+    second: GoldenHit_14
+  - first:
+      213: 4865138386839446569
+    second: GoldenHit_15
+  - first:
+      213: 2229923051860288930
+    second: GoldenHit_16
+  - first:
+      213: -7650143442609570121
+    second: GoldenHit_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GoldenHit_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 393
+        width: 131
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8591a1ba1b66cb40800000000000000
+      internalID: 5460169360626783628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenHit_1
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 393
+        width: 132
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dd0cb11cbf9c8050800000000000000
+      internalID: 5804189649873931730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenHit_2
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 393
+        width: 131
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06434c06080888b50800000000000000
+      internalID: 6595662943151731808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenHit_3
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 393
+        width: 132
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45c4d725657061870800000000000000
+      internalID: 8653111801371511892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenHit_4
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 393
+        width: 134
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06cac4dc40f4c6a10800000000000000
+      internalID: 1903983624513694816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenHit_5
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 393
+        width: 136
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2d15cc45d4b73310800000000000000
+      internalID: 1384774238648737070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenHit_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 197
+        width: 136
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abc1799bb4e3fe2d0800000000000000
+      internalID: -3247308311353680710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenHit_7
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 197
+        width: 136
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a424fdfa616b06a30800000000000000
+      internalID: 4206562260520223306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenHit_8
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 197
+        width: 134
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c571974506ed8ae20800000000000000
+      internalID: 3362181627147523932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenHit_9
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 196
+        width: 132
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4be79b420ee8c9bb0800000000000000
+      internalID: -4927906798910210380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenHit_10
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 196
+        width: 130
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fb478aa5c5cc4030800000000000000
+      internalID: 3480374064810773495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenHit_11
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 196
+        width: 130
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0682d6e6259d40840800000000000000
+      internalID: 5189511618700847200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenHit_12
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 0
+        width: 130
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5531916297b211750800000000000000
+      internalID: 6273843555234026325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenHit_13
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 130
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7750cf58787df6a0800000000000000
+      internalID: -6413837835907868803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenHit_14
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 0
+        width: 130
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f10c8956e9d997b40800000000000000
+      internalID: 5438551328661487647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenHit_15
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 0
+        width: 130
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 924aea21691748340800000000000000
+      internalID: 4865138386839446569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenHit_16
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 0
+        width: 131
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a56696733742fe10800000000000000
+      internalID: 2229923051860288930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenHit_17
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 0
+        width: 131
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bef876321b35d590800000000000000
+      internalID: -7650143442609570121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GoldenHit_0: 5460169360626783628
+      GoldenHit_1: 5804189649873931730
+      GoldenHit_10: 3480374064810773495
+      GoldenHit_11: 5189511618700847200
+      GoldenHit_12: 6273843555234026325
+      GoldenHit_13: -6413837835907868803
+      GoldenHit_14: 5438551328661487647
+      GoldenHit_15: 4865138386839446569
+      GoldenHit_16: 2229923051860288930
+      GoldenHit_17: -7650143442609570121
+      GoldenHit_2: 6595662943151731808
+      GoldenHit_3: 8653111801371511892
+      GoldenHit_4: 1903983624513694816
+      GoldenHit_5: 1384774238648737070
+      GoldenHit_6: -3247308311353680710
+      GoldenHit_7: 4206562260520223306
+      GoldenHit_8: 3362181627147523932
+      GoldenHit_9: -4927906798910210380
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
