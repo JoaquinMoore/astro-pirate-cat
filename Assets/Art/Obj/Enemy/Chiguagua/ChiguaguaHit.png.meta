@@ -1,0 +1,588 @@
+fileFormatVersion: 2
+guid: d9e850790213bac47b713bddd70d7e35
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -606717488249610120
+    second: ChiguaguaHit_0
+  - first:
+      213: 5366023028682963662
+    second: ChiguaguaHit_1
+  - first:
+      213: -721863920648791643
+    second: ChiguaguaHit_2
+  - first:
+      213: -3679973124554477912
+    second: ChiguaguaHit_3
+  - first:
+      213: -6139134792283440242
+    second: ChiguaguaHit_4
+  - first:
+      213: 1160853868839489774
+    second: ChiguaguaHit_5
+  - first:
+      213: 6854971911549300083
+    second: ChiguaguaHit_6
+  - first:
+      213: -7861883451694199839
+    second: ChiguaguaHit_7
+  - first:
+      213: -3330452414365918078
+    second: ChiguaguaHit_8
+  - first:
+      213: 2655449217517517933
+    second: ChiguaguaHit_9
+  - first:
+      213: 5128330857422785928
+    second: ChiguaguaHit_10
+  - first:
+      213: -8615973768805233663
+    second: ChiguaguaHit_11
+  - first:
+      213: 5571768204136755306
+    second: ChiguaguaHit_12
+  - first:
+      213: -2410718625639515820
+    second: ChiguaguaHit_13
+  - first:
+      213: 8681004341936762683
+    second: ChiguaguaHit_14
+  - first:
+      213: 2785529686454786080
+    second: ChiguaguaHit_15
+  - first:
+      213: 5785829328250115697
+    second: ChiguaguaHit_16
+  - first:
+      213: -7473352563277641448
+    second: ChiguaguaHit_17
+  - first:
+      213: 4502782410514172766
+    second: ChiguaguaHit_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ChiguaguaHit_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 378
+        width: 148
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8706dd1b8a18497f0800000000000000
+      internalID: -606717488249610120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChiguaguaHit_1
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 378
+        width: 148
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecab631a381f77a40800000000000000
+      internalID: 5366023028682963662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChiguaguaHit_2
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 378
+        width: 148
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a9de89b69c6bf5f0800000000000000
+      internalID: -721863920648791643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChiguaguaHit_3
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 378
+        width: 148
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ae22f7c0fb1eecc0800000000000000
+      internalID: -3679973124554477912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChiguaguaHit_4
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 378
+        width: 148
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8b34b5de696dcaa0800000000000000
+      internalID: -6139134792283440242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChiguaguaHit_5
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 378
+        width: 148
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee0d058717e2c1010800000000000000
+      internalID: 1160853868839489774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChiguaguaHit_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 189
+        width: 148
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37d2d2562a0c12f50800000000000000
+      internalID: 6854971911549300083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChiguaguaHit_7
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 189
+        width: 148
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ebce3c97aaf4e290800000000000000
+      internalID: -7861883451694199839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChiguaguaHit_8
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 189
+        width: 148
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28c9064bc2bd7c1d0800000000000000
+      internalID: -3330452414365918078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChiguaguaHit_9
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 189
+        width: 148
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6c78318efc0ad420800000000000000
+      internalID: 2655449217517517933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChiguaguaHit_10
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 189
+        width: 148
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d0c576ebd7b2740800000000000000
+      internalID: 5128330857422785928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChiguaguaHit_11
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 189
+        width: 148
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10cc744b189ed6880800000000000000
+      internalID: -8615973768805233663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChiguaguaHit_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 148
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a60336249a5e25d40800000000000000
+      internalID: 5571768204136755306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChiguaguaHit_13
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 0
+        width: 148
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 459b659be286b8ed0800000000000000
+      internalID: -2410718625639515820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChiguaguaHit_14
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 0
+        width: 148
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3fa3ce747f197870800000000000000
+      internalID: 8681004341936762683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChiguaguaHit_15
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 0
+        width: 148
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0285170dd7038a620800000000000000
+      internalID: 2785529686454786080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChiguaguaHit_16
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 0
+        width: 148
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17692619e156b4050800000000000000
+      internalID: 5785829328250115697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChiguaguaHit_17
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 0
+        width: 148
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 819c4907071594890800000000000000
+      internalID: -7473352563277641448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d5489abe45a27cf4b944187c5f2e9ad5
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ChiguaguaHit_0: -606717488249610120
+      ChiguaguaHit_1: 5366023028682963662
+      ChiguaguaHit_10: 5128330857422785928
+      ChiguaguaHit_11: -8615973768805233663
+      ChiguaguaHit_12: 5571768204136755306
+      ChiguaguaHit_13: -2410718625639515820
+      ChiguaguaHit_14: 8681004341936762683
+      ChiguaguaHit_15: 2785529686454786080
+      ChiguaguaHit_16: 5785829328250115697
+      ChiguaguaHit_17: -7473352563277641448
+      ChiguaguaHit_2: -721863920648791643
+      ChiguaguaHit_3: -3679973124554477912
+      ChiguaguaHit_4: -6139134792283440242
+      ChiguaguaHit_5: 1160853868839489774
+      ChiguaguaHit_6: 6854971911549300083
+      ChiguaguaHit_7: -7861883451694199839
+      ChiguaguaHit_8: -3330452414365918078
+      ChiguaguaHit_9: 2655449217517517933
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

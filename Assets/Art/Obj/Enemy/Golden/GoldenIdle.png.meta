@@ -1,0 +1,714 @@
+fileFormatVersion: 2
+guid: 45383d389f7c9914eb60a3eccb8ee3eb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -403316190881099403
+    second: GoldenIdle_0
+  - first:
+      213: 1146455239040258249
+    second: GoldenIdle_1
+  - first:
+      213: -160560308323374403
+    second: GoldenIdle_2
+  - first:
+      213: -1383561689949453894
+    second: GoldenIdle_3
+  - first:
+      213: -8647813656651532136
+    second: GoldenIdle_4
+  - first:
+      213: 8348349677490219298
+    second: GoldenIdle_5
+  - first:
+      213: -253823423390702218
+    second: GoldenIdle_6
+  - first:
+      213: 5684710659063166856
+    second: GoldenIdle_7
+  - first:
+      213: 8479596318489038249
+    second: GoldenIdle_8
+  - first:
+      213: 1766768408468721379
+    second: GoldenIdle_9
+  - first:
+      213: 6973677393301602504
+    second: GoldenIdle_10
+  - first:
+      213: -326720502266712038
+    second: GoldenIdle_11
+  - first:
+      213: -3185352897085691226
+    second: GoldenIdle_12
+  - first:
+      213: -6191424803087687202
+    second: GoldenIdle_13
+  - first:
+      213: 8584939787297799783
+    second: GoldenIdle_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GoldenIdle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 564
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 881d50a1194b00a48a0f260a8e162395
+      internalID: -1672521791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_1
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 564
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d794904028d61e49bbca790fc96fa0e
+      internalID: -1179870470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_2
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 564
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e1814db80906a74bbb0ec9dac166d52
+      internalID: 2126827600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_3
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 564
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9997aafa7388c7745afc6d6864a4de2c
+      internalID: 327343973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_4
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 564
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2db239a3bad48b4e8a92e195fffeba4
+      internalID: -1330419825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_5
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 564
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27bf4eca4032b174d8a27795e2a68f2b
+      internalID: 558655505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 376
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9190171ea4e2db5469ba8aa534cbc3d8
+      internalID: -1181099886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_7
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 376
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9cb44e2ac20bcc4caeabe521973857b
+      internalID: 1306487457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_8
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 376
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6005210003f0ba84ba872f37695ad234
+      internalID: 54404991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_9
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 376
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de8a842bf7f7f54bbb0c75396935a4d
+      internalID: 1828625799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_10
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 376
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd541baf2c4a52e48b9d1353c1c605b5
+      internalID: -1091933238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_11
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 376
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01fb3a372896f824b8743f2ff09fc97c
+      internalID: -168909150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 188
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 943b13878f45cac4a99f0762ac54c88d
+      internalID: -1414543459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_13
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 188
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ece044a10ab1dc344a87ddccfa46e7b0
+      internalID: 1078584989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_14
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 188
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d768338afcd02d740998b897bc2bfeb3
+      internalID: 1971306493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_15
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 188
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f47dc94c49ca940b2afb3fbffa0a54
+      internalID: -128492376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_16
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 188
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5348c210edc8a554bb4015217fba3985
+      internalID: 1477672655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_17
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 188
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c695a628d45667740aea0deda3aaf242
+      internalID: -2045785085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8058573672658444ab94c885047d5e4
+      internalID: 1138757521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_19
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 0
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8918905257c39d94187537e6f2cd0599
+      internalID: 1896616807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_20
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 0
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37ffbcbeef3e41a41a80d03aa2fc724a
+      internalID: 1270434830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_21
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 0
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fca22a3b8de33ce47ae8aeb713ecbec3
+      internalID: 380813033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_22
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 0
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fbdf5f965d7fe74ab11f0222ce43613
+      internalID: -1521717745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenIdle_23
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 0
+        width: 131
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d607812f5e7289c41b6a8a2c2a02b1f1
+      internalID: 1616169163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 85700fc55d24b8d44b9cb205ed2dcaae
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GoldenIdle_0: -1672521791
+      GoldenIdle_1: -1179870470
+      GoldenIdle_10: -1091933238
+      GoldenIdle_11: -168909150
+      GoldenIdle_12: -1414543459
+      GoldenIdle_13: 1078584989
+      GoldenIdle_14: 1971306493
+      GoldenIdle_15: -128492376
+      GoldenIdle_16: 1477672655
+      GoldenIdle_17: -2045785085
+      GoldenIdle_18: 1138757521
+      GoldenIdle_19: 1896616807
+      GoldenIdle_2: 2126827600
+      GoldenIdle_20: 1270434830
+      GoldenIdle_21: 380813033
+      GoldenIdle_22: -1521717745
+      GoldenIdle_23: 1616169163
+      GoldenIdle_3: 327343973
+      GoldenIdle_4: -1330419825
+      GoldenIdle_5: 558655505
+      GoldenIdle_6: -1181099886
+      GoldenIdle_7: 1306487457
+      GoldenIdle_8: 54404991
+      GoldenIdle_9: 1828625799
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
