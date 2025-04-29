@@ -49,7 +49,7 @@ public class SpawnWavePool : MonoBehaviour
 
     public static UnityEvent Sendspawns = new();
 
-    private bool TimerStarted;
+    private bool _timerStarted;
 
     void Start()
     {
@@ -135,7 +135,7 @@ public class SpawnWavePool : MonoBehaviour
         {
             StopAllCoroutines();
             WaveManager.FinishedWave?.Invoke();
-            Debug.Log("end");
+            _timerStarted = false;
             _totalEnemies = 0;
             foreach (var item in _enemyLists)
             {
@@ -237,7 +237,7 @@ public class SpawnWavePool : MonoBehaviour
         _totalEnemies += totalEnemies;
         _currentEnemies += currentEnemies;
 
-        if (TimerStarted == false)
+        if (_timerStarted == false)
             StartCoroutine(TimerFailSafe());
 
         foreach (var item in EnemyList)
@@ -284,7 +284,7 @@ public class SpawnWavePool : MonoBehaviour
 
     IEnumerator TimerFailSafe()
     {
-        TimerStarted = true;
+        _timerStarted = true;
         yield return new WaitForSeconds((_TimeFromEachSpawn * _totalEnemies)+ _ExtraTime );
 
         foreach (var item in _enemyLists)
@@ -294,7 +294,7 @@ public class SpawnWavePool : MonoBehaviour
         }
         _currentEnemies = 0;
         _totalEnemies = 0;
-        TimerStarted = false;
+        _timerStarted = false;
         WaveManager.FinishedWave?.Invoke();
     }
 
@@ -306,6 +306,24 @@ public class SpawnWavePool : MonoBehaviour
             item.SpawnPoint.transform.position -= item.SpawnPoint.transform.forward * newdistance;
         }
     }
+
+
+
+    public float WaveProgress()
+    {
+        float progress = 1;
+        if (_timerStarted)
+        {
+            progress = (float)_currentEnemies / _totalEnemies;
+        }
+        Debug.Log(progress);
+        return progress;
+    }
+
+
+
+
+
 
 
     private void OnDrawGizmos()

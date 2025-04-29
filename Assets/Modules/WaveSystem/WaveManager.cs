@@ -13,7 +13,7 @@ public class WaveManager : MonoBehaviour//, IPause
     [SerializeField, Tooltip("Sirve para indicar a que oleada el juego esta listo para terminar (nota: esto termina con el ciclo de oleadas y habra que reiniciarlo una ves este la opcion añadida)")]
     private int _FinalWave;
 
-    [field: SerializeField] public Material MatWave { get; private set; }
+    [field: SerializeField] public float _animWaitTimer;
 
     [Header("debug")]
     [field: SerializeField] private int _indexWave = 0;
@@ -25,13 +25,13 @@ public class WaveManager : MonoBehaviour//, IPause
     [SerializeField] private SpawnWavePool _wave;
 
     public static int IndexWave;
-
+    private float _visualtimer;
 
     #region Unity Functions
     void Start()
     {
         _wave = GetComponentInChildren<SpawnWavePool>();
-
+        GameManager._wave = this;
         ReciveSpawns.AddListener(ReciveList);
         FinishedWave.AddListener(WaveFinished);
         _currentWave = _Wave[Random.Range(0, _Wave.Count)];
@@ -57,9 +57,8 @@ public class WaveManager : MonoBehaviour//, IPause
         IndexWave = _indexWave;
         _startWave = true;
         _wave.StartSpecial();
-        //MatWave.SetInt("_Actived", 0);
-        //StartCoroutine(UIManager.Instance?.ChangedWave(_indexWave));
-        //
+        UIManager.MenuManager.SwichMenuState(2, true);
+        StartCoroutine(AnimTimer());
         //AudioManager.Instance.Play(SoundName.Alert_Wave.ToString());
         //EnemySpawner.StartWave?.Invoke(this);
 
@@ -78,13 +77,11 @@ public class WaveManager : MonoBehaviour//, IPause
             return;
         }
 
-
+        _visualtimer = 0;
         _startWave = false;
-        //MatWave.SetInt("_Actived", 1);
         _Wave.Clear();
         _Wave = new List<Wave>(_currentWave.WaveChilds);
         _currentWave = _Wave[Random.Range(0, _Wave.Count)];
-        //_currentWave.Reset();
         StartCoroutine(WaveWaitTimer());
 
     }
@@ -94,6 +91,12 @@ public class WaveManager : MonoBehaviour//, IPause
     {
         freemode = true;
         WaveFinished();
+    }
+
+    public IEnumerator AnimTimer()
+    {
+        yield return new WaitForSeconds(_animWaitTimer);
+        UIManager.MenuManager.SwichMenuState(2,false);
     }
 
     public IEnumerator WaveWaitTimer()
@@ -106,6 +109,27 @@ public class WaveManager : MonoBehaviour//, IPause
     {
         _wave.StartSpawning(Spawns);
     }
+
+
+    public float WaveProgress()
+    {
+        float progress = 0;
+        //_wave.WaveProgress();
+        if (_startWave)
+        {
+            progress = _wave.WaveProgress();
+        }
+        else
+        {
+            _visualtimer += Time.deltaTime;
+            progress = Mathf.Clamp(_visualtimer / _currentWave.TimeForWave, 0, 1f);
+        }
+
+
+
+        return progress;
+    }
+
 
     #endregion
 
@@ -132,6 +156,7 @@ public class WaveManager : MonoBehaviour//, IPause
     }
 
     #endregion
+
     #region Tutorial Shenanigans
     public void Unlock()
     {
