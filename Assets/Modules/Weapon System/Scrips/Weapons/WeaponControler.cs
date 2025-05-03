@@ -1,7 +1,8 @@
-using System.Collections;
 using System;
 using System.Collections.Generic;
+using Extensions;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace WeaponSystem
 {
@@ -76,15 +77,9 @@ namespace WeaponSystem
 
         public void TestingInput()
         {
-            bool test = false;
+            bool test = Mouse.current.WorldPosition().x > 500;
 
-            if (Input.mousePosition.x > 500)
-            {
-                test = true;
-            }
             MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition), test);
-
-
 
             if (Input.GetKey(KeyCode.Mouse0))
             {
@@ -145,6 +140,7 @@ namespace WeaponSystem
         {
             Vector2 pos = Vector2.zero;
 
+
             pos = target - (Vector2)transform.position;
             _WeaponRot.transform.right = pos + new Vector2(0, _currentWeapon.Weapon.WeaponSpread());
             if (flip == true)
@@ -182,8 +178,8 @@ namespace WeaponSystem
             _weaponInt = (int)Mathf.Repeat(_weaponInt, _weapons.Count);
 
             if (_weapons[_weaponInt].WeaponEquiped && _weapons.Count > 2)
-            if (_weapons[_weaponInt].WeaponEquiped)
-                _weaponInt += (int)direction;
+                if (_weapons[_weaponInt].WeaponEquiped)
+                    _weaponInt += (int)direction;
 
             if (_weaponInt < 0)
             {

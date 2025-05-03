@@ -40,7 +40,7 @@ namespace HookToolSystem
         private GameObject _hookHeadPref;
         private bool _hooked;
 
-         
+
         public bool Hooking()
         {
             return _hookHeadPref.activeSelf;
@@ -61,11 +61,6 @@ namespace HookToolSystem
             StartCoroutine(Anim(mousePos, _hookSpeed));
 
         }
-
-
-
-
-
 
         private IEnumerator Anim(Vector3 hooktarget, float speed)
         {
@@ -228,5 +223,5 @@ namespace HookToolSystem
                 yield return null;
             }
         }
-    } 
+    }
 }
