@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using Extensions;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace WeaponSystem
 {
@@ -75,15 +77,9 @@ namespace WeaponSystem
 
         public void TestingInput()
         {
-            bool test = false;
+            bool test = Mouse.current.WorldPosition().x > 500;
 
-            if (Input.mousePosition.x > 500)
-            {
-                test = true;
-            }
             MouseAim(Camera.main.ScreenToWorldPoint(Input.mousePosition), test);
-
-
 
             if (Input.GetKey(KeyCode.Mouse0))
             {
