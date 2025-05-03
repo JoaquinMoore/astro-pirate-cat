@@ -1,4 +1,3 @@
-using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -145,6 +144,7 @@ namespace WeaponSystem
         {
             Vector2 pos = Vector2.zero;
 
+
             pos = target - (Vector2)transform.position;
             _WeaponRot.transform.right = pos + new Vector2(0, _currentWeapon.Weapon.WeaponSpread());
             if (flip == true)
@@ -182,8 +182,8 @@ namespace WeaponSystem
             _weaponInt = (int)Mathf.Repeat(_weaponInt, _weapons.Count);
 
             if (_weapons[_weaponInt].WeaponEquiped && _weapons.Count > 2)
-            if (_weapons[_weaponInt].WeaponEquiped)
-                _weaponInt += (int)direction;
+                if (_weapons[_weaponInt].WeaponEquiped)
+                    _weaponInt += (int)direction;
 
             if (_weaponInt < 0)
             {

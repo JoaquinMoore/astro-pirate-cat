@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class SteeringMovement
 {
-    Vector2 _velocity;
-    Vector2 _steering;
+    private Vector2 _velocity;
+    private Vector2 _steering;
 
-    readonly SteeringMovementDataSO _data;
-    readonly Transform _host;
+    private readonly SteeringMovementDataSO _data;
+    private readonly Transform _host;
 
-    Vector2 HostPosition => _host.position;
+    private Vector2 HostPosition => _host.position;
 
     public SteeringMovement(SteeringMovementDataSO data, Transform host)
     {
