@@ -1,16 +1,17 @@
+using System;
+using Extensions;
 using HealthSystem;
 using HookToolSystem;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using WeaponSystem;
 
 public class MaincharacterController : MonoBehaviour
 {
-    // Servicios
-    // HealthService
-    // HookService
-    // WeaponService
-    // MovementService
+    private InputAction _onAttackAction;
+    private InputAction _onHookAction;
+    private SpriteRenderer _spriteRenderer;
 
     public void Hook(Vector3 target)
     {
@@ -53,8 +54,6 @@ public class MaincharacterController : MonoBehaviour
     {
         _weaponcontroller.ChangeSecondaryWeapon(rot);
     }
-
-
 
     protected void Impulse(Vector2 force)
     {
@@ -99,13 +98,37 @@ public class MaincharacterController : MonoBehaviour
         _hpBar = GetComponentInChildren<Slider>();
         _anims = GetComponent<Animator>();
         _hp = GetComponentInChildren<Health>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
 
         _weaponcontroller.OnImpulse += Impulse;
+        _onAttackAction = InputSystem.actions.FindAction("Attack");
+        _onHookAction = InputSystem.actions.FindAction("Hook");
     }
 
     private void OnDisable()
     {
         _weaponcontroller.OnImpulse -= Impulse;
+    }
+
+    private void Update()
+    {
+        if (_onAttackAction.IsPressed())
+        {
+            _weaponcontroller.PrimaryFireDown();
+        }
+        else if (_onAttackAction.WasReleasedThisFrame())
+        {
+            _weaponcontroller.PrimaryFireUp();
+        }
+
+        if (_onHookAction.WasPressedThisFrame())
+        {
+            _hookTool.Hooking(Mouse.current.WorldPosition());
+        }
+
+        var mustFlip = Mouse.current.WorldPosition().x > transform.position.x;
+        _weaponcontroller.MouseAim(Mouse.current.WorldPosition(), mustFlip);
+        _spriteRenderer.flipX = mustFlip;
     }
 
     private void FixedUpdate()

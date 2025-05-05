@@ -11,26 +11,28 @@ public partial class MoveToAction : Action
     [SerializeReference] public BlackboardVariable<GameObject> Self;
     [SerializeReference] public BlackboardVariable<GameObject> Target;
     [SerializeReference] public BlackboardVariable<SteeringMovementDataSO> Data;
+    [SerializeReference] public BlackboardVariable<float> CurrentSpeed;
 
-    SteeringMovement _movementService;
+    private SteeringMovement _movementService;
 
-    Vector2 TargetPosition => Target.Value.transform.position;
+    private Vector2 TargetPosition => Target.Value.transform.position;
 
     protected override Status OnStart()
     {
-        _movementService = new(Data, Self.Value.transform);
+        _movementService = new SteeringMovement(Data, Self.Value.transform);
         return base.OnStart();
     }
 
     protected override Status OnUpdate()
     {
-        Self.Value.transform.position += (Vector3)_movementService
+        var velocity = (Vector3)_movementService
             .Seek(TargetPosition)
             .Flee(TargetPosition)
             .Separation()
-            .GetNextPosition() * Time.deltaTime;
+            .GetNextPosition();
+        Self.Value.transform.position += velocity * Time.deltaTime;
 
+        CurrentSpeed.Value = velocity.magnitude;
         return Status.Running;
     }
 }
-
