@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeForWave: 2
   WaveChilds:
+  - {fileID: 11400000, guid: 080e9819adc46a64fb5bb1ef3aed4cb0, type: 2}
   - {fileID: 11400000, guid: 528dd1cd838844f47bea07e7b45e76d1, type: 2}
   AmauntPerWave:
   - tag: 0
