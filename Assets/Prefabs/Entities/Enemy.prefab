@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2208406186494091192}
   - component: {fileID: 1136595610186671753}
   - component: {fileID: 7378104316559920660}
-  - component: {fileID: 1274084215185137622}
   - component: {fileID: 2377051322802566576}
   - component: {fileID: 7615993295373162295}
   - component: {fileID: 5690794144466119508}
@@ -150,18 +149,6 @@ MonoBehaviour:
           m_Value1: 7203203198850144784
         Name: AttackDistance
         m_Value: 6.72
---- !u!114 &1274084215185137622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1448005437917873411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57eb27970fb1453438e467ac3dedd004, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &2377051322802566576
 BoxCollider2D:
   m_ObjectHideFlags: 0
