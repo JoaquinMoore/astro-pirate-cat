@@ -67,7 +67,8 @@ namespace Physics.Movement
         public Vector2 GetNextPosition()
         {
             _steering *= Time.deltaTime * _data.SteeringForce;
-            return _currentVelocity = Vector2.ClampMagnitude(_currentVelocity + _steering, _data.MaxSpeed);
+            _currentVelocity = Vector2.ClampMagnitude(_currentVelocity + _steering, _data.MaxSpeed);
+            return HostPosition2D + _currentVelocity * Time.deltaTime;
         }
 
         [Serializable]

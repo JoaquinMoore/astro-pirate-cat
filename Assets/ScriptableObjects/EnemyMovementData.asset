@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f5cd0a4b80c28449638138201e4ca7, type: 3}
   m_Name: EnemyMovementData
   m_EditorClassIdentifier: 
-  MaxSpeed: 5
-  SteeringForce: 2
-  SlowingRadius: 2
-  FleeRadius: 3
-  SeparationRadius: 1
+  _data:
+    MaxSpeed: 10
+    SteeringForce: 2
+    SlowingRadius: 2
+    FleeRadius: 0
+    SeparationRadius: 0
+    SeparationLayerMask:
+      serializedVersion: 2
+      m_Bits: 0

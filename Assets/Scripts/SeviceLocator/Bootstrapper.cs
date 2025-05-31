@@ -1,22 +1,24 @@
 ﻿using UnityEngine;
 
-namespace UnityServiceLocator {
+namespace UnityServiceLocator
+{
     [DisallowMultipleComponent]
-    [RequireComponent(typeof(ServiceLocator))]
-    public abstract class Bootstrapper : MonoBehaviour {
-        ServiceLocator container;
-        internal ServiceLocator Container => container.OrNull() ?? (container = GetComponent<ServiceLocator>());
-        
-        bool hasBeenBootstrapped;
+    public abstract class Bootstrapper : ServiceLocator
+    {
+        private bool hasBeenBootstrapped;
 
-        void Awake() => BootstrapOnDemand();
-        
-        public void BootstrapOnDemand() {
+        private void Awake()
+        {
+            BootstrapOnDemand();
+        }
+
+        public void BootstrapOnDemand()
+        {
             if (hasBeenBootstrapped) return;
             hasBeenBootstrapped = true;
             Bootstrap();
         }
-        
+
         protected abstract void Bootstrap();
     }
 }

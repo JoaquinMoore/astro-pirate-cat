@@ -7,9 +7,8 @@ public class MaincharacterBoostraper : Bootstrapper
 {
     protected override void Bootstrap()
     {
-        Container
-            .Register(GetComponent<HookTool>())
-            .Register(GetComponent<WeaponControler>())
-            .Register(GetComponent<Rigidbody2D>());
+        Register(GetComponent<HookTool>());
+        Register(GetComponent<WeaponControler>());
+        Register(GetComponent<Rigidbody2D>());
     }
 }
