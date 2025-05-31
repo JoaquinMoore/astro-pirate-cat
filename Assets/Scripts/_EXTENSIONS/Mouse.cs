@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Extensions
+namespace _EXTENSIONS
 {
     public static class MouseExtensions
     {

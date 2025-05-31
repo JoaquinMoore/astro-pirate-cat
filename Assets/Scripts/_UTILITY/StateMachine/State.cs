@@ -1,4 +1,4 @@
-namespace Assets.Modules.Util.StateMachine
+namespace _UTILITY.StateMachine
 {
     public abstract class State<ContextType>
     {

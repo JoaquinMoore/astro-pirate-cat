@@ -1,16 +1,19 @@
-public abstract class ApeBehaviour
+namespace _UTILITY
 {
-    protected ApeBehaviour()
+    public abstract class ApeBehaviour
     {
-        UpdateManager.DoUpdate += Update;
-        UpdateManager.DoFixedUpdate += FixedUpdate;
-    }
+        protected ApeBehaviour()
+        {
+            UpdateManager.DoUpdate += Update;
+            UpdateManager.DoFixedUpdate += FixedUpdate;
+        }
 
-    protected virtual void Update()
-    {
-    }
+        protected virtual void Update()
+        {
+        }
 
-    protected virtual void FixedUpdate()
-    {
+        protected virtual void FixedUpdate()
+        {
+        }
     }
 }

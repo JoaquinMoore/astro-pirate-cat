@@ -1,41 +1,44 @@
 ﻿using System;
 using UnityEngine;
 
-public class UpdateManager : MonoBehaviour
+namespace _UTILITY
 {
-    private static UpdateManager s_instance;
-
-    private static UpdateManager Instance
+    public class UpdateManager : MonoBehaviour
     {
-        get
+        private static UpdateManager s_instance;
+
+        private static UpdateManager Instance
         {
-            s_instance ??= new GameObject("UpdateManager").AddComponent<UpdateManager>();
-            return s_instance;
+            get
+            {
+                s_instance ??= new GameObject("UpdateManager").AddComponent<UpdateManager>();
+                return s_instance;
+            }
         }
-    }
 
-    private void Update()
-    {
-        doUpdate.Invoke();
-    }
+        private void Update()
+        {
+            doUpdate.Invoke();
+        }
 
-    private void FixedUpdate()
-    {
-        doFixedUpdate.Invoke();
-    }
+        private void FixedUpdate()
+        {
+            doFixedUpdate.Invoke();
+        }
 
-    private event Action doUpdate;
-    private event Action doFixedUpdate;
+        private event Action doUpdate;
+        private event Action doFixedUpdate;
 
-    public static event Action DoUpdate
-    {
-        add => Instance.doUpdate += value;
-        remove => Instance.doUpdate -= value;
-    }
+        public static event Action DoUpdate
+        {
+            add => Instance.doUpdate += value;
+            remove => Instance.doUpdate -= value;
+        }
 
-    public static event Action DoFixedUpdate
-    {
-        add => Instance.doFixedUpdate += value;
-        remove => Instance.doFixedUpdate -= value;
+        public static event Action DoFixedUpdate
+        {
+            add => Instance.doFixedUpdate += value;
+            remove => Instance.doFixedUpdate -= value;
+        }
     }
 }

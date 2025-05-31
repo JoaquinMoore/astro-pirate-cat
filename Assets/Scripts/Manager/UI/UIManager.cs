@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using _UTILITY;
 using UnityEngine;
 
-public class UIManager : Utility.SingletonMono<UIManager>
+public class UIManager : SingletonMono<UIManager>
 {
 
 

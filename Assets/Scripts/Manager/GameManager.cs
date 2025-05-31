@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using _UTILITY;
 using UnityEngine;
 
-public class GameManager : Utility.SingletonMono<GameManager>
+public class GameManager : SingletonMono<GameManager>
 {
     [SerializeField] private GameObject _player;
     [field: SerializeField] public float _limitsize { get; private set; }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Utility
+namespace _UTILITY
 {
     public abstract class BaseDataWrapperSO<T> : ScriptableObject
     {
