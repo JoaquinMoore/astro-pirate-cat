@@ -2,7 +2,6 @@
 
 namespace UnityServiceLocator
 {
-    [DisallowMultipleComponent]
     public abstract class Bootstrapper : ServiceLocator
     {
         private bool hasBeenBootstrapped;

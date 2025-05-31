@@ -9,8 +9,7 @@ public class NPCBootstrapper : Bootstrapper
 
     protected override void Bootstrap()
     {
-        Register(_steeringMovementData);
         Register(GetComponent<BehaviorGraphAgent>());
-        Register(gameObject.AddComponent<MovementService>());
+        Register(new MovementService(transform, _steeringMovementData));
     }
 }

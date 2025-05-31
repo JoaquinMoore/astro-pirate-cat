@@ -1,38 +1,38 @@
+using System.Collections.Generic;
+using Extensions;
 using Physics.Movement;
-using Unity.Behavior;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityServiceLocator;
 
 namespace AstroCat.NPC
 {
     public class NPCController : MonoBehaviour
     {
-        private BehaviorGraphAgent _behaviorGraph;
-        private ITargetable _defaultTarget;
-        private MovementService _movement;
-        private BlackboardVariable<GameObject> _targetVariable;
+        private readonly Stack<INPCTask> _tasks = new();
+        private ITargetable _currentTarget;
 
-        private GameObject Target
-        {
-            get => _targetVariable.Value;
-            set => _targetVariable.Value = value;
-        }
+        private MovementService _movement;
 
         private void Start()
         {
             ServiceLocator.For(this)
-                .Get(out _movement)
-                .Get(out _behaviorGraph);
-            _behaviorGraph.BlackboardReference.GetVariable("Target", out _targetVariable);
+                .Get(out _movement);
         }
 
-        public void Move(Vector2 direction)
+        private void Update()
         {
+            MoveTo(Mouse.current.WorldPosition());
         }
 
-        public void Speak(string mensaje)
+        public void SetNewTarget(ITargetable target)
         {
-            Debug.Log(mensaje);
+            _currentTarget = target;
+        }
+
+        public void MoveTo(Vector2 destiny)
+        {
+            _movement.GoTo(destiny);
         }
     }
 }

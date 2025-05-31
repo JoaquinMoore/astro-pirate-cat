@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 namespace UnityServiceLocator
 {
+    [DisallowMultipleComponent]
     public class ServiceLocator : MonoBehaviour
     {
         private const string k_globalServiceLocatorName = "ServiceLocator [Global]";

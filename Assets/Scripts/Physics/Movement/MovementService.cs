@@ -1,29 +1,36 @@
-using Extensions;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityServiceLocator;
 
 namespace Physics.Movement
 {
-    public class MovementService : MonoBehaviour
+    public class MovementService : ApeBehaviour
     {
-        private SteeringMovement _steeringMovement;
-        private SteeringMovementDataSO _steeringMovementData;
+        private readonly SteeringMovement _steeringMovement;
+        private readonly Transform _transform;
+        private Vector2 _currentDestiny;
 
-        private void Awake()
+        public MovementService(Transform transform, SteeringMovementDataSO data)
         {
-            ServiceLocator.For(this).Get(out _steeringMovementData);
+            _transform = transform;
+            _steeringMovement = new SteeringMovement(data, transform);
         }
 
-        private void Start()
+        protected override void FixedUpdate()
         {
-            _steeringMovement = new SteeringMovement(_steeringMovementData, transform);
+            DoMovement();
         }
 
-        private void FixedUpdate()
+        private void DoMovement()
         {
-            _steeringMovement.AddSeekForce(Mouse.current.WorldPosition());
-            transform.position = _steeringMovement.GetNextPosition();
+            _steeringMovement
+                .AddSeekForce(_currentDestiny)
+                .AddSeparationForce()
+                .AddFleeForce(_currentDestiny);
+            _transform.position = _steeringMovement.GetNextPosition();
+        }
+
+        public void GoTo(Vector2 destiny)
+        {
+            _currentDestiny = destiny;
         }
     }
 }
