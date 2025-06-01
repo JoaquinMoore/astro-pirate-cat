@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Npc;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Pool;
@@ -24,7 +25,7 @@ public class SpawnWavePool : MonoBehaviour
     private float _AreaOfSpawn;
     [SerializeField, Tooltip("el tiempo que uno decide para el failsafe con cada enemigos, este valor se multiplica con la cantidad total de enemigos")]
     private float _TimeFromEachSpawn;
-    [SerializeField, Tooltip("este es un tiempo extra que se añade al failsafe encima del tiempo en cada enemigo")]
+    [SerializeField, Tooltip("este es un tiempo extra que se aï¿½ade al failsafe encima del tiempo en cada enemigo")]
     private float _ExtraTime;
     [SerializeField, Tooltip("Cada cuantas oleadas queres que se cree la oleada especial")]
     private int _SpecialWave;

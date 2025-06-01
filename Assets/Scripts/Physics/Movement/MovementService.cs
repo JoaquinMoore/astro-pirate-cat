@@ -13,6 +13,7 @@ namespace Physics.Movement
         {
             _transform = transform;
             _steeringMovement = new SteeringMovement(data, transform);
+            _currentDestiny = transform.position;
         }
 
         protected override void FixedUpdate()

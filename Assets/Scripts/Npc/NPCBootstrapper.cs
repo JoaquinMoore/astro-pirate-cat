@@ -3,13 +3,16 @@ using Unity.Behavior;
 using UnityEngine;
 using UnityServiceLocator;
 
-public class NPCBootstrapper : Bootstrapper
+namespace Npc
 {
-    [SerializeField] private SteeringMovementDataSO _steeringMovementData;
-
-    protected override void Bootstrap()
+    public class NPCBootstrapper : Bootstrapper
     {
-        Register(GetComponent<BehaviorGraphAgent>());
-        Register(new MovementService(transform, _steeringMovementData));
+        [SerializeField] private SteeringMovementDataSO _steeringMovementData;
+
+        protected override void Bootstrap()
+        {
+            Register(GetComponent<BehaviorGraphAgent>());
+            Register(new MovementService(transform, _steeringMovementData));
+        }
     }
 }

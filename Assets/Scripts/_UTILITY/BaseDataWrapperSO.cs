@@ -6,9 +6,6 @@ namespace _UTILITY
     {
         [SerializeField] private T _data;
 
-        public static implicit operator T(BaseDataWrapperSO<T> data)
-        {
-            return data._data;
-        }
+        public static implicit operator T(BaseDataWrapperSO<T> data) => data._data;
     }
 }
