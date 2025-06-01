@@ -1,35 +1,41 @@
+using System;
 using System.Collections;
 using _EXTENSIONS;
-using Npc;
-using Npc.Tasks;
+using Npc.Tasks.Interfaces;
 using UnityEngine;
 
-public class TaskInteract : BaseNPCTask
+namespace Npc.Tasks
 {
-    private const float INTERACTION_THRESHOLD = 1f;
-
-    [SerializeField] private int numero;
-
-    private IInteractable _target;
-
-    public override void Execute(NPCFacade npc)
+    [Serializable]
+    public class TaskInteract : ITask
     {
-        Debug.Log(npc);
-        npc.StartCoroutine(Go(npc));
-    }
+        private const float INTERACTION_THRESHOLD = 1f;
 
-    private IEnumerator Go(NPCFacade npc)
-    {
-        while (!npc.transform.position.AreApproximately(_target.GetInteractionPosition(npc.transform.position), INTERACTION_THRESHOLD))
+        private IInteractable _target;
+
+        public TaskInteract(IInteractable target)
         {
-            npc.GoTo(_target.GetInteractionPosition(npc.transform.position));
-            yield return null;
+            _target = target;
         }
-        _target.Interact(npc);
-    }
 
-    public override string Log()
-    {
-        return $"El npc tiene que interactuar con <{_target}>";
+        public void Execute(NPCFacade npc)
+        {
+            Debug.Log(npc);
+            npc.StartCoroutine(GoToTask(npc));
+        }
+
+        private IEnumerator GoToTask(NPCFacade npc)
+        {
+            Vector2 interactionSpot;
+
+            do
+            {
+                interactionSpot = _target.GetInteractionPosition(npc.transform.position);
+                npc.GoTo(interactionSpot);
+                yield return null;
+            } while (!npc.transform.position.AreApproximately(interactionSpot, INTERACTION_THRESHOLD));
+
+            _target.Interact(npc);
+        }
     }
 }

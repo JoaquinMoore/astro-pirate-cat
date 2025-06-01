@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     MaxSpeed: 5
-    SteeringForce: 2
-    SlowingRadius: 2
-    FleeRadius: 2
-    SeparationRadius: 1
+    SteeringForce: 5
+    SlowingRadius: 3
+    FleeRadius: 0
+    SeparationRadius: 0
     SeparationLayerMask:
       serializedVersion: 2
       m_Bits: 4294967295

@@ -1,6 +1,7 @@
-using Npc.Tasks;
-
-public interface ITask
+namespace Npc.Tasks.Interfaces
 {
-    BaseNPCTask GetTask();
+    public interface ITask
+    {
+        void Execute(NPCFacade npc);
+    }
 }

@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Npc.Tasks;
+using Npc.Tasks.Interfaces;
 using Physics.Movement;
 using UnityEngine;
 using UnityServiceLocator;
@@ -10,19 +10,12 @@ namespace Npc
     {
         private Enumerators.Team _team;
         private MovementService _movement;
-        private readonly Queue<BaseNPCTask> _tasks = new();
+        private readonly Queue<ITask> _tasks = new();
 
         private MovementService Movement => _movement ??= ServiceLocator.For(this).Get<MovementService>();
 
-        private void Start()
+        public void AddTask(ITask newTask)
         {
-            // ServiceLocator.For(this)
-            //     .Get(out _movement);
-        }
-
-        public void AddTask(BaseNPCTask newTask)
-        {
-            print(newTask.Log());
             _tasks.Enqueue(newTask);
             _tasks.Dequeue().Execute(this);
         }

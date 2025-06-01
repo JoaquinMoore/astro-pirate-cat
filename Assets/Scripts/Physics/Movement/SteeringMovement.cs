@@ -33,7 +33,7 @@ namespace Physics.Movement
         public SteeringMovement AddMoveForce(Vector2 target)
         {
             var distance = target - HostPosition2D;
-            var slowingFactor = Mathf.Clamp01((distance.magnitude - _data.FleeRadius) / _data.SlowingRadius);
+            var slowingFactor = Mathf.Clamp01(distance.magnitude / _data.SlowingRadius);
             var desiredDirection = _data.MaxSpeed * slowingFactor * distance.normalized;
             _steering += desiredDirection - _currentVelocity;
 

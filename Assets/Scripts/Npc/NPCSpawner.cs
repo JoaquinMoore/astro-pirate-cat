@@ -1,20 +1,32 @@
-using Npc;
 using Npc.Tasks;
 using UnityEngine;
 
-public class NPCSpawner : MonoBehaviour
+namespace Npc
 {
-    public NPCFacade npcRef;
-
-    [ContextMenu("Spawn")]
-    public void Spawn()
+    public class NPCSpawner : MonoBehaviour
     {
-        var npc = Instantiate(npcRef);
-        // npc.AddTask();
-    }
+        public NPCFacade npcRef;
 
-    [ContextMenu("Create Interact Task")]
-    public void CreateInteractTask()
-    {
+        [SerializeReference]
+        public BaseTaskWrapper task;
+
+        [ContextMenu("Spawn")]
+        public void Spawn()
+        {
+            var npc = Instantiate(npcRef);
+            npc.AddTask(task.GetTask());
+        }
+
+        [ContextMenu("Create Interact Task")]
+        public void CreateInteractTask()
+        {
+            task = new TaskInteractWrapper();
+        }
+
+        [ContextMenu("Create Move Task")]
+        public void CreateMoveTask()
+        {
+            task = new TaskMoveWrapper();
+        }
     }
 }

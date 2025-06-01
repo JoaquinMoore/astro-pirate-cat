@@ -1,4 +1,7 @@
-﻿public interface IInteractor
+﻿namespace Npc.Tasks.Interfaces
 {
-    void Interact(Barco barco);
+    public interface IInteractor
+    {
+        void Interact(Barco barco);
+    }
 }

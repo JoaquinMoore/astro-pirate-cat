@@ -376,11 +376,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2035495523298565693, guid: a719da0a4204ad94aadf1632b3ba87dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.88
+      value: 9.99
       objectReference: {fileID: 0}
     - target: {fileID: 2035495523298565693, guid: a719da0a4204ad94aadf1632b3ba87dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.16
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 2035495523298565693, guid: a719da0a4204ad94aadf1632b3ba87dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -449,7 +449,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcRef: {fileID: 5544830271782974598, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
-  _task: {fileID: 11400000, guid: 6deb53b4c9ca9fe4ebb44d098375ad34, type: 2}
+  task:
+    rid: 6682598613335408968
+  references:
+    version: 2
+    RefIds:
+    - rid: 6682598613335408968
+      type: {class: TaskInteractWrapper, ns: Npc.Tasks, asm: Assembly-CSharp}
+      data:
+        target: {fileID: 824068893688788548, guid: a719da0a4204ad94aadf1632b3ba87dd, type: 3}
 --- !u!4 &1983803710
 Transform:
   m_ObjectHideFlags: 0
@@ -459,7 +467,7 @@ Transform:
   m_GameObject: {fileID: 1983803708}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -7.06, y: 2.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

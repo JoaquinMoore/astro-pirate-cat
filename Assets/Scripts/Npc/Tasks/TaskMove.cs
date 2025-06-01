@@ -1,18 +1,20 @@
-using System;
-using _UTILITY.PoolManager;
-using Npc;
-using Npc.Tasks;
+using Npc.Tasks.Interfaces;
+using UnityEngine;
 
-public class TaskMove : BaseNPCTask, IPoolable<TaskMove>
+namespace Npc.Tasks
 {
-    public event Action<TaskMove> OnRelease;
-
-    public override void Execute(NPCFacade npc)
+    public class TaskMove : ITask
     {
-    }
+        private readonly Vector2 _position;
 
-    public override string Log()
-    {
-        return string.Empty;
+        public TaskMove(Vector2 position)
+        {
+            _position = position;
+        }
+
+        public void Execute(NPCFacade npc)
+        {
+            npc.GoTo(_position);
+        }
     }
 }
