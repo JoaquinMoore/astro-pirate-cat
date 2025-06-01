@@ -6,7 +6,7 @@ using UnityServiceLocator;
 
 namespace Npc
 {
-    public class NPCFacade : MonoBehaviour, IInteractor
+    public class NPCController : MonoBehaviour, IInteractor
     {
         private Enumerators.Team _team;
         private MovementService _movement;

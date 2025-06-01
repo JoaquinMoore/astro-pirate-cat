@@ -5,7 +5,7 @@ namespace Npc
 {
     public class NPCSpawner : MonoBehaviour
     {
-        public NPCFacade npcRef;
+        public NPCController npcRef;
 
         [SerializeReference]
         public BaseTaskWrapper task;

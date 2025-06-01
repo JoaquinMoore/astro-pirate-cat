@@ -12,7 +12,7 @@ namespace Npc.Tasks
             _position = position;
         }
 
-        public void Execute(NPCFacade npc)
+        public void Execute(NPCController npc)
         {
             npc.GoTo(_position);
         }

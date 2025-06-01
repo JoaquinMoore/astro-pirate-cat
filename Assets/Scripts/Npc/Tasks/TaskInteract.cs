@@ -18,13 +18,13 @@ namespace Npc.Tasks
             _target = target;
         }
 
-        public void Execute(NPCFacade npc)
+        public void Execute(NPCController npc)
         {
             Debug.Log(npc);
             npc.StartCoroutine(GoToTask(npc));
         }
 
-        private IEnumerator GoToTask(NPCFacade npc)
+        private IEnumerator GoToTask(NPCController npc)
         {
             Vector2 interactionSpot;
 

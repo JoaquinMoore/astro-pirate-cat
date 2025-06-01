@@ -5,6 +5,7 @@ using WeaponSystem;
 
 namespace Npc
 {
+    // TODO: Borrar esta clase y remplazarla por NPCFacade
     public class EnemyController : MonoBehaviour
     {
         public SpawnWavePool pool;
