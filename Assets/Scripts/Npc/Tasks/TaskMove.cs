@@ -10,4 +10,9 @@ public class TaskMove : BaseNPCTask, IPoolable<TaskMove>
     public override void Execute(NPCFacade npc)
     {
     }
+
+    public override string Log()
+    {
+        return string.Empty;
+    }
 }

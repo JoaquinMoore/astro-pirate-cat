@@ -1,4 +1,10 @@
-﻿public interface IInteractable
+﻿using UnityEngine;
+
+public interface IInteractable
 {
-    void Interact(IInteractor npc);
+    float MinDistance { get; }
+    Vector2 Position { get; }
+    void Interact(IInteractor visitor);
+
+    Vector2 GetInteractionPosition(Vector2 interactorPosition) => Position + (interactorPosition - Position).normalized * MinDistance;
 }

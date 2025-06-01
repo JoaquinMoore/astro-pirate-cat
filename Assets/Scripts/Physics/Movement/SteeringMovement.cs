@@ -30,6 +30,16 @@ namespace Physics.Movement
             return this;
         }
 
+        public SteeringMovement AddMoveForce(Vector2 target)
+        {
+            var distance = target - HostPosition2D;
+            var slowingFactor = Mathf.Clamp01((distance.magnitude - _data.FleeRadius) / _data.SlowingRadius);
+            var desiredDirection = _data.MaxSpeed * slowingFactor * distance.normalized;
+            _steering += desiredDirection - _currentVelocity;
+
+            return this;
+        }
+
         public SteeringMovement AddFleeForce(Vector2 target)
         {
             var distance = target - HostPosition2D;

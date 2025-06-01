@@ -7,32 +7,28 @@ namespace Physics.Movement
     {
         private readonly SteeringMovement _steeringMovement;
         private readonly Transform _transform;
-        private Vector2 _currentDestiny;
 
         public MovementService(Transform transform, SteeringMovementDataSO data)
         {
             _transform = transform;
             _steeringMovement = new SteeringMovement(data, transform);
-            _currentDestiny = transform.position;
         }
 
-        protected override void FixedUpdate()
-        {
-            DoMovement();
-        }
-
-        private void DoMovement()
+        public void ApproachTo(Vector2 destiny)
         {
             _steeringMovement
-                .AddSeekForce(_currentDestiny)
+                .AddSeekForce(destiny)
                 .AddSeparationForce()
-                .AddFleeForce(_currentDestiny);
+                .AddFleeForce(destiny);
             _transform.position = _steeringMovement.GetNextPosition();
         }
 
-        public void GoTo(Vector2 destiny)
+        public void GoTo(Vector2 position)
         {
-            _currentDestiny = destiny;
+            _steeringMovement
+                .AddMoveForce(position)
+                .AddSeparationForce();
+            _transform.position = _steeringMovement.GetNextPosition();
         }
     }
 }
