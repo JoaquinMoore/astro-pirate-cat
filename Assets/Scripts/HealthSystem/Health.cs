@@ -58,5 +58,10 @@ namespace HealthSystem
             [field: Min(0)]
             public int MaxHealth { get; private set; }
         }
+
+        void IHurtable.Hurt(float damage)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

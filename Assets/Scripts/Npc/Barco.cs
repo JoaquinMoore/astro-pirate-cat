@@ -1,21 +1,13 @@
-using Npc.Tasks.Interfaces;
+using HealthSystem;
 using UnityEngine;
 
 namespace Npc
 {
-    public class Barco : MonoBehaviour, IInteractable
+    public class Barco : MonoBehaviour, IHurtable
     {
-        public float MinDistance => 5;
-        public Vector2 Position => transform.position;
-
-        public void Interact(IInteractor visitor)
+        void IHurtable.Hurt(float damage)
         {
-            visitor.Interact(this);
-        }
-
-        public void Hurt(int damage)
-        {
-            Debug.Log(damage);
+            Debug.Log("Me lastimaron" + damage);
         }
     }
 }

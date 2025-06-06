@@ -1,32 +1,61 @@
-using Npc.Tasks;
+using TasksSystem;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 namespace Npc
 {
     public class NPCSpawner : MonoBehaviour
     {
-        public NPCController npcRef;
-
         [SerializeReference]
-        public BaseTaskWrapper task;
+        private NPCController _npcRef;
+        [SerializeField]
+        private Object _interactable;
+        [SerializeReference]
+        private Task[] _tasks;
+
+        #if UNITY_EDITOR
+        private void OnValidate()
+        {
+            EditorApplication.delayCall += () =>
+            {
+                if (!_interactable)
+                {
+                    _tasks = null;
+                    return;
+                }
+
+                if (_interactable is not IInteractable interactable)
+                {
+                    interactable = _interactable.GetComponentInChildren<IInteractable>();
+                    _interactable = interactable as Object;
+
+                    if (!_interactable)
+                    {
+                        _tasks = null;
+                        Debug.LogWarning("El objeto no es interactuable");
+                        return;
+                    }
+                }
+                else
+                {
+                    var newTask = interactable.CreateBaseTask();
+                    if (newTask.GetType() == _tasks.GetType())
+                    {
+                        return;
+                    }
+                }
+
+                _tasks = interactable.CreateBaseTask();
+            };
+        }
+        #endif
 
         [ContextMenu("Spawn")]
         public void Spawn()
         {
-            var npc = Instantiate(npcRef);
-            npc.AddTask(task.GetTask());
-        }
-
-        [ContextMenu("Create Interact Task")]
-        public void CreateInteractTask()
-        {
-            task = new TaskInteractWrapper();
-        }
-
-        [ContextMenu("Create Move Task")]
-        public void CreateMoveTask()
-        {
-            task = new TaskMoveWrapper();
+            var npc = Instantiate(_npcRef);
+            npc.AddTask(_tasks);
         }
     }
 }

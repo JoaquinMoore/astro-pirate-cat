@@ -7,12 +7,12 @@ namespace Npc
 {
     public class NPCBootstrapper : Bootstrapper
     {
-        [SerializeField] private SteeringMovementDataSO _steeringMovementData;
+        [SerializeField] private SteeringMovementDataSO _movementData;
 
         protected override void Bootstrap()
         {
             Register(GetComponent<BehaviorGraphAgent>());
-            Register(new MovementService(transform, _steeringMovementData));
+            Register(new MovementService(transform, _movementData));
         }
     }
 }

@@ -188,4 +188,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3100e3c1f6d169d4d95c396ff9523ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _steeringMovementData: {fileID: 11400000, guid: 18f95e1e41602c649817bf4ba8e92707, type: 2}
+  _movementData: {fileID: 11400000, guid: 18f95e1e41602c649817bf4ba8e92707, type: 2}
