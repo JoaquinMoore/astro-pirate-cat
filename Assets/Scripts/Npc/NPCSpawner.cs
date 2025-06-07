@@ -14,6 +14,8 @@ namespace Npc
         [SerializeReference]
         private Task[] _tasks;
 
+        private Task<NPCController> _focusTask;
+
         #if UNITY_EDITOR
         private void OnValidate()
         {
@@ -55,7 +57,18 @@ namespace Npc
         public void Spawn()
         {
             var npc = Instantiate(_npcRef);
-            npc.AddTask(_tasks);
+
+            foreach (var task in _tasks)
+            {
+                var interactable = FindFirstObjectByType(_interactable.GetType()) as IInteractable;
+
+                if (task.IsConvertibleTo<IInteractable<NPCController>>(true))
+                {
+                    ((Task<NPCController>)task).data = npc;
+                }
+            }
+            _focusTask = FindFirstObjectByType<Barco>().CreateTask(npc) as Task<NPCController>;
+            npc.DefaultTask = _focusTask;
         }
     }
 }

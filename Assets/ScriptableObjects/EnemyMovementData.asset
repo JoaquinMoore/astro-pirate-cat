@@ -16,7 +16,7 @@ MonoBehaviour:
     MaxSpeed: 5
     SteeringForce: 5
     SlowingRadius: 3
-    FleeRadius: 0
+    FleeRadius: 2
     SeparationRadius: 0
     SeparationLayerMask:
       serializedVersion: 2

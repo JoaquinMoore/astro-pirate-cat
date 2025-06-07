@@ -119,63 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &1060935436
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2057316705742818310, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057316705742818310, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057316705742818310, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057316705742818310, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057316705742818310, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057316705742818310, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057316705742818310, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057316705742818310, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057316705742818310, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057316705742818310, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6851746279365300351, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
-      propertyPath: m_Name
-      value: NPC
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
 --- !u!1001 &1305271205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -429,15 +372,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 824068893688788548, guid: 3aadf3dc8ffbe0a4c8b2060399454897, type: 3}
       propertyPath: m_Name
-      value: Barco
+      value: Pepito
       objectReference: {fileID: 0}
     - target: {fileID: 2035495523298565693, guid: 3aadf3dc8ffbe0a4c8b2060399454897, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.96
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2035495523298565693, guid: 3aadf3dc8ffbe0a4c8b2060399454897, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.41
+      value: 2.96
       objectReference: {fileID: 0}
     - target: {fileID: 2035495523298565693, guid: 3aadf3dc8ffbe0a4c8b2060399454897, type: 3}
       propertyPath: m_LocalPosition.z
@@ -471,11 +414,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3346216899025277910, guid: 3aadf3dc8ffbe0a4c8b2060399454897, type: 3}
+      propertyPath: m_Color.b
+      value: 0.97236586
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346216899025277910, guid: 3aadf3dc8ffbe0a4c8b2060399454897, type: 3}
+      propertyPath: m_Color.g
+      value: 0.43282056
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346216899025277910, guid: 3aadf3dc8ffbe0a4c8b2060399454897, type: 3}
+      propertyPath: m_Color.r
+      value: 0.2219132
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3aadf3dc8ffbe0a4c8b2060399454897, type: 3}
+--- !u!114 &1466974870 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 527849021838952194, guid: 3aadf3dc8ffbe0a4c8b2060399454897, type: 3}
+  m_PrefabInstance: {fileID: 1466974869}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e83e62e71a69a488ce5e943d25c84f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1983803708
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,11 +472,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _npcRef: {fileID: 0}
-  _interactable: {fileID: 0}
-  _tasks: []
+  _interactable: {fileID: 1466974870}
+  _tasks:
+  - rid: 6682598754378317908
+  - rid: 6682598754378317909
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 6682598754378317908
+      type: {class: 'Task`2[[Npc.Barco/Actions, Assembly-CSharp],[Npc.Barco/Data, Assembly-CSharp]]', ns: TasksSystem, asm: Assembly-CSharp}
+      data:
+        _name: Task de Barco
+        data:
+          Pintura: {r: 0, g: 0, b: 0, a: 0}
+          Cantidad: 0
+          Nombre: 
+        interactableReference: {fileID: 1466974870}
+        action: 0
+    - rid: 6682598754378317909
+      type: {class: 'Task`1[[Npc.NPCController, Assembly-CSharp]]', ns: TasksSystem, asm: Assembly-CSharp}
+      data:
+        _name: Task de Barco
+        data: {fileID: 0}
+        interactableReference: {fileID: 1466974870}
 --- !u!4 &1983803710
 Transform:
   m_ObjectHideFlags: 0
@@ -520,7 +504,7 @@ Transform:
   m_GameObject: {fileID: 1983803708}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.47, y: 1.49, z: 0}
+  m_LocalPosition: {x: -7.58, y: 2.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -534,4 +518,3 @@ SceneRoots:
   - {fileID: 1305271205}
   - {fileID: 1983803710}
   - {fileID: 1466974869}
-  - {fileID: 1060935436}

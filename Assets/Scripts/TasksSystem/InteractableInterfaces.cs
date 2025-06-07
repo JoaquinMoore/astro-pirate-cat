@@ -19,10 +19,7 @@ namespace TasksSystem
         bool CanInteract(TData data);
         void Interact(TData data);
 
-        Task[] IInteractable.CreateBaseTask()
-        {
-            return new[] { this.CreateTask() };
-        }
+        Task[] IInteractable.CreateBaseTask() => new[] { this.CreateTask() };
     }
 
     /// <summary>

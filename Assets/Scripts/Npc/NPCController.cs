@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Physics.Movement;
 using TasksSystem;
@@ -8,7 +9,9 @@ namespace Npc
 {
     public class NPCController : MonoBehaviour
     {
-        public Task DefaultTask { get; }
+        public Task DefaultTask { get; set; }
+
+        public Barco barco;
 
         private Enumerators.Team _team;
         private MovementService _movement;
@@ -49,6 +52,14 @@ namespace Npc
                 {
                     _currentTask = DefaultTask;
                 }
+            }
+        }
+
+        private void Update()
+        {
+            if (barco)
+            {
+                ApproachTo(barco.transform.position);
             }
         }
 

@@ -10,8 +10,8 @@ namespace TasksSystem
     [Serializable]
     public abstract class Task
     {
-        [SerializeField]
-        private string _name = "Task"; // string.Join(' ', GetType().GetGenericArguments().Select(t => t));
+        [SerializeField, HideInInspector]
+        public string _name = "Task"; // string.Join(' ', GetType().GetGenericArguments().Select(t => t));
 
         /// <summary>
         /// Executes the task
@@ -32,7 +32,7 @@ namespace TasksSystem
     public class Task<TData> : Task, ISerializationCallbackReceiver
     {
         [SerializeField]
-        protected TData data;
+        public TData data;
         [SerializeField, HideInInspector]
         protected UnityEngine.Object interactableReference;
         protected IInteractable<TData> interactable;
