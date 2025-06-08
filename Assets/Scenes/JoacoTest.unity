@@ -153,11 +153,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7002139680976742402, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.96
+      value: -5.12
       objectReference: {fileID: 0}
     - target: {fileID: 7002139680976742402, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.21
+      value: -0.38
       objectReference: {fileID: 0}
     - target: {fileID: 7002139680976742402, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
       propertyPath: m_LocalPosition.z
@@ -370,17 +370,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 527849021838952194, guid: 3aadf3dc8ffbe0a4c8b2060399454897, type: 3}
+      propertyPath: _globalVariable
+      value: 
+      objectReference: {fileID: 11400000, guid: 244e78904878dcc489118ee196e2dd85, type: 2}
     - target: {fileID: 824068893688788548, guid: 3aadf3dc8ffbe0a4c8b2060399454897, type: 3}
       propertyPath: m_Name
-      value: Pepito
+      value: Barco
       objectReference: {fileID: 0}
     - target: {fileID: 2035495523298565693, guid: 3aadf3dc8ffbe0a4c8b2060399454897, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8
+      value: 11.09
       objectReference: {fileID: 0}
     - target: {fileID: 2035495523298565693, guid: 3aadf3dc8ffbe0a4c8b2060399454897, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.96
+      value: 4.79
       objectReference: {fileID: 0}
     - target: {fileID: 2035495523298565693, guid: 3aadf3dc8ffbe0a4c8b2060399454897, type: 3}
       propertyPath: m_LocalPosition.z
@@ -431,17 +435,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3aadf3dc8ffbe0a4c8b2060399454897, type: 3}
---- !u!114 &1466974870 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 527849021838952194, guid: 3aadf3dc8ffbe0a4c8b2060399454897, type: 3}
-  m_PrefabInstance: {fileID: 1466974869}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13e83e62e71a69a488ce5e943d25c84f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1983803708
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,30 +464,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 579f71f2a91d2d34fab71aa0c3321a6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _npcRef: {fileID: 0}
-  _interactable: {fileID: 1466974870}
-  _tasks:
-  - rid: 6682598754378317908
-  - rid: 6682598754378317909
-  references:
-    version: 2
-    RefIds:
-    - rid: 6682598754378317908
-      type: {class: 'Task`2[[Npc.Barco/Actions, Assembly-CSharp],[Npc.Barco/Data, Assembly-CSharp]]', ns: TasksSystem, asm: Assembly-CSharp}
-      data:
-        _name: Task de Barco
-        data:
-          Pintura: {r: 0, g: 0, b: 0, a: 0}
-          Cantidad: 0
-          Nombre: 
-        interactableReference: {fileID: 1466974870}
-        action: 0
-    - rid: 6682598754378317909
-      type: {class: 'Task`1[[Npc.NPCController, Assembly-CSharp]]', ns: TasksSystem, asm: Assembly-CSharp}
-      data:
-        _name: Task de Barco
-        data: {fileID: 0}
-        interactableReference: {fileID: 1466974870}
+  _npcRef: {fileID: 5544830271782974598, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
+  _task: {fileID: 11400000, guid: 7d3e9bfcac57c4347a4e5d2209a960a1, type: 2}
 --- !u!4 &1983803710
 Transform:
   m_ObjectHideFlags: 0
@@ -504,7 +475,7 @@ Transform:
   m_GameObject: {fileID: 1983803708}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.58, y: 2.9, z: 0}
+  m_LocalPosition: {x: -9.76, y: 0.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

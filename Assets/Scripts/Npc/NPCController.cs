@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using Physics.Movement;
-using TasksSystem;
 using UnityEngine;
 using UnityServiceLocator;
 
@@ -9,18 +7,18 @@ namespace Npc
 {
     public class NPCController : MonoBehaviour
     {
-        public Task DefaultTask { get; set; }
+        public ITask<NPCController> DefaultTask { get; set; }
 
         public Barco barco;
 
         private Enumerators.Team _team;
         private MovementService _movement;
-        private readonly Queue<Task> _tasks = new();
-        private Task _currentTask;
+        private readonly Queue<ITask<NPCController>> _tasks = new();
+        private ITask<NPCController> _currentTask;
 
         private MovementService Movement => _movement ??= ServiceLocator.For(this).Get<MovementService>();
 
-        public void AddTask(params Task[] newBaseTasks)
+        public void AddTask(params ITask<NPCController>[] newBaseTasks)
         {
             foreach (var task in newBaseTasks)
             {
@@ -39,7 +37,7 @@ namespace Npc
             }
             else
             {
-                _currentTask.Execute();
+                _currentTask.Update(this);
             }
 
             return;
