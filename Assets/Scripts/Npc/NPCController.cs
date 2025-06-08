@@ -1,30 +1,68 @@
+using System.Collections.Generic;
 using Physics.Movement;
-using Unity.Behavior;
 using UnityEngine;
+using UnityServiceLocator;
 
-namespace AstroCat.NPC
+namespace Npc
 {
     public class NPCController : MonoBehaviour
     {
-        private BehaviorGraphAgent _behaviorGraph;
-        private ITargetable _defaultTarget;
-        private SteeringMovement _movement;
-        private BlackboardVariable<GameObject> _targetVariable;
+        public ITask<NPCController> DefaultTask { get; set; }
 
-        private GameObject Target
+        public Barco barco;
+
+        private Enumerators.Team _team;
+        private MovementService _movement;
+        private readonly Queue<ITask<NPCController>> _tasks = new();
+        private ITask<NPCController> _currentTask;
+
+        private MovementService Movement => _movement ??= ServiceLocator.For(this).Get<MovementService>();
+
+        public void AddTask(params ITask<NPCController>[] newBaseTasks)
         {
-            get => _targetVariable.Value;
-            set => _targetVariable.Value = value;
+            foreach (var task in newBaseTasks)
+            {
+                _tasks.Enqueue(task);
+            }
         }
 
-        private void Awake()
+        [ContextMenu("Do Task")]
+        public void DoTask()
         {
-            _behaviorGraph = GetComponent<BehaviorGraphAgent>();
+            EnsureCurrentTaskAssigned();
+
+            if (_currentTask == null)
+            {
+                Debug.Log("No tengo ni task default");
+            }
+            else
+            {
+                _currentTask.Update(this);
+            }
+
+            return;
+
+            void EnsureCurrentTaskAssigned()
+            {
+                // if (_currentTask != null && _currentTask.CurrentState != BaseTask.State.Finished) return;
+
+                if (!_tasks.TryDequeue(out _currentTask))
+                {
+                    _currentTask = DefaultTask;
+                }
+            }
         }
 
-        private void Start()
+        private void Update()
         {
-            _behaviorGraph.BlackboardReference.GetVariable("Target", out _targetVariable);
+            if (barco)
+            {
+                ApproachTo(barco.transform.position);
+            }
         }
+
+        public void GoTo(Vector2 position) => Movement.GoTo(position);
+
+        public void ApproachTo(Vector2 destiny) => Movement.ApproachTo(destiny);
     }
 }

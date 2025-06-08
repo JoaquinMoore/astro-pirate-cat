@@ -1,10 +1,13 @@
 using UnityEngine;
 
-namespace UnityServiceLocator {
+namespace UnityServiceLocator
+{
     [AddComponentMenu("ServiceLocator/ServiceLocator Scene")]
-    public class ServiceLocatorScene : Bootstrapper {
-        protected override void Bootstrap() {
-            Container.ConfigureForScene();            
+    public class ServiceLocatorScene : Bootstrapper
+    {
+        protected override void Bootstrap()
+        {
+            ConfigureForScene();
         }
     }
 }
