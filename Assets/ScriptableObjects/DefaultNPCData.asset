@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e73d47ed072cdc40ab7f7814e08c6a6, type: 3}
+  m_Name: DefaultNPCData
+  m_EditorClassIdentifier: 
+  data:
+    _movementData:
+      useConstant: 1
+      constantValue:
+        MaxSpeed: -0.31
+        SteeringForce: 0
+        SlowingRadius: 0
+        FleeRadius: 0
+        SeparationRadius: 0
+        SeparationLayerMask:
+          serializedVersion: 2
+          m_Bits: 0
+      variableValue: {fileID: 11400000, guid: 9b93e01499eb750419a96be791c02705, type: 2}
+    ViewDistance: 2.72

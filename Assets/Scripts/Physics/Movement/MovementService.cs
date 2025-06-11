@@ -16,7 +16,7 @@ namespace Physics.Movement
         private readonly SteeringMovement _steeringMovement;
         private readonly Transform _transform;
 
-        public MovementService(Transform transform, SteeringMovementDataSO data)
+        public MovementService(Transform transform, SteeringMovement.Data data)
         {
             _transform = transform;
             _steeringMovement = new SteeringMovement(data, transform);

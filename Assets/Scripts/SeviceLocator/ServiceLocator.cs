@@ -85,7 +85,7 @@ namespace UnityServiceLocator
         ///     Returns the <see cref="ServiceLocator" /> configured for the scene of a MonoBehaviour. Falls back to the global
         ///     instance.
         /// </summary>
-        public static ServiceLocator ForSceneOf(MonoBehaviour mb)
+        public static ServiceLocator ForSceneOf(GameObject mb)
         {
             var scene = mb.gameObject.scene;
 
@@ -108,7 +108,7 @@ namespace UnityServiceLocator
         ///     Gets the closest ServiceLocator instance to the provided
         ///     MonoBehaviour in hierarchy, the ServiceLocator for its scene, or the global ServiceLocator.
         /// </summary>
-        public static ServiceLocator For(MonoBehaviour mb)
+        public static ServiceLocator For(GameObject mb)
         {
             return mb.GetComponentInParent<ServiceLocator>().OrNull() ?? ForSceneOf(mb) ?? Global;
         }
@@ -209,7 +209,7 @@ namespace UnityServiceLocator
                 return false;
             }
 
-            container = transform.parent.OrNull()?.GetComponentInParent<ServiceLocator>().OrNull() ?? ForSceneOf(this);
+            container = transform.parent.OrNull()?.GetComponentInParent<ServiceLocator>().OrNull() ?? ForSceneOf(gameObject);
             return container != null;
         }
 

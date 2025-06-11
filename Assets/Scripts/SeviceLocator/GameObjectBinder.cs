@@ -9,7 +9,7 @@ public class GameObjectBinder : MonoBehaviour
     {
         foreach (var component in _components)
         {
-            ServiceLocator.For(this).Register(component.GetType(), component);
+            ServiceLocator.For(gameObject).Register(component.GetType(), component);
         }
     }
 }

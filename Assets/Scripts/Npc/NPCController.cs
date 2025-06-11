@@ -1,5 +1,6 @@
-using System.Collections.Generic;
+using System;
 using Physics.Movement;
+using TaskSystem;
 using UnityEngine;
 using UnityServiceLocator;
 
@@ -7,62 +8,36 @@ namespace Npc
 {
     public class NPCController : MonoBehaviour
     {
-        public ITask<NPCController> DefaultTask { get; set; }
+        public Data NPCData => _data;
+
+        private Data _data;
+        private Enumerators.Team _team;
+        private MovementService _movement;
+        private TasksController<NPCController> _tasksController;
+        private MovementService Movement => _movement ??= ServiceLocator.For(gameObject).Get<MovementService>();
+        private TasksController<NPCController> TasksController => _tasksController ??= ServiceLocator.For(gameObject).Get<TasksController<NPCController>>();
 
         public Barco barco;
 
-        private Enumerators.Team _team;
-        private MovementService _movement;
-        private readonly Queue<ITask<NPCController>> _tasks = new();
-        private ITask<NPCController> _currentTask;
-
-        private MovementService Movement => _movement ??= ServiceLocator.For(this).Get<MovementService>();
-
-        public void AddTask(params ITask<NPCController>[] newBaseTasks)
+        private void Start()
         {
-            foreach (var task in newBaseTasks)
-            {
-                _tasks.Enqueue(task);
-            }
+            ServiceLocator.For(gameObject).TryGet(out _data);
+            GoTo(Vector2.zero);
         }
 
-        [ContextMenu("Do Task")]
-        public void DoTask()
-        {
-            EnsureCurrentTaskAssigned();
+        public void SetDefaultTask(ITask<NPCController> baseTask) => TasksController.DefaultBaseTask = baseTask;
 
-            if (_currentTask == null)
-            {
-                Debug.Log("No tengo ni task default");
-            }
-            else
-            {
-                _currentTask.Update(this);
-            }
-
-            return;
-
-            void EnsureCurrentTaskAssigned()
-            {
-                // if (_currentTask != null && _currentTask.CurrentState != BaseTask.State.Finished) return;
-
-                if (!_tasks.TryDequeue(out _currentTask))
-                {
-                    _currentTask = DefaultTask;
-                }
-            }
-        }
-
-        private void Update()
-        {
-            if (barco)
-            {
-                ApproachTo(barco.transform.position);
-            }
-        }
+        public void CheckTask() => TasksController.CheckTask();
 
         public void GoTo(Vector2 position) => Movement.GoTo(position);
 
         public void ApproachTo(Vector2 destiny) => Movement.ApproachTo(destiny);
+
+        [Serializable]
+        public class Data
+        {
+            public SteeringMovementDataSO _movementData;
+            public float ViewDistance;
+        }
     }
 }
