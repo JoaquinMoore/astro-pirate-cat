@@ -9,15 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4f5cd0a4b80c28449638138201e4ca7, type: 3}
-  m_Name: EnemyMovementData
+  m_Script: {fileID: 11500000, guid: cf5a86b372593cf4eb66b8d7f0a0c91c, type: 3}
+  m_Name: TaskAttackShip
   m_EditorClassIdentifier: 
-  data:
-    MaxSpeed: 5
-    SteeringForce: 5
-    SlowingRadius: 1
-    FleeRadius: 2
-    SeparationRadius: 0
-    SeparationLayerMask:
-      serializedVersion: 2
-      m_Bits: 0

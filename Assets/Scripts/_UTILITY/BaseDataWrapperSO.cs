@@ -4,8 +4,8 @@ namespace _UTILITY
 {
     public abstract class BaseDataWrapperSO<T> : ScriptableObject
     {
-        [SerializeField] private T _data;
+        public T data;
 
-        public static implicit operator T(BaseDataWrapperSO<T> data) => data._data;
+        public static implicit operator T(BaseDataWrapperSO<T> data) => data.data;
     }
 }

@@ -1,3 +1,4 @@
+using TaskSystem.TaskWrappers;
 using UnityEngine;
 
 namespace Npc
@@ -14,7 +15,7 @@ namespace Npc
         public void Spawn()
         {
             var npc = Instantiate(_npcRef);
-            npc.DefaultTask = _task.Clone();
+            npc.SetDefaultTask(_task.Clone());
         }
     }
 }

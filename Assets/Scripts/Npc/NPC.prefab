@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6807870911786852474}
   - component: {fileID: 5544830271782974598}
   - component: {fileID: 3195168095617791860}
+  - component: {fileID: 690240704811515057}
+  - component: {fileID: 7613018088506867914}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -30,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 6851746279365300351}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.48, y: 5.59, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -176,6 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe9758f8fb74514d8c86a82462121ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barco: {fileID: 0}
 --- !u!114 &3195168095617791860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,4 +191,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3100e3c1f6d169d4d95c396ff9523ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementData: {fileID: 11400000, guid: 18f95e1e41602c649817bf4ba8e92707, type: 2}
+  _npcData:
+    _movementData: {fileID: 11400000, guid: 18f95e1e41602c649817bf4ba8e92707, type: 2}
+    ViewDistance: 4
+--- !u!114 &690240704811515057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6851746279365300351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ebae91cbdc524448ae48c6cff1d9a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _components:
+  - {fileID: 5544830271782974598}
+--- !u!95 &7613018088506867914
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6851746279365300351}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 260692463a9260b478ae12578a8b3542, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
