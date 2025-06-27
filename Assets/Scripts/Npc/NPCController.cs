@@ -21,11 +21,13 @@ namespace Npc
 
         private void Start()
         {
+            _movement = Movement;
+            _tasksController = TasksController;
             ServiceLocator.For(gameObject).TryGet(out _data);
             GoTo(Vector2.zero);
         }
 
-        public void SetDefaultTask(ITask<NPCController> baseTask) => TasksController.DefaultBaseTask = baseTask;
+        public void SetDefaultTask(ITask<NPCController> baseTask) => TasksController.DefaultTask = baseTask;
 
         public void CheckTask() => TasksController.CheckTask();
 

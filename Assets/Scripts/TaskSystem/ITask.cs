@@ -21,8 +21,8 @@ namespace TaskSystem
             return IsComplete;
         }
 
-        protected void Execute(TContext context);
         protected void Start(TContext context);
+        protected void Execute(TContext context);
         ITask<TContext> Clone();
     }
 

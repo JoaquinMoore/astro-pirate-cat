@@ -4,10 +4,10 @@ namespace TaskSystem
 {
     public class TasksController<TContext>
     {
-        public ITask<TContext> DefaultBaseTask { get; set; }
+        public ITask<TContext> DefaultTask { get; set; }
 
         private readonly Queue<ITask<TContext>> _tasks = new();
-        private ITask<TContext> _currentBaseTask;
+        private ITask<TContext> _currentTask;
         private readonly TContext _context;
 
         public TasksController(TContext context)
@@ -25,12 +25,12 @@ namespace TaskSystem
 
         public void CheckTask()
         {
-            if (!_tasks.TryDequeue(out _currentBaseTask))
+            if (!_tasks.TryDequeue(out _currentTask))
             {
-                _currentBaseTask = DefaultBaseTask;
+                _currentTask = DefaultTask;
             }
 
-            _currentBaseTask?.Update(_context);
+            _currentTask?.Update(_context);
         }
     }
 }

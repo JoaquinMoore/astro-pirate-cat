@@ -3,7 +3,8 @@ using UnityServiceLocator;
 
 public class GameObjectBinder : MonoBehaviour
 {
-    [SerializeField] Component[] _components;
+    [SerializeField]
+    private Component[] _components;
 
     private void Awake()
     {

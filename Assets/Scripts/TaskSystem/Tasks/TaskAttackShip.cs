@@ -5,13 +5,7 @@ namespace TaskSystem.Tasks
     public class TaskAttackShip : ITask<NPCController>
     {
         public bool IsComplete { get; private set; }
-
-        private bool _hasStarted;
-        bool ITask<NPCController>.HasStarted
-        {
-            get => _hasStarted;
-            set => _hasStarted = value;
-        }
+        bool ITask<NPCController>.HasStarted { get; set; }
 
         void ITask<NPCController>.Start(NPCController context)
         {
@@ -20,8 +14,7 @@ namespace TaskSystem.Tasks
         }
 
         void ITask<NPCController>.Execute(NPCController context)
-        {
-        }
+        { }
 
         public ITask<NPCController> Clone() => new TaskAttackShip();
     }

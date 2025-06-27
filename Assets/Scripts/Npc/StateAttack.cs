@@ -8,6 +8,7 @@ public class StateAttack : NPCState
         {
             Debug.Log("Atacando");
         }
+
         NPC.ApproachTo(NPC.barco.transform.position);
     }
 }
