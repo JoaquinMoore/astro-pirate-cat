@@ -34,7 +34,7 @@ MonoBehaviour:
       data:
         name: full
         TriggerSettings:
-          FireRate: 20
+          FireRate: 200
     - rid: 1113679375604383758
       type: {class: Magazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:

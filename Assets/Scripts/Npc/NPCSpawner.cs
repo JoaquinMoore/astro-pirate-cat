@@ -15,7 +15,11 @@ namespace Npc
         public void Spawn()
         {
             var npc = Instantiate(_npcRef);
-            npc.SetDefaultTask(_task.Clone());
+
+            if (_task)
+            {
+                npc.SetDefaultTask(_task.Clone());
+            }
         }
     }
 }

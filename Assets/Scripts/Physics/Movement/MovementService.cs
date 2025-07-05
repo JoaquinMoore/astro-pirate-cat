@@ -1,3 +1,4 @@
+using System;
 using _UTILITY;
 using UnityEngine;
 
@@ -5,16 +6,13 @@ namespace Physics.Movement
 {
     public class MovementService : ApeBehaviour
     {
-        private enum Method
-        {
-            GoTo,
-            Seek
-        }
+        public Vector2 CurrentDestiny => _currentDestiny;
 
         private Vector2 _currentDestiny;
-        private Method _currentMethod;
+        private Action _calculateSteering;
         private readonly SteeringMovement _steeringMovement;
         private readonly Transform _transform;
+        private bool _moving;
 
         public MovementService(Transform transform, SteeringMovement.Data data)
         {
@@ -22,38 +20,41 @@ namespace Physics.Movement
             _steeringMovement = new SteeringMovement(data, transform);
         }
 
-        protected override void Update()
-        {
-            switch (_currentMethod)
-            {
-                case Method.GoTo:
-                    _steeringMovement
-                        .AddMoveForce(_currentDestiny)
-                        .AddSeparationForce()
-                        .GetNextPosition();
-                    break;
-                case Method.Seek:
-                    _steeringMovement
-                        .AddSeekForce(_currentDestiny)
-                        .AddSeparationForce()
-                        .AddFleeForce(_currentDestiny)
-                        .GetNextPosition();
-                    break;
-            }
-
-            _transform.position = _steeringMovement.GetNextPosition();
-        }
-
-        public void ApproachTo(Vector2 destiny)
-        {
-            _currentDestiny = destiny;
-            _currentMethod = Method.Seek;
-        }
-
         public void GoTo(Vector2 position)
         {
+            _moving = true;
             _currentDestiny = position;
-            _currentMethod = Method.GoTo;
+            _steeringMovement
+                .PreciseArrival(position);
         }
+
+        protected override void Update()
+        {
+            // _calculateSteering();
+            if (!_moving)
+            {
+                _steeringMovement.AddStopForce();
+            }
+            _transform.position = _steeringMovement.GetNextPosition();
+            _moving = false;
+        }
+
+        // private void DoApproachTo()
+        // {
+        //     _steeringMovement
+        //         .AddArrivalForce(_currentDestiny);
+        // }
+        //
+        // public void ApproachTo(Vector2 destiny)
+        // {
+        //     _currentDestiny = destiny;
+        //     _calculateSteering = DoApproachTo;
+        // }
+        //
+        // public void GoTo(Vector2 position)
+        // {
+        //     _currentDestiny = position;
+        //     _calculateSteering = DoGoTo;
+        // }
     }
 }

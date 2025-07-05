@@ -136,7 +136,7 @@ namespace WeaponSystem
         }
 
 
-        public void MouseAim(Vector2 target, bool flip = false)
+        public void MouseAim(Vector2 target, bool flip)
         {
             Vector2 pos = Vector2.zero;
 
