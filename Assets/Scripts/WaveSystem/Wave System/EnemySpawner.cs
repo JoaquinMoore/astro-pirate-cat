@@ -58,14 +58,14 @@ public class EnemySpawner : MonoBehaviour//, IPause
         CurrentWave = wave;
 
         // Visual Wave normal
-        _parent.MatWave.SetColor("_MainColor", _normalColorWave);
+        //_parent.MatWave.SetColor("_MainColor", _normalColorWave);
 
         //StartCoroutine(SpawnEnemies());
 
         if (_AllBasesAttackWave == WaveManager.IndexWave)
         {
             // Visual Wave spacial
-            _parent.MatWave.SetColor("_MainColor", _specialColorWave);
+            //_parent.MatWave.SetColor("_MainColor", _specialColorWave);
         }
 
     }

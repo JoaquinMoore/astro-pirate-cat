@@ -10,13 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d8e13e9d89c6e24299552be8f4be181, type: 3}
-  m_Name: Wave
+  m_Name: Wave 4b
   m_EditorClassIdentifier: 
   TimeForWave: 2
   WaveChilds:
-  - {fileID: 11400000, guid: 7df8d0126cf6f73488d741caf4ab053e, type: 2}
-  - {fileID: 11400000, guid: 7ad29334b424876479a22e84b9e49009, type: 2}
+  - {fileID: 11400000, guid: 528dd1cd838844f47bea07e7b45e76d1, type: 2}
+  - {fileID: 11400000, guid: 080e9819adc46a64fb5bb1ef3aed4cb0, type: 2}
   AmauntPerWave:
   - tag: 0
+    AmountForWave: 10
+  - tag: 1
+    AmountForWave: 7
+  - tag: 2
     AmountForWave: 3
   WaveEvents: []

@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using Npc;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.Pool;
 using WeaponSystem;
+using UnityEngine.Events;
 
 public enum EnemyTags
 {
-    test1,
-    test2,
-    test3
+    Golden,
+    Chiguagua,
+    Bulldog,
+    Nave,
+    Caniche,
 }
 
 
@@ -43,14 +45,13 @@ public class SpawnWavePool : MonoBehaviour
     [SerializeField] private float _totalEnemies;
     [SerializeField] private List<EnemyController> _enemy;
     [SerializeField] private List<EnemyList> _enemyLists = new();
-    [SerializeField] private List<TypeAmount> _waveSpawns = new();
     [SerializeField] private float _NextSpecialWave;
 
     public static UnityEvent<List<TypeAmount>, List<SpawnPoints>> ReciveSpawns = new();
 
     public static UnityEvent Sendspawns = new();
 
-    private bool TimerStarted;
+    private bool _timerStarted;
 
     void Start()
     {
@@ -136,7 +137,7 @@ public class SpawnWavePool : MonoBehaviour
         {
             StopAllCoroutines();
             WaveManager.FinishedWave?.Invoke();
-            Debug.Log("end");
+            _timerStarted = false;
             _totalEnemies = 0;
             foreach (var item in _enemyLists)
             {
@@ -202,10 +203,10 @@ public class SpawnWavePool : MonoBehaviour
                     item.MaxAmount = enemys.AmountForWave;
             }
         }
-
+    
         foreach (var item in waveSpawns)
             totalEnemies += item.AmountForWave;
-
+    
         for (currentEnemies = 0; currentEnemies < totalEnemies;)
         {
             var holder = waveSpawns[Random.Range(0, index)];
@@ -222,7 +223,7 @@ public class SpawnWavePool : MonoBehaviour
             if (listholder.Enemys.Count < listholder.MaxAmount)
             {
                 enemy = poolholder.Pool.Get();
-                enemy.transform.position = (Vector2)spawnPoint.SpawnPoint.position + (Random.insideUnitCircle * _AreaOfSpawn);
+                enemy.transform.position = (Vector2)spawnPoint.SpawnPoint.position + (Random.insideUnitCircle *_AreaOfSpawn);
                 currentEnemies++;
                 listholder.Enemys.Add(enemy);
                 failsafe--;
@@ -238,7 +239,7 @@ public class SpawnWavePool : MonoBehaviour
         _totalEnemies += totalEnemies;
         _currentEnemies += currentEnemies;
 
-        if (TimerStarted == false)
+        if (_timerStarted == false)
             StartCoroutine(TimerFailSafe());
 
         foreach (var item in EnemyList)
@@ -285,8 +286,8 @@ public class SpawnWavePool : MonoBehaviour
 
     IEnumerator TimerFailSafe()
     {
-        TimerStarted = true;
-        yield return new WaitForSeconds((_TimeFromEachSpawn * _totalEnemies) + _ExtraTime);
+        _timerStarted = true;
+        yield return new WaitForSeconds((_TimeFromEachSpawn * _totalEnemies)+ _ExtraTime );
 
         foreach (var item in _enemyLists)
         {
@@ -295,7 +296,7 @@ public class SpawnWavePool : MonoBehaviour
         }
         _currentEnemies = 0;
         _totalEnemies = 0;
-        TimerStarted = false;
+        _timerStarted = false;
         WaveManager.FinishedWave?.Invoke();
     }
 
@@ -307,6 +308,24 @@ public class SpawnWavePool : MonoBehaviour
             item.SpawnPoint.transform.position -= item.SpawnPoint.transform.forward * newdistance;
         }
     }
+
+
+
+    public float WaveProgress()
+    {
+        float progress = 1;
+        if (_timerStarted)
+        {
+            progress = (float)_currentEnemies / _totalEnemies;
+        }
+        Debug.Log(progress);
+        return progress;
+    }
+
+
+
+
+
 
 
     private void OnDrawGizmos()
@@ -350,7 +369,7 @@ public class SpawnWavePool : MonoBehaviour
             return holder;
         }
     }
-
+    
 
     [System.Serializable]
     public class SpawnPoints

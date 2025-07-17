@@ -10,8 +10,8 @@ public class GameManager : SingletonMono<GameManager>
     public GameObject player => _player;
 
 
-    [field: SerializeField] public List<MaterialsVisual> Resources { get; private set; } 
-
+    [field: SerializeField] public List<MaterialsVisual> Resources { get; private set; }
+    public static WaveManager _wave;
 
     // Update is called once per frame
     void Update()
@@ -61,10 +61,11 @@ public class GameManager : SingletonMono<GameManager>
 
     public void WinState()
     {
-        UIManager.MenuManager.ChangeScreen(1);
+        UIManager.MenuManager.ChangeScreen(0);
     }
     public void FailState()
     {
+        UIManager.MenuManager.FailState();
         UIManager.MenuManager.ChangeScreen(0);
     }
 
