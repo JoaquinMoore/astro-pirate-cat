@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Pool;
 using WeaponSystem;
 using UnityEngine.Events;
-
+using TaskSystem.TaskWrappers;
 public enum EnemyTags
 {
     Golden,
@@ -31,7 +31,7 @@ public class SpawnWavePool : MonoBehaviour
     private float _ExtraTime;
     [SerializeField, Tooltip("Cada cuantas oleadas queres que se cree la oleada especial")]
     private int _SpecialWave;
-
+    [SerializeField] private TaskWrapperSO _Attacktask;
 
 
     [SerializeField, Tooltip("Pools de los enemigos")]
@@ -46,17 +46,20 @@ public class SpawnWavePool : MonoBehaviour
     [SerializeField] private List<EnemyController> _enemy;
     [SerializeField] private List<EnemyList> _enemyLists = new();
     [SerializeField] private float _NextSpecialWave;
+    private WaveManager _manager;
 
     public static UnityEvent<List<TypeAmount>, List<SpawnPoints>> ReciveSpawns = new();
 
     public static UnityEvent Sendspawns = new();
 
     private bool _timerStarted;
+    private bool _wavePlaying;
 
     void Start()
     {
         _NextSpecialWave += _SpecialWave;
         ReciveSpawns.AddListener(StartSpawning);
+        _manager = GetComponentInParent<WaveManager>();
         foreach (var item in _SpawnPoints)
         {
             item.SpawnPoint.LookAt(transform.position);
@@ -67,7 +70,7 @@ public class SpawnWavePool : MonoBehaviour
 
         foreach (var item in _enemyPools)
         {
-            TempPool<EnemyController> buildtest = new(item.Create);
+            TempPool<NPCController> buildtest = new(item.Create);
             buildtest.SetActionOnGet(OnGetFromPool);
             buildtest.SetActionOnRelease(OnReleaseToPool);
             buildtest.SetActionOnDestroy(OnDestroyPooledObject);
@@ -90,17 +93,17 @@ public class SpawnWavePool : MonoBehaviour
 
 
 
-    public void OnGetFromPool(EnemyController pooledBullet)
+    public void OnGetFromPool(NPCController pooledBullet)
     {
         pooledBullet.gameObject.SetActive(true);
     }
 
-    public void OnReleaseToPool(EnemyController pooledBullet)
+    public void OnReleaseToPool(NPCController pooledBullet)
     {
         pooledBullet.gameObject.SetActive(false);
     }
 
-    public void OnDestroyPooledObject(EnemyController pooledBullet)
+    public void OnDestroyPooledObject(NPCController pooledBullet)
     {
         Destroy(pooledBullet.gameObject);
     }
@@ -117,7 +120,7 @@ public class SpawnWavePool : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (_totalEnemies > 0)
+        if (_wavePlaying)
             CheckEnemys();
 
     }
@@ -133,9 +136,11 @@ public class SpawnWavePool : MonoBehaviour
 
     public void CheckEnemys()
     {
+        Debug.Log("checking");
         if (_currentEnemies <= 0)
         {
             StopAllCoroutines();
+            //_manager.WaveFinished();
             WaveManager.FinishedWave?.Invoke();
             _timerStarted = false;
             _totalEnemies = 0;
@@ -144,6 +149,7 @@ public class SpawnWavePool : MonoBehaviour
                 item.Enemys.Clear();
                 item.MaxAmount = 0;
             }
+            _wavePlaying = false;
         }
     }
 
@@ -186,10 +192,9 @@ public class SpawnWavePool : MonoBehaviour
 
     IEnumerator SpawnEnemies(List<EnemyList> EnemyList, List<SpawnPoints> spawnpoint, List<TypeAmount> waveSpawns)
     {
-        Debug.Log("inicio");
         int index = waveSpawns.Count;
         SpawnPoints spawnPoint;
-        EnemyController enemy = null;
+        NPCController enemy = null;
         int totalEnemies = 0;
         int currentEnemies = 0;
 
@@ -224,24 +229,25 @@ public class SpawnWavePool : MonoBehaviour
             {
                 enemy = poolholder.Pool.Get();
                 enemy.transform.position = (Vector2)spawnPoint.SpawnPoint.position + (Random.insideUnitCircle *_AreaOfSpawn);
+                enemy.SetDefaultTask(_Attacktask.Clone());
                 currentEnemies++;
                 listholder.Enemys.Add(enemy);
                 failsafe--;
                 yield return new WaitForSeconds(_spawnInterval);
             }
             failsafe++;
-            if (failsafe > 150)
+            if (failsafe > 250)
             {
                 Debug.LogError("overflow of spawner");
                 break;
             }
         }
-        _totalEnemies += totalEnemies;
+        _totalEnemies += currentEnemies;
         _currentEnemies += currentEnemies;
 
         if (_timerStarted == false)
             StartCoroutine(TimerFailSafe());
-
+        //_wavePlaying = false;
         foreach (var item in EnemyList)
         {
             var hold = _enemyLists.Find(x => x.Tag == item.Tag);
@@ -252,7 +258,7 @@ public class SpawnWavePool : MonoBehaviour
             }
 
         }
-
+        _wavePlaying = true;
         //if (_AllBasesAttackWave == WaveManager.IndexWave)
         //{
         //    StartSpecialWave();
@@ -267,10 +273,10 @@ public class SpawnWavePool : MonoBehaviour
     }
 
 
-    public void EnemyDeathCallBack(EnemyController npc, EnemyTags tag)
+    public void EnemyDeathCallBack(NPCController npc, EnemyTags tag)
     {
         EnemyList listholder = _enemyLists.Find(x => x.Tag == tag);
-
+        Debug.Log("Death");
         if (listholder == null)
             return;
         if (listholder.Enemys.Find(x => x == npc))
@@ -278,9 +284,6 @@ public class SpawnWavePool : MonoBehaviour
             listholder.Enemys.Remove(npc);
             _currentEnemies--;
         }
-
-
-
     }
 
 
@@ -298,6 +301,8 @@ public class SpawnWavePool : MonoBehaviour
         _totalEnemies = 0;
         _timerStarted = false;
         WaveManager.FinishedWave?.Invoke();
+        _wavePlaying = false;
+        //_manager.WaveFinished();
     }
 
 
@@ -344,7 +349,7 @@ public class SpawnWavePool : MonoBehaviour
     {
         public EnemyTags Tag;
         public int MaxAmount;
-        public List<EnemyController> Enemys = new();
+        public List<NPCController> Enemys = new();
     }
 
     [System.Serializable]
@@ -357,15 +362,15 @@ public class SpawnWavePool : MonoBehaviour
     public class EnemyPool
     {
         public EnemyTags tag;
-        public EnemyController EnemyPrefab;
-        public IObjectPool<EnemyController> Pool;
+        public NPCController EnemyPrefab;
+        public IObjectPool<NPCController> Pool;
         [HideInInspector] public SpawnWavePool Father;
 
-        public EnemyController Create()
+        public NPCController Create()
         {
             var holder = Instantiate(EnemyPrefab);
             holder.GiveRef(Father, tag);
-            holder._NPCtestPool = Pool;
+            holder._NPCPool = Pool;
             return holder;
         }
     }

@@ -1,7 +1,8 @@
 using HealthSystem;
 using UnityEngine;
 using UnityEngine.UI;
-public class Ship : MonoBehaviour
+using _UTILITY;
+public class Ship : SingletonMono<Ship>
 {
     [SerializeField] private GameObject _player;
     [SerializeField] private float _Distance;

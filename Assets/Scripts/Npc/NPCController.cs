@@ -5,11 +5,13 @@ using Unity.Behavior;
 using UnityEngine;
 using UnityServiceLocator;
 using WeaponSystem;
+using UnityEngine.Pool;
 
 namespace Npc
 {
     public class NPCController : MonoBehaviour
     {
+        
         public Data NPCData => _data;
 
         public GameObject Target
@@ -32,6 +34,16 @@ namespace Npc
         private TasksController<NPCController> TasksController => _tasksController ??= ServiceLocator.For(gameObject).Get<TasksController<NPCController>>();
         private BehaviorGraphAgent Agent => _agent ??= ServiceLocator.For(gameObject).Get<BehaviorGraphAgent>();
 
+
+
+        private SpawnWavePool _pool;
+        private EnemyTags _etag;
+        public IObjectPool<NPCController> _NPCPool { set => NPCPool = value; }
+
+        protected IObjectPool<NPCController> NPCPool;
+
+        [Header("test")]
+        public bool ElBoolQueTeMata;
         private void Start()
         {
             ServiceLocator.For(gameObject).TryGet(out _data);
@@ -52,6 +64,11 @@ namespace Npc
             {
                 HorizontalFlip(_movement.CurrentDestiny.x > transform.position.x);
             }
+            if (ElBoolQueTeMata)
+            {
+                Death();
+                ElBoolQueTeMata = false;
+            }
         }
 
         public void SetDefaultTask(ITask<NPCController> baseTask) => TasksController.DefaultTask = baseTask;
@@ -69,8 +86,22 @@ namespace Npc
         public void HorizontalFlip(bool flag)
         {
             transform.localScale = new Vector3(flag ? -1 : 1, transform.localScale.y, transform.localScale.z);
-            Debug.Log(_movement.CurrentDestiny);
+            //Debug.Log(_movement.CurrentDestiny);
         }
+
+        public void GiveRef(SpawnWavePool a, EnemyTags tag)
+        {
+            _pool = a;
+            _etag = tag;
+        }
+
+        public void Death()
+        {
+            if (_pool)
+                _pool.EnemyDeathCallBack(this, _etag);
+            NPCPool.Release(this);
+        }
+
 
         [Serializable]
         public class Data

@@ -11,7 +11,7 @@ namespace Npc
         public SpawnWavePool pool;
         public EnemyTags etag;
         public IObjectPool<EnemyController> _NPCtestPool { set => nPCtestPool = value; }
-
+        
         protected IObjectPool<EnemyController> nPCtestPool;
 
         private BehaviorGraphAgent _agent;
@@ -45,7 +45,7 @@ namespace Npc
         {
             if (pool)
             {
-                pool.EnemyDeathCallBack(this, etag);
+                //pool.EnemyDeathCallBack(this, etag);
             }
 
             nPCtestPool.Release(this);

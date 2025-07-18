@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+
 public class WaveManager : MonoBehaviour//, IPause
 {
     public static UnityEvent<List<SpawnWavePool.TypeAmount>> ReciveSpawns = new();
     public static UnityEvent FinishedWave = new();
     public static bool _startWave;
+    
 
     [SerializeField] List<Wave> _Wave = new();
     [SerializeField, Tooltip("Sirve para indicar a que oleada el juego esta listo para terminar (nota: esto termina con el ciclo de oleadas y habra que reiniciarlo una ves este la opcion añadida)")]
