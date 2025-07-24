@@ -7,11 +7,29 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using WeaponSystem;
 
+
+public enum ControlScheme
+{
+    Gameplay,
+    FailWin,
+    Menu,
+    Build,
+    Tactical
+}
+
+
 public class MaincharacterController : MonoBehaviour
 {
     private InputAction _onAttackAction;
     private InputAction _onHookAction;
+
+    private InputAction _onEscaoe;
+    private InputAction _onNewGame;
+    private InputAction _onRestart;
+
     private SpriteRenderer _spriteRenderer;
+
+    //private Vector3 testpos;
 
     public void Hook(Vector3 target)
     {
@@ -103,6 +121,10 @@ public class MaincharacterController : MonoBehaviour
         _weaponcontroller.OnImpulse += Impulse;
         _onAttackAction = InputSystem.actions.FindAction("Attack");
         _onHookAction = InputSystem.actions.FindAction("Hook");
+
+        _onEscaoe = InputSystem.actions.FindAction("Escape");
+        _onNewGame = InputSystem.actions.FindAction("NewGame");
+        _onRestart = InputSystem.actions.FindAction("Restart");
     }
 
     private void OnDisable()
@@ -111,6 +133,23 @@ public class MaincharacterController : MonoBehaviour
     }
 
     private void Update()
+    {
+        switch (_scheme)
+        {
+            case ControlScheme.Gameplay:
+                 PlayerInputs();
+                break;
+            case ControlScheme.FailWin:
+                FinishMenuInputs();
+                break;
+        }
+        
+
+
+
+    }
+
+    public void PlayerInputs()
     {
         if (_onAttackAction.IsPressed())
         {
@@ -123,18 +162,61 @@ public class MaincharacterController : MonoBehaviour
 
         if (_onHookAction.WasPressedThisFrame())
         {
-            _hookTool.Hooking(Mouse.current.WorldPosition());
+            _hookTool.Hooking(PWorldPosition(Mouse.current));
         }
-
-        var mustFlip = Mouse.current.WorldPosition().x > transform.position.x;
-        _weaponcontroller.MouseAim(Mouse.current.WorldPosition(), mustFlip);
+        var mustFlip = PWorldPosition(Mouse.current).x > transform.position.x;
+        _weaponcontroller.MouseAim(PWorldPosition(Mouse.current), mustFlip);
         _spriteRenderer.flipX = mustFlip;
     }
+
+    public void FinishMenuInputs()
+    {
+        if (_onRestart.IsPressed())
+        {
+            GameManager.Instance.FinishGameControl();
+        }
+        if (_onNewGame.IsPressed())
+        {
+            GameManager.Instance.RestartGame();
+        }
+        if (_onEscaoe.IsPressed())
+        {
+            GameManager.Instance.ReturnToMenu();
+        }
+
+    }
+
+    public void MenuInputs()
+    {
+
+    }
+
+
+    public void SwichControlScreme(ControlScheme scheme)
+    {
+        Debug.Log("called");
+        _scheme = scheme;
+
+    }
+
+    public Vector2 PWorldPosition(Mouse mouse)
+    {
+        return _cam.ScreenToWorldPoint(mouse.position.value);
+    }
+
 
     private void FixedUpdate()
     {
         LimitVelocity(_maxSpeed, _softmaxSpeed);
     }
+
+    private void OnDrawGizmos()
+    {
+        //Gizmos.DrawWireSphere(testpos, 1f);
+    }
+
+
+
 
     private HookTool _hookTool;
     private Rigidbody2D _rigidBody;
@@ -144,10 +226,15 @@ public class MaincharacterController : MonoBehaviour
     private Animator _anims;
     private Health _hp;
 
+    private ControlScheme _scheme;
+
 
     [Header("Config")]
     [SerializeField]
     private float _maxSpeed = 10;
     [SerializeField]
     private float _softmaxSpeed = 5;
+
+    [Header("CamRef")]
+    public Camera _cam;
 }

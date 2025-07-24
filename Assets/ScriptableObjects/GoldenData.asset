@@ -16,5 +16,6 @@ MonoBehaviour:
     _movementData: {fileID: 11400000, guid: 18f95e1e41602c649817bf4ba8e92707, type: 2}
     ViewDistance: 99.4
     AttackDistance: 7
+    StunnedTime: 7
     DetectionTags:
     - Player

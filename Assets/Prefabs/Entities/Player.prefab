@@ -69,7 +69,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 3474568736520994727}
   - component: {fileID: 499287348797686842}
   - component: {fileID: 6112740422791800810}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -330,6 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxSpeed: 10
   _softmaxSpeed: 5
+  _cam: {fileID: 833697167644697045}
 --- !u!114 &6698339815021138942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,12 +405,12 @@ DistanceJoint2D:
   m_ConnectedRigidBody: {fileID: 0}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_BreakAction: 3
+  m_BreakAction: 2
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.97744566
+  m_Distance: 0.005
   m_MaxDistanceOnly: 0
 --- !u!212 &3474568736520994727
 SpriteRenderer:
@@ -1187,6 +1188,10 @@ PrefabInstance:
     - target: {fileID: 3408046127367327658, guid: 251bd73b0242fa447a87aaccc99b543c, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3408046127367327658, guid: 251bd73b0242fa447a87aaccc99b543c, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4308813062482856628, guid: 251bd73b0242fa447a87aaccc99b543c, type: 3}
       propertyPath: _data.<MaxHealth>k__BackingField

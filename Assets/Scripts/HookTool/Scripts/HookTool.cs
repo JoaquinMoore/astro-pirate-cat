@@ -37,7 +37,7 @@ namespace HookToolSystem
         private SpriteRenderer _spriteRef;
 
         public float MinDistance => _minDistance;
-
+        private HookAnchor _anchor;
         private void Awake()
         {
             _joint = GetComponent<DistanceJoint2D>();
@@ -69,6 +69,13 @@ namespace HookToolSystem
 
         public void Hooking(Vector3 target)
         {
+            if (_hooked)
+            {
+                Ungrab();
+                return;
+            }
+
+
             var mousePos = target;
             StopAllCoroutines();
 
@@ -86,7 +93,7 @@ namespace HookToolSystem
         {
             var distance = Vector2.Distance(hooktarget, _hookHeadPref.transform.position);
 
-            while (distance > 0.1f * speed)
+            while (distance > 0.1f)
             {
                 distance = Vector3.Distance(hooktarget, _hookHeadPref.transform.position);
                 yield return new WaitForSeconds(0.000000001f);
@@ -97,6 +104,7 @@ namespace HookToolSystem
                     var target = targets.OrderBy(c =>
                         Vector2.Distance(c.transform.position, _hookHeadPref.transform.position)).First();
                     Grab(target, _hookHeadPref);
+                    _joint.breakForce = 99999999;
                     _hooked = true;
                     yield break;
                 }
@@ -118,7 +126,7 @@ namespace HookToolSystem
 
             while (Rdistance > 0.5f)
             {
-                Debug.Log(Rdistance);
+                //Debug.Log(Rdistance);
                 Rdistance = Vector3.Distance(_visualhookHeadRef.transform.position, _hookHeadPref.transform.position);
                 yield return new WaitForSeconds(0.00001f);
 
@@ -164,14 +172,17 @@ namespace HookToolSystem
         {
             if (collider?.gameObject == _currentAnchor)
                 return;
-
+            Debug.Log(collider.TryGetComponent<HookAnchor>(out var a));
             if (collider && collider.TryGetComponent<HookAnchor>(out var anchor))
             {
+                Debug.Log("ok");
                 _hook = hook != null ? hook : collider.gameObject;
                 _hook.transform.position = collider.transform.position;
                 _joint.connectedAnchor = _hook.transform.position;
                 _joint.enabled = true;
                 _currentAnchor = collider.gameObject;
+                anchor.OnHook.Invoke();
+                _anchor = anchor;
 
                 if (anchor.typeOfAnchor == HookAnchor.AnchorType.Approach)
                 {
@@ -188,20 +199,12 @@ namespace HookToolSystem
         public void Ungrab()
         {
             StopAllCoroutines();
-            _joint.enabled = false;
+            _joint.breakForce = 0;
             _currentAnchor = null;
             _hooked = false;
-
-            _lineRef.enabled = false;
-            _hookHeadPref.SetActive(false);
-            _visualhookHeadRef.gameObject.SetActive(true);
-        }
-
-        public void UnGrab()
-        {
-            _joint.connectedAnchor = default;
-            _joint.enabled = false;
-            StopAllCoroutines();
+            if (_anchor != null)
+                _anchor.OnRealese.Invoke();
+            StartCoroutine(returnhook());
         }
 
         private IEnumerator Approach()

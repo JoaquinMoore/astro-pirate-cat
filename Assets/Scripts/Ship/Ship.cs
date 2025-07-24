@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using _UTILITY;
 public class Ship : SingletonMono<Ship>
 {
-    [SerializeField] private GameObject _player;
+    [SerializeField] private MaincharacterController _player;
     [SerializeField] private float _Distance;
     [SerializeField] private Health _hp;
     [SerializeField] private Slider _slider;
@@ -46,7 +46,7 @@ public class Ship : SingletonMono<Ship>
 
     public void Ondeath()
     {
-
+        _anim.SetFloat("Life", 0);
         GameManager.Instance.FailState();
     }
 

@@ -220,7 +220,7 @@ public class SpawnWavePool : MonoBehaviour
 
             spawnPoint = CheckForPlayerView(spawnpoint[Random.Range(0, spawnpoint.Count)]);
 
-
+            
 
             if (spawnPoint.InView)
                 continue;

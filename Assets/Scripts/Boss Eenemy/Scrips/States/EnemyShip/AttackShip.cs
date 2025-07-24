@@ -11,7 +11,7 @@ namespace NPC.Boss.Ship
         private WepSettings _settings;
         int AttackId;
         int MaxAttacks;
-        GameObject _player;
+        MaincharacterController _player;
 
         public AttackShip(ShipEnemy boss, FiniteStateMachine fsm) : base(boss, fsm)
         {

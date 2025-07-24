@@ -23,6 +23,19 @@ namespace Npc
             set => Agent.BlackboardReference.SetVariableValue("Enemy", value);
         }
 
+        public bool Stunned
+        {
+            get
+            {
+                Agent.BlackboardReference.GetVariableValue("Stunned", out bool go);
+                return go;
+            }
+            set => Agent.BlackboardReference.SetVariableValue("Stunned", value);
+        }
+
+
+
+
         private BehaviorGraphAgent _agent;
         private Data _data;
         private Enumerators.Team _team;
@@ -51,6 +64,7 @@ namespace Npc
             _tasksController = TasksController;
             ServiceLocator.For(gameObject).TryGet(out _weaponController);
             Agent.BlackboardReference.SetVariableValue("AttackDistance", _data.AttackDistance);
+            Agent.BlackboardReference.SetVariableValue("Stunned Time", _data.StunnedTime);
         }
 
         private void Update()
@@ -83,6 +97,13 @@ namespace Npc
         public void TriggerDown() => _weaponController.PrimaryFireDown();
         public void TriggerUp() => _weaponController.PrimaryFireUp();
 
+
+        public void OnHooked()
+        {
+            Debug.Log("stunned");
+            Stunned = true;
+        }
+
         public void HorizontalFlip(bool flag)
         {
             transform.localScale = new Vector3(flag ? -1 : 1, transform.localScale.y, transform.localScale.z);
@@ -99,7 +120,10 @@ namespace Npc
         {
             if (_pool)
                 _pool.EnemyDeathCallBack(this, _etag);
-            NPCPool.Release(this);
+            if (NPCPool != null)
+                NPCPool.Release(this);
+            else
+                Destroy(gameObject);
         }
 
 
@@ -109,6 +133,7 @@ namespace Npc
             public SteeringMovementDataSO _movementData;
             public float ViewDistance;
             public float AttackDistance;
+            public float StunnedTime;
             public string[] DetectionTags;
         }
     }
