@@ -31,10 +31,22 @@ namespace Physics.Movement
         protected override void Update()
         {
             // _calculateSteering();
+            //if (!_moving)
+            //{
+            //    _steeringMovement.AddStopForce();
+            //}
+            //Debug.Log("a2");
+            //_transform.position = _steeringMovement.GetNextPosition();
+            //_moving = false;
+        }
+
+        public void VirtualUpdate()
+        {
             if (!_moving)
             {
                 _steeringMovement.AddStopForce();
             }
+            Debug.Log("a2");
             _transform.position = _steeringMovement.GetNextPosition();
             _moving = false;
         }

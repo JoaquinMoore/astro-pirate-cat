@@ -34,6 +34,7 @@ namespace Physics.Movement
 
         public SteeringMovement PreciseArrival(Vector2 target)
         {
+            Debug.Log("aaa");
             var direction = target - VehiclePosition;
             var slowingFactor = Mathf.Clamp01(direction.magnitude / _data.SlowingRadius);
             Vector2 desiredVelocity;
@@ -55,6 +56,7 @@ namespace Physics.Movement
 
         public SteeringMovement AddSeekForce(Vector2 target)
         {
+            Debug.Log("aaa2");
             var direction = target - VehiclePosition;
             var speedFactor = Mathf.Clamp01(direction.sqrMagnitude / (_data.FleeRadius * _data.FleeRadius));
             var desiredVelocity = direction.normalized * _data.MaxMovementSpeed * speedFactor;
@@ -66,6 +68,7 @@ namespace Physics.Movement
 
         public SteeringMovement AddArrivalForce(Vector2 target)
         {
+            Debug.Log("aaa3");
             // _currentDumpVelocity = _currentVelocity;
             // var desiredDirection = Vector2.SmoothDamp(HostPosition, target, ref _currentDumpVelocity, 0.1f, _data.MaxMovementSpeed, Time.deltaTime);
             // Debug.DrawRay(HostPosition, desiredDirection, Color.yellow);
@@ -82,6 +85,7 @@ namespace Physics.Movement
 
         public SteeringMovement AddFleeForce(Vector2 target)
         {
+            Debug.Log("aaa4");
             var distance = target - VehiclePosition;
 
             if (distance.magnitude < _data.FleeRadius)
@@ -123,6 +127,7 @@ namespace Physics.Movement
 
         public Vector2 GetNextPosition()
         {
+            Debug.Log("aaa6");
             // _steering *= Time.deltaTime * _data.SteeringForce;
             _currentVelocity = Vector2.ClampMagnitude(_currentVelocity + _steering * Time.deltaTime, _data.MaxMovementSpeed);
             // Debug.DrawRay(VehiclePosition, _currentVelocity, Color.red);

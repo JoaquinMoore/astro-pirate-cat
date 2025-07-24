@@ -69,6 +69,7 @@ namespace Npc
 
         private void Update()
         {
+            _movement.VirtualUpdate();
             if (Target)
             {
                 _weaponController.MouseAim(Target.transform.position);
@@ -83,6 +84,7 @@ namespace Npc
                 Death();
                 ElBoolQueTeMata = false;
             }
+
         }
 
         public void SetDefaultTask(ITask<NPCController> baseTask) => TasksController.DefaultTask = baseTask;

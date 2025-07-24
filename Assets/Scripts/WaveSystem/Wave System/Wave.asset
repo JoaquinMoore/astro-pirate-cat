@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8e13e9d89c6e24299552be8f4be181, type: 3}
   m_Name: Wave
   m_EditorClassIdentifier: 
-  TimeForWave: 129.85
+  TimeForWave: 146.15
   WaveChilds:
   - {fileID: 11400000, guid: 7df8d0126cf6f73488d741caf4ab053e, type: 2}
   - {fileID: 11400000, guid: 7ad29334b424876479a22e84b9e49009, type: 2}
