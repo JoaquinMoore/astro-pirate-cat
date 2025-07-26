@@ -8,6 +8,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 471066681250670569, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280785890101371601, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280785890101371601, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710942604583863733, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710942604583863733, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710942604583863733, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710942604583863733, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710942604583863733, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2569548601086043914, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
       propertyPath: m_Color.g
       value: 1
@@ -16,9 +48,61 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.1573993
       objectReference: {fileID: 0}
+    - target: {fileID: 2833502723469206103, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: _typeMat.Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833502723469206103, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: _visualResourse
+      value: 
+      objectReference: {fileID: 4489573414816898031, guid: a3bd76843c5dbc74d81b1eef3d93407f, type: 3}
+    - target: {fileID: 2833502723469206103, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: '_allSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1461639626, guid: 35ee308e2aa13db4895d1d23039df972, type: 3}
+    - target: {fileID: 2833502723469206103, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: '_allSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: -1527527944, guid: 35ee308e2aa13db4895d1d23039df972, type: 3}
+    - target: {fileID: 2833502723469206103, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: '_allSprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: -1262314064, guid: 35ee308e2aa13db4895d1d23039df972, type: 3}
+    - target: {fileID: 4366661276794394694, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: m_fontSize
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391692579593301062, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5347092251105587702, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6085498157384548396, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
       propertyPath: m_Name
       value: Asteroid Catnip
+      objectReference: {fileID: 0}
+    - target: {fileID: 6558188355310195626, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6558188355310195626, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6558188355310195626, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6558188355310195626, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6558188355310195626, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8075283437981410985, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
       propertyPath: m_LocalPosition.x
@@ -60,6 +144,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8092772362324490841, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8346389212451236140, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -68,6 +156,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: d98e03055c4b01248b8ab3bc4ff897b8, type: 2}
+    - target: {fileID: 8508585630412554894, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AsteroidMaterial, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545125166899260571, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
+      propertyPath: _typeMat.Type
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8545125166899260571, guid: 7c79ef9b387b0de4b9615bfbf0670174, type: 3}
       propertyPath: '_allSprites.Array.data[0]'
       value: 

@@ -73,7 +73,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 28671
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -311,10 +311,10 @@ MonoBehaviour:
   _hookabletargets:
     serializedVersion: 2
     m_Bits: 72
-  _hookSpeed: 10
-  _hookReturnSpeed: 8
+  _hookSpeed: 20
+  _hookReturnSpeed: 20
   _hookDetectionRadius: 1
-  _minDistance: 10
+  _minDistance: 1
   _approachSpeed: 5
 --- !u!114 &6161283069179757519
 MonoBehaviour:
