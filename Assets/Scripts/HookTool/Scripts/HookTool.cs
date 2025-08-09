@@ -26,10 +26,14 @@ namespace HookToolSystem
 
         [SerializeField] [Min(0)] private float _approachSpeed;
 
+        [Header("test")]
+        public MaincharacterController _cont;
+
         private GameObject _currentAnchor;
 
         private GameObject _hook;
         private bool _hooked;
+        private bool _inpulsed;
         private GameObject _hookHeadPref;
         private DistanceJoint2D _joint;
         private LineRenderer _lineRef;
@@ -58,6 +62,14 @@ namespace HookToolSystem
         {
             if (_hooked)
                 VisualHooking();
+
+
+
+            if (_inpulsed)
+            {
+                _inpulsed = false;
+                //_cont.Impulse(_hookHeadPref.transform.right * 10);
+            }
         }
 
 
@@ -95,6 +107,7 @@ namespace HookToolSystem
 
             while (distance > 0.1f)
             {
+
                 distance = Vector3.Distance(hooktarget, _hookHeadPref.transform.position);
                 yield return new WaitForSeconds(0.000000001f);
                 _hookHeadPref.transform.position += _hookHeadPref.transform.right * Time.fixedDeltaTime * speed;
@@ -175,7 +188,6 @@ namespace HookToolSystem
             Debug.Log(collider.TryGetComponent<HookAnchor>(out var a));
             if (collider && collider.TryGetComponent<HookAnchor>(out var anchor))
             {
-                Debug.Log("ok");
                 _hook = hook != null ? hook : collider.gameObject;
                 _hook.transform.position = collider.transform.position;
                 _joint.connectedAnchor = _hook.transform.position;
@@ -189,6 +201,12 @@ namespace HookToolSystem
                     StopAllCoroutines();
                     StartCoroutine(Approach());
                 }
+                if (anchor.typeOfAnchor == HookAnchor.AnchorType.Stun)
+                {
+                    StopAllCoroutines();
+                    Ungrab();
+                }
+
             }
             else
             {
@@ -198,13 +216,30 @@ namespace HookToolSystem
 
         public void Ungrab()
         {
+            _inpulsed = true;
+
+            Debug.Log("ungrab");
             StopAllCoroutines();
+
             _joint.breakForce = 0;
             _currentAnchor = null;
             _hooked = false;
             if (_anchor != null)
                 _anchor.OnRealese.Invoke();
+
+            StartCoroutine(GiveInpulse());
             StartCoroutine(returnhook());
+        }
+
+        public IEnumerator GiveInpulse()
+        {
+            float times = 0;
+            while (times < 4)
+            {
+                yield return new WaitForSeconds(0.0000001f);
+                times++;
+                _cont.Impulse(_hookHeadPref.transform.right * 10);
+            }
         }
 
         private IEnumerator Approach()
@@ -212,8 +247,11 @@ namespace HookToolSystem
             while (_joint.distance > Mathf.Max(_minDistance, MIN_APPROACH_DISTANCE))
             {
                 _joint.distance -= _approachSpeed * Time.deltaTime;
+                //Debug.Log(_cont.RigidBody.linearVelocity);
                 yield return null;
             }
+            Ungrab();
+
         }
     }
 }

@@ -33,7 +33,7 @@ namespace Npc
             set => Agent.BlackboardReference.SetVariableValue("Stunned", value);
         }
 
-
+        private SpriteRenderer _sprite;
 
 
         private BehaviorGraphAgent _agent;
@@ -59,6 +59,7 @@ namespace Npc
         public bool ElBoolQueTeMata;
         private void Start()
         {
+            _sprite = GetComponentInChildren<SpriteRenderer>();
             ServiceLocator.For(gameObject).TryGet(out _data);
             _movement = Movement;
             _tasksController = TasksController;
@@ -70,13 +71,19 @@ namespace Npc
         private void Update()
         {
             _movement.VirtualUpdate();
+            
+
+            //_weaponcontroller.MouseAim(PWorldPosition(Mouse.current), mustFlip);
             if (Target)
             {
-                _weaponController.MouseAim(Target.transform.position);
-                HorizontalFlip(Target.transform.position.x > transform.position.x);
+                var mustFlip = Target.transform.position.x > transform.position.x;
+                _weaponController.MouseAim(Target.transform.position, mustFlip);
+                HorizontalFlip(mustFlip);
             }
             else
             {
+
+                _weaponController.MouseAim(Vector2.right* (_movement.CurrentDestiny.x > transform.position.x == true ? -2 : 2), _movement.CurrentDestiny.x > transform.position.x);
                 HorizontalFlip(_movement.CurrentDestiny.x > transform.position.x);
             }
             if (ElBoolQueTeMata)
@@ -108,8 +115,9 @@ namespace Npc
 
         public void HorizontalFlip(bool flag)
         {
-            transform.localScale = new Vector3(flag ? -1 : 1, transform.localScale.y, transform.localScale.z);
-            //Debug.Log(_movement.CurrentDestiny);
+            //transform.localScale = new Vector3(flag ? -1 : 1, transform.localScale.y, transform.localScale.z);
+            _sprite.flipX = flag;
+
         }
 
         public void GiveRef(SpawnWavePool a, EnemyTags tag)

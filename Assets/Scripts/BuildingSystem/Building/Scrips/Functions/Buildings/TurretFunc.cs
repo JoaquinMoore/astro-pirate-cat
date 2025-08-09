@@ -71,9 +71,9 @@ namespace BuildSystem
                 return;
             //_WeaponHandler.MouseAim(new Vector2(-1f, -0.002f) + (Vector2)_WeaponHandler.transform.position);
             if (_lookingAngle == 270)
-                _WeaponHandler.MouseAim(new Vector2(-1f, -0.002f) + (Vector2)_WeaponHandler.transform.position);
+                _WeaponHandler.MouseAimNonFlip(new Vector2(-1f, -0.002f) + (Vector2)_WeaponHandler.transform.position);
             else
-                _WeaponHandler.MouseAim(GetVector2(_lookingAngle) + (Vector2)_WeaponHandler.transform.position);
+                _WeaponHandler.MouseAimNonFlip(GetVector2(_lookingAngle) + (Vector2)_WeaponHandler.transform.position);
             //_WeaponHandler.MouseAim((GetVector2(_lookingAngle)) + (Vector2)_WeaponHandler.transform.position);
         }
 
@@ -95,7 +95,7 @@ namespace BuildSystem
 
             _WeaponHandler.PrimaryFireDown();
             if (!_lockTurretRotation)
-                _WeaponHandler.MouseAim(_NearEnemy.position);
+                _WeaponHandler.MouseAimNonFlip(_NearEnemy.position);
         }
 
 

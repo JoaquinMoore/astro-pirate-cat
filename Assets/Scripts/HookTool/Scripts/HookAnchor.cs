@@ -12,7 +12,8 @@ namespace HookToolSystem
         public enum AnchorType
         {
             Swing,
-            Approach
+            Approach,
+            Stun
         }
 
         public AnchorType typeOfAnchor;

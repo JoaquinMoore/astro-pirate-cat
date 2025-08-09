@@ -29,7 +29,6 @@ public class MaincharacterController : MonoBehaviour
 
     private SpriteRenderer _spriteRenderer;
 
-    //private Vector3 testpos;
 
     public void Hook(Vector3 target)
     {
@@ -45,23 +44,6 @@ public class MaincharacterController : MonoBehaviour
         return _hookTool.Hooking();
     }
 
-    public void Attack(bool value)
-    {
-        if (value)
-        {
-            _weaponcontroller.PrimaryFireDown();
-        }
-        else
-        {
-            _weaponcontroller.PrimaryFireUp();
-        }
-    }
-
-    public void AimTo(Vector2 target)
-    {
-        _weaponcontroller.MouseAim(target);
-    }
-
     public void SwapPrimWeapon()
     {
         _weaponcontroller.SwapPrimaryWeapon();
@@ -73,13 +55,16 @@ public class MaincharacterController : MonoBehaviour
         _weaponcontroller.ChangeSecondaryWeapon(rot);
     }
 
-    protected void Impulse(Vector2 force)
+    public void Impulse(Vector2 force)
     {
+        //Debug.Log(force);
         _rigidBody.AddForce(force, ForceMode2D.Impulse);
     }
 
     private void LimitVelocity(float Hlimit, float Slimit)
     {
+
+        //Debug.Log(_rigidBody.linearVelocity);
         if (_rigidBody.linearVelocity.magnitude > Slimit)
         {
             _rigidBody.linearVelocity = Vector2.Lerp(_rigidBody.linearVelocity, _rigidBody.linearVelocity.normalized * Slimit, ((_rigidBody.linearVelocity.magnitude - Slimit) / 5) * Time.deltaTime);
@@ -104,8 +89,20 @@ public class MaincharacterController : MonoBehaviour
     public void OnDeath()
     {
         _anims.SetTrigger("Death");
+        StopMovement();
+    }
+
+    public void DeathTrigger()
+    {
         GameManager.Instance.FailState();
     }
+
+    public void StopMovement()
+    {
+        _rigidBody.linearVelocity = Vector2.zero;
+        _rigidBody.angularVelocity = 0;
+    }
+
 
     private void Awake()
     {
@@ -117,6 +114,7 @@ public class MaincharacterController : MonoBehaviour
         _anims = GetComponent<Animator>();
         _hp = GetComponentInChildren<Health>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        Cam = GetComponentInChildren<Camera>();
 
         _weaponcontroller.OnImpulse += Impulse;
         _onAttackAction = InputSystem.actions.FindAction("Attack");
@@ -143,10 +141,7 @@ public class MaincharacterController : MonoBehaviour
                 FinishMenuInputs();
                 break;
         }
-        
-
-
-
+        Debug.Log(_rigidBody.linearVelocity);
     }
 
     public void PlayerInputs()
@@ -163,7 +158,16 @@ public class MaincharacterController : MonoBehaviour
         if (_onHookAction.WasPressedThisFrame())
         {
             _hookTool.Hooking(PWorldPosition(Mouse.current));
+        
         }
+
+        //if (Input.GetKeyDown(KeyCode.Mouse1))
+        //{
+        //    _hookTool.Hooking(PWorldPosition(Mouse.current));
+        //
+        //}
+
+
         var mustFlip = PWorldPosition(Mouse.current).x > transform.position.x;
         _weaponcontroller.MouseAim(PWorldPosition(Mouse.current), mustFlip);
         _spriteRenderer.flipX = mustFlip;
@@ -194,14 +198,13 @@ public class MaincharacterController : MonoBehaviour
 
     public void SwichControlScreme(ControlScheme scheme)
     {
-        Debug.Log("called");
         _scheme = scheme;
 
     }
 
     public Vector2 PWorldPosition(Mouse mouse)
     {
-        return _cam.ScreenToWorldPoint(mouse.position.value);
+        return Cam.ScreenToWorldPoint(mouse.position.value);
     }
 
 
@@ -212,7 +215,7 @@ public class MaincharacterController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        //Gizmos.DrawWireSphere(testpos, 1f);
+
     }
 
 
@@ -228,13 +231,12 @@ public class MaincharacterController : MonoBehaviour
 
     private ControlScheme _scheme;
 
+    public Rigidbody2D RigidBody => _rigidBody;
 
     [Header("Config")]
     [SerializeField]
     private float _maxSpeed = 10;
     [SerializeField]
     private float _softmaxSpeed = 5;
-
-    [Header("CamRef")]
-    public Camera _cam;
+    public Camera Cam { get; private set; }
 }

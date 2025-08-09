@@ -13,7 +13,7 @@ public class GameManager : SingletonMono<GameManager>
 
     [field: SerializeField] public List<MaterialsVisual> Resources { get; private set; }
     public static WaveManager _wave;
-
+    private bool finishedGame;
     // Update is called once per frame
     void Update()
     {
@@ -62,11 +62,18 @@ public class GameManager : SingletonMono<GameManager>
 
     public void WinState()
     {
+        if (finishedGame)
+            return;
+        finishedGame = true;
         UIManager.MenuManager.ChangeScreen(3);
         _player.SwichControlScreme(ControlScheme.FailWin);
     }
     public void FailState()
     {
+        if (finishedGame)
+            return;
+        finishedGame = true;
+
         UIManager.MenuManager.FailState();
         UIManager.MenuManager.ChangeScreen(3);
         _player.SwichControlScreme(ControlScheme.FailWin);

@@ -9,6 +9,7 @@ public class Ship : SingletonMono<Ship>
     [SerializeField] private Health _hp;
     [SerializeField] private Slider _slider;
     [SerializeField] private Animator _anim;
+    [SerializeField] private bool _waiting;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,10 @@ public class Ship : SingletonMono<Ship>
         if (Input.GetKeyDown(KeyCode.E) && DistanceCheck())
         {
             OpenShipMenu();
+        }
+        if (_waiting)
+        {
+            WaitForCamArrival();
         }
     }
 
@@ -39,14 +44,30 @@ public class Ship : SingletonMono<Ship>
 
     public void Ondamage()
     {
-        Debug.Log("ow");
+        _anim.SetTrigger("Hit");
         _slider.value = (float)_hp.CurrentHealth / _hp.PublicMaxHealth;
         _anim.SetFloat("Life", (float)_hp.CurrentHealth / _hp.PublicMaxHealth);
     }
 
     public void Ondeath()
     {
+        GameManager.Instance.player.StopMovement();
+        CameraManager.Instance.MoveCamToPlace(transform);
+        _waiting = true;
+    }
+
+    public void WaitForCamArrival()
+    {
+        if (!CameraManager.Instance._camMoving)
+            return;
+
+        _anim.SetTrigger("Hit");
         _anim.SetFloat("Life", 0);
+    }
+
+
+    public void OnDeathAnim()
+    {
         GameManager.Instance.FailState();
     }
 

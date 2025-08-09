@@ -120,12 +120,12 @@ namespace NPC.Boss.Ship
                 turretitem.Ref.transform.right = pos;
                 Timepased += Time.deltaTime;
                 controler.PrimaryFireDown();
-                controler.MouseAim(_player.transform.position);
+                controler.MouseAimNonFlip(_player.transform.position);
                 yield return null;
             }
             turret.rotation = Quaternion.Euler(0, 0, AuxAnlge);
             controler.PrimaryFireUp();
-            controler.MouseAim(controler.transform.position + controler.transform.right * 2);
+            controler.MouseAimNonFlip(controler.transform.position + controler.transform.right * 2);
             turretitem.DoneAttacking = true;
         }
 
