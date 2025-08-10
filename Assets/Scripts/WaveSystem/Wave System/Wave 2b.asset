@@ -16,8 +16,8 @@ MonoBehaviour:
   WaveChilds:
   - {fileID: 11400000, guid: 71365061146a3cc4994d6ff329fc85ed, type: 2}
   AmauntPerWave:
-  - tag: 0
+  - tag: 1
     AmountForWave: 3
   - tag: 2
-    AmountForWave: 2
+    AmountForWave: 1
   WaveEvents: []

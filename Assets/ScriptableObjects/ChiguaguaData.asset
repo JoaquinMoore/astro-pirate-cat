@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e73d47ed072cdc40ab7f7814e08c6a6, type: 3}
-  m_Name: GoldenData
+  m_Name: ChiguaguaData
   m_EditorClassIdentifier: 
   value:
     _movementData: {fileID: 11400000, guid: 18f95e1e41602c649817bf4ba8e92707, type: 2}
     ViewDistance: 99.4
-    AttackDistance: 10
-    StunnedTime: 200
+    AttackDistance: 7
+    StunnedTime: 10
     DetectionTags:
     - Player
     - Ship

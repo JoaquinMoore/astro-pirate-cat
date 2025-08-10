@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3626887508352807653}
   m_Layer: 7
   m_Name: Ship
-  m_TagString: Player
+  m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,6 +57,7 @@ MonoBehaviour:
   _hp: {fileID: 902454665877916909}
   _slider: {fileID: 554069630196220835}
   _anim: {fileID: 3626887508352807653}
+  _waiting: 0
 --- !u!212 &7577161170063930588
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -476,7 +477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3408046127367327658, guid: 251bd73b0242fa447a87aaccc99b543c, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Ship
       objectReference: {fileID: 0}
     - target: {fileID: 4308813062482856628, guid: 251bd73b0242fa447a87aaccc99b543c, type: 3}
       propertyPath: _currentHealth
@@ -484,7 +485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4308813062482856628, guid: 251bd73b0242fa447a87aaccc99b543c, type: 3}
       propertyPath: _data.<MaxHealth>k__BackingField
-      value: 100
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 4308813062482856628, guid: 251bd73b0242fa447a87aaccc99b543c, type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size

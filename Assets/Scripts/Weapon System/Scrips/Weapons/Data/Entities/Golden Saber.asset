@@ -49,4 +49,4 @@ MonoBehaviour:
           SpreadSpeedMod: 1
           MaxSpread: 0
           Recoil: 0
-          BulletData: {fileID: 11400000, guid: 418085b548a6add449c4b6afc1920fa6, type: 2}
+          BulletData: {fileID: 11400000, guid: 0ea0e7a846d2696409d6561e4d4cd6a3, type: 2}

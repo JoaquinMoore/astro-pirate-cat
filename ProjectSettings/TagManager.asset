@@ -8,6 +8,7 @@ TagManager:
   - Wep
   - Wep2
   - Boid
+  - Ship
   layers:
   - Default
   - TransparentFX

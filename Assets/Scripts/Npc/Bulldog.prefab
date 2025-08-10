@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &178259437654537710
+--- !u!1001 &3138800818735399173
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2057316705742818310, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.000531
+      value: 2.9878354
       objectReference: {fileID: 0}
     - target: {fileID: 2057316705742818310, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.123005
+      value: -8.595484
       objectReference: {fileID: 0}
     - target: {fileID: 2057316705742818310, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
       propertyPath: m_LocalPosition.z
@@ -48,9 +48,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2457362470177096114, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
+      propertyPath: _data.<MaxHealth>k__BackingField
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3195168095617791860, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
+      propertyPath: _npcData
+      value: 
+      objectReference: {fileID: 11400000, guid: ab4de26e30abf4e4b924d03273fa1186, type: 2}
+    - target: {fileID: 3596452387091155146, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.191
+      objectReference: {fileID: 0}
+    - target: {fileID: 3596452387091155146, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.195
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777531173903085673, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1161775350, guid: 2bd7463e06a701645b821e122a8980bc, type: 3}
+    - target: {fileID: 3861185047936007428, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e337f9b97b452cc4688c43a8412d2270, type: 3}
+    - target: {fileID: 5034714285541761963, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a1df1271cd58fdf4bb6d4b4a4fd84c38, type: 2}
+    - target: {fileID: 6612997947310350061, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
+      propertyPath: '_Data.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: d4a4c7868a7b00742a51abceccb53c72, type: 2}
     - target: {fileID: 6851746279365300351, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
       propertyPath: m_Name
-      value: Golden3 Variant
+      value: Bulldog
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188268663038475284, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188268663038475284, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.367
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
