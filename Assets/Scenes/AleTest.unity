@@ -2252,6 +2252,10 @@ PrefabInstance:
       propertyPath: _approachSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
+      propertyPath: _hookabletargets.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6513703524092717784, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
       propertyPath: _data.<MaxHealth>k__BackingField
       value: 9488
