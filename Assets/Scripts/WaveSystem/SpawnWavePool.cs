@@ -43,7 +43,7 @@ public class SpawnWavePool : MonoBehaviour
     [Header("debug")]
     [SerializeField] private float _currentEnemies = 0;
     [SerializeField] private float _totalEnemies;
-    [SerializeField] private List<EnemyController> _enemy;
+    [SerializeField] private List<NPCController> _enemy;
     [SerializeField] private List<EnemyList> _enemyLists = new();
     [SerializeField] private float _NextSpecialWave;
     private WaveManager _manager;
@@ -136,8 +136,7 @@ public class SpawnWavePool : MonoBehaviour
 
     public void CheckEnemys()
     {
-        Debug.Log("checking");
-        if (_currentEnemies <= 0)
+        if (_currentEnemies <= 0 || _enemy.Count == 0)
         {
             StopAllCoroutines();
             //_manager.WaveFinished();
@@ -192,6 +191,8 @@ public class SpawnWavePool : MonoBehaviour
 
     IEnumerator SpawnEnemies(List<EnemyList> EnemyList, List<SpawnPoints> spawnpoint, List<TypeAmount> waveSpawns)
     {
+        _enemy.Clear();
+        _currentEnemies = 0;
         int index = waveSpawns.Count;
         SpawnPoints spawnPoint;
         NPCController enemy = null;
@@ -232,6 +233,8 @@ public class SpawnWavePool : MonoBehaviour
                 enemy.SetDefaultTask(_Attacktask.Clone());
                 currentEnemies++;
                 listholder.Enemys.Add(enemy);
+                enemy.SpanwReset();
+                _enemy.Add(enemy);
                 failsafe--;
                 yield return new WaitForSeconds(_spawnInterval);
             }
@@ -276,14 +279,12 @@ public class SpawnWavePool : MonoBehaviour
     public void EnemyDeathCallBack(NPCController npc, EnemyTags tag)
     {
         EnemyList listholder = _enemyLists.Find(x => x.Tag == tag);
+        _enemy.Remove(npc);
+        _currentEnemies--;
         Debug.Log("Death");
         if (listholder == null)
             return;
-        if (listholder.Enemys.Find(x => x == npc))
-        {
-            listholder.Enemys.Remove(npc);
-            _currentEnemies--;
-        }
+        listholder.Enemys.Remove(npc);
     }
 
 

@@ -580,7 +580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3915205503562429500, guid: d003ab403dfdaf745959493727ba221e, type: 3}
       propertyPath: typeOfAnchor
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3915205503562429500, guid: d003ab403dfdaf745959493727ba221e, type: 3}
       propertyPath: OnHook.m_PersistentCalls.m_Calls.Array.size

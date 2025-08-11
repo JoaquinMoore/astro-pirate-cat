@@ -68,6 +68,15 @@ namespace Npc
             Agent.BlackboardReference.SetVariableValue("Stunned Time", _data.StunnedTime);
         }
 
+        public void SpanwReset()
+        {
+            var hold = GetComponentInChildren<HealthSystem.Health>();
+            Stunned = false;
+            Agent.BlackboardReference.SetVariableValue("Stunned", false);
+            hold.Heal(hold.PublicMaxHealth);
+        }
+
+
         private void Update()
         {
             _movement.VirtualUpdate();
@@ -134,6 +143,7 @@ namespace Npc
                 NPCPool.Release(this);
             else
                 Destroy(gameObject);
+            Stunned = false;
         }
 
 

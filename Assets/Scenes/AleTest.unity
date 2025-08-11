@@ -855,7 +855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6851746279365300351, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -880,7 +880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 902454665877916909, guid: 817fa08e5f19b874d84c0eee4bdcecce, type: 3}
       propertyPath: _data.<MaxHealth>k__BackingField
-      value: 50
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 2195496827684564551, guid: 817fa08e5f19b874d84c0eee4bdcecce, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2258,11 +2258,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7002139680976742402, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.7
+      value: 1.71
       objectReference: {fileID: 0}
     - target: {fileID: 7002139680976742402, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.19
+      value: 0.42
       objectReference: {fileID: 0}
     - target: {fileID: 7002139680976742402, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2322,7 +2322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8030742773967105181, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
       propertyPath: m_Distance
-      value: 8.986996
+      value: 1.7608237
       objectReference: {fileID: 0}
     - target: {fileID: 8030742773967105181, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
       propertyPath: m_BreakAction

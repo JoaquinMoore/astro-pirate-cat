@@ -29,11 +29,10 @@ namespace HookToolSystem
         [Header("test")]
         public MaincharacterController _cont;
 
-        private GameObject _currentAnchor;
+        [SerializeField] private GameObject _currentAnchor;
 
         private GameObject _hook;
         private bool _hooked;
-        private bool _inpulsed;
         private GameObject _hookHeadPref;
         private DistanceJoint2D _joint;
         private LineRenderer _lineRef;
@@ -63,13 +62,6 @@ namespace HookToolSystem
             if (_hooked)
                 VisualHooking();
 
-
-
-            if (_inpulsed)
-            {
-                _inpulsed = false;
-                //_cont.Impulse(_hookHeadPref.transform.right * 10);
-            }
         }
 
 
@@ -169,6 +161,7 @@ namespace HookToolSystem
             if (hookpos.x > 0)
                 flip = true;
 
+
             hookpos = (Vector2)_hookHeadPref.transform.position - (Vector2)transform.position;
             _visualhookArmRef.transform.right = hookpos;
             if (!flip)
@@ -178,6 +171,11 @@ namespace HookToolSystem
             _lineRef.SetPosition(0, _visualhookHeadRef.transform.position);
             _lineRef.SetPosition(1, _hookHeadPref.transform.position);
 
+            if (_currentAnchor != null)
+                _hookHeadPref.transform.position = _currentAnchor.transform.position;
+            else
+                Ungrab();
+
             _hookHeadPref.transform.right = hookpos;
         }
 
@@ -185,7 +183,6 @@ namespace HookToolSystem
         {
             if (collider?.gameObject == _currentAnchor)
                 return;
-            Debug.Log(collider.TryGetComponent<HookAnchor>(out var a));
             if (collider && collider.TryGetComponent<HookAnchor>(out var anchor))
             {
                 _hook = hook != null ? hook : collider.gameObject;
@@ -216,7 +213,7 @@ namespace HookToolSystem
 
         public void Ungrab()
         {
-            _inpulsed = true;
+            
 
             Debug.Log("ungrab");
             StopAllCoroutines();
