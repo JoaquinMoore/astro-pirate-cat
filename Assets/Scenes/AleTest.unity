@@ -855,7 +855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6851746279365300351, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2253,8 +2253,64 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
+      propertyPath: _hookLineStrenght
+      value: 12000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
+      propertyPath: _maxApproachSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
+      propertyPath: _hookLineDelayStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
+      propertyPath: _ApproachRampupSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
+      propertyPath: _startingApproachSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
       propertyPath: _hookabletargets.m_Bits
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
+      propertyPath: _approachSpeedCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
+      propertyPath: _approachSpeedCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
+      propertyPath: _approachSpeedCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
+      propertyPath: _approachSpeedCurve.m_Curve.Array.data[0].inSlope
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
+      propertyPath: _approachSpeedCurve.m_Curve.Array.data[1].inSlope
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
+      propertyPath: _approachSpeedCurve.m_Curve.Array.data[0].outSlope
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
+      propertyPath: _approachSpeedCurve.m_Curve.Array.data[1].outSlope
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
+      propertyPath: _approachSpeedCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
+      propertyPath: _approachSpeedCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 6513703524092717784, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
       propertyPath: _data.<MaxHealth>k__BackingField

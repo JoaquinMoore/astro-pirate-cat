@@ -141,7 +141,6 @@ public class MaincharacterController : MonoBehaviour
                 FinishMenuInputs();
                 break;
         }
-        Debug.Log(_rigidBody.linearVelocity);
     }
 
     public void PlayerInputs()

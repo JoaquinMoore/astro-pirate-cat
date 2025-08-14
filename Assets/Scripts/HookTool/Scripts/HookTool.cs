@@ -20,24 +20,36 @@ namespace HookToolSystem
 
         [SerializeField] private float _hookReturnSpeed = 2f;
         [SerializeField] private float _hookDetectionRadius = 0.5f;
+        [SerializeField] private float _hookLineStrenght = 200f;
+        [SerializeField] private float _hookLineDelayStart = 0.01f;
 
-        [Header("Approach anchor")] [SerializeField] [Min(0)]
-        private float _minDistance;
 
-        [SerializeField] [Min(0)] private float _approachSpeed;
+        [Header("Approach anchor")]
+        [SerializeField] [Min(0)] private float _minDistance;
+        [SerializeField] [Min(0)] private float _maxApproachSpeed;
+        [SerializeField] [Min(0)] private float _startingApproachSpeed;
+        [SerializeField] [Min(0)] private float _ApproachRampupSpeed;
+        [SerializeField] private AnimationCurve _approachSpeedCurve;
+
+        [Header("Inpulse")]
+        [SerializeField] [Min(0)] private int _inpulseAttemts;
+        [SerializeField] [Min(0)] private float _inpulseDelayCheck = 0.01f;
 
         [Header("test")]
         public MaincharacterController _cont;
 
         [SerializeField] private GameObject _currentAnchor;
+        [SerializeField] private GameObject _lastAnchor;
 
         private GameObject _hook;
         private bool _hooked;
+        private bool _ungrabing;
         private GameObject _hookHeadPref;
         private DistanceJoint2D _joint;
         private LineRenderer _lineRef;
 
         private SpriteRenderer _spriteRef;
+        private float _approachSpeed;
 
         public float MinDistance => _minDistance;
         private HookAnchor _anchor;
@@ -82,7 +94,7 @@ namespace HookToolSystem
 
             var mousePos = target;
             StopAllCoroutines();
-
+            _ungrabing = false;
             _lineRef.enabled = true;
             _hookHeadPref.SetActive(true);
             _visualhookHeadRef.gameObject.SetActive(false);
@@ -109,7 +121,7 @@ namespace HookToolSystem
                     var target = targets.OrderBy(c =>
                         Vector2.Distance(c.transform.position, _hookHeadPref.transform.position)).First();
                     Grab(target, _hookHeadPref);
-                    _joint.breakForce = 99999999;
+                    _joint.breakForce = _hookLineStrenght;
                     _hooked = true;
                     yield break;
                 }
@@ -173,7 +185,7 @@ namespace HookToolSystem
 
             if (_currentAnchor != null)
                 _hookHeadPref.transform.position = _currentAnchor.transform.position;
-            else
+            else if(!_ungrabing)
                 Ungrab();
 
             _hookHeadPref.transform.right = hookpos;
@@ -181,8 +193,9 @@ namespace HookToolSystem
 
         public void Grab(Collider2D collider, GameObject hook = null)
         {
-            if (collider?.gameObject == _currentAnchor)
+            if (collider?.gameObject == _currentAnchor || collider?.gameObject == _lastAnchor)
                 return;
+
             if (collider && collider.TryGetComponent<HookAnchor>(out var anchor))
             {
                 _hook = hook != null ? hook : collider.gameObject;
@@ -213,11 +226,12 @@ namespace HookToolSystem
 
         public void Ungrab()
         {
-            
+            _ungrabing = true;
 
             Debug.Log("ungrab");
             StopAllCoroutines();
-
+            if (_currentAnchor != null)
+                _lastAnchor = _currentAnchor;
             _joint.breakForce = 0;
             _currentAnchor = null;
             _hooked = false;
@@ -228,25 +242,54 @@ namespace HookToolSystem
             StartCoroutine(returnhook());
         }
 
+        private void OnJointBreak2D(Joint2D joint)
+        {
+            if (_ungrabing)
+                return;
+            Debug.Log("break");
+
+            StopAllCoroutines();
+            _currentAnchor = null;
+            _hooked = false;
+            if (_anchor != null)
+                _anchor.OnRealese.Invoke();
+
+            StartCoroutine(returnhook());
+        }
+
+
+
         public IEnumerator GiveInpulse()
         {
             float times = 0;
-            while (times < 4)
+            while (times < _inpulseAttemts)
             {
                 yield return new WaitForSeconds(0.0000001f);
                 times++;
-                _cont.Impulse(_hookHeadPref.transform.right * 10);
+
+                _cont.Impulse(_hookHeadPref.transform.right * (_approachSpeed));
+                yield return new WaitForSeconds(_inpulseDelayCheck);
+                if (_cont.RigidBody.linearVelocityX >= Mathf.Abs((_hookHeadPref.transform.right * _approachSpeed).x) || _cont.RigidBody.linearVelocityY >= Mathf.Abs((_hookHeadPref.transform.right * _approachSpeed).y))
+                    break;
+
             }
         }
 
         private IEnumerator Approach()
         {
+            yield return new WaitForSeconds(_hookLineDelayStart);
+            float timer = 0;
+            _approachSpeed = 0;
             while (_joint.distance > Mathf.Max(_minDistance, MIN_APPROACH_DISTANCE))
             {
+                timer += Time.deltaTime;
+                _approachSpeed = Mathf.Lerp(_startingApproachSpeed, _maxApproachSpeed, _approachSpeedCurve.Evaluate(timer/_ApproachRampupSpeed));
                 _joint.distance -= _approachSpeed * Time.deltaTime;
                 //Debug.Log(_cont.RigidBody.linearVelocity);
                 yield return null;
             }
+
+            Debug.Log("ungrab aproached");
             Ungrab();
 
         }
