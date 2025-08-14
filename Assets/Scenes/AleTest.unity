@@ -2253,8 +2253,12 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
+      propertyPath: _inpulseAttemts
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
       propertyPath: _hookLineStrenght
-      value: 12000
+      value: 16000
       objectReference: {fileID: 0}
     - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
       propertyPath: _maxApproachSpeed
@@ -2270,7 +2274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
       propertyPath: _startingApproachSpeed
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4140086628041880852, guid: 87fb834aab6517b49b1c20c128c34011, type: 3}
       propertyPath: _hookabletargets.m_Bits
