@@ -73,6 +73,17 @@ namespace HookToolSystem
         {
             if (_hooked)
                 VisualHooking();
+            if (_lastAnchor != null)
+                CheckDistance();
+        }
+
+        public void CheckDistance()
+        {
+
+            if (Vector3.Distance(_lastAnchor.transform.position, transform.position) > 4)
+            {
+                _lastAnchor = null;
+            }
 
         }
 
@@ -120,10 +131,14 @@ namespace HookToolSystem
                 {
                     var target = targets.OrderBy(c =>
                         Vector2.Distance(c.transform.position, _hookHeadPref.transform.position)).First();
-                    Grab(target, _hookHeadPref);
-                    _joint.breakForce = _hookLineStrenght;
-                    _hooked = true;
-                    yield break;
+                    if (target?.gameObject != _lastAnchor)
+                    {
+                        Grab(target, _hookHeadPref);
+                        _joint.breakForce = _hookLineStrenght;
+                        _hooked = true;
+                        yield break;
+                    }
+
                 }
 
 
