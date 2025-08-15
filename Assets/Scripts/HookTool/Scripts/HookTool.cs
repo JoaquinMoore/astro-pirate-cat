@@ -284,7 +284,7 @@ namespace HookToolSystem
 
                 _cont.Impulse(_hookHeadPref.transform.right * (_approachSpeed));
                 yield return new WaitForSeconds(_inpulseDelayCheck);
-                if (_cont.RigidBody.linearVelocityX >= Mathf.Abs((_hookHeadPref.transform.right * _approachSpeed).x) || _cont.RigidBody.linearVelocityY >= Mathf.Abs((_hookHeadPref.transform.right * _approachSpeed).y))
+                if (_cont.RigidBody.linearVelocityX >= (Mathf.Abs((_hookHeadPref.transform.right * _approachSpeed).x) +_cont.RigidBody.linearVelocityX) || _cont.RigidBody.linearVelocityY >= (Mathf.Abs((_hookHeadPref.transform.right * _approachSpeed).y) + _cont.RigidBody.linearVelocityX))
                     break;
 
             }
