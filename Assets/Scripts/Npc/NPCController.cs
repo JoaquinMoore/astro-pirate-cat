@@ -50,7 +50,7 @@ namespace Npc
 
 
         private SpawnWavePool _pool;
-        private EnemyTags _etag;
+        private EnemyPoolData _etag;
         public IObjectPool<NPCController> _NPCPool { set => NPCPool = value; }
 
         protected IObjectPool<NPCController> NPCPool;
@@ -129,7 +129,7 @@ namespace Npc
 
         }
 
-        public void GiveRef(SpawnWavePool a, EnemyTags tag)
+        public void GiveRef(SpawnWavePool a, EnemyPoolData tag)
         {
             _pool = a;
             _etag = tag;

@@ -17,8 +17,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 24457ed05387d7b46ae81577234ff2a6, type: 2}
   - {fileID: 11400000, guid: 71365061146a3cc4994d6ff329fc85ed, type: 2}
   AmauntPerWave:
-  - tag: 1
+  - tag: {fileID: 11400000, guid: c94c761eb5a194d48b8d54150b2eab47, type: 2}
     AmountForWave: 3
-  - tag: 0
+  - tag: {fileID: 11400000, guid: e8f32baa931356143b8cef1b4f9a5430, type: 2}
     AmountForWave: 2
   WaveEvents: []

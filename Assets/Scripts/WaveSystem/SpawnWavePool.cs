@@ -82,7 +82,7 @@ public class SpawnWavePool : MonoBehaviour
             item.Father = this;
             EnemyList hold = new()
             {
-                Tag = item.tag,
+                Tag = item.EnemyPrefab,
             };
             _enemyLists.Add(hold);
         }
@@ -217,7 +217,7 @@ public class SpawnWavePool : MonoBehaviour
         {
             var holder = waveSpawns[Random.Range(0, index)];
             EnemyList listholder = EnemyList.Find(enemy => enemy.Tag == holder.tag);
-            EnemyPool poolholder = _enemyPools.Find(enemy => enemy.tag == holder.tag);
+            EnemyPool poolholder = _enemyPools.Find(enemy => enemy.EnemyPrefab == holder.tag);
 
             spawnPoint = CheckForPlayerView(spawnpoint[Random.Range(0, spawnpoint.Count)]);
 
@@ -276,7 +276,7 @@ public class SpawnWavePool : MonoBehaviour
     }
 
 
-    public void EnemyDeathCallBack(NPCController npc, EnemyTags tag)
+    public void EnemyDeathCallBack(NPCController npc, EnemyPoolData tag)
     {
         EnemyList listholder = _enemyLists.Find(x => x.Tag == tag);
         _enemy.Remove(npc);
@@ -348,7 +348,7 @@ public class SpawnWavePool : MonoBehaviour
     [System.Serializable]
     public class EnemyList
     {
-        public EnemyTags Tag;
+        public EnemyPoolData Tag;
         public int MaxAmount;
         public List<NPCController> Enemys = new();
     }
@@ -356,21 +356,20 @@ public class SpawnWavePool : MonoBehaviour
     [System.Serializable]
     public class TypeAmount
     {
-        public EnemyTags tag;
+        public EnemyPoolData tag;
         public int AmountForWave;
     }
     [System.Serializable]
     public class EnemyPool
     {
-        public EnemyTags tag;
-        public NPCController EnemyPrefab;
+        public EnemyPoolData EnemyPrefab;
         public IObjectPool<NPCController> Pool;
         [HideInInspector] public SpawnWavePool Father;
 
         public NPCController Create()
         {
-            var holder = Instantiate(EnemyPrefab);
-            holder.GiveRef(Father, tag);
+            var holder = Instantiate(EnemyPrefab._ref);
+            holder.GiveRef(Father, EnemyPrefab);
             holder._NPCPool = Pool;
             return holder;
         }
