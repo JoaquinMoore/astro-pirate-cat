@@ -33,6 +33,9 @@ namespace Npc
             set => Agent.BlackboardReference.SetVariableValue("Stunned", value);
         }
 
+
+        public GameObject testtarger;
+
         private SpriteRenderer _sprite;
 
 
@@ -80,10 +83,11 @@ namespace Npc
         private void Update()
         {
             _movement.VirtualUpdate();
-            
 
+            testtarger = Target;
             //_weaponcontroller.MouseAim(PWorldPosition(Mouse.current), mustFlip);
-            if (Target)
+
+            if (Target != null)
             {
                 var mustFlip = Target.transform.position.x > transform.position.x;
                 _weaponController.MouseAim(Target.transform.position, mustFlip);
