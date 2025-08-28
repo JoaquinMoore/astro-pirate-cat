@@ -14,17 +14,16 @@ public class WaveManager : MonoBehaviour//, IPause
     [SerializeField] List<Wave> _Wave = new();
     [SerializeField, Tooltip("Sirve para indicar a que oleada el juego esta listo para terminar (nota: esto termina con el ciclo de oleadas y habra que reiniciarlo una ves este la opcion añadida)")]
     private int _FinalWave;
-
-    [field: SerializeField] public float _animWaitTimer;
+    [SerializeField, Tooltip("Cuanto tiempo queres que el indicador de la oleada quede en pantalla")]
+    private float _animWaitTimer;
 
     [Header("debug")]
-    [field: SerializeField] private int _indexWave = 0;
-    [field: SerializeField] private Wave _currentWave;
+    private int _indexWave = 0;
+    private Wave _currentWave;
     private bool Locked;
     private bool onetime;
     private bool freemode;
-
-    [SerializeField] private SpawnWavePool _wave;
+    private SpawnWavePool _wave;
 
     public static int IndexWave;
     private float _visualtimer;
@@ -37,18 +36,14 @@ public class WaveManager : MonoBehaviour//, IPause
         ReciveSpawns.AddListener(ReciveList);
         FinishedWave.AddListener(WaveFinished);
         _currentWave = _Wave[Random.Range(0, _Wave.Count)];
-        //_currentWave.Reset();
         //GameManager.Instance._PauseGame.Add(this);
-        //MatWave.SetInt("_Actived", 1);
         IndexWave = _indexWave;
         StartCoroutine(WaveWaitTimer());
     }
 
     void Update()
     {
-        if (Locked) return;
 
-        //_currentWave.Event();
     }
     #endregion
 
@@ -62,8 +57,6 @@ public class WaveManager : MonoBehaviour//, IPause
         UIManager.MenuManager.SwichMenuState(2, true);
         StartCoroutine(AnimTimer());
         //AudioManager.Instance.Play(SoundName.Alert_Wave.ToString());
-        //EnemySpawner.StartWave?.Invoke(this);
-
         _currentWave.Event();
 
     }
@@ -116,11 +109,8 @@ public class WaveManager : MonoBehaviour//, IPause
     public float WaveProgress()
     {
         float progress = 0;
-        //_wave.WaveProgress();
         if (_startWave)
-        {
             progress = _wave.WaveProgress();
-        }
         else
         {
             _visualtimer += Time.deltaTime;
@@ -181,7 +171,6 @@ public class WaveManager : MonoBehaviour//, IPause
             _Wave = new List<Wave>(_currentWave.WaveChilds);
             _currentWave = newWave;
 
-            _currentWave.Reset();
         }
 
         onetime = true;

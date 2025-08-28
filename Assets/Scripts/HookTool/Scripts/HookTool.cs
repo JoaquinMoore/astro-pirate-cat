@@ -9,7 +9,7 @@ namespace HookToolSystem
     {
         private const float MIN_APPROACH_DISTANCE = 0.01f;
 
-        [Header("Config")] [SerializeField] private float _maxSpeed = 10;
+        [Header("Config")]
         [SerializeField] private GameObject _hookHeadPrefRef;
         [SerializeField] private SpriteRenderer _visualhookHeadRef;
         [SerializeField] private SpriteRenderer _visualhookArmRef;
@@ -21,7 +21,6 @@ namespace HookToolSystem
         [SerializeField] private float _hookReturnSpeed = 2f;
         [SerializeField] private float _hookDetectionRadius = 0.5f;
         [SerializeField] private float _hookLineStrenght = 200f;
-        [SerializeField] private float _hookLineDelayStart = 0.01f;
 
 
         [Header("Approach anchor")]
@@ -31,12 +30,8 @@ namespace HookToolSystem
         [SerializeField] [Min(0)] private float _ApproachRampupSpeed;
         [SerializeField] private AnimationCurve _approachSpeedCurve;
 
-        [Header("Inpulse")]
-        [SerializeField] [Min(0)] private int _inpulseAttemts;
-        [SerializeField] [Min(0)] private float _inpulseDelayCheck = 0.01f;
-
-        [Header("test")]
-        public MaincharacterController _cont;
+        [Header("Player Ref")]
+        public Rigidbody2D _cont;
 
         [SerializeField] private GameObject _currentAnchor;
         [SerializeField] private GameObject _lastAnchor;
@@ -48,11 +43,11 @@ namespace HookToolSystem
         private DistanceJoint2D _joint;
         private LineRenderer _lineRef;
 
-        private SpriteRenderer _spriteRef;
         private float _approachSpeed;
 
         public float MinDistance => _minDistance;
         private HookAnchor _anchor;
+        Vector3 _inpulseDirection;
         private void Awake()
         {
             _joint = GetComponent<DistanceJoint2D>();
@@ -62,7 +57,6 @@ namespace HookToolSystem
 
         private void Start()
         {
-            _spriteRef = GetComponent<SpriteRenderer>();
             _hookHeadPref = Instantiate(_hookHeadPrefRef);
             _hookHeadPref.SetActive(false);
             _lineRef = GetComponentInChildren<LineRenderer>();
@@ -133,8 +127,8 @@ namespace HookToolSystem
                         Vector2.Distance(c.transform.position, _hookHeadPref.transform.position)).First();
                     if (target?.gameObject != _lastAnchor)
                     {
-                        Grab(target, _hookHeadPref);
                         _joint.breakForce = _hookLineStrenght;
+                        Grab(target, _hookHeadPref);
                         _hooked = true;
                         yield break;
                     }
@@ -221,6 +215,8 @@ namespace HookToolSystem
                 anchor.OnHook.Invoke();
                 _anchor = anchor;
 
+                _inpulseDirection = _hook.transform.position - _cont.transform.position;
+
                 if (anchor.typeOfAnchor == HookAnchor.AnchorType.Approach)
                 {
                     StopAllCoroutines();
@@ -247,13 +243,16 @@ namespace HookToolSystem
             StopAllCoroutines();
             if (_currentAnchor != null)
                 _lastAnchor = _currentAnchor;
-            _joint.breakForce = 0;
+            _joint.enabled = false;
+            //_joint.breakForce = 0;
             _currentAnchor = null;
             _hooked = false;
             if (_anchor != null)
                 _anchor.OnRealese.Invoke();
 
-            StartCoroutine(GiveInpulse());
+            _cont.angularVelocity = 0;
+            _cont.linearVelocity = Vector2.zero;
+            _cont.AddForce(_inpulseDirection * (_approachSpeed), ForceMode2D.Impulse);
             StartCoroutine(returnhook());
         }
 
@@ -271,28 +270,8 @@ namespace HookToolSystem
 
             StartCoroutine(returnhook());
         }
-
-
-
-        public IEnumerator GiveInpulse()
-        {
-            float times = 0;
-            while (times < _inpulseAttemts)
-            {
-                yield return new WaitForSeconds(0.0000001f);
-                times++;
-
-                _cont.Impulse(_hookHeadPref.transform.right * (_approachSpeed));
-                yield return new WaitForSeconds(_inpulseDelayCheck);
-                if (_cont.RigidBody.linearVelocityX >= (Mathf.Abs((_hookHeadPref.transform.right * _approachSpeed).x) +_cont.RigidBody.linearVelocityX) || _cont.RigidBody.linearVelocityY >= (Mathf.Abs((_hookHeadPref.transform.right * _approachSpeed).y) + _cont.RigidBody.linearVelocityX))
-                    break;
-
-            }
-        }
-
         private IEnumerator Approach()
         {
-            yield return new WaitForSeconds(_hookLineDelayStart);
             float timer = 0;
             _approachSpeed = 0;
             while (_joint.distance > Mathf.Max(_minDistance, MIN_APPROACH_DISTANCE))

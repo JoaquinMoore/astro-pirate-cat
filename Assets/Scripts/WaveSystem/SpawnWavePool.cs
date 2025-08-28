@@ -41,12 +41,12 @@ public class SpawnWavePool : MonoBehaviour
 
 
     [Header("debug")]
-    [SerializeField] private float _currentEnemies = 0;
-    [SerializeField] private float _totalEnemies;
-    [SerializeField] private List<NPCController> _enemy;
-    [SerializeField] private List<EnemyList> _enemyLists = new();
-    [SerializeField] private float _NextSpecialWave;
-    private WaveManager _manager;
+    private float _currentEnemies = 0;
+    private float _totalEnemies;
+    private List<NPCController> _enemy;
+    private List<EnemyList> _enemyLists = new();
+    private float _NextSpecialWave;
+
 
     public static UnityEvent<List<TypeAmount>, List<SpawnPoints>> ReciveSpawns = new();
 
@@ -55,11 +55,11 @@ public class SpawnWavePool : MonoBehaviour
     private bool _timerStarted;
     private bool _wavePlaying;
 
+    #region Unity Stuff
     void Start()
     {
         _NextSpecialWave += _SpecialWave;
         ReciveSpawns.AddListener(StartSpawning);
-        _manager = GetComponentInParent<WaveManager>();
         foreach (var item in _SpawnPoints)
         {
             item.SpawnPoint.LookAt(transform.position);
@@ -87,12 +87,25 @@ public class SpawnWavePool : MonoBehaviour
             _enemyLists.Add(hold);
         }
 
-        //_enemyPools[0].Create();
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PushSpawners(5);
+        }
+    }
+    private void LateUpdate()
+    {
+        if (_wavePlaying)
+            CheckEnemys();
 
+    }
 
-
+    #endregion
+    #region Pool Stuff
     public void OnGetFromPool(NPCController pooledBullet)
     {
         pooledBullet.gameObject.SetActive(true);
@@ -107,23 +120,11 @@ public class SpawnWavePool : MonoBehaviour
     {
         Destroy(pooledBullet.gameObject);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            PushSpawners(5);
-        }
-    }
+    #endregion
 
 
-    private void LateUpdate()
-    {
-        if (_wavePlaying)
-            CheckEnemys();
-
-    }
+    #region Wave Stuff
+    #endregion
     public void StartSpecial()
     {
         if (WaveManager.IndexWave == _NextSpecialWave)

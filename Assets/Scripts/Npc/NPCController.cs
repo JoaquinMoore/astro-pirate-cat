@@ -30,7 +30,11 @@ namespace Npc
                 Agent.BlackboardReference.GetVariableValue("Stunned", out bool go);
                 return go;
             }
-            set => Agent.BlackboardReference.SetVariableValue("Stunned", value);
+            set
+            {
+                Agent.BlackboardReference.SetVariableValue("Stunned", value);
+                _weaponController.PrimaryFireUp();
+            }
         }
 
 
@@ -58,8 +62,6 @@ namespace Npc
 
         protected IObjectPool<NPCController> NPCPool;
 
-        [Header("test")]
-        public bool ElBoolQueTeMata;
         private void Start()
         {
             _sprite = GetComponentInChildren<SpriteRenderer>();
@@ -99,12 +101,6 @@ namespace Npc
                 _weaponController.MouseAim(Vector2.right* (_movement.CurrentDestiny.x > transform.position.x == true ? -2 : 2), _movement.CurrentDestiny.x > transform.position.x);
                 HorizontalFlip(_movement.CurrentDestiny.x > transform.position.x);
             }
-            if (ElBoolQueTeMata)
-            {
-                Death();
-                ElBoolQueTeMata = false;
-            }
-
         }
 
         public void SetDefaultTask(ITask<NPCController> baseTask) => TasksController.DefaultTask = baseTask;
