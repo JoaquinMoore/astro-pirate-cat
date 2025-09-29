@@ -4,13 +4,8 @@ using UnityEngine.Pool;
 
 namespace WeaponSystem
 {
-    public class TempPool<T> where T : Component
+    public class GenericPool<T> where T : Component
     {
-        #region oldpool
-        //bulletsPool = new ObjectPool<BaseBullet>(CreateProjectile, OnGetFromPool, OnReleaseToPool, OnDestroyPooledObject,true, 30, 300);
-
-        #endregion
-
         private Func<T> _creationMethod;
         private Action<T> _actionOnGet;
         private Action<T> _actionOnRelease;
@@ -20,42 +15,42 @@ namespace WeaponSystem
         private int _maxSize = 10000;
 
 
-        public TempPool(Func<T> creationMethod)
+        public GenericPool(Func<T> creationMethod)
         {
             _creationMethod = creationMethod;
         }
 
-        public TempPool<T> SetActionOnGet(Action<T> actionOnGet)
+        public GenericPool<T> SetActionOnGet(Action<T> actionOnGet)
         {
             _actionOnGet = actionOnGet;
             return this;
         }
 
-        public TempPool<T> SetActionOnRelease(Action<T> actionOnRelease)
+        public GenericPool<T> SetActionOnRelease(Action<T> actionOnRelease)
         {
             _actionOnRelease = actionOnRelease;
             return this;
         }
 
-        public TempPool<T> SetActionOnDestroy(Action<T> actionOnDestroy)
+        public GenericPool<T> SetActionOnDestroy(Action<T> actionOnDestroy)
         {
             _actionOnDestroy = actionOnDestroy;
             return this;
         }
 
-        public TempPool<T> SetCollectionCheck(bool collectionCheck)
+        public GenericPool<T> SetCollectionCheck(bool collectionCheck)
         {
             _collectionCheck = collectionCheck;
             return this;
         }
 
-        public TempPool<T> SetDefaultCapacity(int defaultCapacity)
+        public GenericPool<T> SetDefaultCapacity(int defaultCapacity)
         {
             _defaultCapacity = defaultCapacity;
             return this;
         }
 
-        public TempPool<T> SetMaxSize(in int maxSize)
+        public GenericPool<T> SetMaxSize(in int maxSize)
         {
             _maxSize = maxSize;
             return this;

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NPC.FSM;
+using Npc;
+
 
 namespace NPC.Boss.Ship
 {
@@ -65,6 +67,7 @@ namespace NPC.Boss.Ship
 
             foreach (var item in _settings.SpawnAmountSets)
             {
+                Debug.Log(item.Pref);
                 SpawnEntsAmount hold = new()
                 {
                     Pref = item.Pref,
@@ -82,9 +85,12 @@ namespace NPC.Boss.Ship
                 if (ent.Amount > ent.CurrentAmount)
                 {
                     SpawnPoints point = _settings.SpawnPoints[Random.Range(0, spawns.Count)];
-                    Object.Instantiate(ent.Pref, point.SpawnPointRef.position, point.SpawnPointRef.rotation);
+
+                    var holder = EnemyManager.Instance.RequestEnemy(ent.Pref);
+                    holder.transform.position = point.SpawnPointRef.position;
+                    //Object.Instantiate(ent.Pref, point.SpawnPointRef.position, point.SpawnPointRef.rotation);
                     ent.CurrentAmount++;
-                    Debug.Log(ent.Pref + "//" + ent.Amount + "/" + ent.CurrentAmount);
+                    //Debug.Log(ent.Pref + "//" + ent.Amount + "/" + ent.CurrentAmount);
 
                 }
                 foreach (var item in spawns)
@@ -135,14 +141,14 @@ namespace NPC.Boss.Ship
         [System.Serializable]
         public class SpawnEnts
         {
-            public GameObject Pref;
+            public NPCController Pref;
             public int MaxAmount;
             public int MinAmount;
         }
 
         public class SpawnEntsAmount
         {
-            public GameObject Pref;
+            public NPCController Pref;
             public int Amount;
             public int CurrentAmount;
         }

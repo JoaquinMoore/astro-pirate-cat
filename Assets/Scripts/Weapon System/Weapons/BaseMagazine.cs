@@ -31,7 +31,7 @@ namespace WeaponSystem
         }
         public void CreatePool()
         {
-            TempPool<BaseBullet> hold = new(CreateProjectile);
+            GenericPool<BaseBullet> hold = new(CreateProjectile);
             hold.SetActionOnGet(OnGetFromPool);
             hold.SetActionOnRelease(OnReleaseToPool);
             hold.SetActionOnDestroy(OnDestroyPooledObject);
@@ -44,7 +44,7 @@ namespace WeaponSystem
         public void CreateParticlePool()
         {
 
-            TempPool<Particle> Phold = new(CreateParticle);
+            GenericPool<Particle> Phold = new(CreateParticle);
             Phold.SetActionOnGet(OnGetParticleFromPool);
             Phold.SetActionOnRelease(OnReleaseParticleToPool);
             Phold.SetActionOnDestroy(OnDestroyParticlePooledObject);

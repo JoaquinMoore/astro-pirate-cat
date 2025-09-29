@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: Ship Gun
   m_EditorClassIdentifier: 
   WeaponPrefab: {fileID: 3434299139494881736, guid: 75445db4710089d49aa97e07823bbbb2, type: 3}
+  SoftSpeedCap: 0
   Triggers:
   - rid: 2248387085135249408
   HideArm: 1
   Magazines:
   - rid: 6012065985212448770
-  FireSelector: 0
-  MagazineSelector: 0
   SyncedSelector: 0
   references:
     version: 2
@@ -35,7 +34,7 @@ MonoBehaviour:
       data:
         name: Weapon
         TriggerSettings:
-          FireRate: 20
+          FireRate: 200
     - rid: 6012065985212448770
       type: {class: Magazine, ns: WeaponSystem, asm: Assembly-CSharp}
       data:

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8e13e9d89c6e24299552be8f4be181, type: 3}
   m_Name: Wave
   m_EditorClassIdentifier: 
-  TimeForWave: 2
+  TimeForWave: 1
   WaveChilds:
   - {fileID: 11400000, guid: 7df8d0126cf6f73488d741caf4ab053e, type: 2}
   - {fileID: 11400000, guid: 7ad29334b424876479a22e84b9e49009, type: 2}
   AmauntPerWave:
-  - tag: {fileID: 11400000, guid: c94c761eb5a194d48b8d54150b2eab47, type: 2}
-    AmountForWave: 3
+  - tag: {fileID: 5659476356068966760, guid: e72bb609664abee4d86440cfdd1a7eb3, type: 3}
+    AmountForWave: 5
   WaveEvents: []

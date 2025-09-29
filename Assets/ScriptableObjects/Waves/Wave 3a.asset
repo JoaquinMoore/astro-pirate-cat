@@ -16,10 +16,10 @@ MonoBehaviour:
   WaveChilds:
   - {fileID: 11400000, guid: 536212d329f036641a3530bc9b100374, type: 2}
   AmauntPerWave:
-  - tag: {fileID: 11400000, guid: e8f32baa931356143b8cef1b4f9a5430, type: 2}
+  - tag: {fileID: 5544830271782974598, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
     AmountForWave: 3
-  - tag: {fileID: 11400000, guid: c94c761eb5a194d48b8d54150b2eab47, type: 2}
+  - tag: {fileID: 5659476356068966760, guid: 7a99396466a374c48acb0bf615d6d979, type: 3}
     AmountForWave: 5
-  - tag: {fileID: 11400000, guid: 7207b565a484ffe41969b67e52210146, type: 2}
+  - tag: {fileID: 7456962041381205379, guid: d804c23dd8b2c3640badc4a533811d5a, type: 3}
     AmountForWave: 2
   WaveEvents: []

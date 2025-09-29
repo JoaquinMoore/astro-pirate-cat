@@ -38,8 +38,6 @@ namespace Npc
         }
 
 
-        public GameObject testtarger;
-
         private SpriteRenderer _sprite;
 
 
@@ -56,12 +54,15 @@ namespace Npc
 
 
 
-        private SpawnWavePool _pool;
-        private EnemyPoolData _etag;
+        private WaveManager _pool;
         public IObjectPool<NPCController> _NPCPool { set => NPCPool = value; }
 
         protected IObjectPool<NPCController> NPCPool;
 
+        private void Awake()
+        {
+            
+        }
         private void Start()
         {
             _sprite = GetComponentInChildren<SpriteRenderer>();
@@ -71,23 +72,26 @@ namespace Npc
             ServiceLocator.For(gameObject).TryGet(out _weaponController);
             Agent.BlackboardReference.SetVariableValue("AttackDistance", _data.AttackDistance);
             Agent.BlackboardReference.SetVariableValue("Stunned Time", _data.StunnedTime);
+            _movement.OnEnable();
         }
 
         public void SpanwReset()
         {
             var hold = GetComponentInChildren<HealthSystem.Health>();
-            Stunned = false;
-            Agent.BlackboardReference.SetVariableValue("Stunned", false);
+            if (_movement != null)
+                _movement.OnEnable();
+            if (Stunned)
+            {
+                Stunned = false;
+                Agent.BlackboardReference.SetVariableValue("Stunned", false);
+            }
+
             hold.Heal(hold.PublicMaxHealth);
         }
 
 
         private void Update()
         {
-            _movement.VirtualUpdate();
-
-            testtarger = Target;
-            //_weaponcontroller.MouseAim(PWorldPosition(Mouse.current), mustFlip);
 
             if (Target != null)
             {
@@ -118,7 +122,6 @@ namespace Npc
 
         public void OnHooked()
         {
-            Debug.Log("stunned");
             Stunned = true;
         }
 
@@ -126,19 +129,18 @@ namespace Npc
         {
             //transform.localScale = new Vector3(flag ? -1 : 1, transform.localScale.y, transform.localScale.z);
             _sprite.flipX = flag;
-
         }
 
-        public void GiveRef(SpawnWavePool a, EnemyPoolData tag)
+        public void GiveRef(WaveManager a)
         {
             _pool = a;
-            _etag = tag;
         }
 
         public void Death()
         {
+            _movement.OnDisable();
             if (_pool)
-                _pool.EnemyDeathCallBack(this, _etag);
+                _pool.EnemyDeathCallBack(this);
             if (NPCPool != null)
                 NPCPool.Release(this);
             else

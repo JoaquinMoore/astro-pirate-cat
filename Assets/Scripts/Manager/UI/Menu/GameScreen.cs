@@ -16,8 +16,7 @@ public class GameScreen : MenuScreen
 
     public void VisualStuff()
     {
-
-        _slider.value = GameManager._wave.WaveProgress();
+        _slider.value = (GameManager._wave.WaveProgress());
     }
 
 }
