@@ -88,6 +88,7 @@ public class GameManager : SingletonMono<GameManager>
         }
         UIManager.MenuManager.ChangeScreen(0);
         _player.SwichControlScreme(ControlScheme.Gameplay);
+        WaveManager.Instance.ContinueGame();
     }
 
     public void ReturnToMenu()

@@ -5,10 +5,11 @@ using UnityEngine;
 using UnityEngine.Pool;
 using WeaponSystem;
 using UnityEngine.Events;
+using _UTILITY;
 using TaskSystem.TaskWrappers;
 
 
-public class WaveManager : MonoBehaviour//, IPause
+public class WaveManager : SingletonMono<WaveManager>//, IPause
 {
 
 
@@ -144,6 +145,17 @@ public class WaveManager : MonoBehaviour//, IPause
         }
         return progress;
     }
+
+    public void ContinueGame()
+    {
+        _visualTimer = 0;
+        _wave.Clear();
+        _wave = new List<WaveBase>(_currentWave.WaveChilds);
+        _currentWave = _wave[Random.Range(0, _wave.Count)];
+        StartCoroutine(WaveWaitTimer());
+        _freemode = true;
+    }
+
 
     #endregion
 
