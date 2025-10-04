@@ -56,10 +56,6 @@ PrefabInstance:
       propertyPath: _npcData
       value: 
       objectReference: {fileID: 11400000, guid: def15f53a86767b40aac28f312dff2df, type: 2}
-    - target: {fileID: 5034714285541761963, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 260692463a9260b478ae12578a8b3542, type: 2}
     - target: {fileID: 6612997947310350061, guid: 249cf1fa6cbbac44da29d7e48669c925, type: 3}
       propertyPath: '_Data.Array.data[0]'
       value: 
