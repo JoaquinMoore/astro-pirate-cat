@@ -8,11 +8,12 @@ TagManager:
   - Wep
   - Wep2
   - Boid
+  - Ship
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Asteroids
+  - Hookable
   - Water
   - UI
   - Enemy

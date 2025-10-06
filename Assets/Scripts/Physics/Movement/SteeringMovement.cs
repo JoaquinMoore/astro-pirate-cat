@@ -116,7 +116,7 @@ namespace Physics.Movement
 
         public SteeringMovement AddStopForce()
         {
-            Debug.Log("Aplicando freno");
+            //Debug.Log("Aplicando freno");
             _steering -= _currentVelocity.normalized * _data.StopAcceleration;
             return this;
         }

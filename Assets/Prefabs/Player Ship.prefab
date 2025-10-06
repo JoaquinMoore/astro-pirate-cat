@@ -49,6 +49,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -96,7 +99,7 @@ GameObject:
   - component: {fileID: 7788948930025110823}
   m_Layer: 0
   m_Name: Player Ship
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,8 +133,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be3573c9d083fd4a9720a70d6c5ccda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dontDestroyOnLoad: 0
   _player: {fileID: 0}
   _Distance: 2.53
+  _hp: {fileID: 0}
+  _slider: {fileID: 0}
+  _anim: {fileID: 0}
 --- !u!1001 &3665106101821880927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -143,6 +150,10 @@ PrefabInstance:
     - target: {fileID: 3408046127367327658, guid: 251bd73b0242fa447a87aaccc99b543c, type: 3}
       propertyPath: m_Name
       value: HitBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 3408046127367327658, guid: 251bd73b0242fa447a87aaccc99b543c, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4308813062482856628, guid: 251bd73b0242fa447a87aaccc99b543c, type: 3}
       propertyPath: _data.<MaxHealth>k__BackingField

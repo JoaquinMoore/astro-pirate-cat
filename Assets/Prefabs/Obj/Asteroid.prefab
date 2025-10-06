@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 22575976161979149}
-  - component: {fileID: 493000308741005631}
+  - component: {fileID: 6783204422443002578}
   - component: {fileID: 258196112360563848}
   m_Layer: 0
   m_Name: Asteroid
@@ -35,7 +35,7 @@ Transform:
   - {fileID: 6693573560663625186}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &493000308741005631
+--- !u!114 &6783204422443002578
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,17 +44,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2609017326567083400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bb394f55aef2f64aa1bd360a7d286a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 911ae17f92e43304a9c6df6af0a2fb52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _allSprites:
   - {fileID: -1292434884, guid: 6be2d1aef96fc0b44b651c797ecf5803, type: 3}
   - {fileID: -1772063687, guid: 6be2d1aef96fc0b44b651c797ecf5803, type: 3}
   - {fileID: -965026252, guid: 6be2d1aef96fc0b44b651c797ecf5803, type: 3}
-  scaleAsteroids:
+  _scaleAsteroids:
   - {x: 1, y: 1, z: 1}
-  - {x: 1.8, y: 1.8, z: 1}
-  - {x: 1.6, y: 1.6, z: 1}
+  - {x: 0.8, y: 0.8, z: 1}
 --- !u!212 &258196112360563848
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -16,6 +16,13 @@ namespace _UTILITY
             }
         }
 
+        private void Awake()
+        {
+            s_instance = this;
+            DoUpdate += DummyUpdate;
+            doFixedUpdate += DummyUpdate;
+        }
+
         private void Update()
         {
             doUpdate.Invoke();
@@ -40,5 +47,8 @@ namespace _UTILITY
             add => Instance.doFixedUpdate += value;
             remove => Instance.doFixedUpdate -= value;
         }
+
+
+        private void DummyUpdate() { }
     }
 }

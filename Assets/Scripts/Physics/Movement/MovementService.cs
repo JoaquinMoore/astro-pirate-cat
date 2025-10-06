@@ -18,6 +18,7 @@ namespace Physics.Movement
         {
             _transform = transform;
             _steeringMovement = new SteeringMovement(data, transform);
+            //UpdateManager.DoUpdate += VirtualUpdate;
         }
 
         public void GoTo(Vector2 position)
@@ -30,13 +31,25 @@ namespace Physics.Movement
 
         protected override void Update()
         {
-            // _calculateSteering();
+            //_calculateSteering();
             if (!_moving)
             {
                 _steeringMovement.AddStopForce();
             }
+            Debug.Log("a2");
             _transform.position = _steeringMovement.GetNextPosition();
             _moving = false;
+        }
+
+        public void VirtualUpdate()
+        {
+            //if (!_moving)
+            //{
+            //    _steeringMovement.AddStopForce();
+            //}
+            ////Debug.Log("a2");
+            //_transform.position = _steeringMovement.GetNextPosition();
+            //_moving = false;
         }
 
         // private void DoApproachTo()

@@ -9,7 +9,7 @@ namespace TaskSystem.Tasks
 
         void ITask<NPCController>.Start(NPCController context)
         {
-            context.Target = Barco.Instance.gameObject;
+            context.Target = Ship.Instance.gameObject;
             IsComplete = true;
         }
 

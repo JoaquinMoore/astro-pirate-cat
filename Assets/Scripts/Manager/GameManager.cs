@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using _UTILITY;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : SingletonMono<GameManager>
 {
-    [SerializeField] private GameObject _player;
+    [SerializeField] private MaincharacterController _player;
     [field: SerializeField] public float _limitsize { get; private set; }
-    public GameObject player => _player;
+    public MaincharacterController player => _player;
 
 
-    [field: SerializeField] public List<MaterialsVisual> Resources { get; private set; } 
-
-
+    [field: SerializeField] public List<MaterialsVisual> Resources { get; private set; }
+    public static WaveManager _wave;
+    private bool finishedGame;
     // Update is called once per frame
     void Update()
     {
@@ -61,13 +62,47 @@ public class GameManager : SingletonMono<GameManager>
 
     public void WinState()
     {
-        UIManager.MenuManager.ChangeScreen(1);
+        if (finishedGame)
+            return;
+        finishedGame = true;
+        UIManager.MenuManager.ChangeScreen(3);
+        _player.SwichControlScreme(ControlScheme.FailWin);
     }
     public void FailState()
     {
-        UIManager.MenuManager.ChangeScreen(0);
+        if (finishedGame)
+            return;
+        finishedGame = true;
+
+        UIManager.MenuManager.FailState();
+        UIManager.MenuManager.ChangeScreen(3);
+        _player.SwichControlScreme(ControlScheme.FailWin);
     }
 
+
+    public void FinishGameControl()
+    {
+        if (UIManager.MenuManager.GetFinalState())
+        {
+            RestartGame();
+        }
+        UIManager.MenuManager.ChangeScreen(0);
+        _player.SwichControlScreme(ControlScheme.Gameplay);
+        WaveManager.Instance.ContinueGame();
+    }
+
+    public void ReturnToMenu()
+    {
+        //al menu
+    }
+
+    public void RestartGame()
+    {
+        //Application.LoadLevel(Application.loadedLevel);
+        Debug.Log("ca");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+    }
 
     #endregion
 
