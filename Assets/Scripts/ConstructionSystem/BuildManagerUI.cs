@@ -39,13 +39,16 @@ namespace BuildSystem
 
         private bool fuck;
         //[SerializeField] private HudButtons DestroyButton;
-        
 
+        private void Awake()
+        {
+            BuilderManager._ui = this;
+        }
 
         // Start is called before the first frame update
         void Start()
         {
-            BuilderManager.UIManager = this;
+
             ButtonsSetUp();
             int id = 0;
             DescriptionHolder.Holder.gameObject.SetActive(false);
@@ -80,14 +83,20 @@ namespace BuildSystem
                 item.Price.gameObject.SetActive(false);
                 //item.Ref.SetActive(false);
             }
+            SwichMode(false);
             VisualUpdate();
+            //gameObject.SetActive(false);
         }
 
         private void OnEnable()
         {
             fuck = false;
-            _currentButton.Unselected();
-            _currentButton = null;
+            if (_currentButton != null)
+            {
+                _currentButton.Unselected();
+                _currentButton = null;
+            }
+
         }
         private void OnDisable()
         {
@@ -217,14 +226,12 @@ namespace BuildSystem
             {
                 var hold = item.Data.BuildRefs.Find(x => x == building.gameObject);
                 var hold2 = item.Data.BuildRefs.Find(x => x == PrefabUtility.IsPartOfAnyPrefab(building));
-                Debug.Log(PrefabUtility.GetPrefabInstanceHandle(building));
                 if (hold != null || hold2 != null)
                 {
                     if (add)
                         item.Data.CurrentBuildingAmount++;
                     else
                         item.Data.CurrentBuildingAmount--;
-                    Debug.Log(item.Data.CurrentBuildingAmount);
                     break;
                 }
 
@@ -270,7 +277,6 @@ namespace BuildSystem
         public void ChangeLock(bool intput)
         {
             Manager.LockInputs(intput);
-            Debug.Log(intput);
         }
 
         [System.Serializable]
@@ -340,7 +346,6 @@ namespace BuildSystem
             {
                 if (itema != maintext)
                     itema.sprite = IconSprite;
-                Debug.Log(itema.sprite);
             }
 
             _text = ButtonRef.GetComponentInChildren<TextMeshProUGUI>();
@@ -360,7 +365,6 @@ namespace BuildSystem
         public void Call()
         {
             Father.SendData(Data, Variants, this);
-            _anim.SetTrigger("SelectedT");
         }
 
         public void OnHover(BaseEventData data)
@@ -383,21 +387,17 @@ namespace BuildSystem
 
         public void Selected()
         {
-
             selected = true;
-            _anim.SetTrigger("Selected");
         }
         public void Unselected()
         {
             selected = false;
-            _anim.SetTrigger("NormalT");
         }
 
 
         IEnumerator unHoveredTimer()
         {
             yield return new WaitForSeconds(_timer);
-            _anim.SetTrigger("NormalT");
         }
     }
 }

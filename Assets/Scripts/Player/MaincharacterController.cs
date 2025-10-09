@@ -14,6 +14,7 @@ public enum ControlScheme
     FailWin,
     Menu,
     Build,
+    BuildRemove,
     Tactical
 }
 
@@ -22,11 +23,21 @@ public class MaincharacterController : MonoBehaviour
 {
     private InputAction _onAttackAction;
     private InputAction _onHookAction;
+    private InputAction _onSwapAction;
+    private InputAction _onOpenBuildMenuAction;
+
 
     private InputAction _onEscaoe;
     private InputAction _onNewGame;
     private InputAction _onRestart;
 
+    private InputAction _onPlace;
+    private InputAction _onRemove;
+    private InputAction _onCloseBuildMenuAction;
+
+    private InputAction _onSelectRemove;
+    private InputAction _onDeselectRemove;
+    private InputAction _onCloseDestroyBuildMenuAction;
     private SpriteRenderer _spriteRenderer;
 
 
@@ -119,10 +130,20 @@ public class MaincharacterController : MonoBehaviour
         _weaponcontroller.OnImpulse += Impulse;
         _onAttackAction = InputSystem.actions.FindAction("Attack");
         _onHookAction = InputSystem.actions.FindAction("Hook");
+        _onSwapAction = InputSystem.actions.FindAction("Swap");
+        _onOpenBuildMenuAction = InputSystem.actions.FindAction("OpenBuild");
 
         _onEscaoe = InputSystem.actions.FindAction("Escape");
         _onNewGame = InputSystem.actions.FindAction("NewGame");
         _onRestart = InputSystem.actions.FindAction("Restart");
+
+        _onPlace = InputSystem.actions.FindAction("Place");
+        _onRemove = InputSystem.actions.FindAction("Remove");
+        _onCloseBuildMenuAction = InputSystem.actions.FindAction("CloseBuild");
+
+        _onSelectRemove = InputSystem.actions.FindAction("RemovePlace");
+        _onDeselectRemove = InputSystem.actions.FindAction("RemoveRemove");
+        _onCloseDestroyBuildMenuAction = InputSystem.actions.FindAction("CloseRemoveBuild");
     }
 
     private void OnDisable()
@@ -139,6 +160,12 @@ public class MaincharacterController : MonoBehaviour
                 break;
             case ControlScheme.FailWin:
                 FinishMenuInputs();
+                break;
+            case ControlScheme.Build:
+                BuildMenuInputs();
+                break;
+            case ControlScheme.BuildRemove:
+                BuildMenuDestroy();
                 break;
         }
     }
@@ -160,12 +187,21 @@ public class MaincharacterController : MonoBehaviour
         
         }
 
-        //if (Input.GetKeyDown(KeyCode.Mouse1))
-        //{
-        //    _hookTool.Hooking(PWorldPosition(Mouse.current));
-        //
-        //}
+        if (_onSwapAction.WasPressedThisFrame())
+        {
+            _weaponcontroller.SwapPrimaryWeapon();
+        }
+        if (_onOpenBuildMenuAction.WasPressedThisFrame())
+        {
+            GameManager.Instance._buildManager.ScreenControls();
+        }
 
+
+
+        if (Mouse.current.scroll.y.value != 0)
+        {
+            _weaponcontroller.ChangeSecondaryWeapon(Mouse.current.scroll.y.value);
+        }
 
         var mustFlip = PWorldPosition(Mouse.current).x > transform.position.x;
         _weaponcontroller.MouseAim(PWorldPosition(Mouse.current), mustFlip);
@@ -174,31 +210,73 @@ public class MaincharacterController : MonoBehaviour
 
     public void FinishMenuInputs()
     {
-        if (_onRestart.IsPressed())
+        if (_onRestart.WasPressedThisFrame())
         {
             GameManager.Instance.FinishGameControl();
         }
-        if (_onNewGame.IsPressed())
+        if (_onNewGame.WasPressedThisFrame())
         {
             GameManager.Instance.RestartGame();
         }
-        if (_onEscaoe.IsPressed())
+        if (_onEscaoe.WasPressedThisFrame())
         {
             GameManager.Instance.ReturnToMenu();
         }
 
     }
 
-    public void MenuInputs()
+    public void BuildMenuInputs()
     {
+        GameManager.Instance._buildManager.MousePosition(Mouse.current.position.value);
+        GameManager.Instance._buildManager.CheckVisual();
 
+        if (_onPlace.WasPressedThisFrame())
+        {
+            GameManager.Instance._buildManager.PlaceHolo();
+        }
+
+        if (Mouse.current.scroll.y.value != 0)
+        {
+            GameManager.Instance._buildManager.ScrollFunc(Mouse.current.scroll.y.value);
+        }
+
+        if (_onRemove.WasPressedThisFrame())
+        {
+            GameManager.Instance._buildManager.RemoveHolo();
+        }
+        if (_onCloseBuildMenuAction.WasPressedThisFrame())
+        {
+            GameManager.Instance._buildManager.ScreenControls();
+        }
+    }
+
+    public void BuildMenuDestroy()
+    {
+        //GameManager.Instance._buildManager.MousePosition(Mouse.current.position.value);
+        GameManager.Instance._buildManager.MouseDestroyPos(GameManager.Instance._buildManager.FindPlacedObjects(Mouse.current.position.value), Mouse.current.position.value);
+
+
+        if (_onSelectRemove.WasPressedThisFrame())
+        {
+            GameManager.Instance._buildManager.PlaceDestroyHolo();
+        }
+
+        if (_onDeselectRemove.WasPressedThisFrame())
+        {
+            GameManager.Instance._buildManager.RemoveDestroyHolo();
+        }
+        if (_onCloseDestroyBuildMenuAction.WasPressedThisFrame())
+        {
+            GameManager.Instance._buildManager.ScreenControls();
+        }
     }
 
 
     public void SwichControlScreme(ControlScheme scheme)
     {
         _scheme = scheme;
-
+        InputSystem.LoadLayout(scheme.ToString());   
+        _weaponcontroller.PrimaryFireUp();
     }
 
     public Vector2 PWorldPosition(Mouse mouse)

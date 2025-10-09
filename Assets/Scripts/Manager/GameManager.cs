@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : SingletonMono<GameManager>
 {
     [SerializeField] private MaincharacterController _player;
+    [field :SerializeField] public BuildSystem.BuilderManager _buildManager { get; private set; }
+
+
     [field: SerializeField] public float _limitsize { get; private set; }
     public MaincharacterController player => _player;
 
@@ -60,13 +63,37 @@ public class GameManager : SingletonMono<GameManager>
 
     #region GameStates
 
+    public void SwichMenu(ControlScheme scheme)
+    {
+        Debug.Log(scheme);
+        switch (scheme)
+        {
+            case ControlScheme.Gameplay:
+                UIManager.MenuManager.ChangeScreen(0);
+                _player.SwichControlScreme(ControlScheme.Gameplay);
+                break;
+            case ControlScheme.FailWin:
+                UIManager.MenuManager.ChangeScreen(3);
+                _player.SwichControlScreme(ControlScheme.FailWin);
+                break;
+            case ControlScheme.Build:
+                UIManager.MenuManager.ChangeScreen(4);
+                _player.SwichControlScreme(ControlScheme.Build);
+                break;
+            case ControlScheme.BuildRemove:
+                _player.SwichControlScreme(ControlScheme.BuildRemove);
+                break;
+        }
+    }
+
     public void WinState()
     {
         if (finishedGame)
             return;
         finishedGame = true;
-        UIManager.MenuManager.ChangeScreen(3);
-        _player.SwichControlScreme(ControlScheme.FailWin);
+        SwichMenu(ControlScheme.FailWin);
+        //UIManager.MenuManager.ChangeScreen(3);
+        //_player.SwichControlScreme(ControlScheme.FailWin);
     }
     public void FailState()
     {
@@ -75,8 +102,9 @@ public class GameManager : SingletonMono<GameManager>
         finishedGame = true;
 
         UIManager.MenuManager.FailState();
-        UIManager.MenuManager.ChangeScreen(3);
-        _player.SwichControlScreme(ControlScheme.FailWin);
+        SwichMenu(ControlScheme.FailWin);
+        //UIManager.MenuManager.ChangeScreen(3);
+        //_player.SwichControlScreme(ControlScheme.FailWin);
     }
 
 
@@ -86,9 +114,11 @@ public class GameManager : SingletonMono<GameManager>
         {
             RestartGame();
         }
-        UIManager.MenuManager.ChangeScreen(0);
-        _player.SwichControlScreme(ControlScheme.Gameplay);
+
+        //UIManager.MenuManager.ChangeScreen(0);
+        //_player.SwichControlScreme(ControlScheme.Gameplay);
         WaveManager.Instance.ContinueGame();
+        SwichMenu(ControlScheme.Gameplay);
     }
 
     public void ReturnToMenu()

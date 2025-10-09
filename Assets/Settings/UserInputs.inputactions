@@ -33,27 +33,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Restart",
+                    "name": "OpenBuild",
                     "type": "Button",
-                    "id": "96bfd401-a60e-43e1-9052-70e98e09430e",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "NewGame",
-                    "type": "Button",
-                    "id": "1bb65105-00f2-406e-b3d0-ffed3b6c13fe",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Escape",
-                    "type": "Button",
-                    "id": "029c40cd-705e-4a7b-9628-4bf12895dc40",
+                    "id": "c62d933c-1504-4154-87de-839f2b0f9d6d",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -96,41 +78,19 @@
                 },
                 {
                     "name": "",
-                    "id": "f8399812-d45b-4401-aadb-5e9fb002af26",
-                    "path": "<Keyboard>/space",
+                    "id": "d7466efb-eb2d-4325-a316-22d2a62e9629",
+                    "path": "<Keyboard>/b",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Restart",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "abb23816-30af-4bad-8a32-2f8c5d11aaa8",
-                    "path": "<Keyboard>/n",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "NewGame",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ecc6b7e2-5594-4737-8102-1e7f6f695201",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Escape",
+                    "groups": "",
+                    "action": "OpenBuild",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
             ]
         },
         {
-            "name": "Win/Fail State",
+            "name": "FailWin",
             "id": "0c0a1aa1-a653-4f80-ac4f-033c90293736",
             "actions": [
                 {
@@ -192,6 +152,142 @@
                     "processors": "",
                     "groups": "",
                     "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Build",
+            "id": "ae65f642-8fa6-40aa-b07c-c03d754edc42",
+            "actions": [
+                {
+                    "name": "Place",
+                    "type": "Button",
+                    "id": "ff092e78-6db0-4377-969f-fd577b112d33",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Remove",
+                    "type": "Button",
+                    "id": "2369bbaf-bd04-4a7a-a0a1-56be95a0d20f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CloseBuild",
+                    "type": "Button",
+                    "id": "a1d7b92f-a5f4-440b-8232-19006e3f3ec5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f6e1160e-9a52-44ac-abaa-6bfa0158f100",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Place",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9b33720f-71db-42dd-b0d5-2296123f49b5",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Remove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fd62c992-5efb-419f-84f6-c33ca9615988",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CloseBuild",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "BuildRemove",
+            "id": "5117a36f-3481-41eb-9722-2c96e47565ce",
+            "actions": [
+                {
+                    "name": "RemovePlace",
+                    "type": "Button",
+                    "id": "4045dabd-faed-499a-a697-c8c177e3b10e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RemoveRemove",
+                    "type": "Button",
+                    "id": "9fb88d37-abad-420c-bdc2-94f916f30864",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CloseRemoveBuild",
+                    "type": "Button",
+                    "id": "4dcb5367-ede5-40c5-8e6a-45fe81506b91",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "49e79f13-fb80-4e59-96cc-bcd0ffa983d5",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "RemovePlace",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6aad6d1e-02fe-4335-a04d-40bd41271322",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "RemoveRemove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1bc473f5-d6e4-4acb-8548-53bf1588b1be",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CloseRemoveBuild",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

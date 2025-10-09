@@ -6,15 +6,15 @@ using TMPro;
 
 public class BuildBtnVisualTest : MonoBehaviour
 {
-    [SerializeField] bool _currentBin;
-    [SerializeField] string _amountBuild;
-    [SerializeField] Image _infiniteIcon;
-    [SerializeField] CanvasGroup _canvas;
-    [SerializeField] TMP_Text _text;
+    [SerializeField] private bool _currentBin;
+    [SerializeField] private string _amountBuild;
+    [SerializeField] private Image _infiniteIcon;
+    [SerializeField] private CanvasGroup _canvas;
+    [SerializeField] private TMP_Text _text;
 
     private void Awake()
     {
-        _canvas.alpha = 0;
+        //_canvas.alpha = 0;
     }
 
     private void OnValidate()

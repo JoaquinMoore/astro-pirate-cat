@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+using UnityEngine.InputSystem;
 
 namespace BuildSystem
 {
@@ -11,9 +12,6 @@ namespace BuildSystem
 
     public class BuilderManager : MonoBehaviour
     {
-        [Header("Temp")]
-        [SerializeField] private GameObject _hud;
-
         [Header("Refs")]
         [SerializeField] private GameObject _holoHolder;
         [SerializeField] private GameObject _VisualHoldRef;
@@ -22,6 +20,7 @@ namespace BuildSystem
         [SerializeField] private LimitBuild _LimitSize;
 
         [Header("Visual Config")]
+        [SerializeField] private Sprite _noBuildSprite;
         [SerializeField] private List<ErrorData> _errorTypes;
         [SerializeField] private float _textShowTime;
         [SerializeField] private float _lerpAmount;
@@ -42,42 +41,42 @@ namespace BuildSystem
 
 
         [Header("debug")]
-        [SerializeField] private SpriteRenderer _spriteRefs;
-        [SerializeField] private BuildData _dataRefs;
+        private SpriteRenderer _spriteRefs = new();
+        private BuildData _dataRefs = new();
 
-        [SerializeField] private List<BuildingData> _current_Builds_Refs;
-        [SerializeField] private List<Materials> _current_Prices_Gross_Code;
-        [SerializeField] private List<Materials> _current_Prices_Gross_Visual;
+        private List<BuildingData> _current_Builds_Refs = new();
+        private List<Materials> _current_Prices_Gross_Code = new();
+        private List<Materials> _current_Prices_Gross_Visual = new();
 
-        [SerializeField] private Grid _grid;
+        private Grid _grid;
 
-        [SerializeField] private Vector2 _ColSize;
-        [SerializeField] private Vector2 _ColOffset;
+        private Vector2 _ColSize;
+        private Vector2 _ColOffset;
 
-        [SerializeField] private int _buildSelectorID;
-        [SerializeField] private List<BuildingData> _empty_Builds_Refs;
+        private int _buildSelectorID;
+        private List<BuildingData> _empty_Builds_Refs = new();
 
-        [SerializeField] private int _enable;
-        [SerializeField] private bool _destruction;
+        private int _enable;
+        private bool _destruction;
 
-        [SerializeField] private List<DemolishData> _selectedToDemolish;
-        [SerializeField] private List<DemolishData> _selectedToDemolish_Empty;
+        private List<DemolishData> _selectedToDemolish = new();
+        private List<DemolishData> _selectedToDemolish_Empty = new();
 
-        [SerializeField] private TextMeshPro _text;
+        private TextMeshPro _text;
 
 
         private BoxCollider2D _colRefDest;
-        [SerializeField] private GameObject _buildRefDest;
+        private GameObject _buildRefDest;
 
         private bool _lockUI;
 
-        public static BuildManagerUI UIManager;
+        public static BuildManagerUI _ui;
 
         private IEnumerator _error;
 
         private float _limitsize;
 
-        [SerializeField] private List<SaveData> _SaveList = new();
+        private List<SaveData> _SaveList = new();
         
 
 
@@ -88,7 +87,6 @@ namespace BuildSystem
             _text = _rotationRef.GetComponentInChildren<TextMeshPro>();
             _rotationRef.SetActive(false);
             BuildManagerUI.Manager = this;
-            UIManager.SwichMode(false);
             _spriteRefs = _holoHolder.GetComponent<SpriteRenderer>();
             _spriteRefs.color = new Color(0, 0, 0, 0);
             _limitsize = GameManager.Instance._limitsize;
@@ -101,116 +99,40 @@ namespace BuildSystem
                 _current_Prices_Gross_Visual.Add(holder2);
             }
             _ErrorTextRef.gameObject.SetActive(false);
-            _hud.SetActive(false);
+            _LimitSize.gameObject.SetActive(false);
         }
 
 
         void Update()
         {
-
-            ScreenControls();
-
             if (_limitsize != GameManager.Instance._limitsize)
                 _limitsize = GameManager.Instance._limitsize;
-
-
-            if (_lockUI)
-                return;
-
-            if (_enable == 1 && _destruction == false)
-                ConstructionInputs();
-            else
-                DestructionInputs();
-
-
-
-
         }
 
         public void ScreenControls()
         {
-
-            if (Input.GetKeyDown(KeyCode.B))
+            switch (_enable)
             {
-
-                switch (_enable)
-                {
-                    case 1:
-                        CloseWindow();
-                        _enable = 0;
-                        break;
-                    case 0:
-                        OpenWindow();
-                        _enable = 1;
-                        break;
-                }
+                case 1:
+                    CloseWindow();
+                    _enable = 0;
+                    break;
+                case 0:
+                    OpenWindow();
+                    _enable = 1;
+                    break;
             }
         }
-
-
-
-        public void ConstructionInputs()
-        {
-
-            if (_dataRefs.BuildRefs.Count == 0)
-                return;
-
-            MousePosition();
-            CheckVisual();
-
-            if (Input.GetKeyDown(KeyCode.Mouse0) && Checkcolitions() && CheckDistance())
-            {
-                PlaceHolo();
-            }
-            else if(Input.GetKeyDown(KeyCode.Mouse0) && !Checkcolitions() && CheckDistance())
-            {
-                ErrorFinder(ErrorType.PlaceError);
-            }
-            else if (Input.GetKeyDown(KeyCode.Mouse0) && Checkcolitions() && !CheckDistance())
-            {
-                ErrorFinder(ErrorType.Distance);
-            }
-
-
-            if (Input.mouseScrollDelta.y != 0)
-            {
-                ScrollFunc(Input.mouseScrollDelta.y);
-            }
-
-
-            if (Input.GetKeyDown(KeyCode.Z))
-            {
-                RemoveHolo(_current_Builds_Refs.Count - 1);
-            }
-        }
-
-        public void DestructionInputs()
-        {
-            MouseDestroyPos(FindPlacedObjects());
-
-            if (Input.GetKeyDown(KeyCode.Mouse0) && _colRefDest != null)
-            {
-                PlaceDestroyHolo();
-            }
-
-
-            if (Input.GetKeyDown(KeyCode.Z))
-            {
-                RemoveDestroyHolo(_selectedToDemolish.Count - 1);
-            }
-        }
-
-
-
 
         public void OpenWindow()
         {
             _spriteRefs.gameObject.transform.localScale = new Vector3(1, 1, 1);
-            _dataRefs = new();
+            _dataRefs = null;
+            _spriteRefs.sprite = _noBuildSprite;
             StopAllCoroutines();
             ClearList();
-            _hud.gameObject.SetActive(true);
-
+            GameManager.Instance.SwichMenu(ControlScheme.Build);
+            _LimitSize.gameObject.SetActive(true);
         }
 
         public void CloseWindow()
@@ -223,13 +145,14 @@ namespace BuildSystem
             if (_selectedToDemolish.Count >= 1)
                 StartCoroutine(DestroyFunction());
             _spriteRefs.color = new Color(0, 0, 0, 0);
-            _dataRefs = new();
+            _dataRefs = null;
             if (_destruction)
                 SwichMode();
             foreach (var item in _current_Prices_Gross_Visual)
                 item.Amount = 0;
-            UIManager.Gross(_current_Prices_Gross_Visual);
-            _hud.SetActive(false);
+            _ui.Gross(_current_Prices_Gross_Visual);
+            GameManager.Instance.SwichMenu(ControlScheme.Gameplay);
+            _LimitSize.gameObject.SetActive(false);
             _rotationRef.SetActive(false);
         }
 
@@ -242,24 +165,18 @@ namespace BuildSystem
             {
                 _spriteRefs.color = _blockColor;
                 _spriteRefs.sprite = _BoxDestroySprite;
-                _dataRefs = default;
+                _dataRefs = null;
                 _rotationRef.SetActive(false);
-                //foreach (var item in _current_Builds_Refs)
-                //    Destroy(item.HoloLoc);
-                //_current_Builds_Refs.Clear();
-                //ClearPrices();
                 _spriteRefs.gameObject.transform.localScale = new Vector3(1, 1, 1);
+                GameManager.Instance.SwichMenu(ControlScheme.BuildRemove);
             }
             else if(_selectedToDemolish.Count <= 0)
             {
-                Debug.Log("non destroy");
                 _rotationRef.SetActive(true);
                 _spriteRefs.gameObject.transform.localScale = new Vector3(1,1,1);
-                //foreach (var item in _selectedToDemolish)
-                //    Destroy(item.HoloLoc);
-                //_selectedToDemolish.Clear();
+                GameManager.Instance.SwichMenu(ControlScheme.Build);
             }
-            UIManager.SwichMode(_destruction);
+            _ui.SwichMode(_destruction);
 
             _spriteRefs.gameObject.transform.localScale = new Vector3(1, 1, 1);
         }
@@ -267,9 +184,9 @@ namespace BuildSystem
 
 
         #region BuildFuncs
-        public void MousePosition()
+        public void MousePosition(Vector2 mousepos)
         {
-            Vector3Int gridposs = _grid.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition) + _gridMouseAdjustment);
+            Vector3Int gridposs = _grid.WorldToCell(Camera.main.ScreenToWorldPoint(mousepos) + _gridMouseAdjustment);
             _holoHolder.transform.position = Vector3.Lerp(_holoHolder.transform.position, _grid.CellToWorld(gridposs) + new Vector3(_grid.cellSize.x / 2, _grid.cellSize.y / 2, 0), Time.deltaTime * _lerpAmount);
             _holoHolder.transform.position = new Vector3(_holoHolder.transform.position.x, _holoHolder.transform.position.y, 0);
 
@@ -300,7 +217,7 @@ namespace BuildSystem
             if (data == null)
                 return;
             _dataRefs = data;
-
+            _spriteRefs.color = _nonBlockColor;
             if (_dataRefs.BuildRefs.Count > 1)
             {
                 _rotationRef.SetActive(true);
@@ -320,12 +237,10 @@ namespace BuildSystem
             //misc resets
             if (_destruction)
                 SwichMode();
-            Debug.Log(_dataRefs.BuildRefs.Count);
             _buildSelectorID = 0;
             _destruction = false;
-            UIManager.SwichMode(_destruction);
+            _ui.SwichMode(_destruction);
             GetBuildStuff(_buildSelectorID);
-            _rotationRef.SetActive(true);
         }
 
 
@@ -336,18 +251,11 @@ namespace BuildSystem
 
         public void PlaceHolo()
         {
-
-
-            if (CheckGrossOverFlow())
-            {
-                ErrorFinder(ErrorType.NotEnoughtMoney);
+            if (_lockUI)
                 return;
-            }
-            if (_dataRefs.BuildingAmount <= _dataRefs.CurrentBuildingAmount)
-            {
-                ErrorFinder(ErrorType.MaxedCap);
+
+            if (!CheckErrors())
                 return;
-            }
 
             BuildingData holder = new();
             Vector2 pos = GetGridPoss();
@@ -362,22 +270,24 @@ namespace BuildSystem
             AddToGross(holder.Prices);
             _current_Builds_Refs.Add(holder);
 
-            UIManager.ChangeValueData(holder.PrefRef.GetComponent<BuildingBase>(), true);
-            //_dataRefs.CurrentBuildingAmount++;
+            _ui.ChangeValueData(holder.PrefRef.GetComponent<BuildingBase>(), true);
         }
 
 
 
-        public void RemoveHolo(int place)
+        public void RemoveHolo(int place = 0)
         {
             if (_current_Builds_Refs.Count == 0)
                 return;
+            if (place == 0)
+                place = _current_Builds_Refs.Count - 1;
+
 
             BuildingData holder = _current_Builds_Refs[place];
             StopAllCoroutines();
             RemoveFromGross(holder.Prices);
             Destroy(holder.HoloLoc);
-            UIManager.ChangeValueData(holder.PrefRef.GetComponent<BuildingBase>(), false);
+            _ui.ChangeValueData(holder.PrefRef.GetComponent<BuildingBase>(), false);
             _current_Builds_Refs.Remove(holder);
         }
 
@@ -390,7 +300,11 @@ namespace BuildSystem
             foreach (var item in _current_Builds_Refs)
             {
                 if (CheckPrices(item.Prices))
+                {
+                    Destroy(item.HoloLoc);
                     continue;
+                }
+
                 RemoveFromGross(item.Prices);
                 foreach (var itema in item.Prices)
                     GameManager.Instance.RemoveMaterialAmount(itema);
@@ -442,12 +356,11 @@ namespace BuildSystem
         #region DestroyFuncs
 
 
-        public void MouseDestroyPos(GameObject building)
+        public void MouseDestroyPos(GameObject building, Vector2 mousepos)
         {
             if (_buildRefDest != building)
             {
                 _colRefDest = null;
-
             }
 
 
@@ -456,7 +369,7 @@ namespace BuildSystem
                 _colRefDest = null;
                 _spriteRefs.gameObject.transform.localScale = Vector2.Lerp(_spriteRefs.gameObject.transform.localScale, new Vector3(1, 1, 1), Time.deltaTime * (_lerpAmount / 2));
 
-                MousePosition();
+                MousePosition(mousepos);
                 return;
             }
             if (_colRefDest == null)
@@ -466,13 +379,15 @@ namespace BuildSystem
             }
             _holoHolder.transform.position = Vector2.Lerp(_holoHolder.transform.position, _colRefDest.transform.position, Time.deltaTime * (_lerpAmount / 2));
             _spriteRefs.gameObject.transform.localScale = Vector2.Lerp(_spriteRefs.gameObject.transform.localScale, _colRefDest.size, Time.deltaTime * (_lerpAmount / 2));
-
         }
 
 
         public void PlaceDestroyHolo()
         {
-
+            if (_lockUI)
+                return;
+            if (_colRefDest == null)
+                return;
             BuildingData hol = _selectedToDemolish.Find(x => x.PrefRef == _buildRefDest.gameObject);
             if (hol != null)
                 return;
@@ -482,7 +397,7 @@ namespace BuildSystem
             if (holohold != null)
             {
                 Destroy(holohold.HoloLoc);
-                UIManager.ChangeValueData(holohold.PrefRef.GetComponent<BuildingBase>(), false);
+                _ui.ChangeValueData(holohold.PrefRef.GetComponent<BuildingBase>(), false);
                 _current_Builds_Refs.Remove(holohold);
                 return;
             }
@@ -526,7 +441,7 @@ namespace BuildSystem
                     GameManager.Instance.AddMaterialAmount(prieces);
 
                 RemoveFromGross(item.Prices);
-                UIManager.ChangeValueData(item.OriginalPrefRef.GetComponent<BuildingBase>(), false);
+                _ui.ChangeValueData(item.OriginalPrefRef.GetComponent<BuildingBase>(), false);
 
                 Destroy(item.PrefRef);
                 Destroy(item.HoloLoc);
@@ -538,10 +453,12 @@ namespace BuildSystem
         }
 
 
-        public void RemoveDestroyHolo(int place)
+        public void RemoveDestroyHolo(int place = 0)
         {
             if (_selectedToDemolish.Count == 0)
                 return;
+            if (place == 0)
+                place = _selectedToDemolish.Count - 1;
 
             DemolishData holder = _selectedToDemolish[place];
             StopAllCoroutines();
@@ -558,13 +475,46 @@ namespace BuildSystem
 
         #region Functions
 
+        public bool CheckErrors()
+        {
+            
+            if (_dataRefs == null || _dataRefs.BuildRefs.Count == 0)
+            {
+                ErrorFinder(ErrorType.NoBuild);
+                return false;
+            }
+            if (!Checkcolitions())
+            {
+                ErrorFinder(ErrorType.PlaceError);
+                return false;
+            }
+            if (!CheckDistance())
+            {
+                ErrorFinder(ErrorType.Distance);
+                return false;
+            }
+            if (CheckGrossOverFlow())
+            {
+                ErrorFinder(ErrorType.NotEnoughtMoney);
+                return false;
+            }
+            if (_dataRefs.BuildingAmount <= _dataRefs.CurrentBuildingAmount)
+            {
+                ErrorFinder(ErrorType.MaxedCap);
+                return false;
+            }
+
+            return true;
+        }
+
+
         public void ClearPrices()
         {
             foreach (var item in _current_Prices_Gross_Code)
                 item.Amount = 0;
             foreach (var item in _current_Prices_Gross_Visual)
                 item.Amount = 0;
-            UIManager.Gross(_current_Prices_Gross_Visual);
+            _ui.Gross(_current_Prices_Gross_Visual);
         }
 
 
@@ -618,31 +568,33 @@ namespace BuildSystem
 
         public IEnumerator AddToGrossAnimIndv(Materials CodeMat, Materials VisualMat)
         {
+            float randomdesinc = Random.Range(-3, 35);
             float _currentTime = 0;
             int dif = CodeMat.Amount - VisualMat.Amount;
 
 
             while (VisualMat.Amount < CodeMat.Amount)
             {
-                _currentTime += Time.deltaTime / dif;
-                yield return new WaitForSeconds(_visualRampUp.Evaluate(_currentTime * _RampUpSpeed));
+                _currentTime += Time.deltaTime / (dif + randomdesinc);
+                yield return new WaitForSeconds(_visualRampUp.Evaluate(_currentTime * (_RampUpSpeed + randomdesinc) ));
                 VisualMat.Amount++;
-                UIManager.Gross(_current_Prices_Gross_Visual);
+                _ui.Gross(_current_Prices_Gross_Visual);
             }
         }
 
         public IEnumerator RemoveToGrossAnimIndv(Materials CodeMat, Materials VisualMat)
         {
+            float randomdesinc = Random.Range(-3, 35);
             float _currentTime = 0;
             int dif = VisualMat.Amount - CodeMat.Amount;
 
 
             while (VisualMat.Amount > CodeMat.Amount)
             {
-                _currentTime += Time.deltaTime / dif;
-                yield return new WaitForSeconds(_visualRampUp.Evaluate(_currentTime * _RampUpSpeed));
+                _currentTime += Time.deltaTime / (dif + randomdesinc);
+                yield return new WaitForSeconds(_visualRampUp.Evaluate(_currentTime * (_RampUpSpeed + randomdesinc)));
                 VisualMat.Amount--;
-                UIManager.Gross(_current_Prices_Gross_Visual);
+                _ui.Gross(_current_Prices_Gross_Visual);
             }
             if (VisualMat.Amount < 0)
                 VisualMat.Amount = 0;
@@ -705,12 +657,9 @@ namespace BuildSystem
         {
             return Vector3.Distance(_holoHolder.transform.position, transform.position) < _limitsize;
         }
-        public GameObject FindPlacedObjects()
+        public GameObject FindPlacedObjects(Vector2 mousepos)
         {
-            var holder = Physics2D.OverlapBox(Camera.main.ScreenToWorldPoint(Input.mousePosition), _DestroyDetectionBoxSize, 0, _BuildingMask);
-
-
-
+            var holder = Physics2D.OverlapBox(Camera.main.ScreenToWorldPoint(mousepos), _DestroyDetectionBoxSize, 0, _BuildingMask);
             if (holder == null)
                 return null;
 
@@ -720,14 +669,10 @@ namespace BuildSystem
                 return hol.gameObject;
 
             BuildingData holdr = _current_Builds_Refs.Find(x => x.HoloLoc == holder.gameObject);
-            Debug.Log(holdr);
             if (holdr != null)
                 return holdr.HoloLoc;
             else
                 return null;
-
-
-
         }
 
         public void ErrorFinder(ErrorType type)
@@ -745,14 +690,22 @@ namespace BuildSystem
             _ErrorTextRef.gameObject.SetActive(true);
             yield return new WaitForSeconds(_textShowTime);
             _ErrorTextRef.gameObject.SetActive(false);
-            Debug.Log("patata");
         }
 
         public bool CheckGrossOverFlow()
         {
+            Materials holder = new();
             foreach (var item in _current_Prices_Gross_Code)
             {
-                if (GameManager.Instance.CheckAmount(item))
+                Debug.Log(_dataRefs);
+                holder.Type = item.Type;
+                holder.Amount = item.Amount;
+                var holde = _dataRefs.Prices.Find(x => x.Type == item.Type);
+                if (holde != null)
+                {
+                    holder.Amount += holde.Amount;
+                }
+                if (GameManager.Instance.CheckAmount(holder))
                 {
                     return true;
                 }
@@ -800,7 +753,8 @@ namespace BuildSystem
             PlaceError,
             NotEnoughtMoney,
             Distance,
-            MaxedCap
+            MaxedCap,
+            NoBuild
         }
     }
 }
